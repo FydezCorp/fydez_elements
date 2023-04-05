@@ -6,20 +6,25 @@ import 'data/nav_bar_effect.dart';
 import 'data/nav_bar_item.dart';
 import 'data/nav_bar_style.dart';
 
+// * Abstract Factory
 class FyBottomNavBar {
-  static Widget getBottomNavBar({
+  static Widget build({
     required List<NavBarItem> items,
+    required void Function(int)? onTap,
     required NavBarStyle style,
     required NavBarEffect effect,
     required bool hasTitle,
     double borderRadius = 0,
+    int currentIndex = 0,
   }) {
     return NavBarFactory(
       style: style,
       effect: effect,
     ).build(
       items: items,
+      onTap: onTap,
       hasTitle: hasTitle,
+      currentIndex: currentIndex,
     );
   }
 }
