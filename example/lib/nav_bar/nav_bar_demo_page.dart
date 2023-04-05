@@ -16,6 +16,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
   NavBarStyle style = NavBarStyle.bold;
   NavBarEffect effect = NavBarEffect.none;
   bool hasTitle = false;
+  double borderRadius = 15;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +82,19 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
                   title: const Text('Has Title?'),
                 ),
               ),
+              SizedBox(
+                width: 200,
+                child: Slider(
+                  value: borderRadius,
+                  min: 0,
+                  max: 50,
+                  onChanged: (value) {
+                    setState(() {
+                      borderRadius = value;
+                    });
+                  },
+                ),
+              )
             ],
           ),
         ),
@@ -89,6 +103,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
         style: style,
         effect: effect,
         hasTitle: true,
+        cornerRadius: borderRadius,
         items: [
           NavBarItem(Icons.abc_sharp, 'label 1'),
           NavBarItem(Icons.abc_sharp, 'label 2'),

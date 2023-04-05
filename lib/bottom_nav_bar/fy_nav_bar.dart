@@ -14,17 +14,18 @@ class FyBottomNavBar {
     required NavBarStyle style,
     required NavBarEffect effect,
     required bool hasTitle,
-    double borderRadius = 0,
+    double cornerRadius = 0,
     int currentIndex = 0,
   }) {
     return NavBarFactory(
-      style: style,
       effect: effect,
     ).build(
+      style: style,
       items: items,
       onTap: onTap,
       hasTitle: hasTitle,
       currentIndex: currentIndex,
+      cornerRadius: cornerRadius,
     );
   }
 }
