@@ -1,3 +1,4 @@
+import 'package:example/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,14 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) {
-        return const Scaffold(
-          body: Center(
-            child: Text('To Be Created!'),
-          ),
-        );
-      },
+    final router = FydezDemoRouter.router;
+    return MaterialApp.router(
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+      routerDelegate: router.routerDelegate,
     );
   }
 }
