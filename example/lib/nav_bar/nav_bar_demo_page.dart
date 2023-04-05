@@ -13,19 +13,81 @@ class NavBarDemoPage extends StatefulWidget {
 
 class _NavBarDemoPageState extends State<NavBarDemoPage> {
   int currentIndex = 0;
+  NavBarStyle style = NavBarStyle.bold;
+  NavBarEffect effect = NavBarEffect.none;
+  bool hasTitle = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: 50,
-        itemBuilder: (context, index) {
-          return Text(index.toString());
-        },
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Style:      '),
+                  DropdownButton(
+                    value: style,
+                    items: NavBarStyle.values
+                        .map((e) => DropdownMenuItem(
+                              enabled: true,
+                              value: e,
+                              child: Text(e.name),
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        style = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Effect:      '),
+                  DropdownButton(
+                    value: effect,
+                    items: NavBarEffect.values
+                        .map((e) => DropdownMenuItem(
+                              enabled: true,
+                              value: e,
+                              child: Text(e.name),
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        effect = value!;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 200,
+                child: CheckboxListTile(
+                  value: hasTitle,
+                  onChanged: (value) {
+                    setState(() {
+                      hasTitle = value!;
+                    });
+                  },
+                  dense: true,
+                  enabled: true,
+                  title: const Text('Has Title?'),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       bottomNavigationBar: FyBottomNavBar.build(
-        style: NavBarStyle.bold,
-        effect: NavBarEffect.line,
+        style: style,
+        effect: effect,
         hasTitle: true,
         items: [
           NavBarItem(Icons.abc_sharp, 'label 1'),
