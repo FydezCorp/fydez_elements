@@ -16,7 +16,7 @@ class BaseShadowContainer extends StatelessWidget {
     }
 
     return Container(
-      margin: EdgeInsets.all(margin()),
+      padding: EdgeInsets.all(margin()),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(cornerRadius),
         boxShadow: [
@@ -26,6 +26,7 @@ class BaseShadowContainer extends StatelessWidget {
             blurRadius: 10,
           ),
         ],
+        color: Colors.transparent,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(cornerRadius),

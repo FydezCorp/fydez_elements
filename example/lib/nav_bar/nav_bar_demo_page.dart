@@ -21,101 +21,133 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
+      extendBody: true,
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Style:      '),
-                  DropdownButton(
-                    value: style,
-                    items: NavBarStyle.values
-                        .map((e) => DropdownMenuItem(
-                              enabled: true,
-                              value: e,
-                              child: Text(e.name),
-                            ))
-                        .toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        style = value!;
-                      });
-                    },
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Effect:      '),
-                  DropdownButton(
-                    value: effect,
-                    items: NavBarEffect.values
-                        .map((e) => DropdownMenuItem(
-                              enabled: true,
-                              value: e,
-                              child: Text(e.name),
-                            ))
-                        .toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        effect = value!;
-                      });
-                    },
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 200,
-                child: CheckboxListTile(
-                  value: hasTitle,
-                  onChanged: (value) {
-                    setState(() {
-                      hasTitle = value!;
-                    });
-                  },
-                  dense: true,
-                  enabled: true,
-                  title: const Text('Has Title?'),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Style:      '),
+                        DropdownButton(
+                          value: style,
+                          items: NavBarStyle.values
+                              .map((e) => DropdownMenuItem(
+                                    enabled: true,
+                                    value: e,
+                                    child: Text(e.name),
+                                  ))
+                              .toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              style = value!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Effect:      '),
+                        DropdownButton(
+                          value: effect,
+                          items: NavBarEffect.values
+                              .map((e) => DropdownMenuItem(
+                                    enabled: true,
+                                    value: e,
+                                    child: Text(e.name),
+                                  ))
+                              .toList(),
+                          onChanged: (value) {
+                            setState(() {
+                              effect = value!;
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 200,
+                      child: CheckboxListTile(
+                        value: hasTitle,
+                        onChanged: (value) {
+                          setState(() {
+                            hasTitle = value!;
+                          });
+                        },
+                        dense: true,
+                        enabled: true,
+                        title: const Text('Has Title?'),
+                      ),
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                              'Corner Radius (${borderRadius.toStringAsFixed(2)})'),
+                          Slider(
+                            value: borderRadius,
+                            min: 0,
+                            max: 50,
+                            onChanged: (value) {
+                              setState(() {
+                                borderRadius = value;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: 500,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: double.infinity,
+                          height: 50,
+                          color: Color(int.parse(
+                              '0xff${index + 10}${index + 50}${index + 50}')),
+                        );
+                      },
+                    )
+                  ],
                 ),
               ),
-              SizedBox(
-                width: 200,
-                child: Slider(
-                  value: borderRadius,
-                  min: 0,
-                  max: 50,
-                  onChanged: (value) {
-                    setState(() {
-                      borderRadius = value;
-                    });
-                  },
-                ),
-              )
-            ],
-          ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              left: 0,
+              child: FyBottomNavBar.build(
+                style: style,
+                effect: effect,
+                hasTitle: hasTitle,
+                cornerRadius: borderRadius,
+                items: [
+                  NavBarItem(Icons.abc_sharp, 'label 1'),
+                  NavBarItem(Icons.abc_sharp, 'label 2'),
+                  NavBarItem(Icons.abc_sharp, 'label 3'),
+                  NavBarItem(Icons.abc_sharp, 'label 4'),
+                ],
+                onTap: (value) {
+                  setState(() {
+                    currentIndex = value;
+                  });
+                },
+                currentIndex: currentIndex,
+              ),
+            ),
+          ],
         ),
-      ),
-      bottomNavigationBar: FyBottomNavBar.build(
-        style: style,
-        effect: effect,
-        hasTitle: hasTitle,
-        cornerRadius: borderRadius,
-        items: [
-          NavBarItem(Icons.abc_sharp, 'label 1'),
-          NavBarItem(Icons.abc_sharp, 'label 2'),
-          NavBarItem(Icons.abc_sharp, 'label 3'),
-          NavBarItem(Icons.abc_sharp, 'label 4'),
-        ],
-        onTap: (value) {
-          setState(() {
-            currentIndex = value;
-          });
-        },
-        currentIndex: currentIndex,
       ),
     );
   }

@@ -37,6 +37,7 @@ class BoldShadowNavBar extends StatelessWidget {
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed, showSelectedLabels: hasTitle,
           showUnselectedLabels: hasTitle,
+          elevation: 0,
         ));
   }
 }
