@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/nav_bar_item.dart';
+import '../widgets/nav_bar_main_title_icon.dart';
 
 class MainTitleLineNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -9,13 +10,14 @@ class MainTitleLineNavBar extends StatelessWidget {
   final double cornerRadius;
   final int currentIndex;
 
-  const MainTitleLineNavBar(
-      {super.key,
-      required this.items,
-      this.onTap,
-      required this.hasTitle,
-      required this.cornerRadius,
-      required this.currentIndex});
+  const MainTitleLineNavBar({
+    super.key,
+    required this.items,
+    this.onTap,
+    required this.hasTitle,
+    required this.cornerRadius,
+    required this.currentIndex,
+  });
   @override
   Widget build(BuildContext context) {
     double margin() {
@@ -40,7 +42,11 @@ class MainTitleLineNavBar extends StatelessWidget {
           items: items
               .map(
                 (item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
+                  icon: NavBarMainTitleIcon(
+                    icon: item.icon,
+                    label: item.label,
+                    isSelected: currentIndex == items.indexOf(item),
+                  ),
                   label: item.label,
                 ),
               )
@@ -51,6 +57,8 @@ class MainTitleLineNavBar extends StatelessWidget {
           onTap: onTap,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
         ),
       ),
     );

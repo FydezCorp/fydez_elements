@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/nav_bar_item.dart';
+import '../widgets/nav_bar_main_title_icon.dart';
 
 class MainTitleShadowNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -40,7 +41,11 @@ class MainTitleShadowNavBar extends StatelessWidget {
           items: items
               .map(
                 (item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
+                  icon: NavBarMainTitleIcon(
+                    icon: item.icon,
+                    label: item.label,
+                    isSelected: currentIndex == items.indexOf(item),
+                  ),
                   label: item.label,
                 ),
               )
@@ -51,6 +56,8 @@ class MainTitleShadowNavBar extends StatelessWidget {
           onTap: onTap,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
         ),
       ),
     );
