@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/nav_bar_item.dart';
+import '../widgets/nav_bar_transparent_icon.dart';
 
 class TransparentLineNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -40,7 +41,10 @@ class TransparentLineNavBar extends StatelessWidget {
           items: items
               .map(
                 (item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
+                  icon: NavBarTransparentIcon(
+                    icon: item.icon,
+                    isSelected: currentIndex == items.indexOf(item),
+                  ),
                   label: item.label,
                 ),
               )
@@ -49,6 +53,8 @@ class TransparentLineNavBar extends StatelessWidget {
           selectedItemColor: const Color(0xff1A1A1A),
           unselectedItemColor: const Color(0xff949494),
           onTap: onTap,
+          showSelectedLabels: hasTitle,
+          showUnselectedLabels: hasTitle,
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
         ),

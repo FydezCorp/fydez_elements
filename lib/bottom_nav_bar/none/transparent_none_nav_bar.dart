@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/bottom_nav_bar/widgets/nav_bar_transparent_icon.dart';
 
 import '../data/nav_bar_item.dart';
 
@@ -40,7 +41,10 @@ class TransparentNoneNavBar extends StatelessWidget {
           items: items
               .map(
                 (item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
+                  icon: NavBarTransparentIcon(
+                    icon: item.icon,
+                    isSelected: currentIndex == items.indexOf(item),
+                  ),
                   label: item.label,
                 ),
               )
@@ -50,6 +54,8 @@ class TransparentNoneNavBar extends StatelessWidget {
           unselectedItemColor: const Color(0xff949494),
           onTap: onTap,
           currentIndex: currentIndex,
+          showSelectedLabels: hasTitle,
+          showUnselectedLabels: hasTitle,
           type: BottomNavigationBarType.fixed,
         ),
       ),

@@ -16,6 +16,7 @@ class LineNavBar implements NavBarFactory {
     required double cornerRadius,
     required int currentIndex,
     required NavBarStyle style,
+    re
   }) {
     switch (style) {
       case NavBarStyle.transparent:

@@ -102,7 +102,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
       bottomNavigationBar: FyBottomNavBar.build(
         style: style,
         effect: effect,
-        hasTitle: true,
+        hasTitle: hasTitle,
         cornerRadius: borderRadius,
         items: [
           NavBarItem(Icons.abc_sharp, 'label 1'),
