@@ -8,6 +8,8 @@ import 'data/nav_bar_style.dart';
 
 // * Abstract Factory
 class FyBottomNavBar {
+  /// Creates an instance of [`FyBottomNavBar`]. Make sure to use it inside a stack
+  /// instead of putting it inside `bottomNavigationBar` filed of scaffold.
   static Widget build({
     required List<NavBarItem> items,
     required void Function(int)? onTap,
