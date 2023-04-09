@@ -28,6 +28,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
           children: [
             Positioned.fill(
               child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
                     Row(
@@ -133,10 +134,26 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
                 hasTitle: hasTitle,
                 cornerRadius: borderRadius,
                 items: [
-                  NavBarItem(Icons.abc_sharp, 'label 1'),
-                  NavBarItem(Icons.abc_sharp, 'label 2'),
-                  NavBarItem(Icons.abc_sharp, 'label 3'),
-                  NavBarItem(Icons.abc_sharp, 'label 4'),
+                  NavBarItem(
+                    icon: Icons.abc_sharp,
+                    label: 'label 1',
+                    activeIcon: Icons.done_all,
+                  ),
+                  NavBarItem(
+                    icon: Icons.abc_sharp,
+                    label: 'label 2',
+                    activeIcon: Icons.done_all,
+                  ),
+                  NavBarItem(
+                    icon: Icons.abc_sharp,
+                    label: 'label 3',
+                    activeIcon: Icons.done_all,
+                  ),
+                  NavBarItem(
+                    icon: Icons.abc_sharp,
+                    label: 'label 4',
+                    activeIcon: Icons.done_all,
+                  ),
                 ],
                 onTap: (value) {
                   setState(() {

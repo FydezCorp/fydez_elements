@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/widgets/base_none_container.dart';
 
 import '../data/nav_bar_item.dart';
+import '../widgets/nav_bar_bold_icon.dart';
 
 class BoldNoneNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -25,7 +26,10 @@ class BoldNoneNavBar extends StatelessWidget {
           items: items
               .map(
                 (item) => BottomNavigationBarItem(
-                  icon: Icon(item.icon),
+                  icon: NavBarBoldIcon(
+                  item: item,
+                  isSelected: currentIndex == items.indexOf(item),
+                ),
                   label: item.label,
                 ),
               )

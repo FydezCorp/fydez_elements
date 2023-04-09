@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/nav_bar_item.dart';
 import '../widgets/base_line_container.dart';
+import '../widgets/nav_bar_bold_icon.dart';
 
 class BoldLineNavBar extends StatelessWidget {
   final List<NavBarItem> items;
@@ -26,7 +27,10 @@ class BoldLineNavBar extends StatelessWidget {
         items: items
             .map(
               (item) => BottomNavigationBarItem(
-                icon: Icon(item.icon),
+                icon: NavBarBoldIcon(
+                  item: item,
+                  isSelected: currentIndex == items.indexOf(item),
+                ),
                 label: item.label,
               ),
             )
@@ -42,3 +46,4 @@ class BoldLineNavBar extends StatelessWidget {
     );
   }
 }
+
