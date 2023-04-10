@@ -16,7 +16,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
   NavBarStyle style = NavBarStyle.bold;
   NavBarEffect effect = NavBarEffect.none;
   bool hasTitle = false;
-  double borderRadius = 15;
+  double cornerRadius = 15;
 
   @override
   Widget build(BuildContext context) {
@@ -93,14 +93,14 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                              'Corner Radius (${borderRadius.toStringAsFixed(2)})'),
+                              'Corner Radius (${cornerRadius.toStringAsFixed(2)})'),
                           Slider(
-                            value: borderRadius,
+                            value: cornerRadius,
                             min: 0,
                             max: 50,
                             onChanged: (value) {
                               setState(() {
-                                borderRadius = value;
+                                cornerRadius = value;
                               });
                             },
                           ),
@@ -132,7 +132,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
                 style: style,
                 effect: effect,
                 hasTitle: hasTitle,
-                cornerRadius: borderRadius,
+                cornerRadius: cornerRadius,
                 items: [
                   NavBarItem(
                     icon: Icons.abc_sharp,
