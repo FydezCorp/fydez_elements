@@ -9,21 +9,31 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> buttonsList = [
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.navBars);
+        },
+        child: const Text('Nav Bars'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.textInputs);
+        },
+        child: const Text('Text Inputs'),
+      ),
+    ];
+
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  context.push(FydezDemoRoutes.navBars);
-                },
-                child: const Text('Nav Bars'),
-              )
-            ],
-          ),
+        child: ListView.builder(
+          itemCount: buttonsList.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(10),
+              child: buttonsList[index],
+            );
+          },
         ),
       ),
     );

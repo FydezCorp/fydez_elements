@@ -79,6 +79,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  gap:
+    dependency: "direct main"
+    description:
+      name: gap
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   go_router:
     dependency: "direct main"
     description:
@@ -86,6 +93,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.5.3"
+  iconsax:
+    dependency: transitive
+    description:
+      name: iconsax
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.8"
   js:
     dependency: transitive
     description:
