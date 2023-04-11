@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../data/fy_icons.dart';
-
 const Map<FyIcons, IconData> iconsaxIcons = {
   FyIcons.home: Iconsax.home,
   FyIcons.login: Iconsax.login,
