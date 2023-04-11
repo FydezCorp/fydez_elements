@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../data/icon_usecases.dart';
+import '../data/fy_icons.dart';
 
-const Map<IconUseCase, IconData> materialIcons = {
-  IconUseCase.home: Icons.home,
-  IconUseCase.login: Icons.login,
-  IconUseCase.logout: Icons.logout,
-  IconUseCase.eye: Icons.remove_red_eye,
-  IconUseCase.heart: Icons.favorite,
-  IconUseCase.store: Icons.store,
-  IconUseCase.user: Icons.person,
+const Map<FyIcons, IconData> materialIcons = {
+  FyIcons.home: Icons.home,
+  FyIcons.login: Icons.login,
+  FyIcons.logout: Icons.logout,
+  FyIcons.eye: Icons.remove_red_eye,
+  FyIcons.heart: Icons.favorite,
+  FyIcons.store: Icons.store,
+  FyIcons.user: Icons.person,
 };

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../data/icon_usecases.dart';
+import '../data/fy_icons.dart';
 
-const Map<IconUseCase, IconData> iconsaxIcons = {
-  IconUseCase.home: Iconsax.home,
-  IconUseCase.login: Iconsax.login,
-  IconUseCase.logout: Iconsax.logout,
-  IconUseCase.eye: Iconsax.eye,
-  IconUseCase.heart: Iconsax.heart,
-  IconUseCase.store: Iconsax.shop,
-  IconUseCase.user: Iconsax.user,
+const Map<FyIcons, IconData> iconsaxIcons = {
+  FyIcons.home: Iconsax.home,
+  FyIcons.login: Iconsax.login,
+  FyIcons.logout: Iconsax.logout,
+  FyIcons.eye: Iconsax.eye,
+  FyIcons.heart: Iconsax.heart,
+  FyIcons.store: Iconsax.shop,
+  FyIcons.user: Iconsax.user,
 };

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/icon_packs/data/icon_usecases.dart';
 import 'package:gap/gap.dart';
 
 class IconPacksDemoPage extends StatefulWidget {
@@ -13,7 +12,7 @@ class IconPacksDemoPage extends StatefulWidget {
 class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
   final List<String> iconPackList = iconPacks.map((e) => e.name).toList();
   String selectedIconPack = 'material';
-  List<IconUseCase> useCases = IconUseCase.values;
+  List<FyIcons> useCases = FyIcons.values;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
