@@ -5,12 +5,15 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final double inputsBorderRadius;
   final double defaultVerticalPadding;
   final double defaultHorizontalPadding;
+  final String iconPack;
 
-  FyThemeParameters(
-      {required this.buttonCornerRadius,
-      required this.inputsBorderRadius,
-      required this.defaultVerticalPadding,
-      required this.defaultHorizontalPadding});
+  FyThemeParameters({
+    required this.buttonCornerRadius,
+    required this.inputsBorderRadius,
+    required this.defaultVerticalPadding,
+    required this.defaultHorizontalPadding,
+    required this.iconPack,
+  });
 
   @override
   ThemeExtension<FyThemeParameters> copyWith({
@@ -18,6 +21,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     double? inputsBorderRadius,
     double? defaultVerticalPadding,
     double? defaultHorizontalPadding,
+    String? iconPack,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -26,6 +30,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
           defaultVerticalPadding ?? this.defaultVerticalPadding,
       defaultHorizontalPadding:
           defaultHorizontalPadding ?? this.defaultHorizontalPadding,
+          iconPack: iconPack ?? this.iconPack,
     );
   }
 
@@ -40,6 +45,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       inputsBorderRadius: inputsBorderRadius,
       defaultVerticalPadding: defaultVerticalPadding,
       defaultHorizontalPadding: defaultHorizontalPadding,
+      iconPack: iconPack,
     );
   }
 }

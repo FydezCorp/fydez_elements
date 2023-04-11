@@ -22,6 +22,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Text Inputs'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.iconPacks);
+        },
+        child: const Text('Icon Packs'),
+      ),
     ];
 
     return Scaffold(

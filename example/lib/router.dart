@@ -1,4 +1,5 @@
 import 'package:example/home_page.dart';
+import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
@@ -23,6 +24,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.textInputs,
         builder: (context, state) {
           return const TextInputsDemoPage();
+        },
+      ),
+        GoRoute(
+        path: FydezDemoRoutes.iconPacks,
+        builder: (context, state) {
+          return const IconPacksDemoPage();
         },
       ),
     ],
