@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../icon_packs/data/icon_packs.dart';
+import '../icon_packs/icon_packs.dart';
 
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final double buttonCornerRadius;

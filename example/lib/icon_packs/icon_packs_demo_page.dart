@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/icon_packs/icon_factory.dart';
 import 'package:gap/gap.dart';
 
 class IconPacksDemoPage extends StatefulWidget {
@@ -44,7 +43,7 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     child: Column(
                       children: [
                         Icon(
-                          IconFactory(
+                          FyIcon(
                             context,
                             iconPack: selectedIconPack,
                           ).home,
