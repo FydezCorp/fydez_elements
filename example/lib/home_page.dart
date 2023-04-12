@@ -28,6 +28,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Icon Packs'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.buttons);
+        },
+        child: const Text('Buttons'),
+      ),
     ];
 
     return Scaffold(
