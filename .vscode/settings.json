@@ -3,6 +3,8 @@
         "Cupertino",
         "fydez",
         "iconsax",
-        "lerp"
+        "lerp",
+        "Reflectable",
+        "usecases"
     ]
 }

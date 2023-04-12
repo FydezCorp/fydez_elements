@@ -9,7 +9,7 @@ import 'transparent_shadow_nav_bar.dart';
 
 class ShadowNavBar implements NavBarFactory {
   @override
-  Widget build({
+  Widget createNavBar({
     required List<NavBarItem> items,
     required void Function(int)? onTap,
     required bool hasTitle,
