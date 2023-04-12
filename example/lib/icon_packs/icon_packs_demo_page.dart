@@ -12,7 +12,6 @@ class IconPacksDemoPage extends StatefulWidget {
 class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
   final List<IconPacks> iconPackList = IconPacks.values;
   IconPacks selectedIconPack = IconPacks.material;
-  // List<FyIcons> useCases = FyIcons.values;
 
   @override
   Widget build(BuildContext context) {
@@ -35,29 +34,84 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                   });
                 },
               ),
+              // TODO: Can we automate this?
               Wrap(
-                children: List.generate(
-                  1,
-                  (index) => Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        Icon(
-                          FyIcon(
-                            context,
-                            iconPack: selectedIconPack,
-                          ).home,
-                        ),
-                        const Gap(5.0),
-                        // Text(useCases[index].name)
-                      ],
-                    ),
+                children: [
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).home,
+                    name: 'home',
                   ),
-                ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).eye,
+                    name: 'eye',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).heart,
+                    name: 'heart',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).login,
+                    name: 'login',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).logout,
+                    name: 'logout',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).store,
+                    name: 'store',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).user,
+                    name: 'user',
+                  ),
+                ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class IconWidget extends StatelessWidget {
+  const IconWidget({
+    Key? key,
+    required this.icon,
+    required this.name,
+  }) : super(key: key);
+
+  final IconData icon;
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [Icon(icon), const Gap(5.0), Text(name)],
       ),
     );
   }
