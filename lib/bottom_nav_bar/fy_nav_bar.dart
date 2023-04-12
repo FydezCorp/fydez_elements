@@ -9,18 +9,20 @@ import 'data/nav_bar_style.dart';
 class FyBottomNavBar {
   /// Creates an instance of [`FyBottomNavBar`]. Make sure to use it inside a stack
   /// instead of putting it inside `bottomNavigationBar` filed of scaffold.
-  static Widget build({
+  static Widget createNavBar({
     required List<NavBarItem> items,
     required void Function(int)? onTap,
-    required NavBarStyle style,
-    required NavBarEffect effect,
-    required bool hasTitle,
+    NavBarStyle style = NavBarStyle.transparent,
+    NavBarEffect effect = NavBarEffect.shadow,
+    bool hasTitle = false,
     double cornerRadius = 0,
     int currentIndex = 0,
   }) {
+    assert(items.length > 2, 'You should have more than 2 items.');
+    
     return NavBarFactory(
       effect: effect,
-    ).build(
+    ).createNavBar(
       style: style,
       items: items,
       onTap: onTap,

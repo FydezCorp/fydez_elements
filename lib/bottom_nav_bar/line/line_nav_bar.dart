@@ -9,15 +9,14 @@ import 'transparent_line_nav_bar.dart';
 
 class LineNavBar implements NavBarFactory {
   @override
-  Widget build({
-    required List<NavBarItem> items,
-    required void Function(int)? onTap,
-    required bool hasTitle,
-    required double cornerRadius,
-    required int currentIndex,
-    required NavBarStyle style,
-    re
-  }) {
+  Widget createNavBar(
+      {required List<NavBarItem> items,
+      required void Function(int)? onTap,
+      required bool hasTitle,
+      required double cornerRadius,
+      required int currentIndex,
+      required NavBarStyle style,
+      re}) {
     switch (style) {
       case NavBarStyle.transparent:
         return TransparentLineNavBar(

@@ -128,7 +128,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
               bottom: 0,
               right: 0,
               left: 0,
-              child: FyBottomNavBar.build(
+              child: FyBottomNavBar.createNavBar(
                 style: style,
                 effect: effect,
                 hasTitle: hasTitle,
