@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/icon_packs/icon_factory.dart';
 import 'package:gap/gap.dart';
 
 class IconPacksDemoPage extends StatefulWidget {
@@ -10,9 +11,10 @@ class IconPacksDemoPage extends StatefulWidget {
 }
 
 class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
-  final List<String> iconPackList = iconPacks.map((e) => e.name).toList();
-  String selectedIconPack = 'material';
-  List<FyIcons> useCases = FyIcons.values;
+  final List<IconPacks> iconPackList = IconPacks.values;
+  IconPacks selectedIconPack = IconPacks.material;
+  // List<FyIcons> useCases = FyIcons.values;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                 items: iconPackList
                     .map((e) => DropdownMenuItem(
                           value: e,
-                          child: Text(e),
+                          child: Text(e.name),
                         ))
                     .toList(),
                 onChanged: (value) {
@@ -36,24 +38,19 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
               ),
               Wrap(
                 children: List.generate(
-                  useCases.length,
+                  1,
                   (index) => Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       children: [
                         Icon(
-                          // FyIcon.icon(
-                          //   context,
-                          //   icon: useCases[index],
-                          //   iconPack: selectedIconPack,
-                          // ),
-                          context.icon(
-                            useCases[index],
+                          IconFactory(
+                            context,
                             iconPack: selectedIconPack,
-                          ),
+                          ).home,
                         ),
                         const Gap(5.0),
-                        Text(useCases[index].name)
+                        // Text(useCases[index].name)
                       ],
                     ),
                   ),

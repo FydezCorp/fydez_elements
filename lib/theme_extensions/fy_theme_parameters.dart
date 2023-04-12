@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../icon_packs/data/icon_packs.dart';
+
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final double buttonCornerRadius;
   final double inputsBorderRadius;
   final double defaultVerticalPadding;
   final double defaultHorizontalPadding;
-  final String iconPack;
+  final IconPacks iconPack;
 
   FyThemeParameters({
     required this.buttonCornerRadius,
@@ -21,7 +23,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     double? inputsBorderRadius,
     double? defaultVerticalPadding,
     double? defaultHorizontalPadding,
-    String? iconPack,
+    IconPacks? iconPack,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
