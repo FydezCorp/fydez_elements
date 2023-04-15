@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:gap/gap.dart';
+
+import '../gap.dart';
 
 class ButtonDemoPage extends StatelessWidget {
   const ButtonDemoPage({Key? key}) : super(key: key);
