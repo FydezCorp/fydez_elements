@@ -14,7 +14,8 @@ class DialogContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(cornerRadius)),
+        borderRadius: BorderRadius.circular(cornerRadius),
+      ),
       child: Stack(
         children: [
           Positioned(
@@ -27,7 +28,10 @@ class DialogContainer extends StatelessWidget {
                 },
                 icon: const Icon(Iconsax.close_circle)),
           ),
-          child,
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: child,
+          ),
         ],
       ),
     );

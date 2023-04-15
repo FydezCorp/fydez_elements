@@ -3,6 +3,8 @@ import 'package:fydez_elements/popup/bg_creator.dart';
 
 import '../export.dart';
 import '../popup_factory.dart';
+import '../widgets/popup_header.dart';
+import '../widgets/popup_icon.dart';
 import 'modal_container.dart';
 
 class ModalPopup implements PopupFactory {
@@ -29,9 +31,19 @@ class ModalPopup implements PopupFactory {
                 ModalContainer(
                   handle: handle,
                   cornerRadius: corderRadius,
-                  child: const SizedBox(
-                    height: 50,
-                    child: Text('kir'),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      PopupHeader(
+                        title: title,
+                        subtitle: subtitle,
+                      ),
+                      PopupIcon(
+                        icon: icon,
+                        hasIcon: hasIcon,
+                      ),
+                      trailing ?? Container(),
+                    ],
                   ),
                 ),
               ],
@@ -40,3 +52,5 @@ class ModalPopup implements PopupFactory {
         });
   }
 }
+
+

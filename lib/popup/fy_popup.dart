@@ -16,6 +16,7 @@ class FyPopup {
     required PopupHandle handle,
     required bool hasIcon,
     IconData? icon,
+    Widget? trailing,
   }) {
     final popupType = type ?? PopupType.modal;
     switch (popupType) {
@@ -28,6 +29,7 @@ class FyPopup {
           handle: handle,
           hasIcon: hasIcon,
           icon: icon,
+          trailing: trailing,
         );
       case PopupType.dialog:
         return DialogPopup().showPopup(
@@ -38,6 +40,7 @@ class FyPopup {
           handle: handle,
           hasIcon: hasIcon,
           icon: icon,
+          trailing: trailing,
         );
     }
   }

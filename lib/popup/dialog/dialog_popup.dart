@@ -4,6 +4,8 @@ import 'package:fydez_elements/popup/bg_creator.dart';
 import '../data/popup_bg.dart';
 import '../data/popup_handle.dart';
 import '../popup_factory.dart';
+import '../widgets/popup_header.dart';
+import '../widgets/popup_icon.dart';
 import 'dialog_container.dart';
 
 class DialogPopup implements PopupFactory {
@@ -24,7 +26,21 @@ class DialogPopup implements PopupFactory {
             bg: background,
             child: DialogContainer(
               cornerRadius: corderRadius,
-              child: Container(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  PopupHeader(
+                    title: title,
+                    subtitle: subtitle,
+                  ),
+                  PopupIcon(
+                    icon: icon,
+                    hasIcon: hasIcon,
+                  ),
+                  trailing ?? Container(),
+                ],
+              ),
             ),
           );
         });
