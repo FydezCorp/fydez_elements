@@ -14,7 +14,7 @@ class ModalPopup implements PopupFactory {
       required String subtitle,
       required PopupBG background,
       required PopupHandle handle,
-      double corderRadius = 20,
+      required double corderRadius,
       required bool hasIcon,
       IconData? icon,
       Widget? trailing}) {

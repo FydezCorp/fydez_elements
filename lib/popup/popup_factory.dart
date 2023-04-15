@@ -12,7 +12,7 @@ abstract class PopupFactory {
     required PopupHandle handle,
     required bool hasIcon,
     IconData? icon,
-    double corderRadius = 20,
+    required double corderRadius,
 
     /// Usually a CTA button.
     Widget? trailing,

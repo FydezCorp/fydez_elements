@@ -17,8 +17,11 @@ class FyPopup {
     required bool hasIcon,
     IconData? icon,
     Widget? trailing,
+    double? cornerRadius,
   }) {
+    // TODO: Replace these with theme parameter.
     final popupType = type ?? PopupType.modal;
+    final popupCornerRadius = cornerRadius ?? 20;
     switch (popupType) {
       case PopupType.modal:
         return ModalPopup().showPopup(
@@ -30,6 +33,7 @@ class FyPopup {
           hasIcon: hasIcon,
           icon: icon,
           trailing: trailing,
+          corderRadius: popupCornerRadius,
         );
       case PopupType.dialog:
         return DialogPopup().showPopup(
@@ -41,6 +45,7 @@ class FyPopup {
           hasIcon: hasIcon,
           icon: icon,
           trailing: trailing,
+          corderRadius: popupCornerRadius,
         );
     }
   }
