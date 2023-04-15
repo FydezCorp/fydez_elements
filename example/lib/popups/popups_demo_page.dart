@@ -1,4 +1,3 @@
-import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
@@ -13,6 +12,7 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
   PopupHandle handle = PopupHandle.outside;
   PopupBG bg = PopupBG.normal;
   bool hasIcon = true;
+  PopupType type = PopupType.dialog;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +20,20 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
         child: SingleChildScrollView(
             child: Column(
           children: [
+            DropdownButton(
+              items: PopupType.values
+                  .map((e) => DropdownMenuItem(
+                        value: e,
+                        child: Text('${e.value} (${e.name})'),
+                      ))
+                  .toList(),
+              onChanged: (value) {
+                setState(() {
+                  type = value!;
+                });
+              },
+              value: type,
+            ),
             DropdownButton(
               items: PopupHandle.values
                   .map((e) => DropdownMenuItem(
@@ -57,30 +71,13 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
               },
               title: const Text('Has icon?'),
             ),
-            FyButton.filled(context, title: 'A (Modal)', onPressed: () {
+            FyButton.filled(context, title: 'Show ${type.name}!',
+                onPressed: () {
               FyPopup.showPopup(
                 context,
                 title: 'Title',
                 subtitle: 'Subtitle',
-                type: PopupType.modal,
-                background: bg,
-                handle: handle,
-                hasIcon: hasIcon,
-                icon: FyIcon(context, iconPack: IconPacks.iconsax).home,
-                trailing: FyButton.filled(
-                  context,
-                  title: 'title',
-                  onPressed: () {},
-                ),
-              );
-            }),
-            const Gap(20),
-            FyButton.filled(context, title: 'B (Dialog)', onPressed: () {
-              FyPopup.showPopup(
-                context,
-                title: 'title',
-                subtitle: 'subtitle',
-                type: PopupType.dialog,
+                type: type,
                 background: bg,
                 handle: handle,
                 hasIcon: hasIcon,
