@@ -3,9 +3,15 @@ import 'package:fydez_elements/fydez_elements.dart';
 
 import '../gap.dart';
 
-class ButtonDemoPage extends StatelessWidget {
+class ButtonDemoPage extends StatefulWidget {
   const ButtonDemoPage({Key? key}) : super(key: key);
 
+  @override
+  State<ButtonDemoPage> createState() => _ButtonDemoPageState();
+}
+
+class _ButtonDemoPageState extends State<ButtonDemoPage> {
+  double ratio = 3;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +70,40 @@ class ButtonDemoPage extends StatelessWidget {
                   onPressed: () {},
                 ),
                 const Gap(20.0),
+                const Text('Flex!'),
+                Row(
+                  children: [
+                    Text('Ratio (${ratio.toStringAsFixed(2)})  '),
+                    Expanded(
+                      child: Slider(
+                        value: ratio,
+                        onChanged: (value) {
+                          setState(() {
+                            ratio = value;
+                          });
+                        },
+                        min: 1,
+                        max: 5,
+                        divisions: 8,
+                      ),
+                    )
+                  ],
+                ),
+                FyFlex(
+                  button1: FyButton.filled(
+                    context,
+                    title: 'Filled Icon Button',
+                    icon: FyIcon(context).home,
+                    onPressed: () {},
+                  ),
+                  button2: FyButton.outlined(
+                    context,
+                    title: 'Cancel',
+                    onPressed: () {},
+                  ),
+                  ratio: ratio,
+                  gap: 20,
+                ),
               ],
             ),
           ),

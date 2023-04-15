@@ -9,7 +9,7 @@ class FyElevatedButton extends StatelessWidget {
   const FyElevatedButton({
     required this.title,
     required this.onPressed,
-     this.height,
+    this.height,
     this.icon,
     Key? key,
   }) : super(key: key);
@@ -34,7 +34,7 @@ class FyElevatedButton extends StatelessWidget {
                 children: [
                   Icon(icon),
                   const SizedBox(width: 10),
-                  Text(title),
+                  Flexible(child: Text(title)),
                 ],
               ),
       ),
