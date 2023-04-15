@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:gap/gap.dart';
+
+import '../gap.dart';
 
 class TextInputsDemoPage extends StatefulWidget {
   const TextInputsDemoPage({super.key});
@@ -99,3 +100,5 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
     return null;
   }
 }
+
+
