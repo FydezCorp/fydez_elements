@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/popup/bg_creator.dart';
 
 import '../data/popup_bg.dart';
 import '../data/popup_handle.dart';
@@ -19,9 +20,12 @@ class DialogPopup implements PopupFactory {
     showDialog(
         context: context,
         builder: (context) {
-          return DialogContainer(
-            cornerRadius: corderRadius,
-            child: Container(),
+          return BGCreator(
+            bg: background,
+            child: DialogContainer(
+              cornerRadius: corderRadius,
+              child: Container(),
+            ),
           );
         });
   }

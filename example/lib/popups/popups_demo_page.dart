@@ -10,6 +10,7 @@ class PopUpDemoPage extends StatefulWidget {
 
 class _PopUpDemoPageState extends State<PopUpDemoPage> {
   PopupHandle handle = PopupHandle.outside;
+  PopupBG bg = PopupBG.normal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +32,27 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
               },
               value: handle,
             ),
+            DropdownButton(
+              items: PopupBG.values
+                  .map((e) => DropdownMenuItem(
+                        value: e,
+                        child: Text(e.name),
+                      ))
+                  .toList(),
+              onChanged: (value) {
+                setState(() {
+                  bg = value!;
+                });
+              },
+              value: bg,
+            ),
             FyButton.filled(context, title: 'A (Modal)', onPressed: () {
               FyPopup.showPopup(
                 context,
                 title: 'title',
                 subtitle: 'subtitle',
                 type: PopupType.modal,
-                background: PopupBG.blur,
+                background: bg,
                 handle: handle,
                 hasIcon: false,
               );
@@ -48,7 +63,7 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
                 title: 'title',
                 subtitle: 'subtitle',
                 type: PopupType.dialog,
-                background: PopupBG.blur,
+                background: bg,
                 handle: PopupHandle.outside,
                 hasIcon: false,
               );

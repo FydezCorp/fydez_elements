@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/popup/bg_creator.dart';
 
 import '../export.dart';
 import '../popup_factory.dart';
@@ -21,17 +22,20 @@ class ModalPopup implements PopupFactory {
         enableDrag: true,
         isScrollControlled: true,
         builder: (context) {
-          return Wrap(
-            children: [
-              ModalContainer(
-                handle: handle,
-                cornerRadius: corderRadius,
-                child: const SizedBox(
-                  height: 50,
-                  child: Text('kir'),
+          return BGCreator(
+            bg: background,
+            child: Wrap(
+              children: [
+                ModalContainer(
+                  handle: handle,
+                  cornerRadius: corderRadius,
+                  child: const SizedBox(
+                    height: 50,
+                    child: Text('kir'),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         });
   }
