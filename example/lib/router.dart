@@ -2,6 +2,7 @@ import 'package:example/button/buttons_demo_page.dart';
 import 'package:example/home_page.dart';
 import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
+import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:go_router/go_router.dart';
@@ -37,6 +38,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.buttons,
         builder: (context, state) {
           return const ButtonDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.popups,
+        builder: (context, state) {
+          return const PopUpDemoPage();
         },
       ),
     ],

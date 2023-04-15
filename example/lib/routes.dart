@@ -4,4 +4,5 @@ class FydezDemoRoutes {
   static String textInputs = '/textInputs';
   static String iconPacks = '/iconPacks';
   static String buttons = '/buttons';
+  static String popups = '/popups';
 }
