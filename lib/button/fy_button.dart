@@ -11,10 +11,12 @@ class FyButton {
     required String title,
     required VoidCallback onPressed,
     IconData? icon,
+    double height = 50,
   }) {
     return FyElevatedButton(
       title: title,
       onPressed: onPressed,
+      height: height,
       icon: icon,
     );
   }
@@ -24,10 +26,12 @@ class FyButton {
     required String title,
     required VoidCallback onPressed,
     IconData? icon,
+    double height = 50,
   }) {
     return FyOutlinedButton(
       title: title,
       onPressed: onPressed,
+      height: height,
       icon: icon,
     );
   }
@@ -37,10 +41,12 @@ class FyButton {
     required String title,
     required VoidCallback onPressed,
     IconData? icon,
+    double height = 35,
   }) {
     return FyTextButton(
       title: title,
       onPressed: onPressed,
+      height: height,
       icon: icon,
     );
   }
