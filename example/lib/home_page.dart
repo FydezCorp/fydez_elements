@@ -34,11 +34,17 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Buttons'),
       ),
-       ElevatedButton(
+      ElevatedButton(
         onPressed: () {
           context.push(FydezDemoRoutes.popups);
         },
         child: const Text('Popups'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.notifier);
+        },
+        child: const Text('Notifiers'),
       ),
     ];
 
