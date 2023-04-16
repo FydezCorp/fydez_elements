@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:bloc/bloc.dart';
 
+import '../cubit/icon_pack_cubit.dart';
 import '../gap.dart';
 
 class IconPacksDemoPage extends StatefulWidget {
@@ -11,8 +14,8 @@ class IconPacksDemoPage extends StatefulWidget {
 }
 
 class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
-  final List<IconPacks> iconPackList = IconPacks.values;
-  IconPacks selectedIconPack = IconPacks.material;
+  final List<IconPack> iconPackList = IconPack.values;
+  IconPack selectedIconPack = IconPack.material;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +35,7 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                 onChanged: (value) {
                   setState(() {
                     selectedIconPack = value!;
+                    context.read<IconPackCubit>().changeIconPack(value);
                   });
                 },
               ),
@@ -39,52 +43,31 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
               Wrap(
                 children: [
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).home,
+                    icon: FyIcon.of(context).home,
                     name: 'home',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).eye,
+                    icon: FyIcon.of(context).eye,
                     name: 'eye',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).heart,
+                    icon: FyIcon.of(context).heart,
                     name: 'heart',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).login,
+                    icon: FyIcon.of(context).login,
                     name: 'login',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).logout,
+                    icon: FyIcon.of(context).logout,
                     name: 'logout',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).store,
+                    icon: FyIcon.of(context).store,
                     name: 'store',
                   ),
                   IconWidget(
-                    icon: FyIcon(
-                      context,
-                      iconPack: selectedIconPack,
-                    ).user,
+                    icon: FyIcon.of(context).user,
                     name: 'user',
                   ),
                 ],

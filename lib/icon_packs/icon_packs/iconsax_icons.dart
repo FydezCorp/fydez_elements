@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/icon_packs/fy_icon.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../icon_list.dart';
 
-class IconsaxIcons extends IconList {
+class IconsaxIcons implements FyIcon {
   @override
   IconData get eye => Iconsax.eye;
 
@@ -24,4 +24,6 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get user => Iconsax.user;
+
+
 }
