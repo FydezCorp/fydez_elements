@@ -46,6 +46,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Notifiers'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.dropdown);
+        },
+        child: const Text('Dropdowns'),
+      ),
     ];
 
     return Scaffold(
