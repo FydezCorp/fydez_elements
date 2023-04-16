@@ -5,7 +5,7 @@ import 'export.dart';
 import 'icon_packs/iconsax_icons.dart';
 import 'icon_packs/material_icons.dart';
 
-class FyIcon implements FyIcons {
+class FyIcon implements IconList {
   /// The build context used to access the fyParameters object.
   final BuildContext context;
 
@@ -16,7 +16,7 @@ class FyIcon implements FyIcons {
   FyIcon(this.context, {this.iconPack});
 
   /// Returns the appropriate icon pack based on the current context and the provided icon pack.
-  FyIcons get getIconPack {
+  IconList get getIconPack {
     // Use the provided icon pack, or the default from fyParameters if none is provided.
     final iconPack = this.iconPack ?? context.fyParameters.iconPack;
     switch (iconPack) {

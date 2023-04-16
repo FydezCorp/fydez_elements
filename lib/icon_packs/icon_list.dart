@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class FyIcons {
+abstract class IconList {
   IconData get home;
   IconData get login;
   IconData get logout;
