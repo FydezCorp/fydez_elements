@@ -3,6 +3,7 @@ import 'package:fydez_elements/fydez_elements.dart';
 
 import 'connected/connected_dropdown.dart';
 import 'disconnected/disconnected_dropdown.dart';
+import 'material/material_dropdown.dart';
 import 'modal/modal_dropdown.dart';
 
 abstract class DropdownFactory<T> {
@@ -22,6 +23,8 @@ abstract class DropdownFactory<T> {
         return DisconnectedDropdown<T>();
       case DropdownType.modal:
         return ModalDropdown<T>();
+      case DropdownType.material:
+        return MaterialDropdown<T>();
     }
   }
 }
