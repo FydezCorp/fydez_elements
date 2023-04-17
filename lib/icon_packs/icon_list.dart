@@ -8,4 +8,6 @@ abstract class IconList {
   IconData get user;
   IconData get heart;
   IconData get store;
+  IconData get arrowDown;
+  IconData get arrowUp;
 }

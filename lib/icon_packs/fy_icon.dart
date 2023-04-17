@@ -52,4 +52,10 @@ class FyIcon implements IconList {
 
   @override
   IconData get user => getIconPack.user;
+  
+  @override
+  IconData get arrowDown => getIconPack.arrowDown;
+  
+  @override
+  IconData get arrowUp => getIconPack.arrowUp;
 }

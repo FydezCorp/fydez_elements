@@ -24,4 +24,10 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get user => Iconsax.user;
+  
+  @override
+  IconData get arrowDown => Iconsax.arrow_down;
+  
+  @override
+  IconData get arrowUp => Iconsax.arrow_up;
 }
