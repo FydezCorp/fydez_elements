@@ -23,4 +23,10 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get user => Icons.person;
+
+  @override
+  IconData get arrowDown => Icons.keyboard_arrow_down_rounded;
+
+  @override
+  IconData get arrowUp => Icons.keyboard_arrow_up_rounded;
 }

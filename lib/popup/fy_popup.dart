@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-
-import 'dialog/dialog_popup.dart';
-import 'modal/modal_popup.dart';
+import 'package:fydez_elements/popup/popup_factory.dart';
 
 class FyPopup {
   static void showPopup(
@@ -10,10 +8,10 @@ class FyPopup {
     PopupType? type,
     required String title,
     required String subtitle,
-    required PopupBG background,
+    PopupBG? background,
 
     /// Only works for type A. Dialogs only have close button.
-    required PopupHandle handle,
+    PopupHandle? handle,
     required bool hasIcon,
     IconData? icon,
     Widget? trailing,
@@ -22,31 +20,19 @@ class FyPopup {
     // TODO: Replace these with theme parameter.
     final popupType = type ?? PopupType.modal;
     final popupCornerRadius = cornerRadius ?? 20;
-    switch (popupType) {
-      case PopupType.modal:
-        return ModalPopup().showPopup(
-          context,
-          title: title,
-          subtitle: subtitle,
-          background: background,
-          handle: handle,
-          hasIcon: hasIcon,
-          icon: icon,
-          trailing: trailing,
-          corderRadius: popupCornerRadius,
-        );
-      case PopupType.dialog:
-        return DialogPopup().showPopup(
-          context,
-          title: title,
-          subtitle: subtitle,
-          background: background,
-          handle: handle,
-          hasIcon: hasIcon,
-          icon: icon,
-          trailing: trailing,
-          corderRadius: popupCornerRadius,
-        );
-    }
+    final popupBackground = background ?? PopupBG.normal;
+    final popupHandle = handle ?? PopupHandle.inside;
+
+    return PopupFactory(popupType).showPopup(
+      context,
+      title: title,
+      subtitle: subtitle,
+      background: popupBackground,
+      handle: popupHandle,
+      hasIcon: hasIcon,
+      corderRadius: popupCornerRadius,
+      icon: icon,
+      trailing: trailing,
+    );
   }
 }
