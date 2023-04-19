@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:bloc/bloc.dart';
 
 import '../cubit/icon_pack_cubit.dart';
 import '../gap.dart';
@@ -69,6 +68,14 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                   IconWidget(
                     icon: FyIcon.of(context).user,
                     name: 'user',
+                  ),
+                  IconWidget(
+                    icon: FyIcon.of(context).arrowDown,
+                    name: 'arrowDown',
+                  ),
+                  IconWidget(
+                    icon: FyIcon.of(context).arrowUp,
+                    name: 'arrowUp',
                   ),
                 ],
               ),

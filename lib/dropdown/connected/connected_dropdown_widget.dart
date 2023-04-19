@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../fydez_elements.dart';
-import '../data/fy_dropdown_item.dart';
 
 class ConnectedDropdownWidget<T> extends StatefulWidget {
   final T value;
@@ -61,8 +60,8 @@ class _ConnectedDropdownWidgetState<T>
                       const SizedBox(width: 10),
                       Icon(
                         _opened
-                            ? FyIcon(context).arrowUp
-                            : FyIcon(context).arrowDown,
+                            ? FyIcon.of(context).arrowUp
+                            : FyIcon.of(context).arrowDown,
                         color: const Color(0xff585858),
                         size: 24,
                       ),
@@ -90,8 +89,8 @@ class _ConnectedDropdownWidgetState<T>
                               widget.onChange(items[index].object);
                             },
                             child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 14),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 14),
                                 child: Center(
                                     child: Text(
                                   items[index].title,

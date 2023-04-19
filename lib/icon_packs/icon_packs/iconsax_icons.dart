@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/icon_packs/fy_icon.dart';
 import 'package:iconsax/iconsax.dart';
 
-
 class IconsaxIcons implements FyIcon {
   @override
   IconData get eye => Iconsax.eye;
@@ -25,5 +24,9 @@ class IconsaxIcons implements FyIcon {
   @override
   IconData get user => Iconsax.user;
 
+  @override
+  IconData get arrowDown => Iconsax.arrow_down_1;
 
+  @override
+  IconData get arrowUp => Iconsax.arrow_up_2;
 }
