@@ -32,7 +32,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.filled(
                   context,
                   title: 'Filled Icon Button',
-                  icon: FyIcon(context).home,
+                  icon: FyIcon.of(context).home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -46,7 +46,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.outlined(
                   context,
                   title: 'Outlined Icon Button',
-                  icon: FyIcon(context).home,
+                  icon: FyIcon.of(context).home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -60,13 +60,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.text(
                   context,
                   title: 'Text Icon Button',
-                  icon: FyIcon(context).home,
+                  icon: FyIcon.of(context).home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),
                 FyButton.icon(
-                  icon: FyIcon(context).heart,
+                  icon: FyIcon.of(context).heart,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -93,7 +93,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   button1: FyButton.filled(
                     context,
                     title: 'Filled Icon Button',
-                    icon: FyIcon(context).home,
+                    icon: FyIcon.of(context).home,
                     onPressed: () {},
                   ),
                   button2: FyButton.outlined(

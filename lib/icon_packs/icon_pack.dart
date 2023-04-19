@@ -1,4 +1,4 @@
-enum IconPacks {
+enum IconPack {
   material,
   iconsax,
 }

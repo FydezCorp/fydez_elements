@@ -103,7 +103,7 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
                   handle: handle,
                   hasIcon: hasIcon,
                   cornerRadius: cornerRadius,
-                  icon: FyIcon(context, iconPack: IconPacks.iconsax).home,
+                  icon: FyIcon.of(context).home,
                   trailing: FyButton.filled(
                     context,
                     title: 'title',
