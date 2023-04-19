@@ -1,4 +1,5 @@
 import 'package:example/button/buttons_demo_page.dart';
+import 'package:example/dropdown/dropdown_demo_page.dart';
 import 'package:example/home_page.dart';
 import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
@@ -51,6 +52,11 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.notifier,
         builder: (context, state) {
           return const NotifierDemoPage();
+        },
+      ),  GoRoute(
+        path: FydezDemoRoutes.dropdown,
+        builder: (context, state) {
+          return const DropDownDemoPage();
         },
       ),
     ],

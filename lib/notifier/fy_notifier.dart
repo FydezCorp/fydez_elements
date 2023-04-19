@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FyNotifier {
+  // TODO: Add Glass Background in the Future.
+
   static void showSnackBar(
     BuildContext context, {
     required String text,
@@ -18,7 +20,7 @@ class FyNotifier {
               borderRadius: BorderRadius.circular(cornerRadius),
             )
           : null,
-      elevation: 3,
+      elevation: 0,
       action: action,
       dismissDirection: DismissDirection.horizontal,
       duration: duration,
