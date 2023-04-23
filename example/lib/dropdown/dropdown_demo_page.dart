@@ -17,6 +17,7 @@ class _DropDownDemoPageState extends State<DropDownDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(

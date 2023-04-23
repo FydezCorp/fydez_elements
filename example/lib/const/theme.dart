@@ -121,7 +121,6 @@ ThemeData theme = ThemeData(
         fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff6C6C6C)),
   ),
   hintColor: const Color(0xffB4B4B4),
-  errorColor: const Color(0xffff266f),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,

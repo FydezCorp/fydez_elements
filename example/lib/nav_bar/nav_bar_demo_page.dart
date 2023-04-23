@@ -21,6 +21,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.grey.shade200,
       extendBody: true,
       body: SafeArea(

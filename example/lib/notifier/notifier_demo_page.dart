@@ -21,6 +21,7 @@ class _NotifierDemoPageState extends State<NotifierDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
           child: SafeArea(
         child: SizedBox(

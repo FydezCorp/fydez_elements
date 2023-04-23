@@ -15,6 +15,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
         child: SafeArea(

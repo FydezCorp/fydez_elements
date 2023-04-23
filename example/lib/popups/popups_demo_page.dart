@@ -17,6 +17,8 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
+      appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
             child: Padding(
