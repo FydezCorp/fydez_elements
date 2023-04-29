@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/button/button_options.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import '../gap.dart';
@@ -23,6 +24,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
             width: double.infinity,
             child: Column(
               children: [
+                const Text('New Filled Button'),
+                FyButtonFactory.fromStyle(
+                        DesignSystem.material, ButtonDesignStyle.filled)
+                    .createButton(
+                        () {},
+                        FilledButtonOptions(
+                            backgroundColor: Colors.red, text: 'Text')),
                 const Text('Filled Button'),
                 FyButton.filled(
                   context,
