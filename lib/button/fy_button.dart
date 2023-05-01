@@ -1,63 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/button/material_buttons/material_icon_button.dart';
+import 'package:fydez_elements/fydez_elements.dart';
 
-import 'widgets/fy_elevated_button.dart';
-import 'widgets/fy_icon_button.dart';
-import 'widgets/fy_outlined_button.dart';
-import 'widgets/fy_text_button.dart';
+import 'material_buttons/material_filled_button.dart';
+import 'material_buttons/material_outlined_button.dart';
+import 'material_buttons/material_text_button.dart';
 
-class FyButton {
-  static Widget filled(
-    BuildContext context, {
-    required String title,
+abstract class FyButton extends StatelessWidget {
+  static Map<String, Map<String, FyButton>> _factories(
+          VoidCallback onPressed, ButtonOption options) =>
+      {
+        'material': {
+          'filled': MaterialFilledButton(
+            onPressed: onPressed,
+            options: options,
+          ),
+          'outlined': MaterialOutlinedButton(
+            onPressed: onPressed,
+            options: options,
+          ),
+          'icon': MaterialIconButton(
+            onPressed: onPressed,
+            options: options,
+          ),
+          'text': MaterialTextButton(
+            onPressed: onPressed,
+            options: options,
+          ),
+        },
+      };
+
+  const FyButton({
+    Key? key,
+    required this.onPressed,
+    required this.options,
+  }) : super(key: key);
+
+  final VoidCallback onPressed;
+  final ButtonOption options;
+
+  static FyButton create({
+    required ButtonDesignStyle style,
     required VoidCallback onPressed,
-    IconData? icon,
-    double height = 50,
+    required ButtonOption options,
   }) {
-    return FyElevatedButton(
-      title: title,
-      onPressed: onPressed,
-      height: height,
-      icon: icon,
-    );
-  }
-
-  static Widget outlined(
-    BuildContext context, {
-    required String title,
-    required VoidCallback onPressed,
-    IconData? icon,
-    double height = 50,
-  }) {
-    return FyOutlinedButton(
-      title: title,
-      onPressed: onPressed,
-      height: height,
-      icon: icon,
-    );
-  }
-
-  static Widget text(
-    BuildContext context, {
-    required String title,
-    required VoidCallback onPressed,
-    IconData? icon,
-    double height = 35,
-  }) {
-    return FyTextButton(
-      title: title,
-      onPressed: onPressed,
-      height: height,
-      icon: icon,
-    );
-  }
-
-  static Widget icon({
-    required IconData icon,
-    required VoidCallback onPressed,
-  }) {
-    return FyIconButton(
-      icon: icon,
-      onPressed: onPressed,
-    );
+    if (_factories(onPressed, options)[FyHandler.designSystem.value]!
+        .containsKey(style.value)) {
+      /// if we have this style on our _factories then we return related item
+      /// else we don't have we return the first item of this design system
+      return _factories(
+          onPressed, options)[FyHandler.designSystem.value]![style.value]!;
+    } else {
+      return _factories(onPressed, options)[FyHandler.designSystem.value]![0]!;
+    }
   }
 }
