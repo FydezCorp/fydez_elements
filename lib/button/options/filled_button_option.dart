@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../../const/constants.dart';
 import 'button_option.dart';
 
 class FilledButtonOption extends ButtonOption {

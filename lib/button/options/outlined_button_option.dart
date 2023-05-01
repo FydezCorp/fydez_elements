@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/constants.dart';
+import 'package:fydez_elements/const/constants.dart';
 
 import 'button_option.dart';
 
