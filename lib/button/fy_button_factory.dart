@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/button/options/button_option.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'material_filled_button.dart';
+
+import 'material_buttons/material_filled_button.dart';
+import 'material_buttons/material_outlined_button.dart';
 
 abstract class FyButtonFactory extends StatelessWidget {
   static Map<String, Map<String, FyButtonFactory>> _factories(
@@ -12,7 +14,7 @@ abstract class FyButtonFactory extends StatelessWidget {
             onPressed: onPressed,
             options: options,
           ),
-          'outlined': MaterialFilledButton(
+          'outlined': MaterialOutlinedButton(
             onPressed: onPressed,
             options: options,
           ),

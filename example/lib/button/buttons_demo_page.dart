@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/button/options/filled_button_option.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import '../gap.dart';
@@ -26,9 +25,26 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
               children: [
                 const Text('New Filled Button'),
                 FyButtonFactory.create(
-                    onPressed: () {},
-                    style: ButtonDesignStyle.filled,
-                    options: FilledButtonOption(text: 'This is Button')),
+                  onPressed: () {},
+                  style: ButtonDesignStyle.filled,
+                  options: FilledButtonOption(text: 'This is Button'),
+                ),
+                const Gap(10.0),
+                FyButtonFactory.create(
+                  onPressed: () {},
+                  style: ButtonDesignStyle.outlined,
+                  options: OutlinedButtonOption(text: 'This is Button'),
+                ),
+                const Gap(10.0),
+                FyButtonFactory.create(
+                  onPressed: () {},
+                  style: ButtonDesignStyle.outlined,
+                  options: OutlinedButtonOption(
+                    text: 'This is Button',
+                    icon: Iconsax.home,
+                  ),
+                ),
+                const Gap(20.0),
                 const Text('Filled Button'),
                 FyButton.filled(
                   context,

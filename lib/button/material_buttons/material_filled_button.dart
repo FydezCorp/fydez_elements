@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/button/fy_button_factory.dart';
 
-import 'options/filled_button_option.dart';
+import '../options/filled_button_option.dart';
 
 class MaterialFilledButton extends FyButtonFactory {
   const MaterialFilledButton(
