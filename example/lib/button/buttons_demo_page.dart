@@ -58,17 +58,19 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 ),
                 const Gap(20.0),
                 const Text('Text Button'),
-                FyButton.text(
-                  context,
-                  title: 'Text Button',
+                FyButtonFactory.create(
                   onPressed: () {},
+                  style: ButtonDesignStyle.text,
+                  options: TextButtonOption(text: 'This is Button'),
                 ),
                 const Gap(10.0),
-                FyButton.text(
-                  context,
-                  title: 'Text Icon Button',
-                  icon: FyIcon.of(context).home,
+                FyButtonFactory.create(
                   onPressed: () {},
+                  style: ButtonDesignStyle.text,
+                  options: TextButtonOption(
+                    text: 'This is Button',
+                    icon: Iconsax.home,
+                  ),
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),

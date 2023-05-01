@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/button/options/button_option.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import 'material_buttons/material_filled_button.dart';
 import 'material_buttons/material_outlined_button.dart';
+import 'material_buttons/material_text_button.dart';
 
 abstract class FyButtonFactory extends StatelessWidget {
   static Map<String, Map<String, FyButtonFactory>> _factories(
@@ -18,11 +18,11 @@ abstract class FyButtonFactory extends StatelessWidget {
             onPressed: onPressed,
             options: options,
           ),
-          'icon': MaterialFilledButton(
+          'icon': MaterialTextButton(
             onPressed: onPressed,
             options: options,
           ),
-          'text': MaterialFilledButton(
+          'text': MaterialTextButton(
             onPressed: onPressed,
             options: options,
           ),
