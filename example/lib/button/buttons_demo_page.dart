@@ -74,9 +74,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),
-                FyButton.icon(
-                  icon: FyIcon.of(context).heart,
+                FyButtonFactory.create(
                   onPressed: () {},
+                  style: ButtonDesignStyle.icon,
+                  options: IconButtonOption(
+                    iconColor: Colors.red,
+                    icon: Iconsax.home,
+                  ),
                 ),
                 const Gap(20.0),
                 const Text('Flex!'),
@@ -99,16 +103,20 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   ],
                 ),
                 FyFlex(
-                  button1: FyButton.filled(
-                    context,
-                    title: 'Filled Icon Button',
-                    icon: FyIcon.of(context).home,
+                  button1: FyButtonFactory.create(
                     onPressed: () {},
+                    style: ButtonDesignStyle.filled,
+                    options: FilledButtonOption(
+                      text: 'This is Button',
+                      icon: Icons.home,
+                    ),
                   ),
-                  button2: FyButton.outlined(
-                    context,
-                    title: 'Cancel',
+                  button2: FyButtonFactory.create(
                     onPressed: () {},
+                    style: ButtonDesignStyle.outlined,
+                    options: OutlinedButtonOption(
+                      text: 'Cancel',
+                    ),
                   ),
                   ratio: ratio,
                   gap: 20,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/button/material_buttons/material_icon_button.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import 'material_buttons/material_filled_button.dart';
@@ -18,7 +19,7 @@ abstract class FyButtonFactory extends StatelessWidget {
             onPressed: onPressed,
             options: options,
           ),
-          'icon': MaterialTextButton(
+          'icon': MaterialIconButton(
             onPressed: onPressed,
             options: options,
           ),
