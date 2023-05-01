@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_effect.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_item.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_style.dart';
-import 'package:fydez_elements/bottom_nav_bar/fy_nav_bar.dart';
+import 'package:fydez_elements/bottom_nav_bar/nav_bar_factory.dart';
 
 class NavBarDemoPage extends StatefulWidget {
   const NavBarDemoPage({Key? key}) : super(key: key);
@@ -129,7 +129,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
               bottom: 0,
               right: 0,
               left: 0,
-              child: FyBottomNavBar.createNavBar(
+              child: NewNavBarFactory.create(
                 style: style,
                 effect: effect,
                 hasTitle: hasTitle,
