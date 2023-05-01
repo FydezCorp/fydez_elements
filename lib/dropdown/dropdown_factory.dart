@@ -15,16 +15,34 @@ abstract class DropdownFactory<T> {
     required double cornerRadius,
   });
 
-  factory DropdownFactory(DropdownType type) {
-    switch (type) {
-      case DropdownType.connected:
-        return ConnectedDropdown<T>();
-      case DropdownType.disconnected:
-        return DisconnectedDropdown<T>();
-      case DropdownType.modal:
-        return ModalDropdown<T>();
-      case DropdownType.material:
-        return MaterialDropdown<T>();
+  factory DropdownFactory(
+    DropdownType type, {
+    DesignSystem? designSystem,
+  }) {
+    final dDesignSystem = designSystem ?? FyHandler.designSystem;
+    switch (dDesignSystem) {
+      case DesignSystem.material:
+        switch (type) {
+          case DropdownType.connected:
+            return ConnectedDropdown<T>();
+          case DropdownType.disconnected:
+            return DisconnectedDropdown<T>();
+          case DropdownType.modal:
+            return ModalDropdown<T>();
+          case DropdownType.material:
+            return MaterialDropdown<T>();
+        }
+      case DesignSystem.airbnb:
+        switch (type) {
+          case DropdownType.connected:
+            return ConnectedDropdown<T>();
+          case DropdownType.disconnected:
+            return DisconnectedDropdown<T>();
+          case DropdownType.modal:
+            return ModalDropdown<T>();
+          case DropdownType.material:
+            return MaterialDropdown<T>();
+        }
     }
   }
 }
