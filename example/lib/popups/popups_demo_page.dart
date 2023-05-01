@@ -17,7 +17,6 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -94,25 +93,25 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
                   ),
                 ],
               ),
-              FyButton.filled(context, title: 'Show ${type.name}!',
+              ElevatedButton(
+                  child: Text('Show ${type.name}!'),
                   onPressed: () {
-                FyPopup.showPopup(
-                  context,
-                  title: 'Title',
-                  subtitle: 'Subtitle',
-                  type: type,
-                  background: bg,
-                  handle: handle,
-                  hasIcon: hasIcon,
-                  cornerRadius: cornerRadius,
-                  icon: FyIcon.of(context).home,
-                  trailing: FyButton.filled(
-                    context,
-                    title: 'title',
-                    onPressed: () {},
-                  ),
-                );
-              }),
+                    FyPopup.showPopup(
+                      context,
+                      title: 'Title',
+                      subtitle: 'Subtitle',
+                      type: type,
+                      background: bg,
+                      handle: handle,
+                      hasIcon: hasIcon,
+                      cornerRadius: cornerRadius,
+                      icon: FyIcon.of(context).home,
+                      trailing: ElevatedButton(
+                        child: const Text('title'),
+                        onPressed: () {},
+                      ),
+                    );
+                  }),
             ],
           ),
         )),

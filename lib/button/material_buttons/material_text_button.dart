@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/button/fy_button_factory.dart';
+import 'package:fydez_elements/button/fy_button.dart';
 import 'package:fydez_elements/button/options/text_button_option.dart';
 import 'package:fydez_elements/constants.dart';
 
-class MaterialTextButton extends FyButtonFactory {
+class MaterialTextButton extends FyButton {
   const MaterialTextButton({
     super.key,
     required super.onPressed,

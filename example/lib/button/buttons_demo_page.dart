@@ -25,13 +25,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
               children: [
                 const Text('Filled Button'),
                 const Gap(10.0),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.filled,
                   options: FilledButtonOption(text: 'This is Button'),
                 ),
                 const Gap(10.0),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.filled,
                   options: FilledButtonOption(
@@ -42,13 +42,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 const Gap(20.0),
                 const Text('Outlined Button'),
                 const Gap(10.0),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.outlined,
                   options: OutlinedButtonOption(text: 'This is Button'),
                 ),
                 const Gap(10.0),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.outlined,
                   options: OutlinedButtonOption(
@@ -58,13 +58,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 ),
                 const Gap(20.0),
                 const Text('Text Button'),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.text,
                   options: TextButtonOption(text: 'This is Button'),
                 ),
                 const Gap(10.0),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.text,
                   options: TextButtonOption(
@@ -74,7 +74,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),
-                FyButtonFactory.create(
+                FyButton.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.icon,
                   options: IconButtonOption(
@@ -103,7 +103,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   ],
                 ),
                 FyFlex(
-                  button1: FyButtonFactory.create(
+                  button1: FyButton.create(
                     onPressed: () {},
                     style: ButtonDesignStyle.filled,
                     options: FilledButtonOption(
@@ -111,7 +111,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                       icon: Icons.home,
                     ),
                   ),
-                  button2: FyButtonFactory.create(
+                  button2: FyButton.create(
                     onPressed: () {},
                     style: ButtonDesignStyle.outlined,
                     options: OutlinedButtonOption(

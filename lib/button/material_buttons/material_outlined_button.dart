@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/button/fy_button_factory.dart';
+import 'package:fydez_elements/button/fy_button.dart';
 import 'package:fydez_elements/button/options/outlined_button_option.dart';
 import 'package:fydez_elements/constants.dart';
 
-class MaterialOutlinedButton extends FyButtonFactory {
+class MaterialOutlinedButton extends FyButton {
   const MaterialOutlinedButton({
     super.key,
     required super.onPressed,

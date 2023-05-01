@@ -63,9 +63,8 @@ class _NotifierDemoPageState extends State<NotifierDemoPage> {
                   ),
                 ],
               ),
-              FyButton.filled(
-                context,
-                title: 'Toast',
+              ElevatedButton(
+                child: const Text('Toast'),
                 onPressed: () {
                   FyNotifier.showToast(
                     context,
@@ -99,9 +98,8 @@ class _NotifierDemoPageState extends State<NotifierDemoPage> {
                   ),
                 ],
               ),
-              FyButton.filled(
-                context,
-                title: 'Snack bar',
+              ElevatedButton(
+                child: const Text('Snack bar'),
                 onPressed: () {
                   FyNotifier.showSnackBar(
                     context,

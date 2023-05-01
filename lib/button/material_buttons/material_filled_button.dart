@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/button/fy_button_factory.dart';
+import 'package:fydez_elements/button/fy_button.dart';
 
 import '../../constants.dart';
 import '../options/filled_button_option.dart';
 
-class MaterialFilledButton extends FyButtonFactory {
+class MaterialFilledButton extends FyButton {
   const MaterialFilledButton(
       {super.key, required super.onPressed, required super.options});
 

@@ -4,7 +4,6 @@ export 'package:iconsax/iconsax.dart';
 
 export 'bottom_nav_bar/fy_nav_bar.dart';
 export 'button/export.dart';
-export 'button/fy_button.dart';
 export 'dropdown/export.dart';
 export 'enum/button_design_style.dart';
 export 'enum/design_system.dart';

@@ -1,4 +1,4 @@
-export 'fy_button_factory.dart';
+export 'fy_button.dart';
 export 'options/button_option.dart';
 export 'options/filled_button_option.dart';
 export 'options/icon_button_option.dart';
