@@ -23,12 +23,24 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
             width: double.infinity,
             child: Column(
               children: [
-                const Text('New Filled Button'),
+                const Text('Filled Button'),
+                const Gap(10.0),
                 FyButtonFactory.create(
                   onPressed: () {},
                   style: ButtonDesignStyle.filled,
                   options: FilledButtonOption(text: 'This is Button'),
                 ),
+                const Gap(10.0),
+                FyButtonFactory.create(
+                  onPressed: () {},
+                  style: ButtonDesignStyle.filled,
+                  options: FilledButtonOption(
+                    text: 'This is Button',
+                    icon: Icons.home,
+                  ),
+                ),
+                const Gap(20.0),
+                const Text('Outlined Button'),
                 const Gap(10.0),
                 FyButtonFactory.create(
                   onPressed: () {},
@@ -43,34 +55,6 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                     text: 'This is Button',
                     icon: Iconsax.home,
                   ),
-                ),
-                const Gap(20.0),
-                const Text('Filled Button'),
-                FyButton.filled(
-                  context,
-                  title: 'Filled Button',
-                  onPressed: () {},
-                ),
-                const Gap(10.0),
-                FyButton.filled(
-                  context,
-                  title: 'Filled Icon Button',
-                  icon: FyIcon.of(context).home,
-                  onPressed: () {},
-                ),
-                const Gap(20.0),
-                const Text('Outlined Button'),
-                FyButton.outlined(
-                  context,
-                  title: 'Outlined Button',
-                  onPressed: () {},
-                ),
-                const Gap(10.0),
-                FyButton.outlined(
-                  context,
-                  title: 'Outlined Icon Button',
-                  icon: FyIcon.of(context).home,
-                  onPressed: () {},
                 ),
                 const Gap(20.0),
                 const Text('Text Button'),
