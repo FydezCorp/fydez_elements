@@ -7,4 +7,5 @@ class FydezDemoRoutes {
   static String popups = '/popups';
   static String notifier = '/notifier';
   static String dropdown = '/dropdown';
+  static String productGridView = '/productGridView';
 }
