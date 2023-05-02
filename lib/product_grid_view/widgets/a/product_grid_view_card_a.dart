@@ -27,7 +27,8 @@ class ProductGridViewCardA extends StatelessWidget {
           onProductTapped!(product);
         }
       },
-      child: Text('Product ${product.id}'),
+      child:
+          Container(color: Colors.amber, child: Text('Product ${product.id}')),
     );
   }
 }

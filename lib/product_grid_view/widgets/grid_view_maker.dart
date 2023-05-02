@@ -21,6 +21,7 @@ class GridViewMaker extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: shrinkWrap,
+      padding: EdgeInsets.symmetric(horizontal: gap),
       physics: physics,
       itemBuilder: (context, index) {
         return children[index];
@@ -29,7 +30,7 @@ class GridViewMaker extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: gap,
-        mainAxisSpacing: 0,
+        mainAxisSpacing: gap,
       ),
     );
   }

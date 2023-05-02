@@ -15,6 +15,7 @@ abstract class FyProductGridView {
   final Function(BaseProduct product)? onProductTapped;
   final ScrollOption? scrollOption;
   // TODO: Add physics or a way to hande scrolling.
+
   FyProductGridView({
     required this.products,
     required this.type,
