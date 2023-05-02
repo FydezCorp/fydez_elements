@@ -13,6 +13,7 @@ class ProductGridViewDemoPage extends StatelessWidget {
         context,
         products: SampleProduct.mockProducts(),
         cornerRadius: 0,
+        scrollOption: ScrollOption.scrollable,
         onProductTapped: (product) {
           log('Product ${product.id} tapped!');
         },

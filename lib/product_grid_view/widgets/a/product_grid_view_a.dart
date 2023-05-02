@@ -1,8 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../../product_grid_view.dart';
 import '../grid_view_maker.dart';
+import 'product_grid_view_card_a.dart';
 
 class ProductGridViewA extends FyProductGridView {
   final double horizontalGap;
@@ -14,34 +15,25 @@ class ProductGridViewA extends FyProductGridView {
     required super.action,
     required super.cornerRadius,
     required super.onProductTapped,
+    required super.scrollOption,
     required this.horizontalGap,
   });
 
   @override
-  // TODO: implement render!
   Widget get render => GridViewMaker(
         gap: horizontalGap,
+        scrollOption: scrollOption,
         children: products
             .map(
-              // TODO: Implement this.
-              (product) => GestureDetector(
-                  onTap: () {
-                    if (onProductTapped != null) {
-                      onProductTapped!(product);
-                    }
-                  },
-                  child: Text(product.name)),
+              (product) => ProductGridViewCardA(
+                badgeLocation: badgeLocation,
+                product: product,
+                cornerRadius: cornerRadius,
+                imageBackgroundType: imageBackgroundType,
+                onProductTapped: onProductTapped,
+                action: action,
+              ),
             )
             .toList(),
       );
 }
-
-// class ProductGridViewCardA extends StatelessWidget {
-//   final BaseProduct product;
-//   const ProductGridViewCardA({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container();
-//   }
-// }

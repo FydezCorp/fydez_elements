@@ -4,8 +4,7 @@ import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 import 'package:fydez_elements/product_grid_view/data/product_grid_view_card_type.dart';
 
-import 'data/badge_location.dart';
-import 'data/product_image_background_type.dart';
+import 'data/scroll_option.dart';
 import 'widgets/a/product_grid_view_a.dart';
 
 abstract class FyProductGridView {
@@ -14,8 +13,9 @@ abstract class FyProductGridView {
   final ProductImageBackgroundType imageBackgroundType;
   final BadgeLocation badgeLocation;
   final Widget? action;
-  final int cornerRadius;
+  final double cornerRadius;
   final Function(BaseProduct product)? onProductTapped;
+  final ScrollOption? scrollOption;
   // TODO: Add physics or a way to hande scrolling.
   FyProductGridView({
     required this.products,
@@ -25,6 +25,7 @@ abstract class FyProductGridView {
     required this.cornerRadius,
     this.action,
     this.onProductTapped,
+    this.scrollOption = ScrollOption.scrollable,
   });
 
   /// The widget that will be returned to show on screen!
@@ -37,8 +38,9 @@ abstract class FyProductGridView {
     ProductImageBackgroundType? imageBackgroundType,
     BadgeLocation? badgeLocation,
     Widget? action,
-    required int cornerRadius,
+    required double cornerRadius,
     Function(BaseProduct)? onProductTapped,
+    ScrollOption? scrollOption,
   }) {
     // TODO: Read these values from context.
     final gridViewType = type ?? ProductGridViewCardType.A;
@@ -66,6 +68,7 @@ abstract class FyProductGridView {
           type: gridViewType,
           horizontalGap: calculateHorizontalGap(),
           onProductTapped: onProductTapped,
+          scrollOption: scrollOption,
         );
       case ProductGridViewCardType.B:
         return ProductGridViewA(
@@ -76,6 +79,7 @@ abstract class FyProductGridView {
           products: products,
           type: gridViewType,
           horizontalGap: calculateHorizontalGap(),
+          scrollOption: scrollOption,
           onProductTapped: onProductTapped,
         );
     }
