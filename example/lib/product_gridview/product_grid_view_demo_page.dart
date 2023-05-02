@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
@@ -11,6 +13,9 @@ class ProductGridViewDemoPage extends StatelessWidget {
         context,
         products: SampleProduct.mockProducts(),
         cornerRadius: 0,
+        onProductTapped: (product) {
+          log('Product ${product.id} tapped!');
+        },
       ).render,
     );
   }

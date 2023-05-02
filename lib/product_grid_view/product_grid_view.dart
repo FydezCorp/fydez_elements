@@ -7,7 +7,6 @@ import 'package:fydez_elements/product_grid_view/data/product_grid_view_card_typ
 import 'data/badge_location.dart';
 import 'data/product_image_background_type.dart';
 import 'widgets/a/product_grid_view_a.dart';
-import 'widgets/grid_view_maker.dart';
 
 abstract class FyProductGridView {
   final List<BaseProduct> products;
@@ -16,7 +15,7 @@ abstract class FyProductGridView {
   final BadgeLocation badgeLocation;
   final Widget? action;
   final int cornerRadius;
-  // TODO: Add on Product tapped.
+  final Function(BaseProduct product)? onProductTapped;
   // TODO: Add physics or a way to hande scrolling.
   FyProductGridView({
     required this.products,
@@ -25,6 +24,7 @@ abstract class FyProductGridView {
     required this.badgeLocation,
     required this.cornerRadius,
     this.action,
+    this.onProductTapped,
   });
 
   Widget get render;
@@ -37,6 +37,7 @@ abstract class FyProductGridView {
     BadgeLocation? badgeLocation,
     Widget? action,
     required int cornerRadius,
+    Function(BaseProduct)? onProductTapped,
   }) {
     final gridViewType = type ??
         ProductGridViewCardType.A; // TODO: Read this value from context.
@@ -63,6 +64,7 @@ abstract class FyProductGridView {
           products: products,
           type: gridViewType,
           horizontalGap: calculateHorizontalGap(),
+          onProductTapped: onProductTapped,
         );
       case ProductGridViewCardType.B:
         return ProductGridViewA(
@@ -73,6 +75,7 @@ abstract class FyProductGridView {
           products: products,
           type: gridViewType,
           horizontalGap: calculateHorizontalGap(),
+          onProductTapped: onProductTapped,
         );
     }
   }

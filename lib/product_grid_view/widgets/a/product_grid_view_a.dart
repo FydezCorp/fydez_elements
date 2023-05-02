@@ -13,6 +13,7 @@ class ProductGridViewA extends FyProductGridView {
     required super.badgeLocation,
     required super.action,
     required super.cornerRadius,
+    required super.onProductTapped,
     required this.horizontalGap,
   });
 
@@ -23,7 +24,13 @@ class ProductGridViewA extends FyProductGridView {
         children: products
             .map(
               // TODO: Implement this.
-              (product) => Text(product.name),
+              (product) => GestureDetector(
+                  onTap: () {
+                    if (onProductTapped != null) {
+                      onProductTapped!(product);
+                    }
+                  },
+                  child: Text(product.name)),
             )
             .toList(),
       );
