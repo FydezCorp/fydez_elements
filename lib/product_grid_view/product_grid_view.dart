@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/product_grid_view/data/product_grid_view_card_type.dart';
 
-import 'data/scroll_option.dart';
 import 'widgets/a/product_grid_view_a.dart';
 
 abstract class FyProductGridView {
