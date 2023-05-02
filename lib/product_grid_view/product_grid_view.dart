@@ -27,6 +27,7 @@ abstract class FyProductGridView {
     this.onProductTapped,
   });
 
+  /// The widget that will be returned to show on screen!
   Widget get render;
 
   factory FyProductGridView.make(
@@ -39,8 +40,8 @@ abstract class FyProductGridView {
     required int cornerRadius,
     Function(BaseProduct)? onProductTapped,
   }) {
-    final gridViewType = type ??
-        ProductGridViewCardType.A; // TODO: Read this value from context.
+    // TODO: Read these values from context.
+    final gridViewType = type ?? ProductGridViewCardType.A;
     final gridViewImageBackgroundType =
         imageBackgroundType ?? ProductImageBackgroundType.white;
     final gridViewBadgeLocation = badgeLocation ?? BadgeLocation.topRound;
