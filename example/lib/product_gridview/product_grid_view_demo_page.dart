@@ -45,7 +45,7 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               items: ProductGridViewCardType.values
                   .map((e) => DropdownMenuItem(
                         value: e,
-                        child: Text(e.name),
+                        child: Text('Type: ${e.name}'),
                       ))
                   .toList(),
               onChanged: (value) {
@@ -59,7 +59,7 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               items: ProductImageBackgroundType.values
                   .map((e) => DropdownMenuItem(
                         value: e,
-                        child: Text(e.name),
+                        child: Text('Background Image Type: ${e.name}'),
                       ))
                   .toList(),
               onChanged: (value) {
@@ -73,7 +73,7 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               items: BadgeLocation.values
                   .map((e) => DropdownMenuItem(
                         value: e,
-                        child: Text(e.name),
+                        child: Text('Badge Location: ${e.name}'),
                       ))
                   .toList(),
               onChanged: (value) {
