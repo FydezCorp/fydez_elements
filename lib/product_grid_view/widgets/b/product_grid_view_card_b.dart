@@ -6,7 +6,7 @@ import '../product_card_background.dart';
 import '../product_card_price.dart';
 import '../product_image_widget.dart';
 
-class ProductGridViewCardA extends StatelessWidget {
+class ProductGridViewCardB extends StatelessWidget {
   final BaseProduct product;
   final Function(BaseProduct product)? onProductTapped;
   final double cornerRadius;
@@ -14,7 +14,7 @@ class ProductGridViewCardA extends StatelessWidget {
   final BadgeLocation badgeLocation;
   final Widget? action;
 
-  const ProductGridViewCardA({
+  const ProductGridViewCardB({
     Key? key,
     required this.product,
     this.onProductTapped,
@@ -32,18 +32,18 @@ class ProductGridViewCardA extends StatelessWidget {
           onProductTapped!(product);
         }
       },
-      child: Column(
-        children: [
-          ProductCardBackground(
-            cornerRadius: cornerRadius,
-            imageBackgroundType: imageBackgroundType,
-            child: ProductImageWidget(
+      child: ProductCardBackground(
+        cornerRadius: cornerRadius,
+        imageBackgroundType: imageBackgroundType,
+        child: Column(
+          children: [
+            ProductImageWidget(
               product: product,
               imageBackgroundType: imageBackgroundType,
             ),
-          ),
-          ProductCardDetails(product: product),
-        ],
+            ProductCardDetails(product: product),
+          ],
+        ),
       ),
     );
   }
@@ -90,4 +90,3 @@ class ProductCardDetails extends StatelessWidget {
     );
   }
 }
-

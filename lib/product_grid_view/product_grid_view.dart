@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/product_grid_view/widgets/b/product_grid_view_b.dart';
 
 import 'widgets/a/product_grid_view_a.dart';
 
@@ -70,7 +71,7 @@ abstract class FyProductGridView {
           scrollOption: scrollOption,
         );
       case ProductGridViewCardType.B:
-        return ProductGridViewA(
+        return ProductGridViewB(
           action: action,
           badgeLocation: gridViewBadgeLocation,
           cornerRadius: cornerRadius,

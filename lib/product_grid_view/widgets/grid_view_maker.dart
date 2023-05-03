@@ -19,6 +19,7 @@ class GridViewMaker extends StatelessWidget {
       : const BouncingScrollPhysics();
   @override
   Widget build(BuildContext context) {
+    // TODO: Try to replace GridView with LayoutGrid.
     return GridView.builder(
       shrinkWrap: shrinkWrap,
       padding: EdgeInsets.symmetric(horizontal: gap),
@@ -29,6 +30,7 @@ class GridViewMaker extends StatelessWidget {
       itemCount: children.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
+        childAspectRatio: 0.5,
         crossAxisSpacing: gap,
         mainAxisSpacing: gap,
       ),
