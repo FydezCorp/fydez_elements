@@ -12,6 +12,7 @@ class ProductGridViewCardB extends StatelessWidget {
   final ProductImageBackgroundType imageBackgroundType;
   final BadgeLocation badgeLocation;
   final Widget? action;
+  final Function(BaseProduct product)? onActionTapped;
   final ProductGridViewCardType type;
 
   const ProductGridViewCardB({
@@ -23,32 +24,49 @@ class ProductGridViewCardB extends StatelessWidget {
     required this.badgeLocation,
     required this.type,
     this.action,
+    this.onActionTapped,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (onProductTapped != null) {
-          onProductTapped!(product);
-        }
-      },
-      child: ProductCardBackground(
-        cornerRadius: cornerRadius,
-        imageBackgroundType: imageBackgroundType,
-        child: Column(
-          children: [
-            ProductImageWidget(
-              product: product,
-              imageBackgroundType: imageBackgroundType,
+    return Stack(
+      children: [
+        GestureDetector(
+          onTap: () {
+            if (onProductTapped != null) {
+              onProductTapped!(product);
+            }
+          },
+          child: ProductCardBackground(
+            cornerRadius: cornerRadius,
+            imageBackgroundType: imageBackgroundType,
+            child: Column(
+              children: [
+                ProductImageWidget(
+                  product: product,
+                  imageBackgroundType: imageBackgroundType,
+                ),
+                ProductCardDetails(
+                  product: product,
+                  type: type,
+                ),
+              ],
             ),
-            ProductCardDetails(
-              product: product,
-              type: type,
-            ),
-          ],
+          ),
         ),
-      ),
+        action != null
+            ? Positioned(
+                top: 5,
+                right: 5,
+                child: GestureDetector(
+                    onTap: () {
+                      onActionTapped != null ? onActionTapped!(product) : () {};
+                      // log('message');
+                    },
+                    child: action!),
+              )
+            : const SizedBox(),
+      ],
     );
   }
 }

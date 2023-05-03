@@ -17,6 +17,7 @@ class ProductGridViewA extends FyProductGridView {
     required super.onProductTapped,
     required super.scrollOption,
     required this.horizontalGap,
+    required super.onActionTapped,
   });
 
   @override
@@ -32,6 +33,7 @@ class ProductGridViewA extends FyProductGridView {
                 imageBackgroundType: imageBackgroundType,
                 onProductTapped: onProductTapped,
                 action: action,
+                onActionTapped: onActionTapped,
                 type: type,
               ),
             )

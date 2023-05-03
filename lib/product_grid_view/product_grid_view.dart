@@ -12,6 +12,7 @@ abstract class FyProductGridView {
   final ProductImageBackgroundType imageBackgroundType;
   final BadgeLocation badgeLocation;
   final Widget? action;
+  final Function(BaseProduct product)? onActionTapped;
   final double cornerRadius;
   final Function(BaseProduct product)? onProductTapped;
   final ScrollOption? scrollOption;
@@ -24,6 +25,7 @@ abstract class FyProductGridView {
     required this.badgeLocation,
     required this.cornerRadius,
     this.action,
+    this.onActionTapped,
     this.onProductTapped,
     this.scrollOption = ScrollOption.scrollable,
   });
@@ -38,6 +40,7 @@ abstract class FyProductGridView {
     ProductImageBackgroundType? imageBackgroundType,
     BadgeLocation? badgeLocation,
     Widget? action,
+    Function(BaseProduct product)? onActionTapped,
     required double cornerRadius,
     Function(BaseProduct)? onProductTapped,
     ScrollOption? scrollOption,
@@ -61,6 +64,7 @@ abstract class FyProductGridView {
       case ProductGridViewCardType.A:
         return ProductGridViewA(
           action: action,
+          onActionTapped: onActionTapped,
           badgeLocation: gridViewBadgeLocation,
           cornerRadius: cornerRadius,
           imageBackgroundType: gridViewImageBackgroundType,
@@ -73,6 +77,7 @@ abstract class FyProductGridView {
       case ProductGridViewCardType.B:
         return ProductGridViewB(
           action: action,
+          onActionTapped: onActionTapped,
           badgeLocation: gridViewBadgeLocation,
           cornerRadius: cornerRadius,
           imageBackgroundType: gridViewImageBackgroundType,

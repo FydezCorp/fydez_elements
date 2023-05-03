@@ -35,6 +35,7 @@ class ProductImageWidget extends StatelessWidget {
 
     return Container(
       height: Constants.productCardImageHeight,
+      width: double.infinity,
       decoration: BoxDecoration(
         color: backgroundColor(),
         image: imageBackgroundType == ProductImageBackgroundType.picture

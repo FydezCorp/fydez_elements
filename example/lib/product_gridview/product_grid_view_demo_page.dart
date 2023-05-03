@@ -95,6 +95,14 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               onProductTapped: (product) {
                 log('Product ${product.id} tapped!');
               },
+              action: Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: const ShapeDecoration(
+                      shape: CircleBorder(), color: Colors.white),
+                  child: const FlutterLogo()),
+              onActionTapped: (product) {
+                log('Action tapped! for product ${product.id}');
+              },
             ).render,
           ],
         ),
