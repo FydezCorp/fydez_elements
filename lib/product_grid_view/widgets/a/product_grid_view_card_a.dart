@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import '../badge_widget.dart';
 import '../product_card_background.dart';
 import '../product_card_details.dart';
 import '../product_image_widget.dart';
@@ -51,6 +52,17 @@ class ProductGridViewCardA extends StatelessWidget {
                 product: product,
                 type: type,
               ),
+              (product.badge != null &&
+                      (badgeLocation == BadgeLocation.bottomRound ||
+                          badgeLocation == BadgeLocation.bottomSharp))
+                  ? Row(
+                      children: [
+                        BadgeWidget(
+                            badge: product.badge!,
+                            badgeLocation: badgeLocation),
+                      ],
+                    )
+                  : const SizedBox()
             ],
           ),
         ),
@@ -66,6 +78,15 @@ class ProductGridViewCardA extends StatelessWidget {
                 ),
               )
             : const SizedBox(),
+        Positioned(
+            top: 5,
+            left: 5,
+            child: (product.badge != null &&
+                    (badgeLocation == BadgeLocation.topRound ||
+                        badgeLocation == BadgeLocation.topSharp))
+                ? BadgeWidget(
+                    badge: product.badge!, badgeLocation: badgeLocation)
+                : const SizedBox())
       ],
     );
   }

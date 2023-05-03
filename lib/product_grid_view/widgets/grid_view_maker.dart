@@ -30,7 +30,7 @@ class GridViewMaker extends StatelessWidget {
       itemCount: children.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.65,
+        childAspectRatio: 0.55,
         crossAxisSpacing: gap,
         mainAxisSpacing: gap,
       ),

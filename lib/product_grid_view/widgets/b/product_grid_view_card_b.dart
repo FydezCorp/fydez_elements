@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/product_grid_view/widgets/badge_widget.dart';
 
 import '../product_card_background.dart';
 import '../product_card_details.dart';
@@ -41,6 +42,7 @@ class ProductGridViewCardB extends StatelessWidget {
             cornerRadius: cornerRadius,
             imageBackgroundType: imageBackgroundType,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductImageWidget(
                   product: product,
@@ -50,6 +52,17 @@ class ProductGridViewCardB extends StatelessWidget {
                   product: product,
                   type: type,
                 ),
+                (product.badge != null &&
+                        (badgeLocation == BadgeLocation.bottomRound ||
+                            badgeLocation == BadgeLocation.bottomSharp))
+                    ? Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: BadgeWidget(
+                          badge: product.badge!,
+                          badgeLocation: badgeLocation,
+                        ),
+                      )
+                    : const SizedBox()
               ],
             ),
           ),
@@ -66,6 +79,17 @@ class ProductGridViewCardB extends StatelessWidget {
                     child: action!),
               )
             : const SizedBox(),
+        (product.badge != null &&
+                (badgeLocation == BadgeLocation.topRound ||
+                    badgeLocation == BadgeLocation.topSharp))
+            ? Padding(
+                padding: const EdgeInsets.only(left: 10, top: 10),
+                child: BadgeWidget(
+                  badge: product.badge!,
+                  badgeLocation: badgeLocation,
+                ),
+              )
+            : const SizedBox()
       ],
     );
   }

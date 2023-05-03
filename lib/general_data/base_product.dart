@@ -9,7 +9,7 @@ abstract class BaseProduct {
   final String price;
   final String finalPrice;
   final List<BaseVariation> variations;
-  final Badge badge;
+  final Badge? badge;
 
   BaseProduct({
     required this.id,
@@ -18,7 +18,7 @@ abstract class BaseProduct {
     required this.price,
     required this.finalPrice,
     required this.variations,
-    required this.badge,
+    this.badge,
   });
 }
 
@@ -30,7 +30,7 @@ class SampleProduct extends BaseProduct {
     required super.price,
     required super.finalPrice,
     required super.variations,
-    required super.badge,
+    super.badge,
   });
 
   static List<SampleProduct> mockProducts() {
@@ -45,6 +45,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -58,6 +59,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -76,6 +78,7 @@ class SampleProduct extends BaseProduct {
         ],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -89,6 +92,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -102,6 +106,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -115,6 +120,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -128,6 +134,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -141,6 +148,7 @@ class SampleProduct extends BaseProduct {
         variations: [],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
@@ -167,6 +175,7 @@ class SampleProduct extends BaseProduct {
         ],
         badge: Badge(
           text: 'New',
+          textColor: Colors.white,
           color: const Color(0xFF000000),
         ),
       ),
