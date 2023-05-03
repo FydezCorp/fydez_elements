@@ -2,6 +2,10 @@ library fydez_elements;
 
 export 'package:iconsax/iconsax.dart';
 
+export '/general_data/badge.dart';
+export '/general_data/base_product.dart';
+export '/general_data/base_variation.dart';
+export '/general_data/scroll_option.dart';
 export 'bottom_nav_bar/fy_nav_bar.dart';
 export 'button/export.dart';
 export 'dropdown/export.dart';

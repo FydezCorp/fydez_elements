@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/product_grid_view/data/scroll_option.dart';
+import 'package:fydez_elements/general_data/scroll_option.dart';
 
 class GridViewMaker extends StatelessWidget {
   final List<Widget> children;

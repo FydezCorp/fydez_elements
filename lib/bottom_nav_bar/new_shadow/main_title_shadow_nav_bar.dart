@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/nav_bar_factory.dart';
 import 'package:fydez_elements/bottom_nav_bar/widgets/base_shadow_container.dart';
 
-import '../data/nav_bar_item.dart';
 import '../widgets/nav_bar_main_title_icon.dart';
 
 class NewMainTitleShadowNavBar extends NewNavBarFactory {

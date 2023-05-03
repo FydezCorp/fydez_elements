@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/product_grid_view/data/product/badge.dart';
-import 'package:fydez_elements/product_grid_view/data/product/base_variation.dart';
+import 'package:fydez_elements/general_data/badge.dart';
+import 'package:fydez_elements/general_data/base_variation.dart';
 
 abstract class BaseProduct {
   final int id;
