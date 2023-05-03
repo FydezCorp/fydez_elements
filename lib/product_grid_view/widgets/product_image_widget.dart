@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../general_data/base_product.dart';
@@ -32,9 +34,22 @@ class ProductImageWidget extends StatelessWidget {
     }
 
     return Container(
-      color: backgroundColor(),
+      height: Constants.productCardImageHeight,
+      decoration: BoxDecoration(
+        color: backgroundColor(),
+        image: imageBackgroundType == ProductImageBackgroundType.picture
+            ? DecorationImage(
+                image: CachedNetworkImageProvider(
+                  product.image,
+                ),
+                fit: BoxFit.cover,
+              )
+            : null,
+      ),
       padding: const EdgeInsets.all(20.0),
-      child: FyNetworkImage(url: product.image),
+      child: imageBackgroundType == ProductImageBackgroundType.picture
+          ? Container()
+          : FyNetworkImage(url: product.image),
     );
   }
 }

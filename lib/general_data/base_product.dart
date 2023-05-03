@@ -65,7 +65,7 @@ class SampleProduct extends BaseProduct {
         id: 3,
         name: 'Product 3',
         image:
-            'https://dkstatics-public.digikala.com/digikala-products/57c190160cf59aebdb94a0ec3a97feac84da013c_1681032738.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80',
+            'https://dkstatics-public.digikala.com/digikala-adservice-banners/f1105959092c908f462c92453d098429f1c1744a_1682746872.jpg?x-oss-process=image/quality,q_95/format,webp',
         price: '\$100',
         finalPrice: '\$90',
         variations: [

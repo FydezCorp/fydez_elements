@@ -43,7 +43,7 @@ class ProductCardBackground extends StatelessWidget {
       case ProductImageBackgroundType.picture:
         return Container(
           decoration: BoxDecoration(
-            // border: Border.all(color: context.fyColors.textThreeColor),
+            border: Border.all(color: context.fyColors.textThreeColor),
             borderRadius: BorderRadius.circular(cornerRadius),
           ),
           child: ClipRRect(
