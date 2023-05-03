@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
-
-import '../../general_data/base_product.dart';
+import 'package:fydez_elements/fydez_elements.dart';
 
 class ProductCardPrice extends StatelessWidget {
   const ProductCardPrice({
     Key? key,
     required this.product,
+
   }) : super(key: key);
 
   final BaseProduct product;

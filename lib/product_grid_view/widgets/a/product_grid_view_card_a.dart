@@ -3,6 +3,7 @@ import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import '../product_card_background.dart';
+import '../product_card_details.dart';
 import '../product_card_price.dart';
 import '../product_image_widget.dart';
 
@@ -13,6 +14,7 @@ class ProductGridViewCardA extends StatelessWidget {
   final ProductImageBackgroundType imageBackgroundType;
   final BadgeLocation badgeLocation;
   final Widget? action;
+  final ProductGridViewCardType type;
 
   const ProductGridViewCardA({
     Key? key,
@@ -21,6 +23,7 @@ class ProductGridViewCardA extends StatelessWidget {
     required this.cornerRadius,
     required this.imageBackgroundType,
     required this.badgeLocation,
+    required this.type,
     this.action,
   }) : super(key: key);
 
@@ -42,52 +45,12 @@ class ProductGridViewCardA extends StatelessWidget {
               imageBackgroundType: imageBackgroundType,
             ),
           ),
-          ProductCardDetails(product: product),
-        ],
-      ),
-    );
-  }
-}
-
-class ProductCardDetails extends StatelessWidget {
-  const ProductCardDetails({
-    Key? key,
-    required this.product,
-  }) : super(key: key);
-
-  final BaseProduct product;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            product.name,
-            style: context.textTheme.titleMedium!.copyWith(
-              color: context.fyColors.textTenColor,
-            ),
+          ProductCardDetails(
+            product: product,
+            type: type,
           ),
-          const SizedBox(height: 5),
-          ProductCardPrice(product: product),
-          const SizedBox(height: 5),
-          Row(
-            children: [
-              ...product.variations
-                  .map(
-                    (e) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
-                      child: e.representative,
-                    ),
-                  )
-                  .toList(),
-            ],
-          )
         ],
       ),
     );
   }
 }
-

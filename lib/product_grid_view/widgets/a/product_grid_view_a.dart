@@ -32,6 +32,7 @@ class ProductGridViewA extends FyProductGridView {
                 imageBackgroundType: imageBackgroundType,
                 onProductTapped: onProductTapped,
                 action: action,
+                type: type,
               ),
             )
             .toList(),
