@@ -4,6 +4,7 @@ import 'package:example/home_page.dart';
 import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
 import 'package:example/notifier/notifier_demo_page.dart';
+import 'package:example/page_maker/testing_page_maker.dart';
 import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
@@ -65,6 +66,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.productGridView,
         builder: (context, state) {
           return const ProductGridViewDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.samplePageMaker,
+        builder: (context, state) {
+          return const TestingPageMaker();
         },
       ),
     ],

@@ -15,6 +15,7 @@ export 'flex/fy_flex.dart';
 export 'fy_handler.dart';
 export 'icon_packs/export.dart';
 export 'notifier/export.dart';
+export 'page_maker/export.dart';
 export 'popup/export.dart';
 export 'product_grid_view/export.dart';
 export 'text_inputs/fy_text_input.dart';

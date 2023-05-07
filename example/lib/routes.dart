@@ -8,4 +8,5 @@ class FydezDemoRoutes {
   static String notifier = '/notifier';
   static String dropdown = '/dropdown';
   static String productGridView = '/productGridView';
+  static String samplePageMaker = '/samplePageMaker';
 }
