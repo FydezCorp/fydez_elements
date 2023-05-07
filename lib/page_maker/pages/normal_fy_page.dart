@@ -10,9 +10,6 @@ class NormalFyPage implements FyPage {
   /// The app bar of the page.
   final PreferredSizeWidget? appBar;
 
-  /// The bottom navigation bar of the page.
-  final Widget? bottomNavigationBar;
-
   /// The scroll physics of the page.
   final ScrollPhysics? physics;
 
@@ -26,7 +23,6 @@ class NormalFyPage implements FyPage {
   NormalFyPage({
     required this.elements,
     this.appBar,
-    this.bottomNavigationBar,
     this.physics,
     this.padding = EdgeInsets.zero,
     this.itemPadding = EdgeInsets.zero,
@@ -36,7 +32,6 @@ class NormalFyPage implements FyPage {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      bottomNavigationBar: bottomNavigationBar,
       body: SingleChildScrollView(
         physics: physics,
         child: Padding(

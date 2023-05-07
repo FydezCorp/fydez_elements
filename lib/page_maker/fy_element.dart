@@ -9,11 +9,9 @@ abstract class FyElement {
   /// Name of the element. For debugging purposes only.
   String get name;
 
-  /// The widget that will be shown for the element.
+  /// The widget that will be shown for the element. Inside the implementation 
+  /// of pages, you can use this widget to render the element.
   Widget get render;
-
-  /// A key for the element. Useful for widget testing.
-  Key? key;
 
   /// We need to convert the element to JSON to save it to a file or read it
   /// from backend.
