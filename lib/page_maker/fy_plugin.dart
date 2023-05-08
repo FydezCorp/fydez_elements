@@ -1,4 +1,4 @@
-abstract class FyPlugin {
+class FyPlugin {
   String name;
   FyPlugin({
     required this.name,

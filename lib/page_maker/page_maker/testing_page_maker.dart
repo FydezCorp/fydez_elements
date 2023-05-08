@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_item.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 class TestingPageMaker extends StatelessWidget {
@@ -14,7 +13,6 @@ class TestingPageMaker extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.all(20.0),
       itemPadding: const EdgeInsets.symmetric(vertical: 10.0),
-     
       elements: [
         SampleElement(),
         SampleElement(),

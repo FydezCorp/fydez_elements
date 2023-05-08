@@ -1,5 +1,4 @@
-import 'package:example/page_maker/splash/widgets/splash_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 class SplashElement extends FyElement {
@@ -15,24 +14,16 @@ class SplashElement extends FyElement {
   String get name => 'Splash Element';
 
   @override
-  Widget get render => SplashWidget(image: image, name: name);
+  Widget get render => throw UnimplementedError();
 
   @override
   List<FyPlugin> get supportedPlugins => [];
-
+  
   @override
-  FyElement fromJson(Map<String, dynamic> data) {
+  FyElement fromMap(Map<String, dynamic> data) {
     return SplashElement(
       image: data['image'],
       title: data['title'],
     );
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'image': image,
-      'title': title,
-    };
   }
 }

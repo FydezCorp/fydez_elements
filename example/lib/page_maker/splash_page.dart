@@ -1,5 +1,5 @@
-import 'package:example/page_maker/splash/splash_fy_page.dart';
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/fydez_elements.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatefulWidget {

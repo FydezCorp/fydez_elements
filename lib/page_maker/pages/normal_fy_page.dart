@@ -51,9 +51,8 @@ class NormalFyPage implements FyPage {
       ),
     );
   }
-  
-  @override
-  FyPage fromJson(Map<String, dynamic> data) {
+
+  FyPage fromMap(List<Map<String, dynamic>> data) {
     // TODO: implement fromJson
     throw UnimplementedError();
   }

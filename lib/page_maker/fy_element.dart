@@ -18,8 +18,8 @@ abstract class FyElement {
   // /// from backend.
   // Map<String, dynamic> toJson();
 
-  /// We need to convert the JSON to an element to render it.
-  FyElement fromJson(Map<String, dynamic> data);
+  // /// We need to convert the JSON to an element to render it.
+  // FyElement fromMap(Map<String, dynamic> data);
 
   /// Each element can change its behavior based on the plugins that we've added.
   List<FyPlugin> get supportedPlugins;
@@ -42,6 +42,7 @@ abstract class FyElement {
   }
 }
 
+
 class SampleElement extends FyElement {
   final List<FyPlugin>? plugins;
 
@@ -54,18 +55,6 @@ class SampleElement extends FyElement {
 
   @override
   Widget render = const Text('SampleElement');
-
-  @override
-  FyElement fromJson(Map<String, dynamic> data) {
-    // TODO: implement fromJson
-    throw UnimplementedError();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    throw UnimplementedError();
-  }
 
   @override
   List<FyPlugin> supportedPlugins = [

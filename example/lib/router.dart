@@ -4,12 +4,13 @@ import 'package:example/home_page.dart';
 import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
 import 'package:example/notifier/notifier_demo_page.dart';
-import 'package:example/page_maker/splash/splash_page.dart';
 import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:go_router/go_router.dart';
+
+import 'page_maker/login_page.dart';
 
 class FydezDemoRouter {
   static GoRouter router = GoRouter(
@@ -71,7 +72,7 @@ class FydezDemoRouter {
       GoRoute(
         path: FydezDemoRoutes.samplePageMaker,
         builder: (context, state) {
-          return const SplashPage();
+          return const LoginPage();
         },
       ),
     ],

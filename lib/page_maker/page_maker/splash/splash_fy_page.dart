@@ -1,6 +1,7 @@
-import 'package:example/page_maker/splash/splash_element.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+
+import 'splash_element.dart';
 
 class SplashFyPage implements FyPage {
   final SplashElement element;
