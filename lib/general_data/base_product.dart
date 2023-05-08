@@ -9,7 +9,7 @@ abstract class BaseProduct {
   final String price;
   final String finalPrice;
   final List<BaseVariation> variations;
-  final Badge? badge;
+  final BadgeElement? badge;
 
   BaseProduct({
     required this.id,
@@ -43,7 +43,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$100',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -57,7 +57,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$90',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -76,7 +76,7 @@ class SampleProduct extends BaseProduct {
             color: const Color(0xFF000000),
           ),
         ],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -90,7 +90,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$100',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -104,7 +104,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$90',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -118,7 +118,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$90',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -132,7 +132,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$90',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -146,7 +146,7 @@ class SampleProduct extends BaseProduct {
         price: '\$100',
         finalPrice: '\$90',
         variations: [],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),
@@ -173,7 +173,7 @@ class SampleProduct extends BaseProduct {
             color: const Color(0xFF000000),
           ),
         ],
-        badge: Badge(
+        badge: BadgeElement(
           text: 'New',
           textColor: Colors.white,
           color: const Color(0xFF000000),

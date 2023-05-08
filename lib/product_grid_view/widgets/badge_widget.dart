@@ -9,7 +9,7 @@ class BadgeWidget extends StatelessWidget {
     required this.badgeLocation,
   }) : super(key: key);
 
-  final Badge badge;
+  final BadgeElement badge;
   final BadgeLocation badgeLocation;
   @override
   Widget build(BuildContext context) {
