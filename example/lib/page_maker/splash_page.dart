@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/fydez_elements.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatefulWidget {
@@ -20,11 +19,12 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SplashFyPage.fromMap(
-      {
-        'image': 'assets/sample-bg.jpg',
-        'title': 'Fydez Elements',
-      },
-    ).build(context);
+    // return SplashFyPage.fromMap(
+    //   {
+    //     'image': 'assets/sample-bg.jpg',
+    //     'title': 'Fydez Elements',
+    //   },
+    // ).build(context);
+    return Container();
   }
 }

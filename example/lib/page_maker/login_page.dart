@@ -15,6 +15,7 @@ class LoginPage extends StatelessWidget {
       'loginPageDescription': 'loginPageDescription',
       'loginPageButtonText': 'loginPageButtonText',
     };
-    return PageSerializer.getPageFromMap(loginPageData).build(context);
+    // return PageSerializer.getPageFromMap(loginPageData).build(context);
+    return Container();
   }
 }
