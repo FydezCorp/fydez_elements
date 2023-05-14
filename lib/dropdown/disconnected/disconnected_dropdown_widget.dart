@@ -63,8 +63,8 @@ class _DisconnectedDropdownWidgetState<T>
                           const SizedBox(width: 10),
                           Icon(
                             _opened
-                                ? FyIcon.of(context).arrowUp
-                                : FyIcon.of(context).arrowDown,
+                                ? FyIcon(context).arrowUp
+                                : FyIcon(context).arrowDown,
                             color: const Color(0xff585858),
                             size: 24,
                           ),

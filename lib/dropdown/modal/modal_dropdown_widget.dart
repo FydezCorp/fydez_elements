@@ -87,7 +87,7 @@ class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
                       ),
                       const SizedBox(width: 10),
                       Icon(
-                        FyIcon.of(context).arrowDown,
+                        FyIcon(context).arrowDown,
                         color: const Color(0xff585858),
                         size: 24,
                       ),

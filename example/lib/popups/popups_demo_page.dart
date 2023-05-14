@@ -105,7 +105,7 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
                       handle: handle,
                       hasIcon: hasIcon,
                       cornerRadius: cornerRadius,
-                      icon: FyIcon.of(context).home,
+                      icon: FyIcon(context).home,
                       trailing: ElevatedButton(
                         child: const Text('title'),
                         onPressed: () {},
