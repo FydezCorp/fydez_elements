@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../badge_widget.dart';
-import '../product_card_background.dart';
-import '../product_card_details.dart';
-import '../product_image_widget.dart';
+import '../widgets/badge_widget.dart';
+import '../widgets/product_card_background.dart';
+import '../widgets/product_card_details.dart';
+import '../widgets/product_image_widget.dart';
 
-class ProductGridViewCardA extends StatelessWidget {
+class ProductCardA extends StatelessWidget {
   final BaseProduct product;
   final Function(BaseProduct product)? onProductTapped;
   final double cornerRadius;
@@ -16,7 +16,7 @@ class ProductGridViewCardA extends StatelessWidget {
   final Function(BaseProduct product)? onActionTapped;
   final ProductGridViewCardType type;
 
-  const ProductGridViewCardA({
+  const ProductCardA({
     Key? key,
     required this.product,
     this.onProductTapped,

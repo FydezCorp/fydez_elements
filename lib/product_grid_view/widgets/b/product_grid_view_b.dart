@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import '../../../product_item/b/product_card_b.dart';
 import '../grid_view_maker.dart';
-import 'product_grid_view_card_b.dart';
 
 class ProductGridViewB extends FyProductGridView {
   final double horizontalGap;
@@ -26,7 +26,7 @@ class ProductGridViewB extends FyProductGridView {
         scrollOption: scrollOption,
         children: products
             .map(
-              (product) => ProductGridViewCardB(
+              (product) => ProductCardB(
                 badgeLocation: badgeLocation,
                 product: product,
                 cornerRadius: cornerRadius,

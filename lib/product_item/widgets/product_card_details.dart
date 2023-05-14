@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/product_grid_view/widgets/product_card_price.dart';
+
+import 'product_card_price.dart';
 
 class ProductCardDetails extends StatelessWidget {
   const ProductCardDetails({
