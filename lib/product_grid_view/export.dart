@@ -1,5 +1,5 @@
 
-export '../general_data/badge.dart';
+export '../general_data/base_badge.dart';
 export 'data/badge_location.dart';
 export 'data/product_grid_view_card_type.dart';
 export 'data/product_image_background_type.dart';
