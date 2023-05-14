@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import '../data/product_card_type.dart';
 import '../widgets/badge_widget.dart';
 import '../widgets/product_card_background.dart';
 import '../widgets/product_card_details.dart';
@@ -14,7 +15,7 @@ class ProductCardA extends StatelessWidget {
   final BadgeLocation badgeLocation;
   final Widget? action;
   final Function(BaseProduct product)? onActionTapped;
-  final ProductGridViewCardType type;
+  final ProductCardType type;
 
   const ProductCardA({
     Key? key,

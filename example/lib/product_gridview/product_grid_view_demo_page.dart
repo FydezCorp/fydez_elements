@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/product_item/data/product_card_type.dart';
 
 class ProductGridViewDemoPage extends StatefulWidget {
   const ProductGridViewDemoPage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class ProductGridViewDemoPage extends StatefulWidget {
 
 class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
   double cornerRadius = 0;
-  ProductGridViewCardType type = ProductGridViewCardType.A;
+  ProductCardType type = ProductCardType.A;
   ProductImageBackgroundType imageBackgroundType =
       ProductImageBackgroundType.white;
   BadgeLocation badgeLocation = BadgeLocation.bottomRound;
@@ -41,8 +42,8 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
                 ),
               ],
             ),
-            DropdownButton<ProductGridViewCardType>(
-              items: ProductGridViewCardType.values
+            DropdownButton<ProductCardType>(
+              items: ProductCardType.values
                   .map((e) => DropdownMenuItem(
                         value: e,
                         child: Text('Type: ${e.name}'),

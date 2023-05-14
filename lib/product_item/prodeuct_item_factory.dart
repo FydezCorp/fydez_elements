@@ -15,7 +15,7 @@ abstract class ProductItemFactory {
     required BadgeLocation badgeLocation,
     required Widget? action,
     required Function(BaseProduct product)? onActionTapped,
-    required ProductGridViewCardType type,
+    required ProductCardType type,
   });
   factory ProductItemFactory({required ProductCardType type}) {
     switch (type) {
@@ -37,7 +37,7 @@ class FyProductItemB implements ProductItemFactory {
       required BadgeLocation badgeLocation,
       required Widget? action,
       required Function(BaseProduct product)? onActionTapped,
-      required ProductGridViewCardType type}) {
+      required ProductCardType type}) {
     return ProductCardB(
       product: product,
       cornerRadius: cornerRadius,
@@ -58,7 +58,7 @@ class FyProductItemA implements ProductItemFactory {
       required BadgeLocation badgeLocation,
       required Widget? action,
       required Function(BaseProduct product)? onActionTapped,
-      required ProductGridViewCardType type}) {
+      required ProductCardType type}) {
     return ProductCardA(
       product: product,
       cornerRadius: cornerRadius,

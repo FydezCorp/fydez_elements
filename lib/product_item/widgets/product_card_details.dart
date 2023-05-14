@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import '../data/product_card_type.dart';
 import 'product_card_price.dart';
 
 class ProductCardDetails extends StatelessWidget {
@@ -12,9 +13,9 @@ class ProductCardDetails extends StatelessWidget {
   }) : super(key: key);
 
   final BaseProduct product;
-  final ProductGridViewCardType type;
+  final ProductCardType type;
 
-  EdgeInsets get padding => type == ProductGridViewCardType.A
+  EdgeInsets get padding => type == ProductCardType.A
       ? const EdgeInsets.only(top: 10)
       : const EdgeInsets.all(10.0);
 

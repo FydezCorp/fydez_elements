@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 import 'package:fydez_elements/product_grid_view/widgets/b/product_grid_view_b.dart';
+import 'package:fydez_elements/product_item/data/product_card_type.dart';
 
 import 'widgets/a/product_grid_view_a.dart';
 
 abstract class FyProductGridView {
   final List<BaseProduct> products;
-  final ProductGridViewCardType type;
+  final ProductCardType type;
   final ProductImageBackgroundType imageBackgroundType;
   final BadgeLocation badgeLocation;
   final Widget? action;
@@ -35,7 +36,7 @@ abstract class FyProductGridView {
 
   factory FyProductGridView.make(
     BuildContext context, {
-    ProductGridViewCardType? type,
+    ProductCardType? type,
     required List<BaseProduct> products,
     ProductImageBackgroundType? imageBackgroundType,
     BadgeLocation? badgeLocation,
@@ -46,7 +47,7 @@ abstract class FyProductGridView {
     ScrollOption? scrollOption,
   }) {
     // TODO: Read these values from context.
-    final gridViewType = type ?? ProductGridViewCardType.A;
+    final gridViewType = type ?? ProductCardType.A;
     final gridViewImageBackgroundType =
         imageBackgroundType ?? ProductImageBackgroundType.white;
     final gridViewBadgeLocation = badgeLocation ?? BadgeLocation.topRound;
@@ -61,7 +62,7 @@ abstract class FyProductGridView {
     }
 
     switch (gridViewType) {
-      case ProductGridViewCardType.A:
+      case ProductCardType.A:
         return ProductGridViewA(
           action: action,
           onActionTapped: onActionTapped,
@@ -74,7 +75,7 @@ abstract class FyProductGridView {
           onProductTapped: onProductTapped,
           scrollOption: scrollOption,
         );
-      case ProductGridViewCardType.B:
+      case ProductCardType.B:
         return ProductGridViewB(
           action: action,
           onActionTapped: onActionTapped,
