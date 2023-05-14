@@ -42,7 +42,10 @@ class ProductCardDetails extends StatelessWidget {
               ...product.variations
                   .map(
                     (e) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 2,
+                        vertical: 5,
+                      ),
                       child: e.representative,
                     ),
                   )
