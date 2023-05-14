@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/icon_packs/fy_icon.dart';
 
 class MaterialIcons extends IconList {
   @override

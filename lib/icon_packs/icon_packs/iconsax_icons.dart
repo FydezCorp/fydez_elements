@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/icon_packs/fy_icon.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../icon_list.dart';
