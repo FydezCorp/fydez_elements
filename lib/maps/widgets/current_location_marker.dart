@@ -1,4 +1,4 @@
-part of '../mbl_marker_widget.dart';
+part of '../fy_marker_widget.dart';
 
 class _CurrentLocationMarker extends StatelessWidget {
   const _CurrentLocationMarker({

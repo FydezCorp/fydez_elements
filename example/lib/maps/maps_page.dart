@@ -8,22 +8,22 @@ class MapsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<MblMarkerData> customMarkers = [
-      MblMarkerData(
+    List<FyMarkerData> customMarkers = [
+      FyMarkerData(
         markerId: 'a',
         position: const LatLng(-33.94845924392454, 150.84666721522808),
-        child: MblMarkerWidget.currentLocation(),
+        child: FyMarkerWidget.currentLocation(),
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'b',
         position: const LatLng(-33.76324398166759, 150.88356133550406),
-        child: MblMarkerWidget.store(
+        child: FyMarkerWidget.store(
           name: 'Lion Food',
           imagePath:
               'https://shopassistdb.s3.ap-southeast-2.amazonaws.com/images/Pharmacy.png',
         ),
         onTap: () {
-          // MblUtility.showGeneralSnackBar(
+          // FyUtility.showGeneralSnackBar(
           //   context,
           //   type: SnackBarType.success,
           //   text: 'Element Tapped!',
@@ -31,12 +31,12 @@ class MapsPage extends StatelessWidget {
           // );
         },
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'lmn',
         position: const LatLng(-33.797138786605885, 150.92115819454193),
-        child: MblMarkerWidget.shop(),
+        child: FyMarkerWidget.shop(),
         onTap: () {
-          // MblUtility.showGeneralSnackBar(
+          // FyUtility.showGeneralSnackBar(
           //   context,
           //   type: SnackBarType.success,
           //   text: 'Element Tapped!',
@@ -44,37 +44,37 @@ class MapsPage extends StatelessWidget {
           // );
         },
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'c',
         position: const LatLng(-33.8958553958967, 151.02188888937235),
-        child: MblMarkerWidget.store(
+        child: FyMarkerWidget.store(
           name: 'Lion Food',
           imagePath:
               'https://shopassistdb.s3.ap-southeast-2.amazonaws.com/images/Pharmacy.png',
         ),
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'd',
         position: const LatLng(-34.0041714113973, 150.82963652908802),
-        child: MblMarkerWidget.store(
+        child: FyMarkerWidget.store(
           name: 'Lion Food',
           imagePath:
               'https://shopassistdb.s3.ap-southeast-2.amazonaws.com/images/Pharmacy.png',
         ),
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'e',
         position: const LatLng(-33.884127439470724, 150.85932154208422),
-        child: MblMarkerWidget.store(
+        child: FyMarkerWidget.store(
           name: 'Lion Food',
           imagePath:
               'https://shopassistdb.s3.ap-southeast-2.amazonaws.com/images/Pharmacy.png',
         ),
       ),
-      MblMarkerData(
+      FyMarkerData(
         markerId: 'f',
         position: const LatLng(-33.93145298001045, 150.79339418560266),
-        child: MblMarkerWidget.store(
+        child: FyMarkerWidget.store(
           name: 'Lion Food',
           imagePath:
               'https://shopassistdb.s3.ap-southeast-2.amazonaws.com/images/Pharmacy.png',
@@ -83,13 +83,13 @@ class MapsPage extends StatelessWidget {
     ];
     return Scaffold(
       appBar: AppBar(title: const Text('Maps!')),
-      body: MblMap(
+      body: FyMap(
         initialCameraPosition: const CameraPosition(
           target: LatLng(-33.87869054679089, 151.0440744459629),
           zoom: 10,
         ),
         onMapCreated: (controller) async {
-          await MblMapUtility.boundToMarkers(
+          await FyMapUtility.boundToMarkers(
             controller: controller,
             customMarkers: customMarkers,
           );

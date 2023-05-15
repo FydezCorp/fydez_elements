@@ -8,9 +8,9 @@ part 'widgets/current_location_marker.dart';
 part 'widgets/shop_marker.dart';
 part 'widgets/store_marker.dart';
 
-class MblMarkerWidget extends StatelessWidget {
+class FyMarkerWidget extends StatelessWidget {
   final Widget child;
-  const MblMarkerWidget({Key? key, required this.child}) : super(key: key);
+  const FyMarkerWidget({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,23 @@ class MblMarkerWidget extends StatelessWidget {
   }
 
   /// Green Indicator of Current Location.
-  factory MblMarkerWidget.currentLocation() {
-    return const MblMarkerWidget(
+  factory FyMarkerWidget.currentLocation() {
+    return const FyMarkerWidget(
       child: _CurrentLocationMarker(),
     );
   }
 
   /// Store Indicator (the one with name and image).
-  factory MblMarkerWidget.store({
+  factory FyMarkerWidget.store({
     required String name,
     required String imagePath,
   }) {
-    return MblMarkerWidget(
+    return FyMarkerWidget(
       child: _StoreMarker(name: name, imagePath: imagePath),
     );
   }
-  factory MblMarkerWidget.shop() {
-    return const MblMarkerWidget(
+  factory FyMarkerWidget.shop() {
+    return const FyMarkerWidget(
       child: _ShopMarker(),
     );
   }

@@ -3,9 +3,9 @@ import 'dart:math';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import 'mbl_marker_data.dart';
+import 'fy_marker_data.dart';
 
-class MblMapUtility {
+class FyMapUtility {
   /// Google Maps doesn't support getting bounds from a list of positions. So this
   /// functions does that for us.
   static LatLngBounds computeBounds(List<LatLng> list) {
@@ -25,10 +25,10 @@ class MblMapUtility {
     return LatLngBounds(southwest: LatLng(s, w), northeast: LatLng(n, e));
   }
 
-  /// Animates camera to bound a list of markers (`MblMarkerData`).
+  /// Animates camera to bound a list of markers (`FyMarkerData`).
   static Future<void> boundToMarkers({
     required GoogleMapController controller,
-    required List<MblMarkerData> customMarkers,
+    required List<FyMarkerData> customMarkers,
   }) async {
     // dev.log('message');
     // ! For animating camera to bounds, we must add some manual lag.

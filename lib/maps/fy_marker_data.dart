@@ -2,8 +2,7 @@ import 'package:custom_map_markers/custom_map_markers.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
-class MblMarkerData extends StatelessWidget implements MarkerData {
+class FyMarkerData extends StatelessWidget implements MarkerData {
   /// A string that should be unique for each marker.
   final String markerId;
 
@@ -17,8 +16,8 @@ class MblMarkerData extends StatelessWidget implements MarkerData {
   @override
   final Widget child;
 
-  /// A widget containing data of marker on [MblMap] widget.
-  const MblMarkerData({
+  /// A widget containing data of marker on [FyMap] widget.
+  const FyMarkerData({
     Key? key,
     required this.markerId,
     required this.position,

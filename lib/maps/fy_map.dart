@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'constants/const_map_style.dart';
-import 'mbl_marker_data.dart';
+import 'fy_marker_data.dart';
 
-class MblMap extends StatefulWidget {
+class FyMap extends StatefulWidget {
   /// A function which returns controller of created map!
   final void Function(GoogleMapController)? onMapCreated;
 
   /// Returns [LatLng] of a tapped point on map.
   final void Function(LatLng)? onTap;
 
-  /// An optional List of [MblMarkerData].To add your custom marker or use one
-  ///  of proprietary markers (child parameter), use [MblMarkerWidget].
-  final List<MblMarkerData>? customMarkers;
+  /// An optional List of [FyMarkerData].To add your custom marker or use one
+  ///  of proprietary markers (child parameter), use [FyMarkerWidget].
+  final List<FyMarkerData>? customMarkers;
 
   /// REQUIRED initial position of camera.
   final CameraPosition initialCameraPosition;
@@ -31,11 +31,11 @@ class MblMap extends StatefulWidget {
 
   /// Map Creator!
   ///
-  /// For adding markers, you should add a list of [MblMarkerData] which can
+  /// For adding markers, you should add a list of [FyMarkerData] which can
   /// take a widget as an input to show as marker (instead of images only)! To
   /// add your custom marker or use one of proprietary markers (child parameter)
-  /// , use [MblMarkerWidget].
-  const MblMap({
+  /// , use [FyMarkerWidget].
+  const FyMap({
     Key? key,
     required this.initialCameraPosition,
     this.zoomEnabled,
@@ -47,10 +47,10 @@ class MblMap extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<MblMap> createState() => _MblMapState();
+  State<FyMap> createState() => _FyMapState();
 }
 
-class _MblMapState extends State<MblMap> {
+class _FyMapState extends State<FyMap> {
   late GoogleMapController _controller;
 
   @override
