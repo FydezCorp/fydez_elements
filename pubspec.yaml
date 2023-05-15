@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   iconsax: ^0.0.8
+  google_maps_flutter: ^2.2.1
+  custom_map_markers: ^0.0.1
+  cached_network_image: ^3.2.3
 
 dev_dependencies:
   flutter_test:
@@ -18,5 +21,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  assets:
+    - assets/map_elements/
 
 
