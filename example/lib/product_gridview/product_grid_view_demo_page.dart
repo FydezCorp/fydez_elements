@@ -4,6 +4,8 @@ import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import 'product_grid_view/product_grid_view.dart';
+
 class ProductGridViewDemoPage extends StatefulWidget {
   const ProductGridViewDemoPage({Key? key}) : super(key: key);
 
