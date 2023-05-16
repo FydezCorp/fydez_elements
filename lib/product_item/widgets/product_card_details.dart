@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../data/product_card_type.dart';
 import 'product_card_price.dart';
 
 class ProductCardDetails extends StatelessWidget {

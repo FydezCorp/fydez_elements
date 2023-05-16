@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../data/product_card_type.dart';
 import '../widgets/badge_widget.dart';
 import '../widgets/product_card_background.dart';
 import '../widgets/product_card_details.dart';
@@ -12,7 +11,7 @@ class ProductCardA extends StatelessWidget {
   final Function(BaseProduct product)? onProductTapped;
   final double cornerRadius;
   final ProductImageBackgroundType imageBackgroundType;
-  final BadgeLocation badgeLocation;
+  final ProductBadgeLocation badgeLocation;
   final Widget? action;
   final Function(BaseProduct product)? onActionTapped;
   final ProductCardType type;
@@ -54,8 +53,8 @@ class ProductCardA extends StatelessWidget {
                 type: type,
               ),
               (product.badge != null &&
-                      (badgeLocation == BadgeLocation.bottomRound ||
-                          badgeLocation == BadgeLocation.bottomSharp))
+                      (badgeLocation == ProductBadgeLocation.bottomRound ||
+                          badgeLocation == ProductBadgeLocation.bottomSharp))
                   ? Row(
                       children: [
                         BadgeWidget(
@@ -83,8 +82,8 @@ class ProductCardA extends StatelessWidget {
             top: 5,
             left: 5,
             child: (product.badge != null &&
-                    (badgeLocation == BadgeLocation.topRound ||
-                        badgeLocation == BadgeLocation.topSharp))
+                    (badgeLocation == ProductBadgeLocation.topRound ||
+                        badgeLocation == ProductBadgeLocation.topSharp))
                 ? BadgeWidget(
                     badge: product.badge!, badgeLocation: badgeLocation)
                 : const SizedBox())

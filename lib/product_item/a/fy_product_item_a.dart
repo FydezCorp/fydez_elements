@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../fydez_elements.dart';
-import '../data/product_card_type.dart';
 import '../product_item_factory.dart';
 import 'product_card_a.dart';
 
@@ -12,7 +11,7 @@ class FyProductItemA implements ProductItemFactory {
       required Function(BaseProduct product)? onProductTapped,
       required double cornerRadius,
       required ProductImageBackgroundType imageBackgroundType,
-      required BadgeLocation badgeLocation,
+      required ProductBadgeLocation badgeLocation,
       required Widget? action,
       required Function(BaseProduct product)? onActionTapped,
       required ProductCardType type}) {

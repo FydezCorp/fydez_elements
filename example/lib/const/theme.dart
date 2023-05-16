@@ -33,6 +33,10 @@ FyThemeParameters themeParameters = FyThemeParameters(
   defaultVerticalPadding: 12,
   inputsBorderRadius: 16,
   iconPack: IconPack.material,
+  productBadgeLocation: ProductBadgeLocation.topRound,
+  productCardType: ProductCardType.A,
+  productCornerRadius: 32,
+  productImageBackgroundType: ProductImageBackgroundType.white,
 );
 
 ColorScheme colorScheme = const ColorScheme(

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 import 'package:fydez_elements/product_grid_view/widgets/b/product_grid_view_b.dart';
-import 'package:fydez_elements/product_item/data/product_card_type.dart';
 
 import 'widgets/a/product_grid_view_a.dart';
 
@@ -11,7 +10,7 @@ abstract class FyProductGridView {
   final List<BaseProduct> products;
   final ProductCardType type;
   final ProductImageBackgroundType imageBackgroundType;
-  final BadgeLocation badgeLocation;
+  final ProductBadgeLocation badgeLocation;
   final Widget? action;
   final Function(BaseProduct product)? onActionTapped;
   final double cornerRadius;
@@ -39,7 +38,7 @@ abstract class FyProductGridView {
     ProductCardType? type,
     required List<BaseProduct> products,
     ProductImageBackgroundType? imageBackgroundType,
-    BadgeLocation? badgeLocation,
+    ProductBadgeLocation? badgeLocation,
     Widget? action,
     Function(BaseProduct product)? onActionTapped,
     required double cornerRadius,
@@ -50,7 +49,8 @@ abstract class FyProductGridView {
     final gridViewType = type ?? ProductCardType.A;
     final gridViewImageBackgroundType =
         imageBackgroundType ?? ProductImageBackgroundType.white;
-    final gridViewBadgeLocation = badgeLocation ?? BadgeLocation.topRound;
+    final gridViewBadgeLocation =
+        badgeLocation ?? ProductBadgeLocation.topRound;
 
     double calculateHorizontalGap() {
       if (imageBackgroundType == ProductImageBackgroundType.white &&

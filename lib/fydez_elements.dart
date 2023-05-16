@@ -19,3 +19,4 @@ export 'popup/export.dart';
 export 'product_grid_view/export.dart';
 export 'text_inputs/fy_text_input.dart';
 export 'theme_extensions/export.dart';
+export 'product_item/export.dart';

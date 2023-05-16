@@ -10,12 +10,12 @@ class BadgeWidget extends StatelessWidget {
   }) : super(key: key);
 
   final BaseBadge badge;
-  final BadgeLocation badgeLocation;
+  final ProductBadgeLocation badgeLocation;
   @override
   Widget build(BuildContext context) {
     ShapeBorder shape() {
-      if (badgeLocation == BadgeLocation.bottomRound ||
-          badgeLocation == BadgeLocation.topRound) {
+      if (badgeLocation == ProductBadgeLocation.bottomRound ||
+          badgeLocation == ProductBadgeLocation.topRound) {
         return const StadiumBorder();
       } else {
         return const RoundedRectangleBorder(borderRadius: BorderRadius.zero);

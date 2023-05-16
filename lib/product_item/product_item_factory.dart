@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import '../fydez_elements.dart';
 import 'a/fy_product_item_a.dart';
 import 'b/fy_product_item_b.dart';
-import 'data/product_card_type.dart';
 
 abstract class ProductItemFactory {
   Widget build(
@@ -12,7 +11,7 @@ abstract class ProductItemFactory {
     required Function(BaseProduct product)? onProductTapped,
     required double cornerRadius,
     required ProductImageBackgroundType imageBackgroundType,
-    required BadgeLocation badgeLocation,
+    required ProductBadgeLocation badgeLocation,
     required Widget? action,
     required Function(BaseProduct product)? onActionTapped,
     required ProductCardType type,
