@@ -2,11 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/product_grid_view/widgets/b/product_grid_view_b.dart';
 
-import 'widgets/a/product_grid_view_a.dart';
+import 'grid_view_maker.dart';
 
-abstract class FyProductGridView {
+class ProductGridView extends StatelessWidget {
   final List<BaseProduct> products;
   final ProductCardType type;
   final ProductImageBackgroundType imageBackgroundType;
@@ -16,9 +15,9 @@ abstract class FyProductGridView {
   final double cornerRadius;
   final Function(BaseProduct product)? onProductTapped;
   final ScrollOption? scrollOption;
-  // TODO: Add physics or a way to hande scrolling.
 
-  FyProductGridView({
+  const ProductGridView({
+    super.key,
     required this.products,
     required this.type,
     required this.imageBackgroundType,
@@ -30,64 +29,35 @@ abstract class FyProductGridView {
     this.scrollOption = ScrollOption.scrollable,
   });
 
-  /// The widget that will be returned to show on screen!
-  Widget get render;
-
-  factory FyProductGridView.make(
-    BuildContext context, {
-    ProductCardType? type,
-    required List<BaseProduct> products,
-    ProductImageBackgroundType? imageBackgroundType,
-    ProductBadgeLocation? badgeLocation,
-    Widget? action,
-    Function(BaseProduct product)? onActionTapped,
-    required double cornerRadius,
-    Function(BaseProduct)? onProductTapped,
-    ScrollOption? scrollOption,
-  }) {
-    // TODO: Read these values from context.
-    final gridViewType = type ?? ProductCardType.A;
-    final gridViewImageBackgroundType =
-        imageBackgroundType ?? ProductImageBackgroundType.white;
-    final gridViewBadgeLocation =
-        badgeLocation ?? ProductBadgeLocation.topRound;
-
-    double calculateHorizontalGap() {
-      if (imageBackgroundType == ProductImageBackgroundType.white &&
-          cornerRadius == 0) {
-        return 0;
-      } else {
-        return Constants.productGridViewGap;
-      }
+  double calculateGap() {
+    if (imageBackgroundType == ProductImageBackgroundType.white &&
+        cornerRadius == 0) {
+      return 0;
+    } else {
+      return Constants.productGridViewGap;
     }
+  }
 
-    switch (gridViewType) {
-      case ProductCardType.A:
-        return ProductGridViewA(
-          action: action,
-          onActionTapped: onActionTapped,
-          badgeLocation: gridViewBadgeLocation,
-          cornerRadius: cornerRadius,
-          imageBackgroundType: gridViewImageBackgroundType,
-          products: products,
-          type: gridViewType,
-          horizontalGap: calculateHorizontalGap(),
-          onProductTapped: onProductTapped,
-          scrollOption: scrollOption,
-        );
-      case ProductCardType.B:
-        return ProductGridViewB(
-          action: action,
-          onActionTapped: onActionTapped,
-          badgeLocation: gridViewBadgeLocation,
-          cornerRadius: cornerRadius,
-          imageBackgroundType: gridViewImageBackgroundType,
-          products: products,
-          type: gridViewType,
-          horizontalGap: calculateHorizontalGap(),
-          scrollOption: scrollOption,
-          onProductTapped: onProductTapped,
-        );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return GridViewMaker(
+      gap: calculateGap(),
+      scrollOption: scrollOption,
+      children: products
+          .map(
+            (product) => FyProductItem.make(
+              context,
+              product: product,
+              onProductTapped: onProductTapped,
+              action: action,
+              onActionTapped: onActionTapped,
+              productBadgeLocation: badgeLocation,
+              productCardType: type,
+              productCornerRadius: cornerRadius,
+              productImageBackgroundType: imageBackgroundType,
+            ),
+          )
+          .toList(),
+    );
   }
 }

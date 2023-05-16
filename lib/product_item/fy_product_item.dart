@@ -6,10 +6,10 @@ import 'package:fydez_elements/product_item/product_item_factory.dart';
 class FyProductItem {
   static Widget make(
     BuildContext context, {
-    required ProductCardType? productCardType,
-    required ProductImageBackgroundType? productImageBackgroundType,
-    required ProductBadgeLocation? productBadgeLocation,
-    required double? productCornerRadius,
+    ProductCardType? productCardType,
+    ProductImageBackgroundType? productImageBackgroundType,
+    ProductBadgeLocation? productBadgeLocation,
+    double? productCornerRadius,
     required BaseProduct product,
     required dynamic Function(BaseProduct)? onProductTapped,
     required Widget? action,

@@ -84,8 +84,7 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               value: badgeLocation,
             ),
             const Gap(20.0),
-            FyProductGridView.make(
-              context,
+            ProductGridView(
               products: SampleProduct.mockProducts(),
               type: type,
               cornerRadius: cornerRadius,
@@ -103,7 +102,7 @@ class _ProductGridViewDemoPageState extends State<ProductGridViewDemoPage> {
               onActionTapped: (product) {
                 log('Action tapped! for product ${product.id}');
               },
-            ).render,
+            ),
           ],
         ),
       ),
