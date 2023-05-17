@@ -53,10 +53,16 @@ class HomePage extends StatelessWidget {
         child: const Text('Dropdowns'),
       ),
       ElevatedButton(
+        child: const Text('Google Maps'),
         onPressed: () {
           context.push(FydezDemoRoutes.maps);
         },
-        child: const Text('Google Maps'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.productGridView);
+        },
+        child: const Text('Product Grid View'),
       ),
     ];
 
