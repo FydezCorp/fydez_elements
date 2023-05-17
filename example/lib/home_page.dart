@@ -76,6 +76,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Tiles'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.empty);
+        },
+        child: const Text('Empty Page!'),
+      ),
     ];
 
     return Scaffold(
