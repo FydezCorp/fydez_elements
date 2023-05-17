@@ -8,30 +8,70 @@ class SliderDemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const image =
+        'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg';
     return Scaffold(
-      body: Column(
-        children: [
-          FySlider.create(items: [
-            SliderItem(
-              image: 'image',
-              cta: CTA(
-                name: 'name',
-                action: () {
-                  log('action');
-                },
+      body: SafeArea(
+        child: Column(
+          children: [
+            FySlider.create(items: [
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
               ),
-            ),
-            SliderItem(
-              image: 'image',
-              cta: CTA(
-                name: 'name',
-                action: () {
-                  log('action');
-                },
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
               ),
-            ),
-          ])
-        ],
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
+              ),
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
+              ),
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
+              ),
+              SliderItem(
+                image: image,
+                cta: CTA(
+                  name: 'name',
+                  action: () {
+                    log('action');
+                  },
+                ),
+              ),
+            ])
+          ],
+        ),
       ),
     );
   }

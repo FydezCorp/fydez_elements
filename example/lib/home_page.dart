@@ -64,6 +64,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Product Grid View'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.slider);
+        },
+        child: const Text('Slider'),
+      ),
     ];
 
     return Scaffold(
