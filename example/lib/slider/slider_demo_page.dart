@@ -11,6 +11,12 @@ class SliderDemoPage extends StatefulWidget {
 }
 
 class _SliderDemoPageState extends State<SliderDemoPage> {
+  double aspectRatio = 16 / 9;
+  double delay = 2000;
+  double cornerRadius = 16.0;
+  double margin = 10.0;
+  SliderType type = SliderType.simple;
+
   @override
   Widget build(BuildContext context) {
     const image =
@@ -19,62 +25,128 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
       body: SafeArea(
         child: Column(
           children: [
-            FySlider.create(items: [
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
-                ),
+            DropdownButton(
+              items: SliderType.values
+                  .map((e) => DropdownMenuItem(
+                        value: e,
+                        child: Text(e.toString()),
+                      ))
+                  .toList(),
+              onChanged: (value) => setState(() => type = value as SliderType),
+              value: type,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Text('Margin ${margin.toStringAsFixed(2)}'),
+                  Expanded(
+                    child: Slider(
+                      value: margin,
+                      onChanged: (value) => setState(() => margin = value),
+                      max: 50,
+                      min: 0,
+                    ),
+                  ),
+                ],
               ),
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Text('Corner Radius ${cornerRadius.toStringAsFixed(2)}'),
+                  Expanded(
+                    child: Slider(
+                      value: cornerRadius,
+                      onChanged: (value) =>
+                          setState(() => cornerRadius = value),
+                      max: 50,
+                      min: 0,
+                    ),
+                  ),
+                ],
               ),
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Text('Aspect Ratio ${aspectRatio.toStringAsFixed(2)}'),
+                  Expanded(
+                    child: Slider(
+                      value: aspectRatio,
+                      onChanged: (value) => setState(() => aspectRatio = value),
+                      max: 4,
+                      min: 1,
+                    ),
+                  ),
+                ],
               ),
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
+            ),
+            FySlider.create(
+              aspectRatio: aspectRatio,
+              cornerRadius: cornerRadius,
+              delay: delay.floor(),
+              margin: margin,
+              type: type,
+              items: [
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
                 ),
-              ),
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
                 ),
-              ),
-              SliderItem(
-                image: image,
-                cta: CTA(
-                  name: 'name',
-                  action: () {
-                    log('action');
-                  },
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
                 ),
-              ),
-            ])
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
+                ),
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
+                ),
+                SliderItem(
+                  image: image,
+                  cta: CTA(
+                    name: 'name',
+                    action: () {
+                      log('action');
+                    },
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
