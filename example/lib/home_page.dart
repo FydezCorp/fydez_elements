@@ -70,6 +70,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Slider'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.tiles);
+        },
+        child: const Text('Tiles'),
+      ),
     ];
 
     return Scaffold(

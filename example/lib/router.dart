@@ -10,6 +10,7 @@ import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/slider/slider_demo_page.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
+import 'package:example/tiles/tiles_demo_page.dart';
 import 'package:go_router/go_router.dart';
 
 class FydezDemoRouter {
@@ -78,6 +79,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.slider,
         builder: (context, state) {
           return const SliderDemoPage();
+        },
+      ),
+       GoRoute(
+        path: FydezDemoRoutes.tiles,
+        builder: (context, state) {
+          return const TilesDemoPage();
         },
       ),
     ],
