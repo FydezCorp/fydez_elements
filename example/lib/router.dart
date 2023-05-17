@@ -8,6 +8,7 @@ import 'package:example/notifier/notifier_demo_page.dart';
 import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
+import 'package:example/slider/slider_demo_page.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -71,6 +72,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.productGridView,
         builder: (context, state) {
           return const ProductGridViewDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.slider,
+        builder: (context, state) {
+          return const SliderDemoPage();
         },
       ),
     ],

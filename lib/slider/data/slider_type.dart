@@ -1,0 +1,3 @@
+enum SliderType {
+  simple,
+}

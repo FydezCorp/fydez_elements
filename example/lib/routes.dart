@@ -9,4 +9,5 @@ class FydezDemoRoutes {
   static String dropdown = '/dropdown';
   static String maps = '/maps';
   static String productGridView = '/productGridView';
+  static String slider = '/slider';
 }
