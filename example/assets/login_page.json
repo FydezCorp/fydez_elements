@@ -1,0 +1,27 @@
+{
+    "id": "3HMDVyJfVbVDgfrEsw91vZ",
+    "type": "page",
+    "modules": [
+            {
+                "id": "4049qkWXU8dhszXOstyZGO",
+                "contentType": "image",
+                "image": {
+                    "contentType": "logo",
+                    "src": "//images.ctfassets.net/axnzlfkkfzif/6lks7sfcbrGwBoRaDF8B5f/1880a0e224ffafdee431f04bba408e64/Magazin_Ratgeber_Header_S.jpg"
+                },
+                "cta": null,
+                "abTest": null,
+                "imageStyle": null
+            },
+            {
+                "id": "2Z2Z2Z2Z2Z2Z2Z2Z2Z2Z2Z",
+                "contentType": "text",
+                "text": {
+                    "contentType": "text",
+                    "style": "h1",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis tincidunt ultricies, nunc nisl aliquam nunc, quis aliquam nisl nunc eu nisl. Nulla facilisi. Nulla f"
+                }
+            }
+                
+    ]}
+         
