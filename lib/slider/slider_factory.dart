@@ -8,6 +8,9 @@ abstract class SliderFactory {
     Key? key,
     required List<SliderItem> items,
     required double aspectRatio,
+    required int delay,
+    required double cornerRadius,
+    required double margin,
   });
 
   factory SliderFactory({SliderType? type}) {

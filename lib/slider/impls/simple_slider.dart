@@ -11,10 +11,16 @@ class SimpleSlider implements SliderFactory {
     Key? key,
     required List<SliderItem> items,
     required double aspectRatio,
+    required int delay,
+    required double cornerRadius,
+    required double margin,
   }) {
     return _SimpleSliderImpl(
       items: items,
       aspectRatio: aspectRatio,
+      cornerRadius: cornerRadius,
+      delay: delay,
+      margin: margin,
     );
   }
 }
@@ -22,9 +28,15 @@ class SimpleSlider implements SliderFactory {
 class _SimpleSliderImpl extends StatefulWidget {
   final List<SliderItem> items;
   final double aspectRatio;
+  final int delay;
+  final double cornerRadius;
+  final double margin;
   const _SimpleSliderImpl({
     required this.items,
     required this.aspectRatio,
+    required this.cornerRadius,
+    required this.margin,
+    required this.delay,
   });
 
   @override
@@ -42,9 +54,9 @@ class _SimpleSliderImplState extends State<_SimpleSliderImpl> {
         return GestureDetector(
           onTap: item.cta.action,
           child: Container(
-            margin: const EdgeInsets.all(20.0),
+            margin: EdgeInsets.all(widget.margin),
             decoration: BoxDecoration(
-              color: Colors.red,
+              borderRadius: BorderRadius.circular(widget.cornerRadius),
               image: DecorationImage(
                 image: CachedNetworkImageProvider(item.image),
                 fit: BoxFit.cover,
@@ -57,6 +69,7 @@ class _SimpleSliderImplState extends State<_SimpleSliderImpl> {
         autoPlay: true,
         aspectRatio: widget.aspectRatio,
         viewportFraction: 1.0,
+        autoPlayInterval: Duration(milliseconds: widget.delay),
       ),
     );
   }

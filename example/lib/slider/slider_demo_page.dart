@@ -3,9 +3,14 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-class SliderDemoPage extends StatelessWidget {
+class SliderDemoPage extends StatefulWidget {
   const SliderDemoPage({Key? key}) : super(key: key);
 
+  @override
+  State<SliderDemoPage> createState() => _SliderDemoPageState();
+}
+
+class _SliderDemoPageState extends State<SliderDemoPage> {
   @override
   Widget build(BuildContext context) {
     const image =
