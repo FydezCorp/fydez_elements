@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 class PopUpDemoPage extends StatefulWidget {
@@ -103,7 +104,7 @@ class _PopUpDemoPageState extends State<PopUpDemoPage> {
                   handle: handle,
                   hasIcon: hasIcon,
                   cornerRadius: cornerRadius,
-                  icon: FyIcon.of(context).home,
+                  icon: context.fyIcons.home,
                   trailing: FyButton.filled(
                     context,
                     title: 'title',

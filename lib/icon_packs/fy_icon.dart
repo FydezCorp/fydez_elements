@@ -1,15 +1,20 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
-abstract  class FyIcon {
-  /// The build context used to access the fyParameters object.
-  static FyIcon of(BuildContext context) {
-    return Localizations.of<FyIcon>(context, FyIcon) as FyIcon;
+
+class FyIcon extends StatelessWidget {
+  final IconData icon;
+  final double size;
+  final Color? color;
+
+  const FyIcon(this.icon, {super.key, this.size = 24, this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      icon,
+      size: size,
+      color: color ?? context.fyColors.textEightColor,
+    );
   }
-  IconData get home;
-  IconData get login;
-  IconData get logout;
-  IconData get eye;
-  IconData get user;
-  IconData get heart;
-  IconData get store;
 }

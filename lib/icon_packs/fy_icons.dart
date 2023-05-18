@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-abstract class IconList {
+abstract  class FyIcons {
+  /// The build context used to access the fyParameters object.
   IconData get home;
   IconData get login;
   IconData get logout;

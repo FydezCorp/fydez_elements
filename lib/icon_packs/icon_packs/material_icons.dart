@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/icon_packs/fy_icon.dart';
+import 'package:fydez_elements/icon_packs/fy_icons.dart';
 
-class MaterialIcons implements FyIcon {
+class MaterialIcons implements FyIcons {
   @override
   IconData get eye => Icons.remove_red_eye;
 

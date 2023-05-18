@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:bloc/bloc.dart';
+import 'package:fydez_elements/icon_packs/fy_icon.dart';
 
-import '../cubit/icon_pack_cubit.dart';
 import '../gap.dart';
 
 class IconPacksDemoPage extends StatefulWidget {
@@ -24,7 +23,7 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              DropdownButton(
+              /* DropdownButton(
                 value: selectedIconPack,
                 items: iconPackList
                     .map((e) => DropdownMenuItem(
@@ -38,36 +37,36 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     context.read<IconPackCubit>().changeIconPack(value);
                   });
                 },
-              ),
+              ), */
               // TODO: Can we automate this?
               Wrap(
                 children: [
                   IconWidget(
-                    icon: FyIcon.of(context).home,
+                    icon: context.fyIcons.home,
                     name: 'home',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).eye,
+                    icon:  context.fyIcons.eye,
                     name: 'eye',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).heart,
+                    icon: context.fyIcons.heart,
                     name: 'heart',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).login,
+                    icon: context.fyIcons.login,
                     name: 'login',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).logout,
+                    icon: context.fyIcons.logout,
                     name: 'logout',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).store,
+                    icon: context.fyIcons.store,
                     name: 'store',
                   ),
                   IconWidget(
-                    icon: FyIcon.of(context).user,
+                    icon: context.fyIcons.user,
                     name: 'user',
                   ),
                 ],
@@ -95,7 +94,7 @@ class IconWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        children: [Icon(icon), const Gap(5.0), Text(name)],
+        children: [FyIcon(icon), const Gap(5.0), Text(name)],
       ),
     );
   }

@@ -1,3 +1,2 @@
-export 'fy_icon.dart';
+export 'fy_icons.dart';
 export 'icon_pack.dart';
-export 'icon_list.dart';

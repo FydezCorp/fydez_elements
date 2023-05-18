@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import '../gap.dart';
@@ -32,7 +33,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.filled(
                   context,
                   title: 'Filled Icon Button',
-                  icon: FyIcon.of(context).home,
+                  icon: context.fyIcons.home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -46,7 +47,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.outlined(
                   context,
                   title: 'Outlined Icon Button',
-                  icon: FyIcon.of(context).home,
+                  icon: context.fyIcons.home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -60,13 +61,13 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                 FyButton.text(
                   context,
                   title: 'Text Icon Button',
-                  icon: FyIcon.of(context).home,
+                  icon: context.fyIcons.home,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),
                 FyButton.icon(
-                  icon: FyIcon.of(context).heart,
+                  icon: context.fyIcons.heart,
                   onPressed: () {},
                 ),
                 const Gap(20.0),
@@ -93,7 +94,7 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   button1: FyButton.filled(
                     context,
                     title: 'Filled Icon Button',
-                    icon: FyIcon.of(context).home,
+                    icon: context.fyIcons.home,
                     onPressed: () {},
                   ),
                   button2: FyButton.outlined(

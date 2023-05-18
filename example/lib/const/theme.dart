@@ -32,7 +32,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
   defaultHorizontalPadding: 16,
   defaultVerticalPadding: 12,
   inputsBorderRadius: 16,
-  iconPack: IconPack.material,
+  iconPack: IconPack.iconsax,
 );
 
 ColorScheme colorScheme = const ColorScheme(

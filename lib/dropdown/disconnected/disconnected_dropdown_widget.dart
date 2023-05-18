@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
 
@@ -63,8 +64,8 @@ class _DisconnectedDropdownWidgetState<T>
                           const SizedBox(width: 10),
                           Icon(
                             _opened
-                                ? FyIcon(context).arrowUp
-                                : FyIcon(context).arrowDown,
+                                ? context.fyIcons.arrowUp
+                                : context.fyIcons.arrowDown,
                             color: const Color(0xff585858),
                             size: 24,
                           ),

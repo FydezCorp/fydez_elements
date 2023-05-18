@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
+import '../../icon_packs/fy_icon.dart';
 
 class ModalDropdownWidget<T> extends StatefulWidget {
   final T value;
@@ -86,8 +88,8 @@ class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
                         style: style,
                       ),
                       const SizedBox(width: 10),
-                      Icon(
-                        FyIcon(context).arrowDown,
+                      FyIcon(
+                        context.fyIcons.arrowDown,
                         color: const Color(0xff585858),
                         size: 24,
                       ),
