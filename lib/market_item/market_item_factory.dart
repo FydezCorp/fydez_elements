@@ -13,7 +13,7 @@ abstract class MarketItemFactory {
     required String address,
     required bool availability,
     required VoidCallback? onTap,
-    required double borderRadius,
+    required double cornerRadius,
   });
   factory MarketItemFactory({required MarketItemType type}) {
     return NormalStoreItem();

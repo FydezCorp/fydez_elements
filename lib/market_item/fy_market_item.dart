@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/const/constants.dart';
 
 import 'data/market_item_type.dart';
 import 'market_item_factory.dart';
@@ -14,10 +15,11 @@ class FyMarketItem {
     required bool isFindInApp,
     required bool availability,
     required VoidCallback? onTap,
-    double? borderRadius,
+    double? cornerRadius,
     MarketItemType? type,
   }) {
-    final finalBorderRadius = borderRadius ?? 12.0;
+    final finalCornerRadius =
+        cornerRadius ?? Constants.marketItemDefaultCornerRadius;
     final finalType = type ?? MarketItemType.normal;
     return MarketItemFactory(type: finalType).build(
       key: key,
@@ -28,7 +30,7 @@ class FyMarketItem {
       address: address,
       availability: availability,
       onTap: onTap,
-      borderRadius: finalBorderRadius,
+      cornerRadius: finalCornerRadius,
     );
   }
 }

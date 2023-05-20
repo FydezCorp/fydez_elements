@@ -16,7 +16,7 @@ class NormalStoreItem implements MarketItemFactory {
     required String address,
     required bool availability,
     required VoidCallback? onTap,
-    required double borderRadius,
+    required double cornerRadius,
   }) {
     return NormalStoreItemWidget(
       distance: distance,
@@ -27,7 +27,7 @@ class NormalStoreItem implements MarketItemFactory {
       availability: availability,
       onTap: onTap,
       key: key,
-      borderRadius: borderRadius,
+      borderRadius: cornerRadius,
     );
   }
 }

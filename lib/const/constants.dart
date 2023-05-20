@@ -13,4 +13,7 @@ class Constants {
   static const int sliderDefaultDelay = 3000;
   static const double sliderDefaultCornerRadius = 0;
   static const double sliderDefaultMargin = 16.0;
+
+  // * Market Item
+  static const double marketItemDefaultCornerRadius = 12.0;
 }
