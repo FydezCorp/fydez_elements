@@ -7,7 +7,7 @@ import 'package:iconsax/iconsax.dart';
 
 import '../cart_item_factory.dart';
 
-class NormalCategoryItem implements CartItemFactory {
+class NormalCartItem implements CartItemFactory {
   @override
   Widget build({
     Key? key,

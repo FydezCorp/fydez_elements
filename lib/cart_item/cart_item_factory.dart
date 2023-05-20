@@ -17,6 +17,6 @@ abstract class CartItemFactory {
   });
 
   factory CartItemFactory({required CartItemType type}) {
-    return NormalCategoryItem();
+    return NormalCartItem();
   }
 }
