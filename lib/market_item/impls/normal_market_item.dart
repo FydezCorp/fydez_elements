@@ -56,7 +56,7 @@ class NormalStoreItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 6),
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(borderRadius),
@@ -127,8 +127,8 @@ class NormalStoreItemWidget extends StatelessWidget {
                                 Container(
                                   width: 6,
                                   height: 6,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(3),
+                                  decoration: ShapeDecoration(
+                                      shape: const CircleBorder(),
                                       color: availability
                                           ? const Color(0xff00BA1E)
                                           : Theme.of(context)
@@ -136,16 +136,19 @@ class NormalStoreItemWidget extends StatelessWidget {
                                               .error),
                                 ),
                                 const Gap(6),
-                                Text(availability ? 'Available' : 'Unavailable',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            color: availability
-                                                ? const Color(0xff00BA1E)
-                                                : Theme.of(context)
-                                                    .colorScheme
-                                                    .error)),
+                                Text(
+                                  availability ? 'Available' : 'Unavailable',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                        color: availability
+                                            ? const Color(0xff00BA1E)
+                                            : Theme.of(context)
+                                                .colorScheme
+                                                .error,
+                                      ),
+                                ),
                               ],
                             ),
                           )
