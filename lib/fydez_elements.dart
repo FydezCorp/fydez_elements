@@ -8,6 +8,7 @@ export '/general_data/base_variation.dart';
 export '/general_data/scroll_option.dart';
 export 'bottom_nav_bar/fy_nav_bar.dart';
 export 'button/export.dart';
+export 'category_item/export.dart';
 export 'checkbox_tile/export.dart';
 export 'dropdown/export.dart';
 export 'empty/fy_empty.dart';

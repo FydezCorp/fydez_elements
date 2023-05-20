@@ -1,4 +1,5 @@
 import 'package:example/button/buttons_demo_page.dart';
+import 'package:example/category_item/categoty_item_demo_page.dart';
 import 'package:example/dropdown/dropdown_demo_page.dart';
 import 'package:example/empty/empty_demo_page.dart';
 import 'package:example/home_page.dart';
@@ -99,6 +100,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.marketItem,
         builder: (context, state) {
           return const MarketItemDemoPage();
+        },
+      ),
+       GoRoute(
+        path: FydezDemoRoutes.categoryItem,
+        builder: (context, state) {
+          return const CategoryItemDemoPage();
         },
       ),
     ],

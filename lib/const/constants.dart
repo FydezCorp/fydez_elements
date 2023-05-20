@@ -16,4 +16,7 @@ class Constants {
 
   // * Market Item
   static const double marketItemDefaultCornerRadius = 12.0;
+
+  // * Category Item
+  static const double categoryItemDefaultCornerRadius = 12.0;
 }

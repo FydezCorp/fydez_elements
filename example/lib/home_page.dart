@@ -88,6 +88,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Market Item'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.categoryItem);
+        },
+        child: const Text('Category Item'),
+      ),
     ];
 
     return Scaffold(
