@@ -17,6 +17,8 @@ import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:example/tiles/tiles_demo_page.dart';
 import 'package:go_router/go_router.dart';
 
+import 'cart_item/cart_item_demo_page.dart';
+
 class FydezDemoRouter {
   static GoRouter router = GoRouter(
     routes: [
@@ -113,6 +115,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.skeletons,
         builder: (context, state) {
           return const SkeletonsDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.cartItem,
+        builder: (context, state) {
+          return const CartItemDemoPage();
         },
       ),
     ],

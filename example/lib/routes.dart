@@ -15,4 +15,5 @@ class FydezDemoRoutes {
   static String marketItem = '/marketItem';
   static String categoryItem = '/categoryItem';
   static String skeletons = '/skeletons';
+  static String cartItem = '/cartItem';
 }
