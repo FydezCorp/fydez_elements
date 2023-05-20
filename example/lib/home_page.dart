@@ -94,6 +94,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Category Item'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.skeletons);
+        },
+        child: const Text('Skeletons'),
+      ),
     ];
 
     return Scaffold(

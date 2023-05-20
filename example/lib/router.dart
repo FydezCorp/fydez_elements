@@ -11,6 +11,7 @@ import 'package:example/notifier/notifier_demo_page.dart';
 import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
+import 'package:example/skeletons/skeletons_demo_page.dart';
 import 'package:example/slider/slider_demo_page.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:example/tiles/tiles_demo_page.dart';
@@ -102,10 +103,16 @@ class FydezDemoRouter {
           return const MarketItemDemoPage();
         },
       ),
-       GoRoute(
+      GoRoute(
         path: FydezDemoRoutes.categoryItem,
         builder: (context, state) {
           return const CategoryItemDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.skeletons,
+        builder: (context, state) {
+          return const SkeletonsDemoPage();
         },
       ),
     ],

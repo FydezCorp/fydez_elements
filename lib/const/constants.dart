@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Constants {
   // * Buttons
   static const double buttonIconSize = 18.0;
@@ -19,4 +21,6 @@ class Constants {
 
   // * Category Item
   static const double categoryItemDefaultCornerRadius = 12.0;
+  static const EdgeInsets categoryItemDefaultPadding =
+      EdgeInsets.symmetric(horizontal: 12, vertical: 8);
 }

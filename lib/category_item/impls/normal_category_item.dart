@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/category_item/category_item_factory.dart';
+import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/image/fy_network_image.dart';
 
@@ -37,7 +38,7 @@ class NormalCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+      padding: Constants.categoryItemDefaultPadding,
       child: InkWell(
         borderRadius: BorderRadius.circular(cornerRadius),
         onTap: onTap,
