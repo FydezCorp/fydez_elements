@@ -12,4 +12,5 @@ class FydezDemoRoutes {
   static String slider = '/slider';
   static String tiles = '/tiles';
   static String empty = '/empty';
+  static String marketItem = '/marketItem';
 }

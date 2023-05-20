@@ -1,0 +1,1 @@
+enum MarketItemType { normal }

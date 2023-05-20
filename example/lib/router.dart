@@ -4,6 +4,7 @@ import 'package:example/empty/empty_demo_page.dart';
 import 'package:example/home_page.dart';
 import 'package:example/icon_packs/icon_packs_demo_page.dart';
 import 'package:example/maps/maps_page.dart';
+import 'package:example/market_item/market_item_demo_page.dart';
 import 'package:example/nav_bar/nav_bar_demo_page.dart';
 import 'package:example/notifier/notifier_demo_page.dart';
 import 'package:example/popups/popups_demo_page.dart';
@@ -92,6 +93,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.empty,
         builder: (context, state) {
           return const EmptyDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.marketItem,
+        builder: (context, state) {
+          return const MarketItemDemoPage();
         },
       ),
     ],

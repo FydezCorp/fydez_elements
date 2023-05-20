@@ -215,6 +215,14 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  gap:
+    dependency: transitive
+    description:
+      name: gap
+      sha256: "976fa1e405d7d8249b3d2ec0e18a1eac116f0a86430c29a7485dff6f5326f03a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   go_router:
     dependency: "direct main"
     description:
@@ -630,4 +638,4 @@ packages:
     version: "6.2.2"
 sdks:
   dart: ">=2.19.0 <3.0.0"
-  flutter: ">=3.7.0-0"
+  flutter: ">=3.7.0"
