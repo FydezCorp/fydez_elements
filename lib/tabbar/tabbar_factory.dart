@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/tabbar/data/tabbar_type.dart';
-import 'package:fydez_elements/tabbar/impls/normal_tabbar.dart';
 
 import 'data/tab_data.dart';
+import 'data/tabbar_type.dart';
+import 'impls/light_background_tabbar.dart';
+import 'impls/underlined_tabbar.dart';
 
 abstract class TabbarFactory {
   Widget build(
@@ -14,6 +15,11 @@ abstract class TabbarFactory {
   });
 
   factory TabbarFactory({required TabbarType type}) {
-    return NormalTabbar();
+    switch (type) {
+      case TabbarType.underlined:
+        return UnderlinedTabbar();
+      case TabbarType.lightBackground:
+        return LightBackgroundTabbar();
+    }
   }
 }

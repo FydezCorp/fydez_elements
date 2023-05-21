@@ -13,7 +13,7 @@ class FyTabbar {
     TabbarType? type,
     Key? key,
   }) {
-    final finalType = type ?? TabbarType.normal;
+    final finalType = type ?? TabbarType.underlined;
     return TabbarFactory(type: finalType).build(
       context,
       key: key,

@@ -3,7 +3,7 @@ import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/tabbar/data/tab_data.dart';
 import 'package:fydez_elements/tabbar/tabbar_factory.dart';
 
-class NormalTabbar implements TabbarFactory {
+class UnderlinedTabbar implements TabbarFactory {
   @override
   Widget build(
     BuildContext context, {
@@ -12,7 +12,7 @@ class NormalTabbar implements TabbarFactory {
     required int initialIndex,
     Key? key,
   }) {
-    return NormalTabbarWidget(
+    return UnderlinedTabbarWidget(
       key: key,
       tabs: tabs,
       onTabChange: onTabChange,
@@ -21,12 +21,12 @@ class NormalTabbar implements TabbarFactory {
   }
 }
 
-class NormalTabbarWidget extends StatefulWidget {
+class UnderlinedTabbarWidget extends StatefulWidget {
   final List<TabData> tabs;
   final Function(int tabIndex) onTabChange;
   final int initialIndex;
 
-  const NormalTabbarWidget({
+  const UnderlinedTabbarWidget({
     super.key,
     required this.tabs,
     required this.onTabChange,
@@ -34,10 +34,10 @@ class NormalTabbarWidget extends StatefulWidget {
   });
 
   @override
-  State<NormalTabbarWidget> createState() => _NormalTabbarWidgetState();
+  State<UnderlinedTabbarWidget> createState() => _UnderlinedTabbarWidgetState();
 }
 
-class _NormalTabbarWidgetState extends State<NormalTabbarWidget>
+class _UnderlinedTabbarWidgetState extends State<UnderlinedTabbarWidget>
     with TickerProviderStateMixin {
   late TabController _tabController;
 
@@ -58,9 +58,7 @@ class _NormalTabbarWidgetState extends State<NormalTabbarWidget>
       initialIndex: widget.initialIndex,
       child: TabBar(
         tabs: widget.tabs
-            .map((tabItem) => Tab(
-                  text: tabItem.title,
-                ))
+            .map((tabData) => UnderlinedTabWidget(tabData: tabData))
             .toList(),
         controller: _tabController,
         physics: const BouncingScrollPhysics(),
@@ -77,6 +75,21 @@ class _NormalTabbarWidgetState extends State<NormalTabbarWidget>
         indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
         isScrollable: true,
       ),
+    );
+  }
+}
+
+class UnderlinedTabWidget extends StatelessWidget {
+  final TabData tabData;
+  const UnderlinedTabWidget({
+    required this.tabData,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Tab(
+      text: tabData.title,
     );
   }
 }

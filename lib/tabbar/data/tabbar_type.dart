@@ -1,1 +1,4 @@
-enum TabbarType { normal }
+enum TabbarType {
+  underlined,
+  lightBackground,
+}
