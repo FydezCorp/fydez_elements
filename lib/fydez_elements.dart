@@ -19,6 +19,7 @@ export 'flex/fy_flex.dart';
 export 'fy_handler.dart';
 export 'general_data/base_badge.dart';
 export 'general_data/cta.dart';
+export 'help/export.dart';
 export 'icon_packs/export.dart';
 export 'maps/export.dart';
 export 'market_item/export.dart';
