@@ -7,6 +7,7 @@ import 'data/tab_data.dart';
 abstract class TabbarFactory {
   Widget build(
     BuildContext context, {
+    Key? key,
     required List<TabData> tabs,
     required Function(int tabIndex) onTabChange,
     required int initialIndex,

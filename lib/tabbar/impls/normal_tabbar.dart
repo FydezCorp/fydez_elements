@@ -10,8 +10,10 @@ class NormalTabbar implements TabbarFactory {
     required List<TabData> tabs,
     required Function(int tabIndex) onTabChange,
     required int initialIndex,
+    Key? key,
   }) {
     return NormalTabbarWidget(
+      key: key,
       tabs: tabs,
       onTabChange: onTabChange,
       initialIndex: initialIndex,

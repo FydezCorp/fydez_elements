@@ -11,10 +11,12 @@ class FyTabbar {
     required Function(int tabIndex) onTabChange,
     required int initialIndex,
     TabbarType? type,
+    Key? key,
   }) {
     final finalType = type ?? TabbarType.normal;
     return TabbarFactory(type: finalType).build(
       context,
+      key: key,
       tabs: tabs,
       onTabChange: onTabChange,
       initialIndex: initialIndex,
