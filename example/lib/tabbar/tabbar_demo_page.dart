@@ -42,7 +42,7 @@ class _TabbarWidget extends StatelessWidget with PreferredSizeWidget {
       onTabChange: (index) {
         log(index.toString());
       },
-      initialIndex: 0,
+      initialIndex: 1,
     );
   }
 

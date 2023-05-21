@@ -46,6 +46,7 @@ class _NormalTabbarWidgetState extends State<NormalTabbarWidget>
     _tabController = TabController(
       length: widget.tabs.length,
       vsync: this,
+      initialIndex: widget.initialIndex,
     );
     super.initState();
   }
