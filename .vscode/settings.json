@@ -8,6 +8,8 @@
         "impls",
         "lerp",
         "Reflectable",
-        "usecases"
+        "Tabbar",
+        "usecases",
+        "vsync"
     ]
 }

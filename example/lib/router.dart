@@ -13,6 +13,7 @@ import 'package:example/product_gridview/product_grid_view_demo_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/skeletons/skeletons_demo_page.dart';
 import 'package:example/slider/slider_demo_page.dart';
+import 'package:example/tabbar/tabbar_demo_page.dart';
 import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:example/tiles/tiles_demo_page.dart';
 import 'package:go_router/go_router.dart';
@@ -121,6 +122,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.cartItem,
         builder: (context, state) {
           return const CartItemDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.tabbar,
+        builder: (context, state) {
+          return const TabbarDemoPage();
         },
       ),
     ],

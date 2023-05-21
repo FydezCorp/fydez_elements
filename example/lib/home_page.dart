@@ -106,6 +106,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Cart Item'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.tabbar);
+        },
+        child: const Text('Tabbar'),
+      ),
     ];
 
     return Scaffold(
