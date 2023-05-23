@@ -15,7 +15,8 @@ class FySlider {
     double cornerRadius = Constants.sliderDefaultCornerRadius,
     double margin = Constants.sliderDefaultMargin,
   }) {
-    return SliderFactory(type: type).build(
+    final finalType = type ?? SliderType.simple;
+    return SliderFactory(type: finalType).build(
       items: items,
       aspectRatio: aspectRatio,
       cornerRadius: cornerRadius,
