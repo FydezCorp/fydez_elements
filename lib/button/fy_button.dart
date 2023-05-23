@@ -11,38 +11,46 @@ abstract class FyButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.options,
+    this.loading = false,
   }) : super(key: key);
 
   final VoidCallback onPressed;
   final ButtonOption options;
+  final bool? loading;
 
   static Widget filled({
     required VoidCallback onPressed,
     required FilledButtonOption options,
+    bool? loading,
   }) {
     return MaterialFilledButton(
       onPressed: onPressed,
       options: options,
+      loading: loading,
     );
   }
 
   static Widget outlined({
     required VoidCallback onPressed,
     required OutlinedButtonOption options,
+    bool? loading,
   }) {
     return MaterialOutlinedButton(
       onPressed: onPressed,
       options: options,
+      loading: loading,
     );
   }
 
   static Widget text({
     required VoidCallback onPressed,
     required TextButtonOption options,
+    bool? loading,
   }) {
     return MaterialTextButton(
       onPressed: onPressed,
       options: options,
+      loading: loading,
     );
   }
 
