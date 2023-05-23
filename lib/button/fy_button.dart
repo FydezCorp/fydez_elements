@@ -7,29 +7,6 @@ import 'material_buttons/material_outlined_button.dart';
 import 'material_buttons/material_text_button.dart';
 
 abstract class FyButton extends StatelessWidget {
-  static Map<String, Map<String, FyButton>> _factories(
-          VoidCallback onPressed, ButtonOption options) =>
-      {
-        'material': {
-          'filled': MaterialFilledButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'outlined': MaterialOutlinedButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'icon': MaterialIconButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'text': MaterialTextButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-        },
-      };
-
   const FyButton({
     Key? key,
     required this.onPressed,
@@ -44,14 +21,27 @@ abstract class FyButton extends StatelessWidget {
     required VoidCallback onPressed,
     required ButtonOption options,
   }) {
-    if (_factories(onPressed, options)[FyHandler.designSystem.value]!
-        .containsKey(style.value)) {
-      /// if we have this style on our _factories then we return related item
-      /// else we don't have we return the first item of this design system
-      return _factories(
-          onPressed, options)[FyHandler.designSystem.value]![style.value]!;
-    } else {
-      return _factories(onPressed, options)[FyHandler.designSystem.value]![0]!;
+    switch (style) {
+      case ButtonDesignStyle.filled:
+        return MaterialFilledButton(
+          onPressed: onPressed,
+          options: options,
+        );
+      case ButtonDesignStyle.outlined:
+        return MaterialOutlinedButton(
+          onPressed: onPressed,
+          options: options,
+        );
+      case ButtonDesignStyle.text:
+        return MaterialTextButton(
+          onPressed: onPressed,
+          options: options,
+        );
+      case ButtonDesignStyle.icon:
+        return MaterialIconButton(
+          onPressed: onPressed,
+          options: options,
+        );
     }
   }
 }

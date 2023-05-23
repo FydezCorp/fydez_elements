@@ -129,9 +129,8 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
               bottom: 0,
               right: 0,
               left: 0,
-              child: NewNavBarFactory.create(
+              child: NavBarFactory(effect: effect).createNavBar(
                 style: style,
-                effect: effect,
                 hasTitle: hasTitle,
                 cornerRadius: cornerRadius,
                 items: [

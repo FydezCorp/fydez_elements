@@ -16,7 +16,6 @@ export 'empty/fy_empty.dart';
 export 'enum/button_design_style.dart';
 export 'enum/design_system.dart';
 export 'flex/fy_flex.dart';
-export 'fy_handler.dart';
 export 'general_data/base_badge.dart';
 export 'general_data/cta.dart';
 export 'help/export.dart';
