@@ -8,6 +8,7 @@ import 'data/slider_item.dart';
 class FySlider {
   static Widget create({
     SliderType? type,
+    Key? key,
     required List<SliderItem> items,
     double aspectRatio = Constants.sliderDefaultAspectRatio,
     int delay = Constants.sliderDefaultDelay,
@@ -20,6 +21,7 @@ class FySlider {
       cornerRadius: cornerRadius,
       delay: delay,
       margin: margin,
+      key: key,
     );
   }
 }
