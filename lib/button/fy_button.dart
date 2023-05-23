@@ -16,32 +16,43 @@ abstract class FyButton extends StatelessWidget {
   final VoidCallback onPressed;
   final ButtonOption options;
 
-  static FyButton create({
-    required ButtonDesignStyle style,
+  static Widget filled({
     required VoidCallback onPressed,
-    required ButtonOption options,
+    required FilledButtonOption options,
   }) {
-    switch (style) {
-      case ButtonDesignStyle.filled:
-        return MaterialFilledButton(
-          onPressed: onPressed,
-          options: options,
-        );
-      case ButtonDesignStyle.outlined:
-        return MaterialOutlinedButton(
-          onPressed: onPressed,
-          options: options,
-        );
-      case ButtonDesignStyle.text:
-        return MaterialTextButton(
-          onPressed: onPressed,
-          options: options,
-        );
-      case ButtonDesignStyle.icon:
-        return MaterialIconButton(
-          onPressed: onPressed,
-          options: options,
-        );
-    }
+    return MaterialFilledButton(
+      onPressed: onPressed,
+      options: options,
+    );
+  }
+
+  static Widget outlined({
+    required VoidCallback onPressed,
+    required OutlinedButtonOption options,
+  }) {
+    return MaterialOutlinedButton(
+      onPressed: onPressed,
+      options: options,
+    );
+  }
+
+  static Widget text({
+    required VoidCallback onPressed,
+    required TextButtonOption options,
+  }) {
+    return MaterialTextButton(
+      onPressed: onPressed,
+      options: options,
+    );
+  }
+
+  static Widget icon({
+    required VoidCallback onPressed,
+    required IconButtonOption options,
+  }) {
+    return MaterialIconButton(
+      onPressed: onPressed,
+      options: options,
+    );
   }
 }
