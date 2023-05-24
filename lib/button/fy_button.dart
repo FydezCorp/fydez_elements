@@ -7,51 +7,60 @@ import 'material_buttons/material_outlined_button.dart';
 import 'material_buttons/material_text_button.dart';
 
 abstract class FyButton extends StatelessWidget {
-  static Map<String, Map<String, FyButton>> _factories(
-          VoidCallback onPressed, ButtonOption options) =>
-      {
-        'material': {
-          'filled': MaterialFilledButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'outlined': MaterialOutlinedButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'icon': MaterialIconButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-          'text': MaterialTextButton(
-            onPressed: onPressed,
-            options: options,
-          ),
-        },
-      };
-
   const FyButton({
     Key? key,
     required this.onPressed,
     required this.options,
+    this.loading = false,
   }) : super(key: key);
 
   final VoidCallback onPressed;
   final ButtonOption options;
+  final bool? loading;
 
-  static FyButton create({
-    required ButtonDesignStyle style,
+  static Widget filled({
     required VoidCallback onPressed,
-    required ButtonOption options,
+    required FilledButtonOption options,
+    bool? loading,
   }) {
-    if (_factories(onPressed, options)[FyHandler.designSystem.value]!
-        .containsKey(style.value)) {
-      /// if we have this style on our _factories then we return related item
-      /// else we don't have we return the first item of this design system
-      return _factories(
-          onPressed, options)[FyHandler.designSystem.value]![style.value]!;
-    } else {
-      return _factories(onPressed, options)[FyHandler.designSystem.value]![0]!;
-    }
+    return MaterialFilledButton(
+      onPressed: onPressed,
+      options: options,
+      loading: loading,
+    );
+  }
+
+  static Widget outlined({
+    required VoidCallback onPressed,
+    required OutlinedButtonOption options,
+    bool? loading,
+  }) {
+    return MaterialOutlinedButton(
+      onPressed: onPressed,
+      options: options,
+      loading: loading,
+    );
+  }
+
+  static Widget text({
+    required VoidCallback onPressed,
+    required TextButtonOption options,
+    bool? loading,
+  }) {
+    return MaterialTextButton(
+      onPressed: onPressed,
+      options: options,
+      loading: loading,
+    );
+  }
+
+  static Widget icon({
+    required VoidCallback onPressed,
+    required IconButtonOption options,
+  }) {
+    return MaterialIconButton(
+      onPressed: onPressed,
+      options: options,
+    );
   }
 }

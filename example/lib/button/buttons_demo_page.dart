@@ -12,6 +12,7 @@ class ButtonDemoPage extends StatefulWidget {
 
 class _ButtonDemoPageState extends State<ButtonDemoPage> {
   double ratio = 3;
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,60 +24,68 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
             width: double.infinity,
             child: Column(
               children: [
+                CheckboxListTile(
+                  value: loading,
+                  onChanged: (value) {
+                    setState(() {
+                      loading = value!;
+                    });
+                  },
+                  title: const Text('Loading'),
+                ),
                 const Text('Filled Button'),
                 const Gap(10.0),
-                FyButton.create(
+                FyButton.filled(
                   onPressed: () {},
-                  style: ButtonDesignStyle.filled,
                   options: FilledButtonOption(text: 'This is Button'),
+                  loading: loading,
                 ),
                 const Gap(10.0),
-                FyButton.create(
+                FyButton.filled(
                   onPressed: () {},
-                  style: ButtonDesignStyle.filled,
                   options: FilledButtonOption(
                     text: 'This is Button',
                     icon: Icons.home,
                   ),
+                  loading: loading,
                 ),
                 const Gap(20.0),
                 const Text('Outlined Button'),
                 const Gap(10.0),
-                FyButton.create(
+                FyButton.outlined(
                   onPressed: () {},
-                  style: ButtonDesignStyle.outlined,
                   options: OutlinedButtonOption(text: 'This is Button'),
+                  loading: loading,
                 ),
                 const Gap(10.0),
-                FyButton.create(
+                FyButton.outlined(
                   onPressed: () {},
-                  style: ButtonDesignStyle.outlined,
                   options: OutlinedButtonOption(
                     text: 'This is Button',
                     icon: Iconsax.home,
                   ),
+                  loading: loading,
                 ),
                 const Gap(20.0),
                 const Text('Text Button'),
-                FyButton.create(
+                FyButton.text(
                   onPressed: () {},
-                  style: ButtonDesignStyle.text,
                   options: TextButtonOption(text: 'This is Button'),
+                  loading: loading,
                 ),
                 const Gap(10.0),
-                FyButton.create(
+                FyButton.text(
                   onPressed: () {},
-                  style: ButtonDesignStyle.text,
                   options: TextButtonOption(
                     text: 'This is Button',
                     icon: Iconsax.home,
                   ),
+                  loading: loading,
                 ),
                 const Gap(20.0),
                 const Text('Icon Button'),
-                FyButton.create(
+                FyButton.icon(
                   onPressed: () {},
-                  style: ButtonDesignStyle.icon,
                   options: IconButtonOption(
                     iconColor: Colors.red,
                     icon: Iconsax.home,
@@ -103,20 +112,20 @@ class _ButtonDemoPageState extends State<ButtonDemoPage> {
                   ],
                 ),
                 FyFlex(
-                  button1: FyButton.create(
+                  button1: FyButton.filled(
                     onPressed: () {},
-                    style: ButtonDesignStyle.filled,
                     options: FilledButtonOption(
                       text: 'This is Button',
                       icon: Icons.home,
                     ),
+                    loading: loading,
                   ),
-                  button2: FyButton.create(
+                  button2: FyButton.outlined(
                     onPressed: () {},
-                    style: ButtonDesignStyle.outlined,
                     options: OutlinedButtonOption(
                       text: 'Cancel',
                     ),
+                    loading: loading,
                   ),
                   ratio: ratio,
                   gap: 20,

@@ -53,10 +53,64 @@ class HomePage extends StatelessWidget {
         child: const Text('Dropdowns'),
       ),
       ElevatedButton(
+        child: const Text('Google Maps'),
         onPressed: () {
           context.push(FydezDemoRoutes.maps);
         },
-        child: const Text('Google Maps'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.productGridView);
+        },
+        child: const Text('Product Grid View'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.slider);
+        },
+        child: const Text('Slider'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.tiles);
+        },
+        child: const Text('Tiles'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.empty);
+        },
+        child: const Text('Empty Page!'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.marketItem);
+        },
+        child: const Text('Market Item'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.categoryItem);
+        },
+        child: const Text('Category Item'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.skeletons);
+        },
+        child: const Text('Skeletons'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.cartItem);
+        },
+        child: const Text('Cart Item'),
+      ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.tabbar);
+        },
+        child: const Text('Tabbar'),
       ),
     ];
 
