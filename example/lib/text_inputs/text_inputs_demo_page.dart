@@ -14,6 +14,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
   bool _enabled = true;
 
   double cornerRadius = 0;
+  FyInputType type = FyInputType.A;
 
   final _formKey = GlobalKey<FormState>();
 
@@ -36,6 +37,21 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
             child: Column(
               children: [
                 const Gap(14),
+                DropdownButton<FyInputType>(
+                  items: FyInputType.values
+                      .map((type) => DropdownMenuItem(
+                            value: type,
+                            child: Text(type.toString()),
+                          ))
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      type = value!;
+                    });
+                  },
+                  value: type,
+                ),
+                const Gap(14),
                 Row(
                   children: [
                     Text('Corner Radius: ${cornerRadius.toStringAsFixed(2)}'),
@@ -56,6 +72,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                 const Gap(14),
                 FyTextInput.create(
                   context,
+                  type: type,
                   controller: _controller1,
                   label: 'Simple',
                   hint: 'This is simple!',
@@ -66,6 +83,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                 const Gap(14),
                 FyTextInput.create(
                   context,
+                  type: type,
                   controller: _controller2,
                   mode: InputMode.numeric,
                   label: 'Numeric',
@@ -77,6 +95,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                 const Gap(14),
                 FyTextInput.create(
                   context,
+                  type: type,
                   controller: _controller3,
                   mode: InputMode.long,
                   label: 'Long Text',
@@ -88,6 +107,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                 const Gap(14),
                 FyTextInput.create(
                   context,
+                  type: type,
                   controller: _controller4,
                   mode: InputMode.secure,
                   label: 'Secure Text',

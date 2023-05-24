@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/text_inputs/impls/B/text_input_b.dart';
 
 import 'impls/A/text_input_a.dart';
 
@@ -22,6 +23,11 @@ abstract class TextInputFactory {
   });
 
   factory TextInputFactory({required FyInputType type}) {
-    return TextInputA();
+    switch (type) {
+      case FyInputType.A:
+        return TextInputA();
+      case FyInputType.B:
+        return TextInputB();
+    }
   }
 }
