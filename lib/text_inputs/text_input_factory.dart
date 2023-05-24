@@ -7,6 +7,7 @@ abstract class TextInputFactory {
   Widget build({
     Key? key,
     InputMode? mode,
+    required double cornerRadius,
     required TextEditingController controller,
     required String label,
     required String hint,

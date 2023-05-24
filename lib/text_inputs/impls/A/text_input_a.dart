@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
-import '../../data/input_mode.dart';
 import '../../text_input_factory.dart';
 
 part 'widgets/long_text_input.dart';
@@ -12,20 +11,22 @@ part 'widgets/simple_text_input.dart';
 
 class TextInputA implements TextInputFactory {
   @override
-  Widget build(
-      {Key? key,
-      InputMode? mode,
-      required TextEditingController controller,
-      required String label,
-      required String hint,
-      String? Function(String? text)? validator,
-      TextInputType? keyboardType,
-      FocusNode? focusNode,
-      TextInputAction? textInputAction,
-      bool? enabled,
-      void Function()? onEditingComplete,
-      void Function(String p1)? onFieldSubmitted,
-      void Function()? onTap}) {
+  Widget build({
+    Key? key,
+    InputMode? mode,
+    required double cornerRadius,
+    required TextEditingController controller,
+    required String label,
+    required String hint,
+    String? Function(String? text)? validator,
+    TextInputType? keyboardType,
+    FocusNode? focusNode,
+    TextInputAction? textInputAction,
+    bool? enabled,
+    void Function()? onEditingComplete,
+    void Function(String p1)? onFieldSubmitted,
+    void Function()? onTap,
+  }) {
     return TextInputAWidget(
       mode: mode,
       controller: controller,
@@ -39,6 +40,7 @@ class TextInputA implements TextInputFactory {
       onEditingComplete: onEditingComplete,
       onFieldSubmitted: onFieldSubmitted,
       onTap: onTap,
+      cornerRadius: cornerRadius,
       key: key,
     );
   }
@@ -65,6 +67,7 @@ class TextInputAWidget extends StatelessWidget {
     this.onEditingComplete,
     this.onFieldSubmitted,
     this.onTap,
+    required this.cornerRadius,
   }) : super(key: key);
   final InputMode? mode;
   final TextEditingController controller;
@@ -78,6 +81,7 @@ class TextInputAWidget extends StatelessWidget {
   final void Function()? onEditingComplete;
   final void Function(String)? onFieldSubmitted;
   final void Function()? onTap;
+  final double cornerRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +99,7 @@ class TextInputAWidget extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
+          cornerRadius: cornerRadius,
         );
       case InputMode.numeric:
         return _NumericTextInput(
@@ -109,6 +114,7 @@ class TextInputAWidget extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
+          cornerRadius: cornerRadius,
         );
       case InputMode.long:
         return _LongTextInput(
@@ -123,6 +129,7 @@ class TextInputAWidget extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
+          cornerRadius: cornerRadius,
         );
       case InputMode.secure:
         return _SecureTextInput(
@@ -137,6 +144,7 @@ class TextInputAWidget extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
+          cornerRadius: cornerRadius,
         );
       default:
         return _SimpleTextInput(
@@ -151,6 +159,7 @@ class TextInputAWidget extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
+          cornerRadius: cornerRadius,
         );
     }
   }

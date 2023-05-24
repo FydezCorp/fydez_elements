@@ -13,6 +13,8 @@ class TextInputsDemoPage extends StatefulWidget {
 class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
   bool _enabled = true;
 
+  double cornerRadius = 0;
+
   final _formKey = GlobalKey<FormState>();
 
   final _controller1 = TextEditingController();
@@ -34,6 +36,24 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
             child: Column(
               children: [
                 const Gap(14),
+                Row(
+                  children: [
+                    Text('Corner Radius: ${cornerRadius.toStringAsFixed(2)}'),
+                    Expanded(
+                      child: Slider(
+                        value: cornerRadius,
+                        onChanged: (value) {
+                          setState(() {
+                            cornerRadius = value;
+                          });
+                        },
+                        min: 0,
+                        max: 15,
+                      ),
+                    )
+                  ],
+                ),
+                const Gap(14),
                 FyTextInput.create(
                   context,
                   controller: _controller1,
@@ -41,6 +61,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                   hint: 'This is simple!',
                   enabled: _enabled,
                   validator: _sampleValidator,
+                  cornerRadius: cornerRadius,
                 ),
                 const Gap(14),
                 FyTextInput.create(
@@ -51,6 +72,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                   hint: 'This is numeric!',
                   enabled: _enabled,
                   validator: _sampleValidator,
+                  cornerRadius: cornerRadius,
                 ),
                 const Gap(14),
                 FyTextInput.create(
@@ -61,6 +83,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                   hint: 'This is really really long!',
                   enabled: _enabled,
                   validator: _sampleValidator,
+                  cornerRadius: cornerRadius,
                 ),
                 const Gap(14),
                 FyTextInput.create(
@@ -71,6 +94,7 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                   hint: '********',
                   enabled: _enabled,
                   validator: _sampleValidator,
+                  cornerRadius: cornerRadius,
                 ),
                 const Gap(25),
                 CheckboxListTile(

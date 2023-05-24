@@ -23,4 +23,7 @@ class Constants {
   static const double categoryItemDefaultCornerRadius = 12.0;
   static const EdgeInsets categoryItemDefaultPadding =
       EdgeInsets.symmetric(horizontal: 12, vertical: 8);
+
+  // * Text Inputs
+  static const double textInputDefaultCornerRadius = 4.0;
 }

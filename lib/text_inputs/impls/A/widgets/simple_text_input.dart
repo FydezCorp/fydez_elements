@@ -14,6 +14,7 @@ class _SimpleTextInput extends StatefulWidget {
     this.onEditingComplete,
     this.onFieldSubmitted,
     this.onTap,
+    required this.cornerRadius,
   }) : super(key: key);
   final TextEditingController controller;
   final String label;
@@ -26,6 +27,7 @@ class _SimpleTextInput extends StatefulWidget {
   final void Function()? onEditingComplete;
   final void Function(String)? onFieldSubmitted;
   final void Function()? onTap;
+  final double cornerRadius;
 
   @override
   State<_SimpleTextInput> createState() => _SimpleTextInputState();
@@ -49,7 +51,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
         fillColor: Colors.white,
         isDense: true,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: const BorderSide(
             color: Color(0xffc4c4c4),
           ),
@@ -66,13 +68,13 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
             fontWeight: FontWeight.w400),
         focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Color(0xff1A1A1A), width: 1.5),
-            borderRadius: BorderRadius.circular(16)),
+            borderRadius: BorderRadius.circular(widget.cornerRadius)),
         disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
             borderSide:
                 BorderSide(color: const Color(0xffB4B4B4).withOpacity(0.3))),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
             borderSide: const BorderSide(color: Color(0xffB4B4B4), width: 1)),
         focusColor: const Color(0xff1A1A1A),
         floatingLabelStyle: const TextStyle(
@@ -81,7 +83,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
             color: Color(0xff949494)),
         alignLabelWithHint: true,
         errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
             borderSide: const BorderSide(color: Color(0xffFF266F))),
       ),
       focusNode: widget.focusNode,

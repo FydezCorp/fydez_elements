@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/text_inputs/text_input_factory.dart';
 
 import 'data/input_mode.dart';
@@ -8,6 +9,7 @@ class FyTextInput {
   static Widget create(
     BuildContext context, {
     FyInputType? type,
+    double? cornerRadius,
     Key? key,
     InputMode? mode,
     required TextEditingController controller,
@@ -23,10 +25,12 @@ class FyTextInput {
     void Function()? onTap,
   }) {
     final finalType = type ?? FyInputType.A;
+    final finalCornerRadius = cornerRadius ?? Constants.textInputDefaultCornerRadius;
     return TextInputFactory(type: finalType).build(
       controller: controller,
       label: label,
       hint: hint,
+      cornerRadius: finalCornerRadius,
       enabled: enabled,
       focusNode: focusNode,
       keyboardType: keyboardType,
