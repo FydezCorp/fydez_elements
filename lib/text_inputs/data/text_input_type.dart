@@ -1,0 +1,4 @@
+enum FyInputType {
+  A,
+  B,
+}

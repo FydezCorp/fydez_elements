@@ -63,39 +63,8 @@ ThemeData theme = ThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
   ),
   scaffoldBackgroundColor: Colors.white,
-  inputDecorationTheme: InputDecorationTheme(
-    filled: true,
-    fillColor: Colors.white,
-    isDense: true,
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
-      borderSide: const BorderSide(
-        color: Color(0xffc4c4c4),
-      ),
-    ),
-    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-    hintStyle: const TextStyle(
-        color: Color(0xFFB4B4B4), fontSize: 14, fontWeight: FontWeight.w400),
-    labelStyle: const TextStyle(
-        color: Color(0xFF949494), fontSize: 14, fontWeight: FontWeight.w400),
-    focusedBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: Color(0xff1A1A1A), width: 1.5),
-        borderRadius: BorderRadius.circular(16)),
-    disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide:
-            BorderSide(color: const Color(0xffB4B4B4).withOpacity(0.3))),
-    enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: Color(0xffB4B4B4), width: 1)),
-    focusColor: const Color(0xff1A1A1A),
-    floatingLabelStyle: const TextStyle(
-        fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff949494)),
-    alignLabelWithHint: true,
-    errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: Color(0xffFF266F))),
-  ),
+
+  
   expansionTileTheme: ExpansionTileThemeData(
     backgroundColor: textColors.textOneColor,
     tilePadding: const EdgeInsets.all(10.0),

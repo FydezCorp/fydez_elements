@@ -34,7 +34,8 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
             child: Column(
               children: [
                 const Gap(14),
-                FyTextInput(
+                FyTextInput.create(
+                  context,
                   controller: _controller1,
                   label: 'Simple',
                   hint: 'This is simple!',
@@ -42,27 +43,30 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
                   validator: _sampleValidator,
                 ),
                 const Gap(14),
-                FyTextInput(
+                FyTextInput.create(
+                  context,
                   controller: _controller2,
-                  type: InputType.numeric,
+                  mode: InputMode.numeric,
                   label: 'Numeric',
                   hint: 'This is numeric!',
                   enabled: _enabled,
                   validator: _sampleValidator,
                 ),
                 const Gap(14),
-                FyTextInput(
+                FyTextInput.create(
+                  context,
                   controller: _controller3,
-                  type: InputType.long,
+                  mode: InputMode.long,
                   label: 'Long Text',
                   hint: 'This is really really long!',
                   enabled: _enabled,
                   validator: _sampleValidator,
                 ),
                 const Gap(14),
-                FyTextInput(
+                FyTextInput.create(
+                  context,
                   controller: _controller4,
-                  type: InputType.secure,
+                  mode: InputMode.secure,
                   label: 'Secure Text',
                   hint: '********',
                   enabled: _enabled,
@@ -100,5 +104,3 @@ class _TextInputsDemoPageState extends State<TextInputsDemoPage> {
     return null;
   }
 }
-
-

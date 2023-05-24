@@ -29,5 +29,5 @@ export 'radio_tile/export.dart';
 export 'skeleton/fy_skeletons.dart';
 export 'slider/export.dart';
 export 'tabbar/export.dart';
-export 'text_inputs/fy_text_input.dart';
+export 'text_inputs/export.dart';
 export 'theme_extensions/export.dart';
