@@ -8,7 +8,7 @@ import 'none/none_nav_bar.dart';
 import 'shadow/shadow_nav_bar.dart';
 
 abstract class NavBarFactory {
-  Widget build({
+  Widget createNavBar({
     required List<NavBarItem> items,
     required void Function(int)? onTap,
     required bool hasTitle,

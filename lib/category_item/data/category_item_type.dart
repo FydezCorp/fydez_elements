@@ -1,0 +1,1 @@
+enum CategoryItemType { normal }

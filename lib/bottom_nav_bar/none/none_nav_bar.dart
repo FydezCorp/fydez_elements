@@ -9,7 +9,7 @@ import 'transparent_none_nav_bar.dart';
 
 class NoneNavBar implements NavBarFactory {
   @override
-  Widget build({
+  Widget createNavBar({
     required List<NavBarItem> items,
     required void Function(int)? onTap,
     required bool hasTitle,

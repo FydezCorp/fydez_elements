@@ -1,0 +1,4 @@
+enum TabbarType {
+  underlined,
+  lightBackground,
+}

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_effect.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_item.dart';
 import 'package:fydez_elements/bottom_nav_bar/data/nav_bar_style.dart';
-import 'package:fydez_elements/bottom_nav_bar/fy_nav_bar.dart';
+import 'package:fydez_elements/bottom_nav_bar/nav_bar_factory.dart';
 
 class NavBarDemoPage extends StatefulWidget {
   const NavBarDemoPage({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.grey.shade200,
       extendBody: true,
       body: SafeArea(
@@ -128,9 +129,8 @@ class _NavBarDemoPageState extends State<NavBarDemoPage> {
               bottom: 0,
               right: 0,
               left: 0,
-              child: FyBottomNavBar.build(
+              child: NavBarFactory(effect: effect).createNavBar(
                 style: style,
-                effect: effect,
                 hasTitle: hasTitle,
                 cornerRadius: cornerRadius,
                 items: [

@@ -1,0 +1,1 @@
+enum CartItemType { normal }

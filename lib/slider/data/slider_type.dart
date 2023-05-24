@@ -1,0 +1,4 @@
+enum SliderType {
+  simple,
+  carousel,
+}
