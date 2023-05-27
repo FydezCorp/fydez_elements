@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/blocks/search_bar/data/search_bar_type.dart';
 import 'package:fydez_elements/blocks/search_bar/search_bar_factory.dart';
 
-class FySearchBar {
+class FySearchBarBlock {
   static Widget create(
     BuildContext context, {
     required String placeholder,

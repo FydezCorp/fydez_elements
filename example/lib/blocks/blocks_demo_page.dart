@@ -18,7 +18,7 @@ class BlocksDemoPage extends StatelessWidget {
               children: [
                 const Text('Search Bar Block'),
                 const Gap(20.0),
-                FySearchBar.create(
+                FySearchBarBlock.create(
                   context,
                   type: SearchBarType.simple,
                   placeholder: 'Search products...',
