@@ -50,7 +50,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
   checkboxTileType: CheckboxTileType.normal,
   dropdownConfiguration: DropdownConfiguration(
     type: DropdownType.modal,
-    cornerRadius: 0.0,
+    cornerRadius: 10.0,
   ),
   marketItemConfiguration: MarketItemConfiguration(
     cornerRadius: 20.0,
