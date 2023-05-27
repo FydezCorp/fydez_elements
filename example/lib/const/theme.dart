@@ -64,6 +64,10 @@ FyThemeParameters themeParameters = FyThemeParameters(
   ),
   radioTileType: RadioTileType.normal,
   tabbarType: TabbarType.underlined,
+  textInputConfiguration: TextInputConfiguration(
+    type: FyInputType.A,
+    cornerRadius: 10.0,
+  ),
 );
 
 ColorScheme colorScheme = const ColorScheme(

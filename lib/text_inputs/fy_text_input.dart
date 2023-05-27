@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/const/constants.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/text_inputs/text_input_factory.dart';
 
 import 'data/input_mode.dart';
@@ -24,8 +24,9 @@ class FyTextInput {
     void Function(String text)? onFieldSubmitted,
     void Function()? onTap,
   }) {
-    final finalType = type ?? FyInputType.A;
-    final finalCornerRadius = cornerRadius ?? Constants.textInputDefaultCornerRadius;
+    final finalType = type ?? context.fyParameters.textInputConfiguration.type;
+    final finalCornerRadius = cornerRadius ??
+        context.fyParameters.textInputConfiguration.cornerRadius;
     return TextInputFactory(type: finalType).build(
       controller: controller,
       label: label,

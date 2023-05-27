@@ -17,6 +17,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final PopupConfiguration popupConfiguration;
   final RadioTileType radioTileType;
   final TabbarType tabbarType;
+  final TextInputConfiguration textInputConfiguration;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -33,6 +34,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.popupConfiguration,
     required this.radioTileType,
     required this.tabbarType,
+    required this.textInputConfiguration,
   });
 
   @override
@@ -52,6 +54,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     PopupConfiguration? popupConfiguration,
     RadioTileType? radioTileType,
     TabbarType? tabbarType,
+    TextInputConfiguration? textInputConfiguration,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -75,6 +78,8 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       popupConfiguration: popupConfiguration ?? this.popupConfiguration,
       radioTileType: radioTileType ?? this.radioTileType,
       tabbarType: tabbarType ?? this.tabbarType,
+      textInputConfiguration:
+          textInputConfiguration ?? this.textInputConfiguration,
     );
   }
 
@@ -100,6 +105,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       popupConfiguration: popupConfiguration,
       radioTileType: radioTileType,
       tabbarType: tabbarType,
+      textInputConfiguration: textInputConfiguration,
     );
   }
 }
