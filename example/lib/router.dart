@@ -18,6 +18,7 @@ import 'package:example/text_inputs/text_inputs_demo_page.dart';
 import 'package:example/tiles/tiles_demo_page.dart';
 import 'package:go_router/go_router.dart';
 
+import 'blocks/blocks_demo_page.dart';
 import 'cart_item/cart_item_demo_page.dart';
 
 class FydezDemoRouter {
@@ -128,6 +129,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.tabbar,
         builder: (context, state) {
           return const TabbarDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.blocks,
+        builder: (context, state) {
+          return const BlocksDemoPage();
         },
       ),
     ],

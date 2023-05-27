@@ -112,6 +112,12 @@ class HomePage extends StatelessWidget {
         },
         child: const Text('Tabbar'),
       ),
+      ElevatedButton(
+        onPressed: () {
+          context.push(FydezDemoRoutes.blocks);
+        },
+        child: const Text('Blocks!'),
+      ),
     ];
 
     return Scaffold(
