@@ -14,6 +14,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final CheckboxTileType checkboxTileType;
   final DropdownConfiguration dropdownConfiguration;
   final MarketItemConfiguration marketItemConfiguration;
+  final PopupConfiguration popupConfiguration;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -27,6 +28,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.checkboxTileType,
     required this.dropdownConfiguration,
     required this.marketItemConfiguration,
+    required this.popupConfiguration,
   });
 
   @override
@@ -43,6 +45,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     CheckboxTileType? checkboxTileType,
     DropdownConfiguration? dropdownConfiguration,
     MarketItemConfiguration? marketItemConfiguration,
+    PopupConfiguration? popupConfiguration,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -63,6 +66,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
           dropdownConfiguration ?? this.dropdownConfiguration,
       marketItemConfiguration:
           marketItemConfiguration ?? this.marketItemConfiguration,
+          popupConfiguration: popupConfiguration ?? this.popupConfiguration,
     );
   }
 
@@ -85,6 +89,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       checkboxTileType: checkboxTileType,
       dropdownConfiguration: dropdownConfiguration,
       marketItemConfiguration: marketItemConfiguration,
+      popupConfiguration: popupConfiguration,
     );
   }
 }

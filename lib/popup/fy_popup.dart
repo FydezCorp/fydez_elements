@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 import 'package:fydez_elements/popup/popup_factory.dart';
 
@@ -6,22 +7,24 @@ class FyPopup {
   static void showPopup(
     BuildContext context, {
     PopupType? type,
-    required String title,
-    required String subtitle,
-    PopupBG? background,
 
     /// Only works for type A. Dialogs only have close button.
     PopupHandle? handle,
+    PopupBG? background,
+    double? cornerRadius,
+    required String title,
+    required String subtitle,
     required bool hasIcon,
     IconData? icon,
     Widget? trailing,
-    double? cornerRadius,
   }) {
-    // TODO: Replace these with theme parameter.
-    final popupType = type ?? PopupType.modal;
-    final popupCornerRadius = cornerRadius ?? 20;
-    final popupBackground = background ?? PopupBG.normal;
-    final popupHandle = handle ?? PopupHandle.inside;
+    final popupType = type ?? context.fyParameters.popupConfiguration.type;
+    final popupCornerRadius =
+        cornerRadius ?? context.fyParameters.popupConfiguration.cornerRadius;
+    final popupBackground =
+        background ?? context.fyParameters.popupConfiguration.background;
+    final popupHandle =
+        handle ?? context.fyParameters.popupConfiguration.handle;
 
     return PopupFactory(popupType).showPopup(
       context,

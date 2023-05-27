@@ -56,6 +56,12 @@ FyThemeParameters themeParameters = FyThemeParameters(
     cornerRadius: 20.0,
     type: MarketItemType.normal,
   ),
+  popupConfiguration: PopupConfiguration(
+    cornerRadius: 20.0,
+    type: PopupType.modal,
+    background: PopupBG.blur,
+    handle: PopupHandle.inside,
+  ),
 );
 
 ColorScheme colorScheme = const ColorScheme(
