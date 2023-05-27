@@ -10,20 +10,25 @@ class BlocksDemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Text('Search Bar Demo'),
-            const Gap(20.0),
-            FySearchBar.create(
-              context,
-              type: SearchBarType.simple,
-              placeholder: 'placeholder',
-              onSearchTapped: () {
-                log('Search Tapped');
-              },
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                const Text('Search Bar Block'),
+                const Gap(20.0),
+                FySearchBar.create(
+                  context,
+                  type: SearchBarType.simple,
+                  placeholder: 'Search products...',
+                  onSearchTapped: () {
+                    log('Search Tapped');
+                  },
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

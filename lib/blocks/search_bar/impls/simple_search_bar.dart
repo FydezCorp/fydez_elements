@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
+import '../../../fydez_elements.dart';
 import '../search_bar_factory.dart';
 
 class SimpleSearchBar implements SearchBarFactory {
@@ -28,7 +30,28 @@ class SimpleSearchBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onSearchTapped,
-      child: Container(),
+      child: Container(
+          decoration: BoxDecoration(
+            color: context.fyColors.textTwoColor,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+          child: Row(
+            children: [
+              Icon(
+                FyIcon(context).search,
+                size: 24.0,
+                color: context.fyColors.textSevenColor,
+              ),
+              const SizedBox(width: 7.5),
+              Text(
+                placeholder,
+                style: context.textTheme.titleMedium!.copyWith(
+                  color: context.fyColors.textSevenColor,
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
