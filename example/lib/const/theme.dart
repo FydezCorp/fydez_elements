@@ -47,6 +47,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
   ),
   cartItemType: CartItemType.normal,
   categoryItemType: CategoryItemType.normal,
+  checkboxTileType: CheckboxTileType.normal,
 );
 
 ColorScheme colorScheme = const ColorScheme(
