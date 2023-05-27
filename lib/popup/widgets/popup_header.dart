@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 class PopupHeader extends StatelessWidget {
   final String title;
@@ -16,15 +17,15 @@ class PopupHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
-            color: Color(0xff585858),
+          style:  TextStyle(
+            color: context.fyColors.textEightColor,
             fontSize: 20,
           ),
         ),
         Text(
           subtitle,
-          style: const TextStyle(
-            color: Color(0xff949494),
+          style: TextStyle(
+            color: context.fyColors.textSixColor,
             fontSize: 14,
           ),
         ),

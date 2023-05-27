@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 class NavBarTransparentIcon extends StatelessWidget {
   final IconData icon;
@@ -14,9 +15,8 @@ class NavBarTransparentIcon extends StatelessWidget {
     return isSelected
         ? Container(
             padding: const EdgeInsets.all(5.0),
-            decoration: const BoxDecoration(
-              // TODO: Read these colors from theme.
-              color: Colors.black,
+            decoration: BoxDecoration(
+              color: context.fyColors.textTenColor,
               shape: BoxShape.circle,
             ),
             child: Icon(

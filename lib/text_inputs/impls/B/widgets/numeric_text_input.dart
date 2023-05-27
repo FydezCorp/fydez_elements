@@ -52,18 +52,18 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         isDense: true,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
-          borderSide: const BorderSide(
-            color: Color(0xffc4c4c4),
+          borderSide:  BorderSide(
+            color: context.fyColors.textFourColor,
           ),
         ),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        hintStyle: const TextStyle(
-            color: Color(0xFFB4B4B4),
+        hintStyle: TextStyle(
+            color: context.fyColors.textFiveColor,
             fontSize: 14,
             fontWeight: FontWeight.w400),
-        labelStyle: const TextStyle(
-            color: Color(0xFF949494),
+        labelStyle: TextStyle(
+            color: context.fyColors.textSixColor,
             fontSize: 14,
             fontWeight: FontWeight.w400),
         focusedBorder: UnderlineInputBorder(
@@ -78,11 +78,11 @@ class _NumericTextInputState extends State<_NumericTextInput> {
               color: Colors.transparent,
               width: 1,
             )),
-        focusColor: const Color(0xff1A1A1A),
-        floatingLabelStyle: const TextStyle(
+        focusColor: context.fyColors.textTenColor,
+        floatingLabelStyle: TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w400,
-            color: Color(0xff949494)),
+            color: context.fyColors.textSixColor),
         alignLabelWithHint: true,
       ),
       focusNode: widget.focusNode,

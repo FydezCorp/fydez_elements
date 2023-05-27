@@ -6,12 +6,12 @@ FyTextColor textColors = FyTextColor(
   textTwoColor: const Color(0xFFF2F2F2),
   textThreeColor: const Color(0xFFCCCCCC),
   textFourColor: const Color(0xFFD8D8D8),
-  textFiveColor: const Color(0xFFB4B4B4),
+  textFiveColor: const Color(0xffB4B4B4),
   textSixColor: const Color(0xFF949494),
-  textSevenColor: const Color(0xFF6C6C6C),
-  textEightColor: const Color(0xFF585858),
+  textSevenColor: const Color(0xff6C6C6C),
+  textEightColor: const Color(0xff585858),
   textNineColor: const Color(0xFF3A3A3A),
-  textTenColor: const Color(0xFF1A1A1A),
+  textTenColor: const Color(0xff1A1A1A),
 );
 
 FyPrimaryColor primaryColors = FyPrimaryColor(
@@ -100,7 +100,7 @@ ThemeData theme = ThemeData(
     collapsedBackgroundColor: textColors.textOneColor,
   ),
   listTileTheme: ListTileThemeData(
-    textColor: const Color(0xFF6C6C6C),
+    textColor: const Color(0xff6C6C6C),
     contentPadding: const EdgeInsets.all(5.0),
     horizontalTitleGap: 5,
     shape: RoundedRectangleBorder(
@@ -153,7 +153,7 @@ ThemeData theme = ThemeData(
     style: TextButton.styleFrom(
       foregroundColor: const Color(0xFF949494),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      disabledForegroundColor: const Color(0xff949494).withOpacity(0.38),
+      disabledForegroundColor: const Color(0xFF949494).withOpacity(0.38),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       textStyle: const TextStyle(
         fontSize: 12,
