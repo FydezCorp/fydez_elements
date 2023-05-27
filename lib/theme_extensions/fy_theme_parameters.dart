@@ -15,6 +15,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final DropdownConfiguration dropdownConfiguration;
   final MarketItemConfiguration marketItemConfiguration;
   final PopupConfiguration popupConfiguration;
+  final RadioTileType radioTileType;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -29,6 +30,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.dropdownConfiguration,
     required this.marketItemConfiguration,
     required this.popupConfiguration,
+    required this.radioTileType,
   });
 
   @override
@@ -46,6 +48,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     DropdownConfiguration? dropdownConfiguration,
     MarketItemConfiguration? marketItemConfiguration,
     PopupConfiguration? popupConfiguration,
+    RadioTileType? radioTileType,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -66,7 +69,8 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
           dropdownConfiguration ?? this.dropdownConfiguration,
       marketItemConfiguration:
           marketItemConfiguration ?? this.marketItemConfiguration,
-          popupConfiguration: popupConfiguration ?? this.popupConfiguration,
+      popupConfiguration: popupConfiguration ?? this.popupConfiguration,
+      radioTileType: radioTileType ?? this.radioTileType,
     );
   }
 
@@ -90,6 +94,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       dropdownConfiguration: dropdownConfiguration,
       marketItemConfiguration: marketItemConfiguration,
       popupConfiguration: popupConfiguration,
+      radioTileType: radioTileType,
     );
   }
 }
