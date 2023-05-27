@@ -63,6 +63,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
     handle: PopupHandle.inside,
   ),
   radioTileType: RadioTileType.normal,
+  tabbarType: TabbarType.underlined,
 );
 
 ColorScheme colorScheme = const ColorScheme(

@@ -16,6 +16,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final MarketItemConfiguration marketItemConfiguration;
   final PopupConfiguration popupConfiguration;
   final RadioTileType radioTileType;
+  final TabbarType tabbarType;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -31,6 +32,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.marketItemConfiguration,
     required this.popupConfiguration,
     required this.radioTileType,
+    required this.tabbarType,
   });
 
   @override
@@ -49,6 +51,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     MarketItemConfiguration? marketItemConfiguration,
     PopupConfiguration? popupConfiguration,
     RadioTileType? radioTileType,
+    TabbarType? tabbarType,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -71,6 +74,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
           marketItemConfiguration ?? this.marketItemConfiguration,
       popupConfiguration: popupConfiguration ?? this.popupConfiguration,
       radioTileType: radioTileType ?? this.radioTileType,
+      tabbarType: tabbarType ?? this.tabbarType,
     );
   }
 
@@ -95,6 +99,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       marketItemConfiguration: marketItemConfiguration,
       popupConfiguration: popupConfiguration,
       radioTileType: radioTileType,
+      tabbarType: tabbarType,
     );
   }
 }
