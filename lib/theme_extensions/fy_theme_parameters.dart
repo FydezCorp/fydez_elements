@@ -12,6 +12,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final CartItemType cartItemType;
   final CategoryItemType categoryItemType;
   final CheckboxTileType checkboxTileType;
+  final DropdownConfiguration dropdownConfiguration;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -23,6 +24,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.cartItemType,
     required this.categoryItemType,
     required this.checkboxTileType,
+    required this.dropdownConfiguration,
   });
 
   @override
@@ -37,6 +39,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     CartItemType? cartItemType,
     CategoryItemType? categoryItemType,
     CheckboxTileType? checkboxTileType,
+    DropdownConfiguration? dropdownConfiguration,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -53,6 +56,8 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       cartItemType: cartItemType ?? this.cartItemType,
       categoryItemType: categoryItemType ?? this.categoryItemType,
       checkboxTileType: checkboxTileType ?? this.checkboxTileType,
+      dropdownConfiguration:
+          dropdownConfiguration ?? this.dropdownConfiguration,
     );
   }
 
@@ -73,6 +78,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       cartItemType: cartItemType,
       categoryItemType: categoryItemType,
       checkboxTileType: checkboxTileType,
+      dropdownConfiguration: dropdownConfiguration,
     );
   }
 }

@@ -28,27 +28,30 @@ FyPrimaryColor primaryColors = FyPrimaryColor(
 );
 
 FyThemeParameters themeParameters = FyThemeParameters(
-  buttonCornerRadius: 16,
-  defaultHorizontalPadding: 16,
-  defaultVerticalPadding: 12,
-  inputsBorderRadius: 16,
-  iconPack: IconPack.material,
-  productCardConfiguration: ProductItemConfiguration(
-    productImageBackgroundType: ProductImageBackgroundType.white,
-    productBadgeLocation: ProductBadgeLocation.topRound,
-    productCardType: ProductCardType.A,
-    productCornerRadius: 32,
-  ),
-  bottomNavBarConfiguration: BottomNavBarConfiguration(
-    style: NavBarStyle.transparent,
-    cornerRadius: 0,
-    effect: NavBarEffect.shadow,
-    hasTitle: false,
-  ),
-  cartItemType: CartItemType.normal,
-  categoryItemType: CategoryItemType.normal,
-  checkboxTileType: CheckboxTileType.normal,
-);
+    buttonCornerRadius: 16,
+    defaultHorizontalPadding: 16,
+    defaultVerticalPadding: 12,
+    inputsBorderRadius: 16,
+    iconPack: IconPack.material,
+    productCardConfiguration: ProductItemConfiguration(
+      productImageBackgroundType: ProductImageBackgroundType.white,
+      productBadgeLocation: ProductBadgeLocation.topRound,
+      productCardType: ProductCardType.A,
+      productCornerRadius: 32,
+    ),
+    bottomNavBarConfiguration: BottomNavBarConfiguration(
+      style: NavBarStyle.transparent,
+      cornerRadius: 0,
+      effect: NavBarEffect.shadow,
+      hasTitle: false,
+    ),
+    cartItemType: CartItemType.normal,
+    categoryItemType: CategoryItemType.normal,
+    checkboxTileType: CheckboxTileType.normal,
+    dropdownConfiguration: DropdownConfiguration(
+      type: DropdownType.modal,
+      cornerRadius: 0.0,
+    ));
 
 ColorScheme colorScheme = const ColorScheme(
   brightness: Brightness.light,
