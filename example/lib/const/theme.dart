@@ -39,6 +39,12 @@ FyThemeParameters themeParameters = FyThemeParameters(
     productCardType: ProductCardType.A,
     productCornerRadius: 32,
   ),
+  bottomNavBarConfiguration: BottomNavBarConfiguration(
+    style: NavBarStyle.transparent,
+    cornerRadius: 0,
+    effect: NavBarEffect.shadow,
+    hasTitle: false,
+  ),
 );
 
 ColorScheme colorScheme = const ColorScheme(

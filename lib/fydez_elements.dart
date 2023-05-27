@@ -6,7 +6,7 @@ export 'package:iconsax/iconsax.dart';
 export '/general_data/base_product.dart';
 export '/general_data/base_variation.dart';
 export '/general_data/scroll_option.dart';
-export 'bottom_nav_bar/fy_nav_bar.dart';
+export 'bottom_nav_bar/export.dart';
 export 'button/export.dart';
 export 'cart_item/export.dart';
 export 'category_item/export.dart';
