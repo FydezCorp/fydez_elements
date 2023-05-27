@@ -33,10 +33,12 @@ FyThemeParameters themeParameters = FyThemeParameters(
   defaultVerticalPadding: 12,
   inputsBorderRadius: 16,
   iconPack: IconPack.material,
-  productBadgeLocation: ProductBadgeLocation.topRound,
-  productCardType: ProductCardType.A,
-  productCornerRadius: 32,
-  productImageBackgroundType: ProductImageBackgroundType.white,
+  productCardConfiguration: ProductItemConfiguration(
+    productImageBackgroundType: ProductImageBackgroundType.white,
+    productBadgeLocation: ProductBadgeLocation.topRound,
+    productCardType: ProductCardType.A,
+    productCornerRadius: 32,
+  ),
 );
 
 ColorScheme colorScheme = const ColorScheme(
@@ -63,8 +65,6 @@ ThemeData theme = ThemeData(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
   ),
   scaffoldBackgroundColor: Colors.white,
-
-  
   expansionTileTheme: ExpansionTileThemeData(
     backgroundColor: textColors.textOneColor,
     tilePadding: const EdgeInsets.all(10.0),

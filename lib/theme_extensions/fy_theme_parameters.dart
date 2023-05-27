@@ -7,12 +7,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final double defaultVerticalPadding;
   final double defaultHorizontalPadding;
   final IconPack iconPack;
-
-  // * Product Item
-  final ProductCardType productCardType;
-  final ProductImageBackgroundType productImageBackgroundType;
-  final ProductBadgeLocation productBadgeLocation;
-  final double productCornerRadius;
+  final ProductItemConfiguration productCardConfiguration;
 
   FyThemeParameters({
     required this.buttonCornerRadius,
@@ -20,10 +15,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.defaultVerticalPadding,
     required this.defaultHorizontalPadding,
     required this.iconPack,
-    required this.productBadgeLocation,
-    required this.productCardType,
-    required this.productCornerRadius,
-    required this.productImageBackgroundType,
+    required this.productCardConfiguration,
   });
 
   @override
@@ -33,10 +25,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     double? defaultVerticalPadding,
     double? defaultHorizontalPadding,
     IconPack? iconPack,
-    ProductCardType? productCardType,
-    ProductImageBackgroundType? productImageBackgroundType,
-    ProductBadgeLocation? productBadgeLocation,
-    double? productCornerRadius,
+    ProductItemConfiguration? productCardConfiguration,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -46,11 +35,8 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       defaultHorizontalPadding:
           defaultHorizontalPadding ?? this.defaultHorizontalPadding,
       iconPack: iconPack ?? this.iconPack,
-      productBadgeLocation: productBadgeLocation ?? this.productBadgeLocation,
-      productCardType: productCardType ?? this.productCardType,
-      productCornerRadius: productCornerRadius ?? this.productCornerRadius,
-      productImageBackgroundType:
-          productImageBackgroundType ?? this.productImageBackgroundType,
+      productCardConfiguration:
+          productCardConfiguration ?? this.productCardConfiguration,
     );
   }
 
@@ -66,10 +52,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       defaultVerticalPadding: defaultVerticalPadding,
       defaultHorizontalPadding: defaultHorizontalPadding,
       iconPack: iconPack,
-      productBadgeLocation: productBadgeLocation,
-      productCardType: productCardType,
-      productCornerRadius: productCornerRadius,
-      productImageBackgroundType: productImageBackgroundType,
+      productCardConfiguration: productCardConfiguration,
     );
   }
 }
