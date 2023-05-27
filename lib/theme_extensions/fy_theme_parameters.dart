@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/theme_extensions/data/bottom_nav_bar_configuration.dart';
 
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final double buttonCornerRadius;
@@ -10,6 +9,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final IconPack iconPack;
   final ProductItemConfiguration productCardConfiguration;
   final BottomNavBarConfiguration bottomNavBarConfiguration;
+  final CartItemType cartItemType;
   FyThemeParameters({
     required this.buttonCornerRadius,
     required this.inputsBorderRadius,
@@ -18,6 +18,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.iconPack,
     required this.productCardConfiguration,
     required this.bottomNavBarConfiguration,
+    required this.cartItemType,
   });
 
   @override
@@ -29,6 +30,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     IconPack? iconPack,
     ProductItemConfiguration? productCardConfiguration,
     BottomNavBarConfiguration? bottomNavBarConfiguration,
+    CartItemType? cartItemType,
   }) {
     return FyThemeParameters(
       buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
@@ -42,6 +44,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
           productCardConfiguration ?? this.productCardConfiguration,
       bottomNavBarConfiguration:
           bottomNavBarConfiguration ?? this.bottomNavBarConfiguration,
+      cartItemType: cartItemType ?? this.cartItemType,
     );
   }
 
@@ -59,6 +62,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       iconPack: iconPack,
       productCardConfiguration: productCardConfiguration,
       bottomNavBarConfiguration: bottomNavBarConfiguration,
+      cartItemType: cartItemType,
     );
   }
 }

@@ -45,6 +45,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
     effect: NavBarEffect.shadow,
     hasTitle: false,
   ),
+  cartItemType: CartItemType.normal,
 );
 
 ColorScheme colorScheme = const ColorScheme(
