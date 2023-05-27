@@ -15,14 +15,15 @@ class FyProductItem {
     required Widget? action,
     required dynamic Function(BaseProduct)? onActionTapped,
   }) {
-    final finalProductCardType =
-        productCardType ?? context.fyParameters.productCardType;
+    final finalProductCardType = productCardType ??
+        context.fyParameters.productCardConfiguration.productCardType;
     final finalProductImageBackgroundType = productImageBackgroundType ??
-        context.fyParameters.productImageBackgroundType;
-    final finalProductBadgeLocation =
-        productBadgeLocation ?? context.fyParameters.productBadgeLocation;
-    final finalProductCornerRadius =
-        productCornerRadius ?? context.fyParameters.productCornerRadius;
+        context
+            .fyParameters.productCardConfiguration.productImageBackgroundType;
+    final finalProductBadgeLocation = productBadgeLocation ??
+        context.fyParameters.productCardConfiguration.productBadgeLocation;
+    final finalProductCornerRadius = productCornerRadius ??
+        context.fyParameters.productCardConfiguration.productCornerRadius;
     return ProductItemFactory(type: finalProductCardType).build(
       context,
       product: product,

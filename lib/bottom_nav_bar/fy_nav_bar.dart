@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/nav_bar_factory.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import 'data/nav_bar_effect.dart';
 import 'data/nav_bar_item.dart';
@@ -9,7 +10,8 @@ import 'data/nav_bar_style.dart';
 class FyBottomNavBar {
   /// Creates an instance of [`FyBottomNavBar`]. Make sure to use it inside a stack
   /// instead of putting it inside `bottomNavigationBar` field of scaffold.
-  static Widget createNavBar({
+  static Widget createNavBar(
+    BuildContext context, {
     /// Required list of nav bar items to display.
     required List<NavBarItem> items,
 
@@ -17,16 +19,16 @@ class FyBottomNavBar {
     required void Function(int)? onTap,
 
     /// Style of the nav bar.
-    NavBarStyle style = NavBarStyle.transparent,
+    NavBarStyle? style,
 
     /// Effect to apply to the nav bar.
-    NavBarEffect effect = NavBarEffect.shadow,
+    NavBarEffect? effect,
 
     /// Whether to display a title above the nav bar.
-    bool hasTitle = false,
+    bool? hasTitle,
 
     /// Corner radius of the nav bar.
-    double cornerRadius = 0,
+    double? cornerRadius,
 
     /// Index of the currently selected item in the nav bar.
     int currentIndex = 0,
@@ -34,16 +36,25 @@ class FyBottomNavBar {
     /// Check that there are at least 2 items in the nav bar.
     assert(items.length > 2, 'You should have more than 2 items.');
 
+    final finalCornerRadius = cornerRadius ??
+        context.fyParameters.bottomNavBarConfiguration.cornerRadius;
+    final finalHasTitle =
+        hasTitle ?? context.fyParameters.bottomNavBarConfiguration.hasTitle;
+    final finalStyle =
+        style ?? context.fyParameters.bottomNavBarConfiguration.style;
+    final finalEffect =
+        effect ?? context.fyParameters.bottomNavBarConfiguration.effect;
+
     /// Create a new instance of the nav bar using the provided parameters.
     return NavBarFactory(
-      effect: effect,
+      effect: finalEffect,
     ).createNavBar(
-      style: style,
+      style: finalStyle,
       items: items,
       onTap: onTap,
-      hasTitle: hasTitle,
+      hasTitle: finalHasTitle,
       currentIndex: currentIndex,
-      cornerRadius: cornerRadius,
+      cornerRadius: finalCornerRadius,
     );
   }
 }

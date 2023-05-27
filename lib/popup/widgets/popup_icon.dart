@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 class PopupIcon extends StatelessWidget {
   final IconData? icon;
@@ -17,7 +18,7 @@ class PopupIcon extends StatelessWidget {
           ? Icon(
               icon,
               size: 80,
-              color: const Color(0xff585858),
+              color: context.fyColors.textEightColor,
             )
           : Container(),
     );

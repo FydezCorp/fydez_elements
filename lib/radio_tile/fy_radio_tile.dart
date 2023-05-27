@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/radio_tile/radio_tile_factory.dart';
 
 import 'data/radio_tile_type.dart';
@@ -14,7 +15,7 @@ class FyRadioTile {
     required void Function(T?) onChanged,
     RadioTileType? type,
   }) {
-    final finalType = type ?? RadioTileType.normal;
+    final finalType = type ?? context.fyParameters.radioTileType;
     return RadioTileFactory<T>(type: finalType).build(
       key: key,
       title: title,

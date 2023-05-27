@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
 
@@ -26,7 +27,7 @@ class ModalDropdownWidget<T> extends StatefulWidget {
 class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(fontSize: 14, color: Color(0xff949494));
+    final style = TextStyle(fontSize: 14, color: context.fyColors.textSixColor);
 
     void showModal() {
       FyPopup.showPopup(context,
@@ -69,7 +70,7 @@ class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(color: const Color(0xffB4B4B4)),
+              border: Border.all(color: context.fyColors.textFiveColor),
               borderRadius: BorderRadius.circular(widget.cornerRadius),
             ),
             padding: const EdgeInsets.symmetric(vertical: 14),
@@ -88,7 +89,7 @@ class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
                       const SizedBox(width: 10),
                       Icon(
                         FyIcon(context).arrowDown,
-                        color: const Color(0xff585858),
+                        color:  context.fyColors.textEightColor,
                         size: 24,
                       ),
                     ],

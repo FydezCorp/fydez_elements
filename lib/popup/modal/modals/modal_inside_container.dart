@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 class ModalInsideContainer extends StatelessWidget {
   const ModalInsideContainer({
@@ -28,9 +29,9 @@ class ModalInsideContainer extends StatelessWidget {
             height: 5,
             width: 38,
             margin: const EdgeInsets.symmetric(vertical: 20),
-            decoration: const ShapeDecoration(
-              color: Color(0xffB4B4B4),
-              shape: StadiumBorder(),
+            decoration: ShapeDecoration(
+              color: context.fyColors.textFiveColor,
+              shape: const StadiumBorder(),
             ),
           ),
           child,

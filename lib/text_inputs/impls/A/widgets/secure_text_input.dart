@@ -91,41 +91,41 @@ class _SecureTextInputState extends State<_SecureTextInput> {
             isDense: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(widget.cornerRadius),
-              borderSide: const BorderSide(
-                color: Color(0xffc4c4c4),
+              borderSide: BorderSide(
+                color: context.fyColors.textFourColor,
               ),
             ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            hintStyle: const TextStyle(
-                color: Color(0xFFB4B4B4),
+            hintStyle: TextStyle(
+                color: context.fyColors.textFiveColor,
                 fontSize: 14,
                 fontWeight: FontWeight.w400),
-            labelStyle: const TextStyle(
-                color: Color(0xFF949494),
+            labelStyle: TextStyle(
+                color: context.fyColors.textSixColor,
                 fontSize: 14,
                 fontWeight: FontWeight.w400),
             focusedBorder: OutlineInputBorder(
-                borderSide:
-                    const BorderSide(color: Color(0xff1A1A1A), width: 1.5),
+                borderSide: BorderSide(
+                    color: context.fyColors.textTenColor, width: 1.5),
                 borderRadius: BorderRadius.circular(widget.cornerRadius)),
             disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.cornerRadius),
                 borderSide: BorderSide(
-                    color: const Color(0xffB4B4B4).withOpacity(0.3))),
+                    color: context.fyColors.textFiveColor.withOpacity(0.3))),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.cornerRadius),
-                borderSide:
-                    const BorderSide(color: Color(0xffB4B4B4), width: 1)),
-            focusColor: const Color(0xff1A1A1A),
-            floatingLabelStyle: const TextStyle(
+                borderSide: BorderSide(
+                    color: context.fyColors.textFiveColor, width: 1)),
+            focusColor: context.fyColors.textTenColor,
+            floatingLabelStyle: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: Color(0xff949494)),
+                color: context.fyColors.textSixColor),
             alignLabelWithHint: true,
             errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.cornerRadius),
-                borderSide: const BorderSide(color: Color(0xffFF266F))),
+                borderSide: BorderSide(color: context.colorScheme.error)),
           ),
           focusNode: widget.focusNode,
           textInputAction: widget.textInputAction,
