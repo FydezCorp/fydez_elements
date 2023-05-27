@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/category_item/category_item_factory.dart';
 import 'package:fydez_elements/const/constants.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import 'data/category_item_type.dart';
 
@@ -14,7 +15,7 @@ class FyCategoryItem {
     VoidCallback? onTap,
     CategoryItemType? type,
   }) {
-    final finalType = type ?? CategoryItemType.normal;
+    final finalType = type ?? context.fyParameters.categoryItemType;
     final finalCornerRadius =
         cornerRadius ?? Constants.categoryItemDefaultCornerRadius;
     return CategoryItemFactory(type: finalType).build(

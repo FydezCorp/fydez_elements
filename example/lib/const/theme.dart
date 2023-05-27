@@ -46,6 +46,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
     hasTitle: false,
   ),
   cartItemType: CartItemType.normal,
+  categoryItemType: CategoryItemType.normal,
 );
 
 ColorScheme colorScheme = const ColorScheme(
