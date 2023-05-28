@@ -1,1 +1,4 @@
-enum ImageBlockType { shadow }
+enum ImageBlockType {
+  shadow,
+  normal,
+}

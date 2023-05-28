@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../fydez_elements.dart';
-import 'data/image_block_type.dart';
+import 'impls/normal_image_factory.dart';
 import 'impls/shadow_image_factory.dart';
 
 abstract class ImageFactory {
@@ -17,6 +17,8 @@ abstract class ImageFactory {
     switch (type) {
       case ImageBlockType.shadow:
         return ShadowImageFactory();
+      case ImageBlockType.normal:
+        return NormalImageFactory();
     }
   }
 }
