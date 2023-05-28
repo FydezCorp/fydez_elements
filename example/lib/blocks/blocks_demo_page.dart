@@ -26,6 +26,23 @@ class BlocksDemoPage extends StatelessWidget {
                     log('Search Tapped');
                   },
                 ),
+                const Gap(20.0),
+                const Text('Image Block'),
+                const Gap(20.0),
+                FyImageBlock.create(
+                  context,
+                  imageUrl:
+                      'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
+                  aspectRatio: 2,
+                  cta: CTA(
+                    name: 'Image',
+                    action: () {
+                      log('Image Tapped');
+                    },
+                  ),
+                  cornerRadius: 10.0,
+                  type: ImageBlockType.shadow,
+                ),
               ],
             ),
           ),
