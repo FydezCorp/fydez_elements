@@ -74,12 +74,12 @@ class _VideoDemoState extends State<VideoDemo> {
         FyVideoBlock.create(
           context,
           videoUrl:
-              'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+              'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
           aspectRatio: aspectRatio,
           cta: CTA(
-            name: 'Image',
+            name: 'video',
             action: () {
-              log('Image Tapped');
+              log('video Tapped');
             },
           ),
           cornerRadius: cornerRadius,
