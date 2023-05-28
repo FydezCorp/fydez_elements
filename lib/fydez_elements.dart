@@ -33,3 +33,4 @@ export 'text_inputs/export.dart';
 export 'theme_extensions/export.dart';
 export 'blocks/search_bar/export.dart';
 export 'blocks/image/export.dart';
+export 'blocks/video/export.dart';
