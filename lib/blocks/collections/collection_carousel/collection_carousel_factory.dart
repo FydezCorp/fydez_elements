@@ -9,6 +9,7 @@ abstract class CollectionCarouselFactory {
     required List<CollectionItem> items,
     required bool hasTitle,
     required double cornerRadius,
+    required Function(int id) onCollectionTapped,
   });
 
   factory CollectionCarouselFactory({required CollectionCarouselType type}) {

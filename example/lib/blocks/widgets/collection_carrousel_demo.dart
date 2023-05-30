@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
@@ -77,6 +79,9 @@ class _CollectionCarouselDemoState extends State<CollectionCarouselDemo> {
           type: type,
           hasTitle: hasTitle,
           cornerRadius: cornerRadius,
+          onCollectionTapped: (id) {
+            log('Collection tapped: $id');
+          },
         ),
       ],
     );

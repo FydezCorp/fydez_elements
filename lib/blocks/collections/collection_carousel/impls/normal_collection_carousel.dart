@@ -11,11 +11,13 @@ class NormalCollectionCarousel implements CollectionCarouselFactory {
     required List<CollectionItem> items,
     required bool hasTitle,
     required double cornerRadius,
+    required Function(int id) onCollectionTapped,
   }) {
     return NormalCollectionCarouselWidget(
       items: items,
       hasTitle: hasTitle,
       cornerRadius: cornerRadius,
+      onCollectionTapped: onCollectionTapped,
     );
   }
 }
@@ -24,11 +26,13 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
   final List<CollectionItem> items;
   final bool hasTitle;
   final double cornerRadius;
+  final Function(int id) onCollectionTapped;
   const NormalCollectionCarouselWidget({
     Key? key,
     required this.hasTitle,
     required this.items,
     required this.cornerRadius,
+    required this.onCollectionTapped,
   }) : super(key: key);
 
   @override
@@ -41,28 +45,33 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           final item = items[index];
-          return Container(
-            width: 175,
-            height: 75,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(cornerRadius),
-              color: context.colorScheme.primary,
-              image: DecorationImage(
-                image: CachedNetworkImageProvider(item.imageUrl),
-                fit: BoxFit.cover,
-                opacity: hasTitle ? 0.5 : 1,
+          return GestureDetector(
+            onTap: () {
+              onCollectionTapped(item.id);
+            },
+            child: Container(
+              width: 175,
+              height: 75,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(cornerRadius),
+                color: context.colorScheme.primary,
+                image: DecorationImage(
+                  image: CachedNetworkImageProvider(item.imageUrl),
+                  fit: BoxFit.cover,
+                  opacity: hasTitle ? 0.5 : 1,
+                ),
               ),
-            ),
-            child: hasTitle
-                ? Center(
-                    child: Text(
-                      item.title,
-                      style: context.textTheme.titleMedium!.copyWith(
-                        color: Colors.white,
+              child: hasTitle
+                  ? Center(
+                      child: Text(
+                        item.title,
+                        style: context.textTheme.titleMedium!.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  )
-                : null,
+                    )
+                  : null,
+            ),
           );
         },
         separatorBuilder: (context, index) => const SizedBox(width: 10),
