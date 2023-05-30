@@ -1,9 +1,11 @@
+import 'package:example/blocks/widgets/collection_slider_demo.dart';
 import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/collection_carrousel_demo.dart';
 import 'widgets/image_demo.dart';
 import 'widgets/search_bar_demo.dart';
+import 'widgets/video_demo.dart';
 
 class BlocksDemoPage extends StatelessWidget {
   const BlocksDemoPage({Key? key}) : super(key: key);
@@ -21,9 +23,11 @@ class BlocksDemoPage extends StatelessWidget {
                 Gap(20.0),
                 ImageDemo(),
                 Gap(20.0),
-                // VideoDemo(),
-                // Gap(20.0),
+                VideoDemo(),
+                Gap(20.0),
                 CollectionCarouselDemo(),
+                Gap(20.0),
+                CollectionSliderDemo(),
               ],
             ),
           ),

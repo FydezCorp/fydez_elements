@@ -1,0 +1,1 @@
+enum CollectionSliderType { normal }
