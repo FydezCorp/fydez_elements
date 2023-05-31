@@ -8,6 +8,7 @@ export '/general_data/base_variation.dart';
 export '/general_data/scroll_option.dart';
 export 'blocks/collections/collection_slider/export.dart';
 export 'blocks/collections/export.dart';
+export 'blocks/countdown/export.dart';
 export 'blocks/image/export.dart';
 export 'blocks/search_bar/export.dart';
 export 'blocks/video/export.dart';
