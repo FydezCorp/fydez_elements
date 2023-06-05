@@ -8,7 +8,7 @@ abstract class BaseProduct {
   final String image;
   final String price;
   final String finalPrice;
-  final List<BaseVariation> variations;
+  final List<BaseVariation>? variations;
   final BaseBadge? badge;
 
   BaseProduct({
@@ -17,7 +17,7 @@ abstract class BaseProduct {
     required this.image,
     required this.price,
     required this.finalPrice,
-    required this.variations,
+    this.variations,
     this.badge,
   });
 }
