@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../../general_data/cta.dart';
+import '../../../general_data/blocks/cta.dart';
 import '../video_factory.dart';
 
 class NormalVideoFactory implements VideoFactory {

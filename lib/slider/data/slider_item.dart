@@ -1,4 +1,4 @@
-import '../../general_data/cta.dart';
+import '../../general_data/blocks/cta.dart';
 
 class SliderItem {
   final String image;
