@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
-import '../../general_data/base_product.dart';
+import '../../general_data/product/base_product.dart';
 import '../../image/fy_network_image.dart';
 import '../data/product_image_background_type.dart';
 

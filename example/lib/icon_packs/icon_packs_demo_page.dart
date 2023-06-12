@@ -102,6 +102,13 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).arrowUp,
                     name: 'arrowUp',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).search,
+                    name: 'search',
+                  ),
                 ],
               ),
             ],

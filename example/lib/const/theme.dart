@@ -34,10 +34,10 @@ FyThemeParameters themeParameters = FyThemeParameters(
   inputsBorderRadius: 16,
   iconPack: IconPack.material,
   productCardConfiguration: ProductItemConfiguration(
-    productImageBackgroundType: ProductImageBackgroundType.white,
+    productImageBackgroundType: ProductImageBackgroundType.shadow,
     productBadgeLocation: ProductBadgeLocation.topRound,
-    productCardType: ProductCardType.A,
-    productCornerRadius: 32,
+    productCardType: ProductCardType.B,
+    productCornerRadius: 10,
   ),
   bottomNavBarConfiguration: BottomNavBarConfiguration(
     style: NavBarStyle.transparent,

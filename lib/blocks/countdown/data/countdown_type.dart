@@ -1,0 +1,1 @@
+enum CountdownType { simple }
