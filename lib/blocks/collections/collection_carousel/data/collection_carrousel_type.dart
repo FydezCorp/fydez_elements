@@ -1,0 +1,1 @@
+enum CollectionCarouselType { simple }

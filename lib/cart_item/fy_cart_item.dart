@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import 'cart_item_factory.dart';
 import 'data/cart_item_type.dart';
@@ -17,7 +18,7 @@ class FyCartItem {
     CartItemType? type,
     Key? key,
   }) {
-    final finalType = type ?? CartItemType.normal;
+    final finalType = type ?? context.fyParameters.cartItemType;
     return CartItemFactory(type: finalType).build(
       onDelete: onDelete,
       onAdd: onAdd,

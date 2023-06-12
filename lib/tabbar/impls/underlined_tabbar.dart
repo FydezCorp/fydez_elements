@@ -71,7 +71,7 @@ class _UnderlinedTabbarWidgetState extends State<UnderlinedTabbarWidget>
         ),
         indicatorColor: Theme.of(context).colorScheme.primary,
         labelColor: Theme.of(context).colorScheme.primary,
-        unselectedLabelColor: const Color(0xff6C6C6C),
+        unselectedLabelColor: context.fyColors.textSevenColor,
         indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
         isScrollable: true,
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/tabbar/data/tabbar_type.dart';
 import 'package:fydez_elements/tabbar/tabbar_factory.dart';
 
@@ -13,7 +14,7 @@ class FyTabbar {
     TabbarType? type,
     Key? key,
   }) {
-    final finalType = type ?? TabbarType.underlined;
+    final finalType = type ?? context.fyParameters.tabbarType;
     return TabbarFactory(type: finalType).build(
       context,
       key: key,

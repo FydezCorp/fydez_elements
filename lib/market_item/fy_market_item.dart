@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/const/constants.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import 'data/market_item_type.dart';
 import 'market_item_factory.dart';
@@ -18,9 +18,9 @@ class FyMarketItem {
     double? cornerRadius,
     MarketItemType? type,
   }) {
-    final finalCornerRadius =
-        cornerRadius ?? Constants.marketItemDefaultCornerRadius;
-    final finalType = type ?? MarketItemType.normal;
+    final finalCornerRadius = cornerRadius ??
+        context.fyParameters.marketItemConfiguration.cornerRadius;
+    final finalType = type ?? context.fyParameters.marketItemConfiguration.type;
     return MarketItemFactory(type: finalType).build(
       key: key,
       distance: distance,

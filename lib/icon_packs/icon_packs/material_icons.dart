@@ -28,4 +28,7 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get arrowUp => Icons.keyboard_arrow_up_rounded;
+
+  @override
+  IconData get search => Icons.search;
 }

@@ -10,4 +10,5 @@ abstract class IconList {
   IconData get store;
   IconData get arrowDown;
   IconData get arrowUp;
+  IconData get search;
 }

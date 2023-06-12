@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/bottom_nav_bar/widgets/base_shadow_container.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../data/nav_bar_item.dart';
 import '../widgets/nav_bar_bold_icon.dart';
@@ -34,12 +35,12 @@ class BoldShadowNavBar extends StatelessWidget {
                 ),
               )
               .toList(),
-          // TODO: Read these colors from theme.
-          selectedItemColor: const Color(0xff1A1A1A),
-          unselectedItemColor: const Color(0xff949494),
+          selectedItemColor: context.fyColors.textTenColor,
+          unselectedItemColor: context.fyColors.textSixColor,
           onTap: onTap,
           currentIndex: currentIndex,
-          type: BottomNavigationBarType.fixed, showSelectedLabels: hasTitle,
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: hasTitle,
           showUnselectedLabels: hasTitle,
           elevation: 0,
         ));

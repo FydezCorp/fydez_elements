@@ -1,0 +1,98 @@
+part of '../text_input_a.dart';
+
+class _SimpleTextInput extends StatefulWidget {
+  const _SimpleTextInput({
+    Key? key,
+    required this.controller,
+    required this.label,
+    this.keyboardType,
+    required this.hint,
+    this.validator,
+    this.focusNode,
+    this.textInputAction,
+    this.enabled,
+    this.onEditingComplete,
+    this.onFieldSubmitted,
+    this.onTap,
+    required this.cornerRadius,
+  }) : super(key: key);
+  final TextEditingController controller;
+  final String label;
+  final String hint;
+  final String? Function(String?)? validator;
+  final TextInputType? keyboardType;
+  final FocusNode? focusNode;
+  final TextInputAction? textInputAction;
+  final bool? enabled;
+  final void Function()? onEditingComplete;
+  final void Function(String)? onFieldSubmitted;
+  final void Function()? onTap;
+  final double cornerRadius;
+
+  @override
+  State<_SimpleTextInput> createState() => _SimpleTextInputState();
+}
+
+class _SimpleTextInputState extends State<_SimpleTextInput> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      style: TextStyle(
+          fontSize: 14,
+          color: context.theme.extension<FyTextColor>()!.textTenColor),
+      controller: widget.controller,
+      keyboardType: widget.keyboardType,
+      validator: widget.validator,
+      decoration: InputDecoration(
+        hintText: widget.hint,
+        label: Text(widget.label),
+        enabled: widget.enabled ?? true,
+        filled: true,
+        fillColor: Colors.white,
+        isDense: true,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(widget.cornerRadius),
+          borderSide: BorderSide(
+            color: context.fyColors.textFourColor,
+          ),
+        ),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        hintStyle: TextStyle(
+            color: context.fyColors.textFiveColor,
+            fontSize: 14,
+            fontWeight: FontWeight.w400),
+        labelStyle: TextStyle(
+            color: context.fyColors.textSixColor,
+            fontSize: 14,
+            fontWeight: FontWeight.w400),
+        focusedBorder: OutlineInputBorder(
+            borderSide:
+                BorderSide(color: context.fyColors.textTenColor, width: 1.5),
+            borderRadius: BorderRadius.circular(widget.cornerRadius)),
+        disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
+            borderSide: BorderSide(
+                color: context.fyColors.textFiveColor.withOpacity(0.3))),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
+            borderSide:
+                BorderSide(color: context.fyColors.textFiveColor, width: 1)),
+        focusColor: context.fyColors.textTenColor,
+        floatingLabelStyle: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: context.fyColors.textSixColor),
+        alignLabelWithHint: true,
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
+            borderSide: BorderSide(color: context.colorScheme.error)),
+      ),
+      focusNode: widget.focusNode,
+      textInputAction: widget.textInputAction,
+      onEditingComplete: widget.onEditingComplete,
+      onFieldSubmitted: widget.onFieldSubmitted,
+      onTap: widget.onTap,
+    );
+  }
+}

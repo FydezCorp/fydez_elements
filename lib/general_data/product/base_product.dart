@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fydez_elements/general_data/base_badge.dart';
-import 'package:fydez_elements/general_data/base_variation.dart';
+import 'package:fydez_elements/general_data/product/base_variation.dart';
+
+import 'base_badge.dart';
 
 abstract class BaseProduct {
   final int id;
@@ -8,7 +9,7 @@ abstract class BaseProduct {
   final String image;
   final String price;
   final String finalPrice;
-  final List<BaseVariation> variations;
+  final List<BaseVariation>? variations;
   final BaseBadge? badge;
 
   BaseProduct({
@@ -17,7 +18,7 @@ abstract class BaseProduct {
     required this.image,
     required this.price,
     required this.finalPrice,
-    required this.variations,
+    this.variations,
     this.badge,
   });
 }

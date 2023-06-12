@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
 import '../data/fy_dropdown_item.dart';
@@ -26,7 +27,7 @@ class MaterialDropdownWidget<T> extends StatefulWidget {
 class _MaterialDropdownWidgetState<T> extends State<MaterialDropdownWidget<T>> {
   @override
   Widget build(BuildContext context) {
-    const style = TextStyle(fontSize: 14, color: Color(0xff949494));
+    final style = TextStyle(fontSize: 14, color: context.fyColors.textSixColor);
     return DropdownButton<T>(
       items: widget.items
           .map((e) => DropdownMenuItem<T>(

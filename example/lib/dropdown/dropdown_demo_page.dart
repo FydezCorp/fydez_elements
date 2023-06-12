@@ -14,6 +14,7 @@ class _DropDownDemoPageState extends State<DropDownDemoPage> {
   DropdownType type = DropdownType.connected;
   int number = 0;
   final numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  double cornerRadius = 10.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +41,21 @@ class _DropDownDemoPageState extends State<DropDownDemoPage> {
                     });
                   },
                 ),
+                Slider(
+                  value: cornerRadius,
+                  onChanged: (value) {
+                    setState(() {
+                      cornerRadius = value;
+                    });
+                  },
+                  min: 0,
+                  max: 40,
+                ),
                 FyDropdown.showSimpleDropdown<int>(
                   context,
                   value: number,
                   type: type,
+                  cornerRadius: cornerRadius,
                   items: numbers
                       .map(
                           (e) => FyDropdownItem(title: e.toString(), object: e))
