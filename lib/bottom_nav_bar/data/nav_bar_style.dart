@@ -5,5 +5,17 @@ enum NavBarStyle {
 
   const NavBarStyle(this.value);
   final String value;
-}
 
+  static NavBarStyle fromString(String? value) {
+    switch (value) {
+      case 'bold':
+        return NavBarStyle.bold;
+      case 'transparent':
+        return NavBarStyle.transparent;
+      case 'main title':
+        return NavBarStyle.mainTitle;
+      default:
+        return NavBarStyle.bold;
+    }
+  }
+}
