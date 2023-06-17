@@ -20,6 +20,7 @@ class HelpLinkWidget extends HelpFactoryWidget {
     return WidgetSpan(
       child: GestureDetector(
           onTap: () {
+            // TODO: Make it launch a URL.
             debugPrint(item.href);
           },
           child: Text(
