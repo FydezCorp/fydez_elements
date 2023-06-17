@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum TabbarType {
   underlined,
   lightBackground;
@@ -9,6 +11,10 @@ enum TabbarType {
       case 'lightBackground':
         return TabbarType.lightBackground;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: TabbarType,
+        );
         return TabbarType.underlined;
     }
   }

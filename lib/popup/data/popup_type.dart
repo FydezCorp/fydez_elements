@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum PopupType {
   modal('A'),
   dialog('B');
@@ -12,6 +14,10 @@ enum PopupType {
       case 'B':
         return PopupType.dialog;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: PopupType,
+        );
         return PopupType.modal;
     }
   }

@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum NavBarStyle {
   bold('bold'),
   transparent('transparent'),
@@ -15,6 +17,10 @@ enum NavBarStyle {
       case 'main title':
         return NavBarStyle.mainTitle;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: NavBarStyle,
+        );
         return NavBarStyle.bold;
     }
   }

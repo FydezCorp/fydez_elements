@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum SliderType {
   simple,
   carousel;
@@ -9,6 +11,10 @@ enum SliderType {
       case 'carousel':
         return SliderType.carousel;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: SliderType,
+        );
         return SliderType.simple;
     }
   }

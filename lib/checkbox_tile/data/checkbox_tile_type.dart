@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum CheckboxTileType {
   normal;
 
@@ -6,6 +8,10 @@ enum CheckboxTileType {
       case 'normal':
         return CheckboxTileType.normal;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: CheckboxTileType,
+        );
         return CheckboxTileType.normal;
     }
   }

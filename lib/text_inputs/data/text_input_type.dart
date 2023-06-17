@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum FyInputType {
   A,
   B;
@@ -9,6 +11,10 @@ enum FyInputType {
       case 'B':
         return FyInputType.B;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: FyInputType,
+        );
         return FyInputType.A;
     }
   }

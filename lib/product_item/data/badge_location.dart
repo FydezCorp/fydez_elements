@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum ProductBadgeLocation {
   topSharp('topSharp'),
   bottomSharp('bottomSharp'),
@@ -18,6 +20,10 @@ enum ProductBadgeLocation {
       case 'bottom-round':
         return ProductBadgeLocation.bottomRound;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: ProductBadgeLocation,
+        );
         return ProductBadgeLocation.topSharp;
     }
   }

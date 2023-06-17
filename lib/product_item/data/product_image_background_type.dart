@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum ProductImageBackgroundType {
   grey('grey'),
   white('white'),
@@ -18,6 +20,10 @@ enum ProductImageBackgroundType {
       case 'shadow':
         return ProductImageBackgroundType.shadow;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: ProductImageBackgroundType,
+        );
         return ProductImageBackgroundType.grey;
     }
   }

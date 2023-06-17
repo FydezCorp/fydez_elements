@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum CategoryItemType {
   normal;
 
@@ -6,6 +8,10 @@ enum CategoryItemType {
       case 'normal':
         return CategoryItemType.normal;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: CategoryItemType,
+        );
         return CategoryItemType.normal;
     }
   }

@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum DropdownType {
   connected('a'),
   disconnected('b'),
@@ -18,6 +20,10 @@ enum DropdownType {
       case 'd':
         return DropdownType.material;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: DropdownType,
+        );
         return DropdownType.modal;
     }
   }

@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum NavBarEffect {
   none('none'),
   line('line'),
@@ -15,6 +17,10 @@ enum NavBarEffect {
       case 'none':
         return NavBarEffect.none;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: NavBarEffect,
+        );
         return NavBarEffect.none;
     }
   }

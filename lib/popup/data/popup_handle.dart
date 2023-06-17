@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum PopupHandle {
   inside,
   outside,
@@ -12,6 +14,10 @@ enum PopupHandle {
       case 'close':
         return PopupHandle.close;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: PopupHandle,
+        );
         return PopupHandle.inside;
     }
   }

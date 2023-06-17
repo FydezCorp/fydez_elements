@@ -1,3 +1,5 @@
+import '../const/logger.dart';
+
 enum IconPack {
   material,
   iconsax;
@@ -9,6 +11,10 @@ enum IconPack {
       case 'iconsax':
         return IconPack.iconsax;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: IconPack,
+        );
         return IconPack.material;
     }
   }

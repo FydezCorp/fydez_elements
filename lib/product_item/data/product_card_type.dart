@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum ProductCardType {
   A('A'),
   B('B');
@@ -12,6 +14,10 @@ enum ProductCardType {
       case 'B':
         return ProductCardType.B;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: ProductCardType,
+        );
         return ProductCardType.A;
     }
   }

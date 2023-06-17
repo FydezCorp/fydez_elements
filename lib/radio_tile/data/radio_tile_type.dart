@@ -1,3 +1,5 @@
+import '../../const/logger.dart';
+
 enum RadioTileType {
   normal;
 
@@ -6,6 +8,10 @@ enum RadioTileType {
       case 'normal':
         return RadioTileType.normal;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: value,
+          object: RadioTileType,
+        );
         return RadioTileType.normal;
     }
   }

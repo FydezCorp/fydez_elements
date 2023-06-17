@@ -11,6 +11,7 @@ export 'button/export.dart';
 export 'cart_item/export.dart';
 export 'category_item/export.dart';
 export 'checkbox_tile/export.dart';
+export 'const/logger.dart';
 export 'dropdown/export.dart';
 export 'empty/fy_empty.dart';
 export 'enum/button_design_style.dart';
