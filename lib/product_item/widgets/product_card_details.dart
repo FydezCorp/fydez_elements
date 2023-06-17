@@ -36,21 +36,23 @@ class ProductCardDetails extends StatelessWidget {
             product: product,
           ),
           const SizedBox(height: 5),
-          Row(
-            children: [
-              ...product.variations
-                  .map(
-                    (e) => Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 2,
-                        vertical: 5,
-                      ),
-                      child: e.representative,
-                    ),
-                  )
-                  .toList(),
-            ],
-          )
+          product.variations != null
+              ? Row(
+                  children: [
+                    ...product.variations!
+                        .map(
+                          (e) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 2,
+                              vertical: 5,
+                            ),
+                            child: e.representative,
+                          ),
+                        )
+                        .toList(),
+                  ],
+                )
+              : const SizedBox(),
         ],
       ),
     );

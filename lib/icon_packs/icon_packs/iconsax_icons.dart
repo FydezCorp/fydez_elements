@@ -30,4 +30,7 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get arrowUp => Iconsax.arrow_up_2;
+  
+  @override
+  IconData get search => Iconsax.search_normal;
 }
