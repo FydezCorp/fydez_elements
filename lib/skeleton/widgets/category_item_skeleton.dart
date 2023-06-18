@@ -20,9 +20,9 @@ class CategoryItemSkeleton extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           SizedBox(
             width: 80,
             child: SkeletonLine(),
