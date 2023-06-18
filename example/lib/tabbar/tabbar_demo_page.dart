@@ -55,7 +55,7 @@ class _TabbarDemoPageState extends State<TabbarDemoPage> {
   }
 }
 
-class _TabbarWidget extends StatelessWidget with PreferredSizeWidget {
+class _TabbarWidget extends StatelessWidget implements PreferredSizeWidget {
   final TabbarType type;
   final Function(int) onTabChange;
   const _TabbarWidget({

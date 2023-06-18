@@ -15,19 +15,19 @@ class CartItemSkeleton extends StatelessWidget {
         ),
       ),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      child: Row(
+      child: const Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SkeletonAvatar(
+          SkeletonAvatar(
             style: SkeletonAvatarStyle(
               width: 80,
               height: 80,
             ),
           ),
-          const Gap(10),
+          Gap(10),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               SizedBox(
                 width: 80,
                 child: SkeletonLine(
