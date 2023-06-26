@@ -14,6 +14,7 @@ class CarrouselSlider implements SliderFactory {
     required int delay,
     required double cornerRadius,
     required double margin,
+    required bool isAutoPlay,
   }) {
     return _CarrouselSliderImpl(
       items: items,
@@ -21,6 +22,7 @@ class CarrouselSlider implements SliderFactory {
       cornerRadius: cornerRadius,
       delay: delay,
       margin: margin,
+      isAutoPlay: isAutoPlay,
     );
   }
 }
@@ -31,12 +33,14 @@ class _CarrouselSliderImpl extends StatefulWidget {
   final int delay;
   final double cornerRadius;
   final double margin;
+  final bool isAutoPlay;
   const _CarrouselSliderImpl({
     required this.items,
     required this.aspectRatio,
     required this.cornerRadius,
     required this.margin,
     required this.delay,
+    required this.isAutoPlay,
   });
 
   @override
@@ -66,7 +70,7 @@ class _CarrouselSliderImplState extends State<_CarrouselSliderImpl> {
         );
       },
       options: CarouselOptions(
-        autoPlay: true,
+        autoPlay: widget.isAutoPlay,
         aspectRatio: widget.aspectRatio,
         viewportFraction: 0.75,
         autoPlayInterval: Duration(milliseconds: widget.delay),

@@ -40,7 +40,8 @@ class BoldLineNavBar extends StatelessWidget {
         unselectedItemColor: context.fyColors.textSixColor,
         onTap: onTap,
         currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed, showSelectedLabels: hasTitle,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: hasTitle,
         showUnselectedLabels: hasTitle,
       ),
     );

@@ -16,6 +16,7 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
   double cornerRadius = 16.0;
   double margin = 10.0;
   SliderType type = SliderType.simple;
+  bool isAutoPlay = true;
 
   @override
   Widget build(BuildContext context) {
@@ -84,12 +85,25 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CheckboxListTile(
+                value: isAutoPlay,
+                onChanged: (value) {
+                  setState(() {
+                    isAutoPlay = value!;
+                  });
+                },
+                title: const Text('Auto play?'),
+              ),
+            ),
             FySlider.create(
               aspectRatio: aspectRatio,
               cornerRadius: cornerRadius,
               delay: delay.floor(),
               margin: margin,
               type: type,
+              isAutoPlay: isAutoPlay,
               items: [
                 SliderItem(
                   image: image,

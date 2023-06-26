@@ -12,6 +12,7 @@ abstract class SliderFactory {
     required int delay,
     required double cornerRadius,
     required double margin,
+    required bool isAutoPlay,
   });
 
   factory SliderFactory({required SliderType type}) {

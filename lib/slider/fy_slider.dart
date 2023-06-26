@@ -10,6 +10,7 @@ class FySlider {
     SliderType? type,
     Key? key,
     required List<SliderItem> items,
+    required bool isAutoPlay,
     double aspectRatio = Constants.sliderDefaultAspectRatio,
     int delay = Constants.sliderDefaultDelay,
     double cornerRadius = Constants.sliderDefaultCornerRadius,
@@ -17,12 +18,13 @@ class FySlider {
   }) {
     final finalType = type ?? SliderType.simple;
     return SliderFactory(type: finalType).build(
+      key: key,
       items: items,
-      aspectRatio: aspectRatio,
-      cornerRadius: cornerRadius,
       delay: delay,
       margin: margin,
-      key: key,
+      isAutoPlay: isAutoPlay,
+      aspectRatio: aspectRatio,
+      cornerRadius: cornerRadius,
     );
   }
 }
