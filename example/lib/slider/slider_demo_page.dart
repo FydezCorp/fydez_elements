@@ -116,6 +116,7 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
               delay: delay.floor(),
               margin: margin,
               type: type,
+              hasIndicator: hasIndicator,
               isAutoPlay: isAutoPlay,
               items: [
                 SliderItem(
