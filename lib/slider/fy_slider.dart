@@ -11,6 +11,7 @@ class FySlider {
     Key? key,
     required List<SliderItem> items,
     required bool isAutoPlay,
+    bool hasIndicator = true,
     double aspectRatio = Constants.sliderDefaultAspectRatio,
     int delay = Constants.sliderDefaultDelay,
     double cornerRadius = Constants.sliderDefaultCornerRadius,
@@ -25,6 +26,7 @@ class FySlider {
       isAutoPlay: isAutoPlay,
       aspectRatio: aspectRatio,
       cornerRadius: cornerRadius,
+      hasIndicator: hasIndicator,
     );
   }
 }

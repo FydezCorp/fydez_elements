@@ -15,6 +15,7 @@ class SimpleSlider implements SliderFactory {
     required double cornerRadius,
     required double margin,
     required bool isAutoPlay,
+    required bool hasIndicator,
   }) {
     return _SimpleSliderImpl(
       items: items,
@@ -23,6 +24,7 @@ class SimpleSlider implements SliderFactory {
       delay: delay,
       margin: margin,
       isAutoPlay: isAutoPlay,
+      hasIndicator: hasIndicator,
     );
   }
 }
@@ -34,6 +36,8 @@ class _SimpleSliderImpl extends StatefulWidget {
   final double cornerRadius;
   final double margin;
   final bool isAutoPlay;
+  final bool hasIndicator;
+
   const _SimpleSliderImpl({
     required this.items,
     required this.aspectRatio,
@@ -41,6 +45,7 @@ class _SimpleSliderImpl extends StatefulWidget {
     required this.margin,
     required this.delay,
     required this.isAutoPlay,
+    required this.hasIndicator,
   });
 
   @override
