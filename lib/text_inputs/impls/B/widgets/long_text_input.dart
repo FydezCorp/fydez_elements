@@ -54,12 +54,11 @@ class _LongTextInputState extends State<_LongTextInput> {
         isDense: true,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
-          borderSide:  BorderSide(
+          borderSide: BorderSide(
             color: context.fyColors.textFourColor,
           ),
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,

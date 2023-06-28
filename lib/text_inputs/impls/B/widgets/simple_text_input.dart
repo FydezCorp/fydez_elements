@@ -49,7 +49,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
         enabled: widget.enabled ?? true,
         filled: true,
         fillColor: context.fyColors.textTwoColor,
-        isDense: true,
+        isDense: false,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
@@ -57,7 +57,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
           ),
         ),
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,
@@ -83,7 +83,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: context.fyColors.textSixColor),
-        alignLabelWithHint: true,
+        alignLabelWithHint: false,
       ),
       focusNode: widget.focusNode,
       textInputAction: widget.textInputAction,

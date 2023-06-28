@@ -52,7 +52,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         isDense: true,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
-          borderSide:  BorderSide(
+          borderSide: BorderSide(
             color: context.fyColors.textFourColor,
           ),
         ),
@@ -83,7 +83,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: context.fyColors.textSixColor),
-        alignLabelWithHint: true,
+        alignLabelWithHint: false,
       ),
       focusNode: widget.focusNode,
       textInputAction: widget.textInputAction,

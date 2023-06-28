@@ -125,7 +125,7 @@ class _SecureTextInputState extends State<_SecureTextInput> {
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
                 color: context.fyColors.textSixColor),
-            alignLabelWithHint: true,
+            alignLabelWithHint: false,
           ),
           focusNode: widget.focusNode,
           textInputAction: widget.textInputAction,
