@@ -28,10 +28,11 @@ FyPrimaryColor primaryColors = FyPrimaryColor(
 );
 
 FyThemeParameters themeParameters = FyThemeParameters(
-  buttonCornerRadius: 16,
+  buttonConfiguration: ButtonConfiguration(
+    cornerRadius: 10.0,
+  ),
   defaultHorizontalPadding: 16,
   defaultVerticalPadding: 12,
-  inputsBorderRadius: 16,
   iconPack: IconPack.material,
   productCardConfiguration: ProductItemConfiguration(
     productImageBackgroundType: ProductImageBackgroundType.shadow,

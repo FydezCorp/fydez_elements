@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/theme_extensions/data/button_configuration.dart';
 
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
-  final double buttonCornerRadius;
-  final double inputsBorderRadius;
+  final ButtonConfiguration buttonConfiguration;
   final double defaultVerticalPadding;
   final double defaultHorizontalPadding;
   final IconPack iconPack;
@@ -19,8 +19,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final TabbarType tabbarType;
   final TextInputConfiguration textInputConfiguration;
   FyThemeParameters({
-    required this.buttonCornerRadius,
-    required this.inputsBorderRadius,
+    required this.buttonConfiguration,
     required this.defaultVerticalPadding,
     required this.defaultHorizontalPadding,
     required this.iconPack,
@@ -39,8 +38,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
 
   @override
   ThemeExtension<FyThemeParameters> copyWith({
-    double? buttonCornerRadius,
-    double? inputsBorderRadius,
+    ButtonConfiguration? buttonConfiguration,
     double? defaultVerticalPadding,
     double? defaultHorizontalPadding,
     IconPack? iconPack,
@@ -57,8 +55,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     TextInputConfiguration? textInputConfiguration,
   }) {
     return FyThemeParameters(
-      buttonCornerRadius: buttonCornerRadius ?? this.buttonCornerRadius,
-      inputsBorderRadius: inputsBorderRadius ?? this.inputsBorderRadius,
+      buttonConfiguration: buttonConfiguration ?? this.buttonConfiguration,
       defaultVerticalPadding:
           defaultVerticalPadding ?? this.defaultVerticalPadding,
       defaultHorizontalPadding:
@@ -90,8 +87,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       return this;
     }
     return FyThemeParameters(
-      buttonCornerRadius: buttonCornerRadius,
-      inputsBorderRadius: inputsBorderRadius,
+      buttonConfiguration: buttonConfiguration,
       defaultVerticalPadding: defaultVerticalPadding,
       defaultHorizontalPadding: defaultHorizontalPadding,
       iconPack: iconPack,
