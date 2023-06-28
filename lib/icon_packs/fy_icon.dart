@@ -21,7 +21,6 @@ class FyIcon implements IconList {
     // Use the provided icon pack, or the default from fyParameters if none is provided.
     final iconPack = this.iconPack ?? context.fyParameters.iconPack;
     switch (iconPack) {
-
       // Return the Material Icons icon pack.
       case IconPack.material:
         return MaterialIcons();
@@ -60,6 +59,9 @@ class FyIcon implements IconList {
   @override
   IconData get arrowUp => getIconPack.arrowUp;
 
-    @override
+  @override
   IconData get search => getIconPack.search;
+
+  @override
+  IconData get eyeSlash => getIconPack.eyeSlash;
 }

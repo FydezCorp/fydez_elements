@@ -31,4 +31,7 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get search => Icons.search;
+
+  @override
+  IconData get eyeSlash => Icons.visibility_off_rounded;
 }

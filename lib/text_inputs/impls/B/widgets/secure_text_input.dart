@@ -80,11 +80,11 @@ class _SecureTextInputState extends State<_SecureTextInput> {
               onPressed: _changePasswordVisibility,
               icon: _isObscure
                   ? Icon(
-                      Iconsax.eye,
+                      FyIcon(context).eye,
                       color: getIconColor(),
                     )
                   : Icon(
-                      Iconsax.eye_slash,
+                      FyIcon(context).eyeSlash,
                       color: getIconColor(),
                     ),
             ),
@@ -93,7 +93,7 @@ class _SecureTextInputState extends State<_SecureTextInput> {
             fillColor: context.fyColors.textTwoColor,
             border: UnderlineInputBorder(
               borderRadius: BorderRadius.circular(widget.cornerRadius),
-              borderSide:  BorderSide(
+              borderSide: BorderSide(
                 color: context.fyColors.textFourColor,
               ),
             ),

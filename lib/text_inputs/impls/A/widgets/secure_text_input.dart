@@ -80,11 +80,11 @@ class _SecureTextInputState extends State<_SecureTextInput> {
               onPressed: _changePasswordVisibility,
               icon: _isObscure
                   ? Icon(
-                      Iconsax.eye,
+                      FyIcon(context).eye,
                       color: getIconColor(),
                     )
                   : Icon(
-                      Iconsax.eye_slash,
+                      FyIcon(context).eyeSlash,
                       color: getIconColor(),
                     ),
             ),
