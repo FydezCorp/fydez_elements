@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/theme_extensions/data/button_configuration.dart';
 
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final ButtonConfiguration buttonConfiguration;

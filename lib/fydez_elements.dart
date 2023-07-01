@@ -34,7 +34,7 @@ export 'popup/export.dart';
 export 'product_item/export.dart';
 export 'radio_tile/export.dart';
 export 'refactored_buttons/data/button_state.dart';
-export 'refactored_buttons/filled/export.dart';
+export 'refactored_buttons/export.dart';
 export 'skeleton/fy_skeletons.dart';
 export 'slider/export.dart';
 export 'tabbar/export.dart';

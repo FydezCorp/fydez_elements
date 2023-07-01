@@ -14,6 +14,7 @@ class RefactoredButtonsDemoPage extends StatefulWidget {
 class _RefactoredButtonsDemoPageState extends State<RefactoredButtonsDemoPage> {
   ButtonState buttonState = ButtonState.active;
   FilledButtonType filledButtonType = FilledButtonType.material;
+  OutlinedButtonType outlinedButtonType = OutlinedButtonType.material;
   double cornerRadius = 0;
   @override
   Widget build(BuildContext context) {
@@ -82,6 +83,41 @@ class _RefactoredButtonsDemoPageState extends State<RefactoredButtonsDemoPage> {
               ),
               const Gap(10.0),
               FyFilledButton.create(
+                context,
+                onPressed: () {},
+                title: 'Filled Button with Icon',
+                cornerRadius: cornerRadius,
+                icon: FyIcon(context).heart,
+                state: buttonState,
+              ),
+              const Divider(),
+              const TitleWidget(
+                title: 'Outlined Button',
+              ),
+              DropdownButton<OutlinedButtonType>(
+                items: OutlinedButtonType.values
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text('Outlined Button Type: ${e.name}'),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    outlinedButtonType = value!;
+                  });
+                },
+                value: outlinedButtonType,
+              ),
+              const Gap(10.0),
+              FyOutlinedButton.create(
+                context,
+                onPressed: () {},
+                title: 'Outlined Button',
+                cornerRadius: cornerRadius,
+                state: buttonState,
+              ),
+              const Gap(10.0),
+              FyOutlinedButton.create(
                 context,
                 onPressed: () {},
                 title: 'Filled Button with Icon',

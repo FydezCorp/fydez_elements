@@ -4,9 +4,9 @@ import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../../const/constants.dart';
 import '../../../fydez_elements.dart';
-import '../filled_button_factory.dart';
+import '../outlined_button_factory.dart';
 
-class MaterialFilledButton implements FilledButtonFactory {
+class MaterialOutlinedButton implements OutlinedButtonFactory {
   @override
   Widget build({
     required VoidCallback onPressed,
@@ -18,7 +18,7 @@ class MaterialFilledButton implements FilledButtonFactory {
     required ButtonState state,
     double? height,
   }) {
-    return FilledMaterialButtonFactoryWidget(
+    return OutlinedMaterialButtonFactoryWidget(
       onPressed: onPressed,
       title: title,
       icon: icon,
@@ -31,8 +31,8 @@ class MaterialFilledButton implements FilledButtonFactory {
   }
 }
 
-class FilledMaterialButtonFactoryWidget extends StatelessWidget {
-  const FilledMaterialButtonFactoryWidget({
+class OutlinedMaterialButtonFactoryWidget extends StatelessWidget {
+  const OutlinedMaterialButtonFactoryWidget({
     super.key,
     required this.cornerRadius,
     required this.onPressed,
@@ -89,9 +89,9 @@ class FilledMaterialButtonFactoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height ?? Constants.buttonDefaultHeight,
-      child: ElevatedButton(
+      child: OutlinedButton(
         onPressed: _getMethod,
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
