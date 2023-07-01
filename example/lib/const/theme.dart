@@ -29,7 +29,8 @@ FyPrimaryColor primaryColors = FyPrimaryColor(
 
 FyThemeParameters themeParameters = FyThemeParameters(
   buttonConfiguration: ButtonConfiguration(
-    cornerRadius: 10.0,
+    filledCornerRadius: 20.0,
+    filledType: FilledButtonType.material,
   ),
   defaultHorizontalPadding: 16,
   defaultVerticalPadding: 12,
