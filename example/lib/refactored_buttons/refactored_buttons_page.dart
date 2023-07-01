@@ -15,6 +15,7 @@ class _RefactoredButtonsDemoPageState extends State<RefactoredButtonsDemoPage> {
   ButtonState buttonState = ButtonState.active;
   FilledButtonType filledButtonType = FilledButtonType.material;
   OutlinedButtonType outlinedButtonType = OutlinedButtonType.material;
+  TextButtonType textButtonType = TextButtonType.material;
   double cornerRadius = 0;
   @override
   Widget build(BuildContext context) {
@@ -121,6 +122,41 @@ class _RefactoredButtonsDemoPageState extends State<RefactoredButtonsDemoPage> {
                 context,
                 onPressed: () {},
                 title: 'Filled Button with Icon',
+                cornerRadius: cornerRadius,
+                icon: FyIcon(context).heart,
+                state: buttonState,
+              ),
+              const Divider(),
+              const TitleWidget(
+                title: 'Text Button',
+              ),
+              DropdownButton<TextButtonType>(
+                items: TextButtonType.values
+                    .map((e) => DropdownMenuItem(
+                          value: e,
+                          child: Text('Text Button Type: ${e.name}'),
+                        ))
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    textButtonType = value!;
+                  });
+                },
+                value: textButtonType,
+              ),
+              const Gap(10.0),
+              FyTextButton.create(
+                context,
+                onPressed: () {},
+                title: 'Text Button',
+                cornerRadius: cornerRadius,
+                state: buttonState,
+              ),
+              const Gap(10.0),
+              FyTextButton.create(
+                context,
+                onPressed: () {},
+                title: 'Text Button with Icon',
                 cornerRadius: cornerRadius,
                 icon: FyIcon(context).heart,
                 state: buttonState,
