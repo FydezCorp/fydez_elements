@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/theme_extensions/data/notifier_configuration.dart';
 
 class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final ButtonConfiguration buttonConfiguration;
@@ -17,6 +18,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
   final RadioTileType radioTileType;
   final TabbarType tabbarType;
   final TextInputConfiguration textInputConfiguration;
+  final NotifierConfiguration notifierConfiguration;
   FyThemeParameters({
     required this.buttonConfiguration,
     required this.defaultVerticalPadding,
@@ -33,6 +35,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     required this.radioTileType,
     required this.tabbarType,
     required this.textInputConfiguration,
+    required this.notifierConfiguration,
   });
 
   @override
@@ -52,6 +55,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
     RadioTileType? radioTileType,
     TabbarType? tabbarType,
     TextInputConfiguration? textInputConfiguration,
+    NotifierConfiguration? notifierConfiguration,
   }) {
     return FyThemeParameters(
       buttonConfiguration: buttonConfiguration ?? this.buttonConfiguration,
@@ -76,6 +80,8 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       tabbarType: tabbarType ?? this.tabbarType,
       textInputConfiguration:
           textInputConfiguration ?? this.textInputConfiguration,
+      notifierConfiguration:
+          notifierConfiguration ?? this.notifierConfiguration,
     );
   }
 
@@ -101,6 +107,7 @@ class FyThemeParameters extends ThemeExtension<FyThemeParameters> {
       radioTileType: radioTileType,
       tabbarType: tabbarType,
       textInputConfiguration: textInputConfiguration,
+      notifierConfiguration: notifierConfiguration,
     );
   }
 }

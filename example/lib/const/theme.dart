@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/theme_extensions/data/notifier_configuration.dart';
 
 FyTextColor textColors = FyTextColor(
   textOneColor: const Color(0xFFF9F9F9),
@@ -28,54 +29,57 @@ FyPrimaryColor primaryColors = FyPrimaryColor(
 );
 
 FyThemeParameters themeParameters = FyThemeParameters(
-  buttonConfiguration: ButtonConfiguration(
-    filledCornerRadius: 20.0,
-    filledType: FilledButtonType.material,
-    outlinedCornerRadius: 10.0,
-    outlinedType: OutlinedButtonType.material,
-    textCornerRadius: 10.0,
-    textType: TextButtonType.material,
-    iconType: IconButtonType.material,
-  ),
-  defaultHorizontalPadding: 16,
-  defaultVerticalPadding: 12,
-  iconPack: IconPack.material,
-  productCardConfiguration: ProductItemConfiguration(
-    productImageBackgroundType: ProductImageBackgroundType.shadow,
-    productBadgeLocation: ProductBadgeLocation.topRound,
-    productCardType: ProductCardType.B,
-    productCornerRadius: 10,
-  ),
-  bottomNavBarConfiguration: BottomNavBarConfiguration(
-    style: NavBarStyle.transparent,
-    cornerRadius: 0,
-    effect: NavBarEffect.shadow,
-    hasTitle: false,
-  ),
-  cartItemType: CartItemType.normal,
-  categoryItemType: CategoryItemType.normal,
-  checkboxTileType: CheckboxTileType.normal,
-  dropdownConfiguration: DropdownConfiguration(
-    type: DropdownType.modal,
-    cornerRadius: 10.0,
-  ),
-  marketItemConfiguration: MarketItemConfiguration(
-    cornerRadius: 20.0,
-    type: MarketItemType.normal,
-  ),
-  popupConfiguration: PopupConfiguration(
-    cornerRadius: 20.0,
-    type: PopupType.modal,
-    background: PopupBG.blur,
-    handle: PopupHandle.inside,
-  ),
-  radioTileType: RadioTileType.normal,
-  tabbarType: TabbarType.underlined,
-  textInputConfiguration: TextInputConfiguration(
-    type: FyInputType.A,
-    cornerRadius: 10.0,
-  ),
-);
+    buttonConfiguration: ButtonConfiguration(
+      filledCornerRadius: 20.0,
+      filledType: FilledButtonType.material,
+      outlinedCornerRadius: 10.0,
+      outlinedType: OutlinedButtonType.material,
+      textCornerRadius: 10.0,
+      textType: TextButtonType.material,
+      iconType: IconButtonType.material,
+    ),
+    defaultHorizontalPadding: 16,
+    defaultVerticalPadding: 12,
+    iconPack: IconPack.material,
+    productCardConfiguration: ProductItemConfiguration(
+      productImageBackgroundType: ProductImageBackgroundType.shadow,
+      productBadgeLocation: ProductBadgeLocation.topRound,
+      productCardType: ProductCardType.B,
+      productCornerRadius: 10,
+    ),
+    bottomNavBarConfiguration: BottomNavBarConfiguration(
+      style: NavBarStyle.transparent,
+      cornerRadius: 0,
+      effect: NavBarEffect.shadow,
+      hasTitle: false,
+    ),
+    cartItemType: CartItemType.normal,
+    categoryItemType: CategoryItemType.normal,
+    checkboxTileType: CheckboxTileType.normal,
+    dropdownConfiguration: DropdownConfiguration(
+      type: DropdownType.modal,
+      cornerRadius: 10.0,
+    ),
+    marketItemConfiguration: MarketItemConfiguration(
+      cornerRadius: 20.0,
+      type: MarketItemType.normal,
+    ),
+    popupConfiguration: PopupConfiguration(
+      cornerRadius: 20.0,
+      type: PopupType.modal,
+      background: PopupBG.blur,
+      handle: PopupHandle.inside,
+    ),
+    radioTileType: RadioTileType.normal,
+    tabbarType: TabbarType.underlined,
+    textInputConfiguration: TextInputConfiguration(
+      type: FyInputType.A,
+      cornerRadius: 10.0,
+    ),
+    notifierConfiguration: NotifierConfiguration(
+      cornerRadius: 10.0,
+      bgType: NotifierBGType.normal,
+    ));
 
 ColorScheme colorScheme = const ColorScheme(
   brightness: Brightness.light,
