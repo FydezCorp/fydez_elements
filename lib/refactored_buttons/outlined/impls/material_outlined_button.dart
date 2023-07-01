@@ -96,6 +96,14 @@ class OutlinedMaterialButtonFactoryWidget extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
           ),
+          foregroundColor: context.colorScheme.primary,
+          elevation: 0,
+          side: BorderSide(color: context.colorScheme.primary, width: 1.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          textStyle: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         child: _getChild(context),
       ),

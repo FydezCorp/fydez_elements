@@ -96,6 +96,12 @@ class TextMaterialButtonFactoryWidget extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
           ),
+          foregroundColor: const Color(0xFF949494),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          textStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+          ),
         ),
         child: _getChild(context),
       ),

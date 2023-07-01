@@ -129,44 +129,45 @@ ThemeData theme = ThemeData(
         fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff6C6C6C)),
   ),
   hintColor: const Color(0xffB4B4B4),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      elevation: 0,
-      disabledBackgroundColor: const Color(0xFFFCDFB1),
-      shadowColor: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      textStyle: const TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 14,
-        color: Colors.white,
-      ),
-    ),
-  ),
-  outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-    foregroundColor: colorScheme.primary,
-    elevation: 0,
-    side: BorderSide(color: colorScheme.primary, width: 1.0),
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-    textStyle: const TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-    ),
-  )),
-  textButtonTheme: TextButtonThemeData(
-    style: TextButton.styleFrom(
-      foregroundColor: const Color(0xFF949494),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      disabledForegroundColor: const Color(0xFF949494).withOpacity(0.38),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-      textStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-      ),
-    ),
-  ),
+  // elevatedButtonTheme: ElevatedButtonThemeData(
+  //   style: ElevatedButton.styleFrom(
+  //     elevation: 0,
+  //     disabledBackgroundColor: const Color(0xFFFCDFB1),
+  //     shadowColor: Colors.white,
+  //     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  //     textStyle: const TextStyle(
+  //       fontWeight: FontWeight.w500,
+  //       fontSize: 14,
+  //       color: Colors.white,
+  //     ),
+  //   ),
+  // ),
+  // outlinedButtonTheme: OutlinedButtonThemeData(
+  //   style: OutlinedButton.styleFrom(
+  //     foregroundColor: colorScheme.primary,
+  //     elevation: 0,
+  //     side: BorderSide(color: colorScheme.primary, width: 1.0),
+  //     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  //     textStyle: const TextStyle(
+  //       fontSize: 14,
+  //       fontWeight: FontWeight.w500,
+  //     ),
+  //   ),
+  // ),
+  // textButtonTheme: TextButtonThemeData(
+  //   style: TextButton.styleFrom(
+  //     foregroundColor: const Color(0xFF949494),
+  //     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //     disabledForegroundColor: const Color(0xFF949494).withOpacity(0.38),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+  //     textStyle: const TextStyle(
+  //       fontSize: 12,
+  //       fontWeight: FontWeight.w400,
+  //     ),
+  //   ),
+  // ),
   bottomSheetTheme: const BottomSheetThemeData(
     backgroundColor: Colors.red,
     modalBackgroundColor: Colors.white,

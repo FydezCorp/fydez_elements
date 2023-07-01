@@ -89,12 +89,19 @@ class FilledMaterialButtonFactoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height ?? Constants.buttonDefaultHeight,
-      child: ElevatedButton(
+      child: FilledButton(
         onPressed: _getMethod,
-        style: ElevatedButton.styleFrom(
+        style: FilledButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
+          ),
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          textStyle: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+            color: foregroundColor,
           ),
         ),
         child: _getChild(context),
