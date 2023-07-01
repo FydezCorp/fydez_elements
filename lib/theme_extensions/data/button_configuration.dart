@@ -7,6 +7,7 @@ class ButtonConfiguration {
   final OutlinedButtonType outlinedType;
   final double textCornerRadius;
   final TextButtonType textType;
+  final IconButtonType iconType;
 
   ButtonConfiguration({
     required this.filledCornerRadius,
@@ -15,5 +16,6 @@ class ButtonConfiguration {
     required this.outlinedType,
     required this.textCornerRadius,
     required this.textType,
+    required this.iconType,
   });
 }

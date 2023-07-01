@@ -35,6 +35,7 @@ FyThemeParameters themeParameters = FyThemeParameters(
     outlinedType: OutlinedButtonType.material,
     textCornerRadius: 10.0,
     textType: TextButtonType.material,
+    iconType: IconButtonType.material,
   ),
   defaultHorizontalPadding: 16,
   defaultVerticalPadding: 12,
