@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
+import '../const/logger.dart';
 import 'icon_list.dart';
 import 'icon_pack.dart';
 import 'icon_packs/iconsax_icons.dart';
@@ -83,6 +84,10 @@ class FyIcon implements IconList {
       case 'eye':
         return FyIcon(context, iconPack: finalIconPack).eye;
       default:
+        SerializationErrorLogger.showConfigError(
+          value: icon,
+          object: FyIcon,
+        );
         return FyIcon(context, iconPack: finalIconPack).home;
     }
   }
