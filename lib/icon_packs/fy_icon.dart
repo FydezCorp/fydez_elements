@@ -64,4 +64,26 @@ class FyIcon implements IconList {
 
   @override
   IconData get eyeSlash => getIconPack.eyeSlash;
+
+  /// Returns the appropriate icon based on the provided icon name.
+  static IconData fromString(
+    BuildContext context, {
+    required String? icon,
+    IconPack? iconPack,
+  }) {
+    final finalIconPack = iconPack ?? context.fyParameters.iconPack;
+    switch (icon) {
+      // TODO: Implement All Icons.
+      case 'home':
+        return FyIcon(context, iconPack: finalIconPack).home;
+      case 'heart':
+        return FyIcon(context, iconPack: finalIconPack).heart;
+      case 'store':
+        return FyIcon(context, iconPack: finalIconPack).store;
+      case 'eye':
+        return FyIcon(context, iconPack: finalIconPack).eye;
+      default:
+        return FyIcon(context, iconPack: finalIconPack).home;
+    }
+  }
 }
