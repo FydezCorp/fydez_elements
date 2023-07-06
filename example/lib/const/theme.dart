@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:fydez_elements/theme_extensions/data/notifier_configuration.dart';
 
 FyTextColor textColors = FyTextColor(
   textOneColor: const Color(0xFFF9F9F9),
@@ -28,47 +29,57 @@ FyPrimaryColor primaryColors = FyPrimaryColor(
 );
 
 FyThemeParameters themeParameters = FyThemeParameters(
-  buttonCornerRadius: 16,
-  defaultHorizontalPadding: 16,
-  defaultVerticalPadding: 12,
-  inputsBorderRadius: 16,
-  iconPack: IconPack.material,
-  productCardConfiguration: ProductItemConfiguration(
-    productImageBackgroundType: ProductImageBackgroundType.shadow,
-    productBadgeLocation: ProductBadgeLocation.topRound,
-    productCardType: ProductCardType.B,
-    productCornerRadius: 10,
-  ),
-  bottomNavBarConfiguration: BottomNavBarConfiguration(
-    style: NavBarStyle.transparent,
-    cornerRadius: 0,
-    effect: NavBarEffect.shadow,
-    hasTitle: false,
-  ),
-  cartItemType: CartItemType.normal,
-  categoryItemType: CategoryItemType.normal,
-  checkboxTileType: CheckboxTileType.normal,
-  dropdownConfiguration: DropdownConfiguration(
-    type: DropdownType.modal,
-    cornerRadius: 10.0,
-  ),
-  marketItemConfiguration: MarketItemConfiguration(
-    cornerRadius: 20.0,
-    type: MarketItemType.normal,
-  ),
-  popupConfiguration: PopupConfiguration(
-    cornerRadius: 20.0,
-    type: PopupType.modal,
-    background: PopupBG.blur,
-    handle: PopupHandle.inside,
-  ),
-  radioTileType: RadioTileType.normal,
-  tabbarType: TabbarType.underlined,
-  textInputConfiguration: TextInputConfiguration(
-    type: FyInputType.A,
-    cornerRadius: 10.0,
-  ),
-);
+    buttonConfiguration: ButtonConfiguration(
+      filledCornerRadius: 20.0,
+      filledType: FilledButtonType.material,
+      outlinedCornerRadius: 10.0,
+      outlinedType: OutlinedButtonType.material,
+      textCornerRadius: 10.0,
+      textType: TextButtonType.material,
+      iconType: IconButtonType.material,
+    ),
+    defaultHorizontalPadding: 16,
+    defaultVerticalPadding: 12,
+    iconPack: IconPack.material,
+    productCardConfiguration: ProductItemConfiguration(
+      productImageBackgroundType: ProductImageBackgroundType.shadow,
+      productBadgeLocation: ProductBadgeLocation.topRound,
+      productCardType: ProductCardType.B,
+      productCornerRadius: 10,
+    ),
+    bottomNavBarConfiguration: BottomNavBarConfiguration(
+      style: NavBarStyle.transparent,
+      cornerRadius: 0,
+      effect: NavBarEffect.shadow,
+      hasTitle: false,
+    ),
+    cartItemType: CartItemType.normal,
+    categoryItemType: CategoryItemType.normal,
+    checkboxTileType: CheckboxTileType.normal,
+    dropdownConfiguration: DropdownConfiguration(
+      type: DropdownType.modal,
+      cornerRadius: 10.0,
+    ),
+    marketItemConfiguration: MarketItemConfiguration(
+      cornerRadius: 20.0,
+      type: MarketItemType.normal,
+    ),
+    popupConfiguration: PopupConfiguration(
+      cornerRadius: 20.0,
+      type: PopupType.modal,
+      background: PopupBG.blur,
+      handle: PopupHandle.inside,
+    ),
+    radioTileType: RadioTileType.normal,
+    tabbarType: TabbarType.underlined,
+    textInputConfiguration: TextInputConfiguration(
+      type: FyInputType.A,
+      cornerRadius: 10.0,
+    ),
+    notifierConfiguration: NotifierConfiguration(
+      cornerRadius: 10.0,
+      bgType: NotifierBGType.normal,
+    ));
 
 ColorScheme colorScheme = const ColorScheme(
   brightness: Brightness.light,
@@ -123,44 +134,45 @@ ThemeData theme = ThemeData(
         fontSize: 12, fontWeight: FontWeight.w400, color: Color(0xff6C6C6C)),
   ),
   hintColor: const Color(0xffB4B4B4),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      elevation: 0,
-      disabledBackgroundColor: const Color(0xFFFCDFB1),
-      shadowColor: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      textStyle: const TextStyle(
-        fontWeight: FontWeight.w500,
-        fontSize: 14,
-        color: Colors.white,
-      ),
-    ),
-  ),
-  outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-    foregroundColor: colorScheme.primary,
-    elevation: 0,
-    side: BorderSide(color: colorScheme.primary, width: 1.0),
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-    textStyle: const TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-    ),
-  )),
-  textButtonTheme: TextButtonThemeData(
-    style: TextButton.styleFrom(
-      foregroundColor: const Color(0xFF949494),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      disabledForegroundColor: const Color(0xFF949494).withOpacity(0.38),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-      textStyle: const TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-      ),
-    ),
-  ),
+  // elevatedButtonTheme: ElevatedButtonThemeData(
+  //   style: ElevatedButton.styleFrom(
+  //     elevation: 0,
+  //     disabledBackgroundColor: const Color(0xFFFCDFB1),
+  //     shadowColor: Colors.white,
+  //     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  //     textStyle: const TextStyle(
+  //       fontWeight: FontWeight.w500,
+  //       fontSize: 14,
+  //       color: Colors.white,
+  //     ),
+  //   ),
+  // ),
+  // outlinedButtonTheme: OutlinedButtonThemeData(
+  //   style: OutlinedButton.styleFrom(
+  //     foregroundColor: colorScheme.primary,
+  //     elevation: 0,
+  //     side: BorderSide(color: colorScheme.primary, width: 1.0),
+  //     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+  //     textStyle: const TextStyle(
+  //       fontSize: 14,
+  //       fontWeight: FontWeight.w500,
+  //     ),
+  //   ),
+  // ),
+  // textButtonTheme: TextButtonThemeData(
+  //   style: TextButton.styleFrom(
+  //     foregroundColor: const Color(0xFF949494),
+  //     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+  //     disabledForegroundColor: const Color(0xFF949494).withOpacity(0.38),
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+  //     textStyle: const TextStyle(
+  //       fontSize: 12,
+  //       fontWeight: FontWeight.w400,
+  //     ),
+  //   ),
+  // ),
   bottomSheetTheme: const BottomSheetThemeData(
     backgroundColor: Colors.red,
     modalBackgroundColor: Colors.white,

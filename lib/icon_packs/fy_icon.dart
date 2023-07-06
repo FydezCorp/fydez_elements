@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
+import '../const/logger.dart';
 import 'icon_list.dart';
 import 'icon_pack.dart';
 import 'icon_packs/iconsax_icons.dart';
@@ -21,7 +22,6 @@ class FyIcon implements IconList {
     // Use the provided icon pack, or the default from fyParameters if none is provided.
     final iconPack = this.iconPack ?? context.fyParameters.iconPack;
     switch (iconPack) {
-
       // Return the Material Icons icon pack.
       case IconPack.material:
         return MaterialIcons();
@@ -60,6 +60,35 @@ class FyIcon implements IconList {
   @override
   IconData get arrowUp => getIconPack.arrowUp;
 
-    @override
+  @override
   IconData get search => getIconPack.search;
+
+  @override
+  IconData get eyeSlash => getIconPack.eyeSlash;
+
+  /// Returns the appropriate icon based on the provided icon name.
+  static IconData fromString(
+    BuildContext context, {
+    required String? icon,
+    IconPack? iconPack,
+  }) {
+    final finalIconPack = iconPack ?? context.fyParameters.iconPack;
+    switch (icon) {
+      // TODO: Implement All Icons.
+      case 'home':
+        return FyIcon(context, iconPack: finalIconPack).home;
+      case 'heart':
+        return FyIcon(context, iconPack: finalIconPack).heart;
+      case 'store':
+        return FyIcon(context, iconPack: finalIconPack).store;
+      case 'eye':
+        return FyIcon(context, iconPack: finalIconPack).eye;
+      default:
+        SerializationErrorLogger.showConfigError(
+          value: icon,
+          object: FyIcon,
+        );
+        return FyIcon(context, iconPack: finalIconPack).home;
+    }
+  }
 }

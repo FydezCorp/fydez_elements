@@ -36,6 +36,12 @@ class HomePage extends StatelessWidget {
       ),
       ElevatedButton(
         onPressed: () {
+          context.push(FydezDemoRoutes.refactoredButtons);
+        },
+        child: const Text('refactoredButtons'),
+      ),
+      ElevatedButton(
+        onPressed: () {
           context.push(FydezDemoRoutes.popups);
         },
         child: const Text('Popups'),

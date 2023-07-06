@@ -18,6 +18,7 @@ abstract class FyButton extends StatelessWidget {
   final ButtonOption options;
   final bool? loading;
 
+  @Deprecated('Use `FyFilledButton` instead.')
   static Widget filled({
     required VoidCallback onPressed,
     required FilledButtonOption options,
@@ -30,6 +31,7 @@ abstract class FyButton extends StatelessWidget {
     );
   }
 
+  @Deprecated('Use `FyOutlinedButton` instead.')
   static Widget outlined({
     required VoidCallback onPressed,
     required OutlinedButtonOption options,
@@ -42,6 +44,7 @@ abstract class FyButton extends StatelessWidget {
     );
   }
 
+  @Deprecated('Use `FyTextButton` instead.')
   static Widget text({
     required VoidCallback onPressed,
     required TextButtonOption options,
@@ -54,6 +57,7 @@ abstract class FyButton extends StatelessWidget {
     );
   }
 
+  @Deprecated('Use `FyIconButton` instead.')
   static Widget icon({
     required VoidCallback onPressed,
     required IconButtonOption options,

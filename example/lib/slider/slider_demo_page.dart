@@ -16,6 +16,8 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
   double cornerRadius = 16.0;
   double margin = 10.0;
   SliderType type = SliderType.simple;
+  bool isAutoPlay = true;
+  bool hasIndicator = true;
 
   @override
   Widget build(BuildContext context) {
@@ -84,12 +86,38 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CheckboxListTile(
+                value: isAutoPlay,
+                onChanged: (value) {
+                  setState(() {
+                    isAutoPlay = value!;
+                  });
+                },
+                title: const Text('Auto play?'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CheckboxListTile(
+                value: hasIndicator,
+                onChanged: (value) {
+                  setState(() {
+                    hasIndicator = value!;
+                  });
+                },
+                title: const Text('Has indicator?'),
+              ),
+            ),
             FySlider.create(
               aspectRatio: aspectRatio,
               cornerRadius: cornerRadius,
               delay: delay.floor(),
               margin: margin,
               type: type,
+              hasIndicator: hasIndicator,
+              isAutoPlay: isAutoPlay,
               items: [
                 SliderItem(
                   image: image,

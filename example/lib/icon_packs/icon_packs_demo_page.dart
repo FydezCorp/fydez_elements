@@ -13,6 +13,7 @@ class IconPacksDemoPage extends StatefulWidget {
 class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
   final List<IconPack> iconPackList = IconPack.values;
   IconPack selectedIconPack = IconPack.material;
+  String? iconName;
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +112,32 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                   ),
                 ],
               ),
+              Row(
+                children: [
+                  Expanded(
+                      child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: 'Icon Name',
+                      hintText: 'Enter Icon Name',
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        iconName = value;
+                      });
+                    },
+                  )),
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Icon(
+                      FyIcon.fromString(
+                        context,
+                        icon: iconName,
+                        iconPack: selectedIconPack,
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),

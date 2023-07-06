@@ -5,6 +5,7 @@ abstract class IconList {
   IconData get login;
   IconData get logout;
   IconData get eye;
+  IconData get eyeSlash;
   IconData get user;
   IconData get heart;
   IconData get store;

@@ -10,6 +10,7 @@ import 'package:example/nav_bar/nav_bar_demo_page.dart';
 import 'package:example/notifier/notifier_demo_page.dart';
 import 'package:example/popups/popups_demo_page.dart';
 import 'package:example/product_gridview/product_grid_view_demo_page.dart';
+import 'package:example/refactored_buttons/refactored_buttons_page.dart';
 import 'package:example/routes.dart';
 import 'package:example/skeletons/skeletons_demo_page.dart';
 import 'package:example/slider/slider_demo_page.dart';
@@ -52,6 +53,12 @@ class FydezDemoRouter {
         path: FydezDemoRoutes.buttons,
         builder: (context, state) {
           return const ButtonDemoPage();
+        },
+      ),
+      GoRoute(
+        path: FydezDemoRoutes.refactoredButtons,
+        builder: (context, state) {
+          return const RefactoredButtonsDemoPage();
         },
       ),
       GoRoute(

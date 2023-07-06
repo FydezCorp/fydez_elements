@@ -1,4 +1,5 @@
 export 'data/bottom_nav_bar_configuration.dart';
+export 'data/button_configuration.dart';
 export 'data/dropdown_configuration.dart';
 export 'data/market_item_configuration.dart';
 export 'data/popup_configuration.dart';

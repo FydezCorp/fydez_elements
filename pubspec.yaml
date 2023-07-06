@@ -1,6 +1,6 @@
 name: fydez_elements
 description: A Package Containing UI Elements for Fydez App Builder
-version: 0.0.1
+version: 0.0.2
 homepage: https://fydez.com/
 
 environment:
