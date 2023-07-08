@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:fydez_elements/fydez_elements.dart';
 
 class DialogContainer extends StatelessWidget {
   final Widget child;
@@ -26,7 +26,7 @@ class DialogContainer extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                icon: const Icon(Iconsax.close_circle)),
+                icon: Icon(FyIcon(context).popUpClose)),
           ),
           Container(
             padding: const EdgeInsets.all(20),
