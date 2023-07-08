@@ -110,6 +110,202 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).search,
                     name: 'search',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarCart,
+                    name: 'navBarCart',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarCartActive,
+                    name: 'navBarCartActive',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarFavorites,
+                    name: 'navBarFavorites',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarFavoritesActive,
+                    name: 'navBarFavoritesActive',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarHome,
+                    name: 'navBarHome',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarHomeActive,
+                    name: 'navBarHomeActive',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarProfile,
+                    name: 'navBarProfile',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarProfileActive,
+                    name: 'navBarProfileActive',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarStore,
+                    name: 'navBarStore',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).navBarStoreActive,
+                    name: 'navBarStoreActive',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).addToCart,
+                    name: 'addToCart',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).appBarBack,
+                    name: 'appBarBack',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).dropdownExpand,
+                    name: 'dropdownExpand',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).dropdownShrink,
+                    name: 'dropdownShrink',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).expansionTileExpand,
+                    name: 'expansionTileExpand',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).expansionTileShrink,
+                    name: 'expansionTileShrink',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).hidePassword,
+                    name: 'hidePassword',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).showPassword,
+                    name: 'showPassword',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).listTileSeeMore,
+                    name: 'listTileSeeMore',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).popUpClose,
+                    name: 'popUpClose',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileAccountSettings,
+                    name: 'profileAccountSettings',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileAddresses,
+                    name: 'profileAddresses',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileContact,
+                    name: 'profileContact',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileHelp,
+                    name: 'profileHelp',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileLogOut,
+                    name: 'profileLogOut',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileNotifications,
+                    name: 'profileNotifications',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profileOrderDetails,
+                    name: 'profileOrderDetails',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).profilePassword,
+                    name: 'profilePassword',
+                  ),
                 ],
               ),
               Row(

@@ -66,6 +66,90 @@ class FyIcon implements IconList {
   @override
   IconData get eyeSlash => getIconPack.eyeSlash;
 
+  @override
+  IconData get addToCart => getIconPack.addToCart;
+
+  @override
+  IconData get appBarBack => getIconPack.appBarBack;
+
+  @override
+  IconData get dropdownExpand => getIconPack.dropdownExpand;
+
+  @override
+  IconData get dropdownShrink => getIconPack.dropdownShrink;
+
+  @override
+  IconData get expansionTileExpand => getIconPack.expansionTileExpand;
+
+  @override
+  IconData get expansionTileShrink => getIconPack.expansionTileShrink;
+
+  @override
+  IconData get hidePassword => getIconPack.hidePassword;
+
+  @override
+  IconData get listTileSeeMore => getIconPack.listTileSeeMore;
+
+  @override
+  IconData get navBarCart => getIconPack.navBarCart;
+
+  @override
+  IconData get navBarCartActive => getIconPack.navBarCartActive;
+
+  @override
+  IconData get navBarFavorites => getIconPack.navBarFavorites;
+
+  @override
+  IconData get navBarFavoritesActive => getIconPack.navBarFavoritesActive;
+
+  @override
+  IconData get navBarHome => getIconPack.navBarHome;
+
+  @override
+  IconData get navBarHomeActive => getIconPack.navBarHomeActive;
+
+  @override
+  IconData get navBarProfile => getIconPack.navBarProfile;
+
+  @override
+  IconData get navBarProfileActive => getIconPack.navBarProfileActive;
+
+  @override
+  IconData get navBarStore => getIconPack.navBarStore;
+
+  @override
+  IconData get navBarStoreActive => getIconPack.navBarStoreActive;
+
+  @override
+  IconData get popUpClose => getIconPack.popUpClose;
+
+  @override
+  IconData get profileAccountSettings => getIconPack.profileAccountSettings;
+
+  @override
+  IconData get profileAddresses => getIconPack.profileAddresses;
+
+  @override
+  IconData get profileContact => getIconPack.profileContact;
+
+  @override
+  IconData get profileHelp => getIconPack.profileHelp;
+
+  @override
+  IconData get profileLogOut => getIconPack.profileLogOut;
+
+  @override
+  IconData get profileNotifications => getIconPack.profileNotifications;
+
+  @override
+  IconData get profileOrderDetails => getIconPack.profileOrderDetails;
+
+  @override
+  IconData get profilePassword => getIconPack.profilePassword;
+
+  @override
+  IconData get showPassword => getIconPack.showPassword;
+
   /// Returns the appropriate icon based on the provided icon name.
   static IconData fromString(
     BuildContext context, {
@@ -83,6 +167,62 @@ class FyIcon implements IconList {
         return FyIcon(context, iconPack: finalIconPack).store;
       case 'eye':
         return FyIcon(context, iconPack: finalIconPack).eye;
+      case 'showPassword':
+        return FyIcon(context, iconPack: finalIconPack).showPassword;
+      case 'hidePassword':
+        return FyIcon(context, iconPack: finalIconPack).hidePassword;
+      case 'appBarBack':
+        return FyIcon(context, iconPack: finalIconPack).appBarBack;
+      case 'dropdownExpand':
+        return FyIcon(context, iconPack: finalIconPack).dropdownExpand;
+      case 'dropdownShrink':
+        return FyIcon(context, iconPack: finalIconPack).dropdownShrink;
+      case 'popUpClose':
+        return FyIcon(context, iconPack: finalIconPack).popUpClose;
+      case 'expansionTileExpand':
+        return FyIcon(context, iconPack: finalIconPack).expansionTileExpand;
+      case 'expansionTileShrink':
+        return FyIcon(context, iconPack: finalIconPack).expansionTileShrink;
+      case 'listTileSeeMore':
+        return FyIcon(context, iconPack: finalIconPack).listTileSeeMore;
+      case 'navBarHome':
+        return FyIcon(context, iconPack: finalIconPack).navBarHome;
+      case 'navBarHomeActive':
+        return FyIcon(context, iconPack: finalIconPack).navBarHomeActive;
+      case 'navBarStore':
+        return FyIcon(context, iconPack: finalIconPack).navBarStore;
+      case 'navBarStoreActive':
+        return FyIcon(context, iconPack: finalIconPack).navBarStoreActive;
+      case 'navBarFavorites':
+        return FyIcon(context, iconPack: finalIconPack).navBarFavorites;
+      case 'navBarFavoritesActive':
+        return FyIcon(context, iconPack: finalIconPack).navBarFavoritesActive;
+      case 'navBarCart':
+        return FyIcon(context, iconPack: finalIconPack).navBarCart;
+      case 'navBarCartActive':
+        return FyIcon(context, iconPack: finalIconPack).navBarCartActive;
+      case 'navBarProfile':
+        return FyIcon(context, iconPack: finalIconPack).navBarProfile;
+      case 'navBarProfileActive':
+        return FyIcon(context, iconPack: finalIconPack).navBarProfileActive;
+      case 'addToCart':
+        return FyIcon(context, iconPack: finalIconPack).addToCart;
+      case 'profileAccountSettings':
+        return FyIcon(context, iconPack: finalIconPack).profileAccountSettings;
+      case 'profilePassword':
+        return FyIcon(context, iconPack: finalIconPack).profilePassword;
+      case 'profileAddresses':
+        return FyIcon(context, iconPack: finalIconPack).profileAddresses;
+      case 'profileOrderDetails':
+        return FyIcon(context, iconPack: finalIconPack).profileOrderDetails;
+      case 'profileNotifications':
+        return FyIcon(context, iconPack: finalIconPack).profileNotifications;
+      case 'profileContact':
+        return FyIcon(context, iconPack: finalIconPack).profileContact;
+      case 'profileHelp':
+        return FyIcon(context, iconPack: finalIconPack).profileHelp;
+      case 'profileLogOut':
+        return FyIcon(context, iconPack: finalIconPack).profileLogOut;
       default:
         SerializationErrorLogger.showConfigError(
           value: icon,
