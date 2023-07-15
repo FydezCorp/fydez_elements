@@ -1,0 +1,1 @@
+enum WidgetListViewType { simple }
