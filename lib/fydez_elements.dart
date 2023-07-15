@@ -40,3 +40,4 @@ export 'slider/export.dart';
 export 'tabbar/export.dart';
 export 'text_inputs/export.dart';
 export 'theme_extensions/export.dart';
+export 'blocks/widget_listview/export.dart';
