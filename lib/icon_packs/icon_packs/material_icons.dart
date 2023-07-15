@@ -118,4 +118,31 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get showPassword => Icons.remove_red_eye;
+
+  @override
+  IconData get changePassword => Icons.password_outlined;
+
+  @override
+  IconData get email => Icons.email_outlined;
+
+  @override
+  IconData get horizontalMore => Icons.more_horiz;
+
+  @override
+  IconData get location => Icons.place_outlined;
+
+  @override
+  IconData get myLocation => Icons.gps_fixed_rounded;
+
+  @override
+  IconData get phone => Icons.phone;
+
+  @override
+  IconData get sms => Icons.sms_outlined;
+
+  @override
+  IconData get zoomIn => Icons.add_rounded;
+
+  @override
+  IconData get zoomOut => Icons.remove_rounded;
 }

@@ -23,6 +23,7 @@ abstract class IconList {
   IconData get expansionTileExpand;
   IconData get expansionTileShrink;
   IconData get listTileSeeMore;
+  IconData get horizontalMore;
 
   // * Bottom Navigation Bar Icons
   IconData get navBarHome;
@@ -48,4 +49,16 @@ abstract class IconList {
   IconData get profileContact;
   IconData get profileHelp;
   IconData get profileLogOut;
+
+  // * Profile Section Pages
+  IconData get changePassword;
+  IconData get myLocation;
+  IconData get zoomIn;
+  IconData get zoomOut;
+  IconData get location;
+  IconData get phone;
+  IconData get email;
+  IconData get sms;
+  
+
 }

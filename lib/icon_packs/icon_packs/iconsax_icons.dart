@@ -120,4 +120,31 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get showPassword => Iconsax.eye;
+
+  @override
+  IconData get changePassword => Iconsax.password_check;
+
+  @override
+  IconData get email => Iconsax.message_text_1;
+
+  @override
+  IconData get horizontalMore => Iconsax.more;
+
+  @override
+  IconData get location => Iconsax.location;
+
+  @override
+  IconData get myLocation => Iconsax.gps;
+
+  @override
+  IconData get phone => Iconsax.call;
+
+  @override
+  IconData get sms => Iconsax.messages;
+
+  @override
+  IconData get zoomIn => Iconsax.add;
+
+  @override
+  IconData get zoomOut => Iconsax.minus;
 }

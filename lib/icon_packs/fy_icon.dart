@@ -150,6 +150,33 @@ class FyIcon implements IconList {
   @override
   IconData get showPassword => getIconPack.showPassword;
 
+  @override
+  IconData get changePassword => getIconPack.changePassword;
+
+  @override
+  IconData get email => getIconPack.email;
+
+  @override
+  IconData get horizontalMore => getIconPack.horizontalMore;
+
+  @override
+  IconData get location => getIconPack.location;
+
+  @override
+  IconData get myLocation => getIconPack.myLocation;
+
+  @override
+  IconData get phone => getIconPack.phone;
+
+  @override
+  IconData get sms => getIconPack.sms;
+
+  @override
+  IconData get zoomIn => getIconPack.zoomIn;
+
+  @override
+  IconData get zoomOut => getIconPack.zoomOut;
+
   /// Returns the appropriate icon based on the provided icon name.
   static IconData fromString(
     BuildContext context, {
@@ -158,7 +185,6 @@ class FyIcon implements IconList {
   }) {
     final finalIconPack = iconPack ?? context.fyParameters.iconPack;
     switch (icon) {
-      // TODO: Implement All Icons.
       case 'home':
         return FyIcon(context, iconPack: finalIconPack).home;
       case 'heart':
@@ -223,6 +249,24 @@ class FyIcon implements IconList {
         return FyIcon(context, iconPack: finalIconPack).profileHelp;
       case 'profileLogOut':
         return FyIcon(context, iconPack: finalIconPack).profileLogOut;
+      case 'changePassword':
+        return FyIcon(context, iconPack: finalIconPack).changePassword;
+      case 'email':
+        return FyIcon(context, iconPack: finalIconPack).email;
+      case 'horizontalMore':
+        return FyIcon(context, iconPack: finalIconPack).horizontalMore;
+      case 'location':
+        return FyIcon(context, iconPack: finalIconPack).location;
+      case 'myLocation':
+        return FyIcon(context, iconPack: finalIconPack).myLocation;
+      case 'phone':
+        return FyIcon(context, iconPack: finalIconPack).phone;
+      case 'sms':
+        return FyIcon(context, iconPack: finalIconPack).sms;
+      case 'zoomIn':
+        return FyIcon(context, iconPack: finalIconPack).zoomIn;
+      case 'zoomOut':
+        return FyIcon(context, iconPack: finalIconPack).zoomOut;
       default:
         SerializationErrorLogger.showConfigError(
           value: icon,
