@@ -177,6 +177,21 @@ class FyIcon implements IconList {
   @override
   IconData get zoomOut => getIconPack.zoomOut;
 
+  @override
+  IconData get helpDelivery => getIconPack.helpDelivery;
+
+  @override
+  IconData get helpFAQ => getIconPack.helpFAQ;
+
+  @override
+  IconData get helpGift => getIconPack.helpGift;
+
+  @override
+  IconData get helpPrivacy => getIconPack.helpPrivacy;
+
+  @override
+  IconData get helpReturn => getIconPack.helpReturn;
+
   /// Returns the appropriate icon based on the provided icon name.
   static IconData fromString(
     BuildContext context, {
@@ -267,6 +282,16 @@ class FyIcon implements IconList {
         return FyIcon(context, iconPack: finalIconPack).zoomIn;
       case 'zoomOut':
         return FyIcon(context, iconPack: finalIconPack).zoomOut;
+      case 'helpDelivery':
+        return FyIcon(context, iconPack: finalIconPack).helpDelivery;
+      case 'helpFAQ':
+        return FyIcon(context, iconPack: finalIconPack).helpFAQ;
+      case 'helpGift':
+        return FyIcon(context, iconPack: finalIconPack).helpGift;
+      case 'helpPrivacy':
+        return FyIcon(context, iconPack: finalIconPack).helpPrivacy;
+      case 'helpReturn':
+        return FyIcon(context, iconPack: finalIconPack).helpReturn;
       default:
         SerializationErrorLogger.showConfigError(
           value: icon,
