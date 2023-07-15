@@ -66,7 +66,7 @@ class MaterialIcons extends IconList {
   IconData get navBarCartActive => Icons.shopping_bag;
 
   @override
-  IconData get navBarFavorites => Icons.favorite_outlined;
+  IconData get navBarFavorites => Icons.favorite_border_rounded;
 
   @override
   IconData get navBarFavoritesActive => Icons.favorite;
