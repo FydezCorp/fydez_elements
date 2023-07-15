@@ -147,4 +147,19 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get zoomOut => Iconsax.minus;
+
+  @override
+  IconData get helpDelivery => Iconsax.truck_fast;
+
+  @override
+  IconData get helpFAQ => Iconsax.message_question;
+
+  @override
+  IconData get helpGift => Iconsax.gift;
+
+  @override
+  IconData get helpPrivacy => Iconsax.document;
+
+  @override
+  IconData get helpReturn => Iconsax.d_rotate;
 }

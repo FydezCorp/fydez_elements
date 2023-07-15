@@ -145,4 +145,19 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get zoomOut => Icons.remove_rounded;
+
+  @override
+  IconData get helpDelivery => Icons.local_shipping_outlined;
+
+  @override
+  IconData get helpFAQ => Icons.quiz_outlined;
+
+  @override
+  IconData get helpGift => Icons.redeem_outlined;
+
+  @override
+  IconData get helpPrivacy => Icons.privacy_tip_outlined;
+
+  @override
+  IconData get helpReturn => Icons.change_circle_outlined;
 }

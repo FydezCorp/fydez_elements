@@ -59,6 +59,11 @@ abstract class IconList {
   IconData get phone;
   IconData get email;
   IconData get sms;
-  
 
+  // Help
+  IconData get helpDelivery;
+  IconData get helpReturn;
+  IconData get helpFAQ;
+  IconData get helpGift;
+  IconData get helpPrivacy;
 }
