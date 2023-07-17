@@ -160,4 +160,13 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get helpReturn => Icons.change_circle_outlined;
+
+  @override
+  IconData get cartAdd => Icons.add_circle_outline_rounded;
+
+  @override
+  IconData get cartRemove => Icons.remove_circle_outline_rounded;
+
+  @override
+  IconData get cartRemoveSingular => Icons.delete_forever_outlined;
 }

@@ -404,6 +404,27 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).helpReturn,
                     name: 'helpReturn',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartAdd,
+                    name: 'cartAdd',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartRemove,
+                    name: 'cartRemove',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartRemoveSingular,
+                    name: 'cartRemoveSingular',
+                  ),
                 ],
               ),
               Row(
