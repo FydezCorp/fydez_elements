@@ -162,4 +162,13 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get helpReturn => Iconsax.d_rotate;
+
+  @override
+  IconData get cartAdd => Iconsax.add_circle;
+
+  @override
+  IconData get cartRemove => Iconsax.minus_cirlce;
+
+  @override
+  IconData get cartRemoveSingular => Iconsax.trash;
 }

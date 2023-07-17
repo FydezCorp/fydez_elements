@@ -192,6 +192,15 @@ class FyIcon implements IconList {
   @override
   IconData get helpReturn => getIconPack.helpReturn;
 
+  @override
+  IconData get cartAdd => getIconPack.cartAdd;
+
+  @override
+  IconData get cartRemove => getIconPack.cartRemove;
+
+  @override
+  IconData get cartRemoveSingular => getIconPack.cartRemoveSingular;
+
   /// Returns the appropriate icon based on the provided icon name.
   static IconData fromString(
     BuildContext context, {
@@ -292,6 +301,12 @@ class FyIcon implements IconList {
         return FyIcon(context, iconPack: finalIconPack).helpPrivacy;
       case 'helpReturn':
         return FyIcon(context, iconPack: finalIconPack).helpReturn;
+      case 'cartAdd':
+        return FyIcon(context, iconPack: finalIconPack).cartAdd;
+      case 'cartRemove':
+        return FyIcon(context, iconPack: finalIconPack).cartRemove;
+      case 'cartRemoveSingular':
+        return FyIcon(context, iconPack: finalIconPack).cartRemoveSingular;
       default:
         SerializationErrorLogger.showConfigError(
           value: icon,

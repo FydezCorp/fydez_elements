@@ -66,4 +66,10 @@ abstract class IconList {
   IconData get helpFAQ;
   IconData get helpGift;
   IconData get helpPrivacy;
+
+
+  // * Cart
+  IconData get cartRemove;
+  IconData get cartRemoveSingular;
+  IconData get cartAdd;
 }

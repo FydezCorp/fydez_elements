@@ -306,6 +306,125 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).profilePassword,
                     name: 'profilePassword',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).changePassword,
+                    name: 'changePassword',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).email,
+                    name: 'email',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).horizontalMore,
+                    name: 'horizontalMore',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).location,
+                    name: 'location',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).myLocation,
+                    name: 'myLocation',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).phone,
+                    name: 'phone',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).sms,
+                    name: 'sms',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).zoomIn,
+                    name: 'zoomIn',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).zoomOut,
+                    name: 'zoomOut',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).helpDelivery,
+                    name: 'helpDelivery',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).helpFAQ,
+                    name: 'helpFAQ',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).helpGift,
+                    name: 'helpGift',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).helpPrivacy,
+                    name: 'helpPrivacy',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).helpReturn,
+                    name: 'helpReturn',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartAdd,
+                    name: 'cartAdd',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartRemove,
+                    name: 'cartRemove',
+                  ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).cartRemoveSingular,
+                    name: 'cartRemoveSingular',
+                  ),
                 ],
               ),
               Row(
