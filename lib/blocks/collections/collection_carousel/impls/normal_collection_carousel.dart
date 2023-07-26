@@ -12,12 +12,14 @@ class NormalCollectionCarousel implements CollectionCarouselFactory {
     required bool hasTitle,
     required double cornerRadius,
     required Function(int id) onCollectionTapped,
+    required String? title,
   }) {
     return NormalCollectionCarouselWidget(
       items: items,
       hasTitle: hasTitle,
       cornerRadius: cornerRadius,
       onCollectionTapped: onCollectionTapped,
+      title: title,
     );
   }
 }
@@ -27,61 +29,83 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
   final bool hasTitle;
   final double cornerRadius;
   final Function(int id) onCollectionTapped;
+  final String? title;
   const NormalCollectionCarouselWidget({
     Key? key,
     required this.hasTitle,
     required this.items,
     required this.cornerRadius,
     required this.onCollectionTapped,
+    required this.title,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 75,
-      child: ListView.separated(
-        itemCount: items.length,
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return GestureDetector(
-            onTap: () {
-              onCollectionTapped(item.id);
-            },
-            child: Container(
-              width: 175,
-              height: 75,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(cornerRadius),
-                color: context.colorScheme.primary,
-                image: DecorationImage(
-                  image: CachedNetworkImageProvider(item.imageUrl),
-                  fit: BoxFit.cover,
-                  opacity: hasTitle ? 0.5 : 1,
+    return Column(
+      children: [
+        Visibility(
+          visible: title != null,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 16.0),
+            child: Row(
+              children: [
+                Text(
+                  title ?? '',
+                  style: context.textTheme.titleMedium!.copyWith(
+                    color: context.fyColors.textNineColor,
+                  ),
                 ),
-              ),
-              child: hasTitle
-                  ? Center(
-                      child: Text(
-                        item.title,
-                        style: context.textTheme.titleMedium!.copyWith(
-                          color: context.colorScheme.onPrimary,
-                          shadows: [
-                            Shadow(
-                              color: context.fyColors.textTenColor,
-                              blurRadius: 10.0,
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
-                  : null,
+              ],
             ),
-          );
-        },
-        separatorBuilder: (context, index) => const SizedBox(width: 10),
-      ),
+          ),
+        ),
+        SizedBox(
+          height: 75,
+          child: ListView.separated(
+            itemCount: items.length,
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) {
+              final item = items[index];
+              return GestureDetector(
+                onTap: () {
+                  onCollectionTapped(item.id);
+                },
+                child: Container(
+                  width: 175,
+                  height: 75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(cornerRadius),
+                    color: context.colorScheme.primary,
+                    image: DecorationImage(
+                      image: CachedNetworkImageProvider(item.imageUrl),
+                      fit: BoxFit.cover,
+                      opacity: hasTitle ? 0.5 : 1,
+                    ),
+                  ),
+                  child: hasTitle
+                      ? Center(
+                          child: Text(
+                            item.title,
+                            style: context.textTheme.titleMedium!.copyWith(
+                              color: context.colorScheme.onPrimary,
+                              shadows: [
+                                Shadow(
+                                  color: context.fyColors.textTenColor,
+                                  blurRadius: 10.0,
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      : null,
+                ),
+              );
+            },
+            separatorBuilder: (context, index) => const SizedBox(width: 10),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -79,6 +79,7 @@ class _CollectionCarouselDemoState extends State<CollectionCarouselDemo> {
           type: type,
           hasTitle: hasTitle,
           cornerRadius: cornerRadius,
+          title: 'Categories',
           onCollectionTapped: (id) {
             log('Collection tapped: $id');
           },

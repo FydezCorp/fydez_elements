@@ -10,6 +10,7 @@ abstract class CollectionCarouselFactory {
     required bool hasTitle,
     required double cornerRadius,
     required Function(int id) onCollectionTapped,
+    required String? title,
   });
 
   factory CollectionCarouselFactory({required CollectionCarouselType type}) {
