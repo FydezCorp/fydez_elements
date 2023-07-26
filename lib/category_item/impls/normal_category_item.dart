@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/category_item/category_item_factory.dart';
-import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/image/fy_network_image.dart';
 
@@ -38,39 +37,42 @@ class NormalCategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      padding: Constants.categoryItemDefaultPadding,
       child: InkWell(
         borderRadius: BorderRadius.circular(cornerRadius),
         onTap: onTap,
-        child: Container(
-          height: 80,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(cornerRadius),
-            color: context.fyColors.textOneColor,
-          ),
-          child: Stack(
-            alignment: Alignment.centerLeft,
-            children: [
-              Positioned(
-                right: 20,
-                child: FyNetworkImage(
-                  url: imageUrl,
-                  height: 80,
-                  width: 80,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(cornerRadius),
+          child: Container(
+            height: 80,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              // borderRadius: BorderRadius.circular(cornerRadius),
+              color: context.fyColors.textOneColor,
+            ),
+            child: Stack(
+              alignment: Alignment.centerLeft,
+              children: [
+                Positioned(
+                  right: 0,
+                  child: FyNetworkImage(
+                    url: imageUrl,
+                    height: 80,
+                    width: 80,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-              Positioned(
-                left: 20,
-                child: Text(
-                  name.toUpperCase(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .displaySmall!
-                      .copyWith(color: context.fyColors.textNineColor),
+                Positioned(
+                  left: 20,
+                  child: Text(
+                    name.toUpperCase(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .displaySmall!
+                        .copyWith(color: context.fyColors.textNineColor),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
