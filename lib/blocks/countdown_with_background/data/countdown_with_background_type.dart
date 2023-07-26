@@ -1,0 +1,1 @@
+enum CountdownWithBackgroundType { simple }

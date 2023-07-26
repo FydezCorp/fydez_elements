@@ -12,6 +12,7 @@ class DropDownDemoPage extends StatefulWidget {
 
 class _DropDownDemoPageState extends State<DropDownDemoPage> {
   DropdownType type = DropdownType.connected;
+  FyInputType inputType = FyInputType.A;
   int number = 0;
   final numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   double cornerRadius = 10.0;
@@ -41,6 +42,20 @@ class _DropDownDemoPageState extends State<DropDownDemoPage> {
                     });
                   },
                 ),
+                DropdownButton(
+                  items: FyInputType.values
+                      .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e.name),
+                          ))
+                      .toList(),
+                  value: inputType,
+                  onChanged: (value) {
+                    setState(() {
+                      inputType = value!;
+                    });
+                  },
+                ),
                 Slider(
                   value: cornerRadius,
                   onChanged: (value) {
@@ -56,6 +71,7 @@ class _DropDownDemoPageState extends State<DropDownDemoPage> {
                   value: number,
                   type: type,
                   cornerRadius: cornerRadius,
+                  textInputType: inputType,
                   items: numbers
                       .map(
                           (e) => FyDropdownItem(title: e.toString(), object: e))

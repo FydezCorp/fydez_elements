@@ -54,32 +54,36 @@ class _LightBackgroundTabbarWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: widget.tabs.length,
-      initialIndex: widget.initialIndex,
-      child: TabBar(
-        tabs: widget.tabs
-            .map((tabData) => LightBackgroundTabWidget(tabData: tabData))
-            .toList(),
-        controller: _tabController,
-        physics: const BouncingScrollPhysics(),
-        onTap: (index) => widget.onTabChange(index),
-        labelStyle: context.textTheme.labelMedium!.copyWith(
-          color: context.fyColors.textTenColor,
-        ),
-        unselectedLabelStyle: context.textTheme.labelSmall!.copyWith(
-          color: context.fyColors.textFiveColor,
-        ),
-        indicatorColor: Theme.of(context).colorScheme.primary,
-        labelColor: Theme.of(context).colorScheme.primary,
-        unselectedLabelColor:  context.fyColors.textSevenColor,
-        indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
-        isScrollable: true,
-        padding: const EdgeInsets.symmetric(vertical: 3),
-        splashFactory: NoSplash.splashFactory,
-        indicator: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: context.fyColors.textOneColor,
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: DefaultTabController(
+        length: widget.tabs.length,
+        initialIndex: widget.initialIndex,
+        child: TabBar(
+          tabs: widget.tabs
+              .map((tabData) => LightBackgroundTabWidget(tabData: tabData))
+              .toList(),
+          controller: _tabController,
+          physics: const BouncingScrollPhysics(),
+          onTap: (index) => widget.onTabChange(index),
+          labelStyle: context.textTheme.labelMedium!.copyWith(
+            color: context.fyColors.textTenColor,
+          ),
+          unselectedLabelStyle: context.textTheme.labelSmall!.copyWith(
+            color: context.fyColors.textFiveColor,
+          ),
+          indicatorColor: Theme.of(context).colorScheme.primary,
+          labelColor: Theme.of(context).colorScheme.primary,
+          unselectedLabelColor: context.fyColors.textSevenColor,
+          indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
+          isScrollable: true,
+          padding: const EdgeInsets.symmetric(vertical: 3),
+          splashFactory: NoSplash.splashFactory,
+          splashBorderRadius: BorderRadius.circular(16),
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: context.fyColors.textOneColor,
+          ),
         ),
       ),
     );

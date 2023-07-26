@@ -10,11 +10,13 @@ class MaterialDropdownWidget<T> extends StatefulWidget {
   final Function(T? value) onChange;
   final double cornerRadius;
   final String? title;
+  final FyInputType textInputType;
   const MaterialDropdownWidget({
     required this.items,
     required this.onChange,
     required this.value,
     required this.cornerRadius,
+    required this.textInputType,
     this.title = 'test title',
     Key? key,
   }) : super(key: key);

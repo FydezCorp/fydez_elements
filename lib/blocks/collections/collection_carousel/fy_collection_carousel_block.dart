@@ -11,12 +11,14 @@ class FyCollectionCarouselBlock {
     required bool hasTitle,
     required double cornerRadius,
     required Function(int id) onCollectionTapped,
+    String? title,
   }) {
     return CollectionCarouselFactory(type: type).create(
       items: items,
       hasTitle: hasTitle,
       cornerRadius: cornerRadius,
       onCollectionTapped: onCollectionTapped,
+      title: title,
     );
   }
 }

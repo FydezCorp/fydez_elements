@@ -53,27 +53,41 @@ class _UnderlinedTabbarWidgetState extends State<UnderlinedTabbarWidget>
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: widget.tabs.length,
-      initialIndex: widget.initialIndex,
-      child: TabBar(
-        tabs: widget.tabs
-            .map((tabData) => UnderlinedTabWidget(tabData: tabData))
-            .toList(),
-        controller: _tabController,
-        physics: const BouncingScrollPhysics(),
-        onTap: (index) => widget.onTabChange(index),
-        labelStyle: context.textTheme.labelMedium!.copyWith(
-          color: context.fyColors.textTenColor,
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: context.fyColors.textThreeColor,
+            width: 0.5,
+          ),
         ),
-        unselectedLabelStyle: context.textTheme.labelSmall!.copyWith(
-          color: context.fyColors.textFiveColor,
+      ),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: DefaultTabController(
+          length: widget.tabs.length,
+          initialIndex: widget.initialIndex,
+          child: TabBar(
+            tabs: widget.tabs
+                .map((tabData) => UnderlinedTabWidget(tabData: tabData))
+                .toList(),
+            controller: _tabController,
+            physics: const BouncingScrollPhysics(),
+            onTap: (index) => widget.onTabChange(index),
+            labelStyle: context.textTheme.labelMedium!.copyWith(
+              color: context.fyColors.textTenColor,
+            ),
+            unselectedLabelStyle: context.textTheme.labelSmall!.copyWith(
+              color: context.fyColors.textFiveColor,
+            ),
+            indicatorColor: Theme.of(context).colorScheme.primary,
+            labelColor: Theme.of(context).colorScheme.primary,
+            unselectedLabelColor: context.fyColors.textSevenColor,
+            indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
+            isScrollable: true,
+            splashFactory: NoSplash.splashFactory,
+          ),
         ),
-        indicatorColor: Theme.of(context).colorScheme.primary,
-        labelColor: Theme.of(context).colorScheme.primary,
-        unselectedLabelColor: context.fyColors.textSevenColor,
-        indicatorPadding: const EdgeInsets.symmetric(horizontal: 0),
-        isScrollable: true,
       ),
     );
   }

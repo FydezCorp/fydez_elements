@@ -85,6 +85,11 @@ class OutlinedMaterialButtonFactoryWidget extends StatelessWidget {
     }
   }
 
+  Color _getBorderColor(BuildContext context) =>
+      state == ButtonState.deactivated
+          ? context.fyColors.textFiveColor
+          : context.colorScheme.primary;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -96,9 +101,13 @@ class OutlinedMaterialButtonFactoryWidget extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
           ),
+          disabledForegroundColor: context.fyColors.textFiveColor,
           foregroundColor: context.colorScheme.primary,
           elevation: 0,
-          side: BorderSide(color: context.colorScheme.primary, width: 1.0),
+          side: BorderSide(
+            color: _getBorderColor(context),
+            width: 1.0,
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           textStyle: const TextStyle(
             fontSize: 14,
