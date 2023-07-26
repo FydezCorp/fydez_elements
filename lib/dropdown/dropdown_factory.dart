@@ -13,6 +13,7 @@ abstract class DropdownFactory<T> {
     required List<FyDropdownItem> items,
     required Function(T? value) onChange,
     required double cornerRadius,
+    required FyInputType textInputType,
   });
 
   factory DropdownFactory(DropdownType type) {

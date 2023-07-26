@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
+import '../widgets/dropdown_button_widget.dart';
 
 class ModalDropdownWidget<T> extends StatefulWidget {
   final T value;
@@ -10,11 +11,13 @@ class ModalDropdownWidget<T> extends StatefulWidget {
   final double cornerRadius;
   final String? title;
   final String? subtitle;
+  final FyInputType textInputType;
   const ModalDropdownWidget({
     required this.items,
     required this.onChange,
     required this.value,
     required this.cornerRadius,
+    required this.textInputType,
     this.title = 'test title',
     this.subtitle = 'test subtitle',
     Key? key,
@@ -62,44 +65,36 @@ class _ModalDropdownWidgetState<T> extends State<ModalDropdownWidget<T>> {
           ));
     }
 
-    return LayoutBuilder(builder: (context, constraints) {
-      return Ink(
-        child: InkWell(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return DropdownButtonWidget(
           onTap: showModal,
-          splashColor: const Color(0xffF9F9F9),
-          borderRadius: BorderRadius.circular(widget.cornerRadius),
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: context.fyColors.textFiveColor),
-              borderRadius: BorderRadius.circular(widget.cornerRadius),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 14),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    // mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        widget.value.toString(),
-                        style: style,
-                      ),
-                      const SizedBox(width: 10),
-                      Icon(
-                        FyIcon(context).arrowDown,
-                        color:  context.fyColors.textEightColor,
-                        size: 24,
-                      ),
-                    ],
-                  ),
+          cornerRadius: widget.cornerRadius,
+          textInputType: widget.textInputType,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      widget.value.toString(),
+                      style: style,
+                    ),
+                    const SizedBox(width: 10),
+                    Icon(
+                      FyIcon(context).arrowDown,
+                      color: context.fyColors.textEightColor,
+                      size: 24,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 }

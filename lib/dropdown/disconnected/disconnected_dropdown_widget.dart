@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/dropdown/widgets/dropdown_button_widget.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
@@ -9,11 +10,13 @@ class DisconnectedDropdownWidget<T> extends StatefulWidget {
   final Function(T? value) onChange;
   final double cornerRadius;
   final String? title;
+  final FyInputType textInputType;
   const DisconnectedDropdownWidget({
     required this.items,
     required this.onChange,
     required this.value,
     required this.cornerRadius,
+    required this.textInputType,
     this.title = 'test title',
     Key? key,
   }) : super(key: key);
@@ -31,50 +34,45 @@ class _DisconnectedDropdownWidgetState<T>
   Widget build(BuildContext context) {
     final style = TextStyle(fontSize: 14, color: context.fyColors.textSixColor);
     return LayoutBuilder(builder: (context, constraints) {
-      BoxDecoration boxDecoration = BoxDecoration(
-        border: Border.all(color: context.fyColors.textFiveColor),
-        borderRadius: BorderRadius.circular(widget.cornerRadius),
-      );
+      BoxDecoration boxDecoration = widget.textInputType == FyInputType.A
+          ? BoxDecoration(
+              border: Border.all(color: context.fyColors.textFiveColor),
+              borderRadius: BorderRadius.circular(widget.cornerRadius),
+            )
+          : BoxDecoration(
+              color: context.fyColors.textTwoColor,
+              borderRadius: BorderRadius.circular(widget.cornerRadius),
+            );
       return Column(
         children: [
-          Ink(
-            child: InkWell(
-              onTap: () {
-                setState(() {
-                  _opened = !_opened;
-                });
-              },
-              splashColor: const Color(0xffF9F9F9),
-              borderRadius: BorderRadius.circular(widget.cornerRadius),
-              child: Container(
-                decoration: boxDecoration,
-                padding: const EdgeInsets.symmetric(vertical: 14),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Row(
-                        // mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            widget.value.toString(),
-                            style: style,
-                          ),
-                          const SizedBox(width: 10),
-                          Icon(
-                            _opened
-                                ? FyIcon(context).arrowUp
-                                : FyIcon(context).arrowDown,
-                            color:  context.fyColors.textEightColor,
-                            size: 24,
-                          ),
-                        ],
+          DropdownButtonWidget(
+            textInputType: widget.textInputType,
+            onTap: dropdownMethod,
+            cornerRadius: widget.cornerRadius,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    // mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.value.toString(),
+                        style: style,
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 10),
+                      Icon(
+                        _opened
+                            ? FyIcon(context).arrowUp
+                            : FyIcon(context).arrowDown,
+                        color: context.fyColors.textEightColor,
+                        size: 24,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
           Visibility(
@@ -100,11 +98,18 @@ class _DisconnectedDropdownWidgetState<T>
                         widget.onChange(items[index].object);
                       },
                       child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 14),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 14,
+                            horizontal: 16.0,
+                          ),
                           child: Center(
-                              child: Text(
-                            items[index].title,
-                            style: style,
+                              child: Row(
+                            children: [
+                              Text(
+                                items[index].title,
+                                style: style,
+                              ),
+                            ],
                           ))),
                     ),
                   );
@@ -114,6 +119,12 @@ class _DisconnectedDropdownWidgetState<T>
           )
         ],
       );
+    });
+  }
+
+  void dropdownMethod() {
+    setState(() {
+      _opened = !_opened;
     });
   }
 }
