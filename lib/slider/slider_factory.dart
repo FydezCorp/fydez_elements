@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fydez_elements/slider/data/slider_item.dart';
 import 'package:fydez_elements/slider/data/slider_type.dart';
 import 'package:fydez_elements/slider/impls/carousel_slider.dart';
+import 'package:fydez_elements/slider/impls/product_detail_slider.dart';
 import 'package:fydez_elements/slider/impls/simple_slider.dart';
 
 abstract class SliderFactory {
@@ -22,6 +23,8 @@ abstract class SliderFactory {
         return SimpleSlider();
       case SliderType.carousel:
         return CarrouselSlider();
+      case SliderType.productDetail:
+        return ProductDetailSlider();
     }
   }
 }

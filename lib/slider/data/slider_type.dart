@@ -2,7 +2,9 @@ import '../../const/logger.dart';
 
 enum SliderType {
   simple,
-  carousel;
+  carousel,
+  productDetail,
+  ;
 
   static SliderType fromString(String? value) {
     switch (value) {
@@ -10,6 +12,8 @@ enum SliderType {
         return SliderType.simple;
       case 'carousel':
         return SliderType.carousel;
+      case 'productDetail':
+        return SliderType.productDetail;
       default:
         SerializationErrorLogger.showConfigError(
           value: value,
