@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../../general_data/blocks/cta.dart';
 import '../video_factory.dart';
@@ -42,29 +41,28 @@ class NormalVideoFactoryWidget extends StatefulWidget {
 }
 
 class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
-  late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
+    /* _controller = VideoPlayerController.network(
       widget.videoUrl,
     )..initialize().then((_) {
         setState(() {});
-      });
+      }); */
     settings();
   }
 
-  settings() {
+  settings() {/* 
     _controller.setLooping(true);
     _controller.setVolume(0.0);
-    _controller.play();
+    _controller.play(); */
   }
 
   @override
   void dispose() {
-    _controller.dispose();
-    super.dispose();
+/*     _controller.dispose();
+ */    super.dispose();
   }
 
   @override
@@ -77,9 +75,9 @@ class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
           aspectRatio: widget.aspectRatio,
           child: Container(
             color: context.fyColors.textTwoColor,
-            child: _controller.value.isPlaying
+            child: /* _controller.value.isPlaying
                 ? VideoPlayer(_controller)
-                : const CupertinoActivityIndicator(),
+                : const */ CupertinoActivityIndicator(),
           ),
         ),
       ),
