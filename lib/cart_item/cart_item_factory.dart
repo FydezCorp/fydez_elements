@@ -12,7 +12,7 @@ abstract class CartItemFactory {
     required String productImage,
     required String productTitle,
     required double productPrice,
-    required String categoryName,
+    required String subtitle,
     required int count,
   });
 
