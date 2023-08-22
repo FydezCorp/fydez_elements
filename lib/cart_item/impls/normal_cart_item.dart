@@ -17,7 +17,7 @@ class NormalCartItem implements CartItemFactory {
     required String productImage,
     required String productTitle,
     required double productPrice,
-    required String categoryName,
+    required String subtitle,
     required int count,
   }) {
     return NormalCartItemWidget(
@@ -25,7 +25,7 @@ class NormalCartItem implements CartItemFactory {
       productTitle: productTitle,
       productPrice: productPrice,
       count: count,
-      categoryName: categoryName,
+      subtitle: subtitle,
       onDelete: onDelete,
       onAdd: onAdd,
       onFraction: onFraction,
@@ -41,7 +41,7 @@ class NormalCartItemWidget extends StatelessWidget {
   final String productImage;
   final String productTitle;
   final double productPrice;
-  final String categoryName;
+  final String subtitle;
   final int count;
 
   const NormalCartItemWidget({
@@ -50,7 +50,7 @@ class NormalCartItemWidget extends StatelessWidget {
     required this.productTitle,
     required this.productPrice,
     required this.count,
-    required this.categoryName,
+    required this.subtitle,
     required this.onDelete,
     required this.onAdd,
     required this.onFraction,
@@ -93,29 +93,12 @@ class NormalCartItemWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.labelMedium,
                   ),
                   Text(
-                    categoryName,
+                    subtitle,
                     style: Theme.of(context)
                         .textTheme
                         .labelSmall!
                         .copyWith(color: context.fyColors.textSixColor),
                   ),
-                  // ? TODO: WTF are these?
-                  Text(
-                    'Size 6',
-                    style: Theme.of(context)
-                        .textTheme
-                        .labelSmall!
-                        .copyWith(color: context.fyColors.textSixColor),
-                  ),
-                  const Gap(4),
-                  Container(
-                    width: 6,
-                    height: 6,
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(3)),
-                  ),
-                  const Gap(8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

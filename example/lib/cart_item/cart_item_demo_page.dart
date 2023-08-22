@@ -20,7 +20,7 @@ class CartItemDemoPage extends StatelessWidget {
                   'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
               productTitle: 'product Title',
               productPrice: 12.65,
-              categoryName: 'category Name',
+              subtitle: 'Subtitle (variation name!)',
               count: 2,
             ),
             FyCartItem.create(
@@ -32,7 +32,7 @@ class CartItemDemoPage extends StatelessWidget {
                   'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
               productTitle: 'product Title',
               productPrice: 12.65,
-              categoryName: 'category Name',
+              subtitle: 'Subtitle (variation name!)',
               count: 2,
             ),
           ],

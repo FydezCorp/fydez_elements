@@ -13,7 +13,7 @@ class FyCartItem {
     required String productImage,
     required String productTitle,
     required double productPrice,
-    required String categoryName,
+    required String subtitle,
     required int count,
     CartItemType? type,
     Key? key,
@@ -26,7 +26,7 @@ class FyCartItem {
       productImage: productImage,
       productTitle: productTitle,
       productPrice: productPrice,
-      categoryName: categoryName,
+      subtitle: subtitle,
       count: count,
       key: key,
     );
