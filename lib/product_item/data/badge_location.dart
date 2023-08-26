@@ -11,13 +11,13 @@ enum ProductBadgeLocation {
 
   static ProductBadgeLocation fromString(String? value) {
     switch (value) {
-      case 'top-sharp':
+      case 'sharp':
         return ProductBadgeLocation.topSharp;
-      case 'bottom-sharp':
+      case 'bottom_sharp':
         return ProductBadgeLocation.bottomSharp;
-      case 'top-round':
+      case 'round':
         return ProductBadgeLocation.topRound;
-      case 'bottom-round':
+      case 'bottom_round':
         return ProductBadgeLocation.bottomRound;
       default:
         SerializationErrorLogger.showConfigError(
