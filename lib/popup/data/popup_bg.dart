@@ -6,7 +6,7 @@ enum PopupBG {
 
   static PopupBG fromString(String? value) {
     switch (value) {
-      case 'normal':
+      case 'simple':
         return PopupBG.normal;
       case 'blur':
         return PopupBG.blur;
