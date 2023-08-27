@@ -1,17 +1,17 @@
 import '../../const/logger.dart';
 
 enum ProductCardType {
-  A('A'),
-  B('B');
+  A('a'),
+  B('b');
 
   final String value;
   const ProductCardType(this.value);
 
   static ProductCardType fromString(String? value) {
     switch (value) {
-      case 'A':
+      case 'a':
         return ProductCardType.A;
-      case 'B':
+      case 'b':
         return ProductCardType.B;
       default:
         SerializationErrorLogger.showConfigError(
