@@ -1,17 +1,17 @@
 import '../../const/logger.dart';
 
 enum PopupType {
-  modal('A'),
-  dialog('B');
+  modal('a'),
+  dialog('b');
 
   const PopupType(this.value);
   final String value;
 
   static PopupType fromString(String? value) {
     switch (value) {
-      case 'A':
+      case 'a':
         return PopupType.modal;
-      case 'B':
+      case 'b':
         return PopupType.dialog;
       default:
         SerializationErrorLogger.showConfigError(
