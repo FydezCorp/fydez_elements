@@ -8,10 +8,11 @@ enum ProductCardType {
   const ProductCardType(this.value);
 
   static ProductCardType fromString(String? value) {
+    // TODO: See what the fuck you can do about this.
     switch (value) {
-      case 'a':
+      case 'A' || 'C' || 'D' || 'E':
         return ProductCardType.A;
-      case 'b':
+      case 'B':
         return ProductCardType.B;
       default:
         SerializationErrorLogger.showConfigError(

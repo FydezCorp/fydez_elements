@@ -11,13 +11,13 @@ enum DropdownType {
 
   static DropdownType fromString(String? value) {
     switch (value) {
-      case 'a':
+      case 'A':
         return DropdownType.connected;
-      case 'b':
+      case 'B':
         return DropdownType.disconnected;
-      case 'c':
+      case 'C':
         return DropdownType.modal;
-      case 'd':
+      case 'D':
         return DropdownType.material;
       default:
         SerializationErrorLogger.showConfigError(
