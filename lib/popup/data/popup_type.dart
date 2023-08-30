@@ -9,9 +9,9 @@ enum PopupType {
 
   static PopupType fromString(String? value) {
     switch (value) {
-      case 'a':
+      case 'A':
         return PopupType.modal;
-      case 'b':
+      case 'B':
         return PopupType.dialog;
       default:
         SerializationErrorLogger.showConfigError(
