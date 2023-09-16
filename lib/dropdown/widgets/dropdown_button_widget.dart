@@ -33,6 +33,12 @@ class DropdownButtonWidget extends StatelessWidget {
           cornerRadius: cornerRadius,
           child: child,
         );
+      default:
+        return OutlinedDropdownButtonWidget(
+          onTap: onTap,
+          cornerRadius: cornerRadius,
+          child: child,
+        );
     }
   }
 }
