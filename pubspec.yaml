@@ -23,6 +23,8 @@ dependencies:
   google_fonts: ^4.0.4
   logger: ^1.4.0
   video_player: ^2.6.1
+  feather_icons: ^1.2.0
+
 
 dev_dependencies:
   flutter_test:
