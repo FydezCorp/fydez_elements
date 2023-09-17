@@ -36,65 +36,69 @@ class _LongTextInput extends StatefulWidget {
 class _LongTextInputState extends State<_LongTextInput> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      style: TextStyle(
-          fontSize: 14,
-          color: context.theme.extension<FyTextColor>()!.textTenColor),
-      controller: widget.controller,
-      minLines: 3,
-      maxLines: 10,
-      keyboardType: widget.keyboardType ?? TextInputType.multiline,
-      validator: widget.validator,
-      decoration: InputDecoration(
-        hintText: widget.hint,
-        label: Text(widget.label),
-        enabled: widget.enabled ?? true,
-        filled: true,
-        fillColor: Colors.white,
-        isDense: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.cornerRadius),
-          borderSide: BorderSide(
-            color: context.fyColors.textFourColor,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(widget.label),
+        const Gap(5.0),
+        TextFormField(
+          style: TextStyle(
+              fontSize: 14,
+              color: context.theme.extension<FyTextColor>()!.textTenColor),
+          controller: widget.controller,
+          minLines: 3,
+          maxLines: 10,
+          keyboardType: widget.keyboardType ?? TextInputType.multiline,
+          validator: widget.validator,
+          decoration: InputDecoration(
+            hintText: widget.hint,
+            enabled: widget.enabled ?? true,
+            isDense: true,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(widget.cornerRadius),
+              borderSide: BorderSide(
+                color: context.fyColors.textFourColor,
+              ),
+            ),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            hintStyle: TextStyle(
+                color: context.fyColors.textFiveColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+            labelStyle: TextStyle(
+                color: context.fyColors.textSixColor,
+                fontSize: 14,
+                fontWeight: FontWeight.w400),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: context.fyColors.textTenColor, width: 1.5),
+                borderRadius: BorderRadius.circular(widget.cornerRadius)),
+            disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(widget.cornerRadius),
+                borderSide: BorderSide(
+                    color: context.fyColors.textFiveColor.withOpacity(0.3))),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(widget.cornerRadius),
+                borderSide: BorderSide(
+                    color: context.fyColors.textFiveColor, width: 1)),
+            focusColor: context.fyColors.textTenColor,
+            floatingLabelStyle: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w400,
+                color: context.fyColors.textSixColor),
+            alignLabelWithHint: true,
+            errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(widget.cornerRadius),
+                borderSide: BorderSide(color: context.colorScheme.error)),
           ),
+          focusNode: widget.focusNode,
+          textInputAction: widget.textInputAction,
+          onEditingComplete: widget.onEditingComplete,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          onTap: widget.onTap,
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        hintStyle: TextStyle(
-            color: context.fyColors.textFiveColor,
-            fontSize: 14,
-            fontWeight: FontWeight.w400),
-        labelStyle: TextStyle(
-            color: context.fyColors.textSixColor,
-            fontSize: 14,
-            fontWeight: FontWeight.w400),
-        focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: context.fyColors.textTenColor, width: 1.5),
-            borderRadius: BorderRadius.circular(widget.cornerRadius)),
-        disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.cornerRadius),
-            borderSide: BorderSide(
-                color: context.fyColors.textFiveColor.withOpacity(0.3))),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.cornerRadius),
-            borderSide:
-                BorderSide(color: context.fyColors.textFiveColor, width: 1)),
-        focusColor: context.fyColors.textTenColor,
-        floatingLabelStyle: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-            color: context.fyColors.textSixColor),
-        alignLabelWithHint: true,
-        errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(widget.cornerRadius),
-            borderSide:  BorderSide(color: context.colorScheme.error)),
-      ),
-      focusNode: widget.focusNode,
-      textInputAction: widget.textInputAction,
-      onEditingComplete: widget.onEditingComplete,
-      onFieldSubmitted: widget.onFieldSubmitted,
-      onTap: widget.onTap,
+      ],
     );
   }
 }

@@ -32,11 +32,11 @@ abstract class TextInputFactory {
       case FyInputType.B:
         return TextInputB();
       case FyInputType.C:
-        return TextInputD();
-      case FyInputType.D:
-        return TextInputE();
-      case FyInputType.E:
         return TextInputC();
+      case FyInputType.D:
+        return TextInputD();
+      case FyInputType.E:
+        return TextInputE();
     }
   }
 }

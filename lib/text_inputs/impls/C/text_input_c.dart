@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
+import 'package:gap/gap.dart';
 
 import '../../text_input_factory.dart';
 
