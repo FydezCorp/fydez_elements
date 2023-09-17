@@ -20,14 +20,14 @@ class DropdownButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (textInputType) {
-      case FyInputType.A:
-        return OutlinedDropdownButtonWidget(
+      case FyInputType.C:
+        return FilledDropdownButtonWidget(
           onTap: onTap,
           cornerRadius: cornerRadius,
           child: child,
         );
 
-      case FyInputType.B:
+      case FyInputType.E:
         return FilledDropdownButtonWidget(
           onTap: onTap,
           cornerRadius: cornerRadius,
