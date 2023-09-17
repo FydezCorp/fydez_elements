@@ -50,6 +50,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         filled: true,
         fillColor: context.fyColors.textTwoColor,
         isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(

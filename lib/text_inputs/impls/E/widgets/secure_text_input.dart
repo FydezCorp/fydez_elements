@@ -76,6 +76,7 @@ class _SecureTextInputState extends State<_SecureTextInput> {
             hintText: widget.hint,
             label: Text(widget.label),
             enabled: widget.enabled ?? true,
+            floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: IconButton(
               onPressed: _changePasswordVisibility,
               icon: _isObscure
