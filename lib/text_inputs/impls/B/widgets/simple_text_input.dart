@@ -1,7 +1,7 @@
-part of '../text_input_c.dart';
+part of '../text_input_b.dart';
 
-class _SecureTextInput extends StatefulWidget {
-  const _SecureTextInput({
+class _SimpleTextInput extends StatefulWidget {
+  const _SimpleTextInput({
     Key? key,
     required this.controller,
     required this.label,
@@ -30,33 +30,16 @@ class _SecureTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_SecureTextInput> createState() => _SecureTextInputState();
+  State<_SimpleTextInput> createState() => _SimpleTextInputState();
 }
 
-class _SecureTextInputState extends State<_SecureTextInput> {
-  bool _isObscure = true;
-
-  void _changePasswordVisibility() {
-    setState(() {
-      _isObscure = !_isObscure;
-    });
-  }
-
+class _SimpleTextInputState extends State<_SimpleTextInput> {
   bool _isFocused = false;
-
   @override
   Widget build(BuildContext context) {
     final focusedColor = context.theme.extension<FyTextColor>()!.textSevenColor;
     final unfocusedColor =
         context.theme.extension<FyTextColor>()!.textThreeColor;
-    Color getIconColor() {
-      if (_isFocused) {
-        return focusedColor;
-      } else {
-        return unfocusedColor;
-      }
-    }
-
     Color getTitleColor() {
       if (_isFocused) {
         return focusedColor;
@@ -65,48 +48,35 @@ class _SecureTextInputState extends State<_SecureTextInput> {
       }
     }
 
-    return FocusScope(
-      child: Focus(
-        onFocusChange: (value) {
-          setState(() {
-            _isFocused = value;
-          });
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.label,
-              style: TextStyle(
-                color: getTitleColor(),
-              ),
-            ),
-            const Gap(5.0),
-            TextFormField(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.label,
+          style: TextStyle(
+            color: getTitleColor(),
+          ),
+        ),
+        const Gap(5.0),
+        FocusScope(
+          child: Focus(
+            onFocusChange: (value) {
+              setState(() {
+                _isFocused = value;
+              });
+            },
+            child: TextFormField(
               style: TextStyle(
                   fontSize: 14,
                   color: context.theme.extension<FyTextColor>()!.textTenColor),
               controller: widget.controller,
               keyboardType: widget.keyboardType,
-              obscureText: _isObscure,
               validator: widget.validator,
               decoration: InputDecoration(
                 hintText: widget.hint,
                 enabled: widget.enabled ?? true,
-                suffixIcon: IconButton(
-                  onPressed: _changePasswordVisibility,
-                  icon: _isObscure
-                      ? Icon(
-                          FyIcon(context).eye,
-                          color: getIconColor(),
-                        )
-                      : Icon(
-                          FyIcon(context).eyeSlash,
-                          color: getIconColor(),
-                        ),
-                ),
-                isDense: true,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
+                isDense: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(widget.cornerRadius),
                   borderSide: BorderSide(
@@ -152,9 +122,9 @@ class _SecureTextInputState extends State<_SecureTextInput> {
               onFieldSubmitted: widget.onFieldSubmitted,
               onTap: widget.onTap,
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

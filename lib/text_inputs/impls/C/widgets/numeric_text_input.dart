@@ -1,13 +1,13 @@
-part of '../text_input_b.dart';
+part of '../text_input_c.dart';
 
-class _SimpleTextInput extends StatefulWidget {
-  const _SimpleTextInput({
+class _NumericTextInput extends StatefulWidget {
+  const _NumericTextInput({
     Key? key,
     required this.controller,
     required this.label,
-    this.keyboardType,
     required this.hint,
     this.validator,
+    this.keyboardType,
     this.focusNode,
     this.textInputAction,
     this.enabled,
@@ -30,10 +30,10 @@ class _SimpleTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_SimpleTextInput> createState() => _SimpleTextInputState();
+  State<_NumericTextInput> createState() => _NumericTextInputState();
 }
 
-class _SimpleTextInputState extends State<_SimpleTextInput> {
+class _NumericTextInputState extends State<_NumericTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -41,7 +41,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
           fontSize: 14,
           color: context.theme.extension<FyTextColor>()!.textTenColor),
       controller: widget.controller,
-      keyboardType: widget.keyboardType,
+      keyboardType: widget.keyboardType ?? TextInputType.number,
       validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hint,
@@ -49,7 +49,8 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
         enabled: widget.enabled ?? true,
         filled: true,
         fillColor: context.fyColors.textTwoColor,
-        isDense: false,
+        isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
@@ -57,7 +58,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
           ),
         ),
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,

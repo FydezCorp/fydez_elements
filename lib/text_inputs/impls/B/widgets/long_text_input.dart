@@ -1,4 +1,4 @@
-part of '../text_input_c.dart';
+part of '../text_input_b.dart';
 
 class _LongTextInput extends StatefulWidget {
   const _LongTextInput({

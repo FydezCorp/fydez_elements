@@ -1,13 +1,13 @@
-part of '../text_input_c.dart';
+part of '../text_input_b.dart';
 
-class _NumericTextInput extends StatefulWidget {
-  const _NumericTextInput({
+class _SecureTextInput extends StatefulWidget {
+  const _SecureTextInput({
     Key? key,
     required this.controller,
     required this.label,
+    this.keyboardType,
     required this.hint,
     this.validator,
-    this.keyboardType,
     this.focusNode,
     this.textInputAction,
     this.enabled,
@@ -30,10 +30,18 @@ class _NumericTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_NumericTextInput> createState() => _NumericTextInputState();
+  State<_SecureTextInput> createState() => _SecureTextInputState();
 }
 
-class _NumericTextInputState extends State<_NumericTextInput> {
+class _SecureTextInputState extends State<_SecureTextInput> {
+  bool _isObscure = true;
+
+  void _changePasswordVisibility() {
+    setState(() {
+      _isObscure = !_isObscure;
+    });
+  }
+
   bool _isFocused = false;
 
   @override
@@ -41,6 +49,14 @@ class _NumericTextInputState extends State<_NumericTextInput> {
     final focusedColor = context.theme.extension<FyTextColor>()!.textSevenColor;
     final unfocusedColor =
         context.theme.extension<FyTextColor>()!.textThreeColor;
+    Color getIconColor() {
+      if (_isFocused) {
+        return focusedColor;
+      } else {
+        return unfocusedColor;
+      }
+    }
+
     Color getTitleColor() {
       if (_isFocused) {
         return focusedColor;
@@ -49,36 +65,48 @@ class _NumericTextInputState extends State<_NumericTextInput> {
       }
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          widget.label,
-          style: TextStyle(
-            color: getTitleColor(),
-          ),
-        ),
-        const Gap(5.0),
-        FocusScope(
-          child: Focus(
-            onFocusChange: (value) {
-              setState(() {
-                _isFocused = value;
-              });
-            },
-            child: TextFormField(
+    return FocusScope(
+      child: Focus(
+        onFocusChange: (value) {
+          setState(() {
+            _isFocused = value;
+          });
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.label,
+              style: TextStyle(
+                color: getTitleColor(),
+              ),
+            ),
+            const Gap(5.0),
+            TextFormField(
               style: TextStyle(
                   fontSize: 14,
                   color: context.theme.extension<FyTextColor>()!.textTenColor),
               controller: widget.controller,
-              keyboardType: widget.keyboardType ?? TextInputType.number,
+              keyboardType: widget.keyboardType,
+              obscureText: _isObscure,
               validator: widget.validator,
               decoration: InputDecoration(
                 hintText: widget.hint,
-                // label: Text(widget.label),
                 enabled: widget.enabled ?? true,
-                floatingLabelBehavior: FloatingLabelBehavior.always,
+                suffixIcon: IconButton(
+                  onPressed: _changePasswordVisibility,
+                  icon: _isObscure
+                      ? Icon(
+                          FyIcon(context).eye,
+                          color: getIconColor(),
+                        )
+                      : Icon(
+                          FyIcon(context).eyeSlash,
+                          color: getIconColor(),
+                        ),
+                ),
                 isDense: true,
+                floatingLabelBehavior: FloatingLabelBehavior.always,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(widget.cornerRadius),
                   borderSide: BorderSide(
@@ -124,9 +152,9 @@ class _NumericTextInputState extends State<_NumericTextInput> {
               onFieldSubmitted: widget.onFieldSubmitted,
               onTap: widget.onTap,
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

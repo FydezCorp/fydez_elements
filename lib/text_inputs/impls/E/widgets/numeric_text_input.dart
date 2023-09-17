@@ -1,7 +1,7 @@
-part of '../text_input_b.dart';
+part of '../text_input_e.dart';
 
-class _LongTextInput extends StatefulWidget {
-  const _LongTextInput({
+class _NumericTextInput extends StatefulWidget {
+  const _NumericTextInput({
     Key? key,
     required this.controller,
     required this.label,
@@ -30,10 +30,10 @@ class _LongTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_LongTextInput> createState() => _LongTextInputState();
+  State<_NumericTextInput> createState() => _NumericTextInputState();
 }
 
-class _LongTextInputState extends State<_LongTextInput> {
+class _NumericTextInputState extends State<_NumericTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -41,9 +41,7 @@ class _LongTextInputState extends State<_LongTextInput> {
           fontSize: 14,
           color: context.theme.extension<FyTextColor>()!.textTenColor),
       controller: widget.controller,
-      minLines: 3,
-      maxLines: 10,
-      keyboardType: widget.keyboardType ?? TextInputType.multiline,
+      keyboardType: widget.keyboardType ?? TextInputType.number,
       validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hint,
@@ -58,7 +56,8 @@ class _LongTextInputState extends State<_LongTextInput> {
             color: context.fyColors.textFourColor,
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,
@@ -84,7 +83,7 @@ class _LongTextInputState extends State<_LongTextInput> {
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: context.fyColors.textSixColor),
-        alignLabelWithHint: true,
+        alignLabelWithHint: false,
       ),
       focusNode: widget.focusNode,
       textInputAction: widget.textInputAction,

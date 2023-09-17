@@ -1,13 +1,13 @@
-part of '../text_input_b.dart';
+part of '../text_input_e.dart';
 
-class _NumericTextInput extends StatefulWidget {
-  const _NumericTextInput({
+class _SimpleTextInput extends StatefulWidget {
+  const _SimpleTextInput({
     Key? key,
     required this.controller,
     required this.label,
+    this.keyboardType,
     required this.hint,
     this.validator,
-    this.keyboardType,
     this.focusNode,
     this.textInputAction,
     this.enabled,
@@ -30,10 +30,10 @@ class _NumericTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_NumericTextInput> createState() => _NumericTextInputState();
+  State<_SimpleTextInput> createState() => _SimpleTextInputState();
 }
 
-class _NumericTextInputState extends State<_NumericTextInput> {
+class _SimpleTextInputState extends State<_SimpleTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -41,7 +41,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
           fontSize: 14,
           color: context.theme.extension<FyTextColor>()!.textTenColor),
       controller: widget.controller,
-      keyboardType: widget.keyboardType ?? TextInputType.number,
+      keyboardType: widget.keyboardType,
       validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hint,
@@ -49,7 +49,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         enabled: widget.enabled ?? true,
         filled: true,
         fillColor: context.fyColors.textTwoColor,
-        isDense: true,
+        isDense: false,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
@@ -57,7 +57,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
           ),
         ),
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,

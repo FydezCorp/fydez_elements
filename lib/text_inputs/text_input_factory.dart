@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
 import 'impls/A/text_input_a.dart';
-import 'impls/B (old C)/text_input_c.dart';
-import 'impls/C (old E)/text_input_e.dart';
+import 'impls/B/text_input_b.dart';
+import 'impls/C/text_input_c.dart';
 import 'impls/D/text_input_d.dart';
-import 'impls/E (old B)/text_input_b.dart';
+import 'impls/E/text_input_e.dart';
 
 abstract class TextInputFactory {
   Widget build({

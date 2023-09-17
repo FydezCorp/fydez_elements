@@ -1,13 +1,13 @@
-part of '../text_input_c.dart';
+part of '../text_input_b.dart';
 
-class _SimpleTextInput extends StatefulWidget {
-  const _SimpleTextInput({
+class _NumericTextInput extends StatefulWidget {
+  const _NumericTextInput({
     Key? key,
     required this.controller,
     required this.label,
-    this.keyboardType,
     required this.hint,
     this.validator,
+    this.keyboardType,
     this.focusNode,
     this.textInputAction,
     this.enabled,
@@ -30,11 +30,12 @@ class _SimpleTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_SimpleTextInput> createState() => _SimpleTextInputState();
+  State<_NumericTextInput> createState() => _NumericTextInputState();
 }
 
-class _SimpleTextInputState extends State<_SimpleTextInput> {
+class _NumericTextInputState extends State<_NumericTextInput> {
   bool _isFocused = false;
+
   @override
   Widget build(BuildContext context) {
     final focusedColor = context.theme.extension<FyTextColor>()!.textSevenColor;
@@ -70,10 +71,11 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
                   fontSize: 14,
                   color: context.theme.extension<FyTextColor>()!.textTenColor),
               controller: widget.controller,
-              keyboardType: widget.keyboardType,
+              keyboardType: widget.keyboardType ?? TextInputType.number,
               validator: widget.validator,
               decoration: InputDecoration(
                 hintText: widget.hint,
+                // label: Text(widget.label),
                 enabled: widget.enabled ?? true,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
                 isDense: true,

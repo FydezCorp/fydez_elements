@@ -1,7 +1,7 @@
 part of '../text_input_e.dart';
 
-class _NumericTextInput extends StatefulWidget {
-  const _NumericTextInput({
+class _LongTextInput extends StatefulWidget {
+  const _LongTextInput({
     Key? key,
     required this.controller,
     required this.label,
@@ -30,10 +30,10 @@ class _NumericTextInput extends StatefulWidget {
   final double cornerRadius;
 
   @override
-  State<_NumericTextInput> createState() => _NumericTextInputState();
+  State<_LongTextInput> createState() => _LongTextInputState();
 }
 
-class _NumericTextInputState extends State<_NumericTextInput> {
+class _LongTextInputState extends State<_LongTextInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -41,7 +41,9 @@ class _NumericTextInputState extends State<_NumericTextInput> {
           fontSize: 14,
           color: context.theme.extension<FyTextColor>()!.textTenColor),
       controller: widget.controller,
-      keyboardType: widget.keyboardType ?? TextInputType.number,
+      minLines: 3,
+      maxLines: 10,
+      keyboardType: widget.keyboardType ?? TextInputType.multiline,
       validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hint,
@@ -50,15 +52,13 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         filled: true,
         fillColor: context.fyColors.textTwoColor,
         isDense: true,
-        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: UnderlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
             color: context.fyColors.textFourColor,
           ),
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         hintStyle: TextStyle(
             color: context.fyColors.textFiveColor,
             fontSize: 14,
@@ -84,7 +84,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: context.fyColors.textSixColor),
-        alignLabelWithHint: false,
+        alignLabelWithHint: true,
       ),
       focusNode: widget.focusNode,
       textInputAction: widget.textInputAction,
