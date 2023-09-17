@@ -10,7 +10,7 @@ part 'widgets/numeric_text_input.dart';
 part 'widgets/secure_text_input.dart';
 part 'widgets/simple_text_input.dart';
 
-class TextInputC implements TextInputFactory {
+class TextInputB implements TextInputFactory {
   @override
   Widget build({
     Key? key,
@@ -28,7 +28,7 @@ class TextInputC implements TextInputFactory {
     void Function(String p1)? onFieldSubmitted,
     void Function()? onTap,
   }) {
-    return TextInputCWidget(
+    return TextInputBWidget(
       mode: mode,
       controller: controller,
       label: label,
@@ -47,12 +47,12 @@ class TextInputC implements TextInputFactory {
   }
 }
 
-class TextInputCWidget extends StatelessWidget {
+class TextInputBWidget extends StatelessWidget {
   /// Creates a Text Input Widget ([TextFormField])
   ///
   /// All the fields are same as [TextFormField] except 'type' parameter which
   /// takes an enum of [InputMode] which defaults to [InputMode.simple].
-  const TextInputCWidget({
+  const TextInputBWidget({
     Key? key,
 
     /// Defaults to [InputMode.simple].
