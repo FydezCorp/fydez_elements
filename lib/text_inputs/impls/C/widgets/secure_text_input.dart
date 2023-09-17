@@ -57,6 +57,14 @@ class _SecureTextInputState extends State<_SecureTextInput> {
       }
     }
 
+    Color getTitleColor() {
+      if (_isFocused) {
+        return focusedColor;
+      } else {
+        return unfocusedColor;
+      }
+    }
+
     return FocusScope(
       child: Focus(
         onFocusChange: (value) {
@@ -67,7 +75,12 @@ class _SecureTextInputState extends State<_SecureTextInput> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.label),
+            Text(
+              widget.label,
+              style: TextStyle(
+                color: getTitleColor(),
+              ),
+            ),
             const Gap(5.0),
             TextFormField(
               style: TextStyle(
