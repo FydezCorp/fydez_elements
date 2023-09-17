@@ -52,6 +52,7 @@ class _LongTextInputState extends State<_LongTextInput> {
         filled: true,
         fillColor: Colors.white,
         isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
@@ -88,7 +89,7 @@ class _LongTextInputState extends State<_LongTextInput> {
         alignLabelWithHint: true,
         errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.cornerRadius),
-            borderSide:  BorderSide(color: context.colorScheme.error)),
+            borderSide: BorderSide(color: context.colorScheme.error)),
       ),
       focusNode: widget.focusNode,
       textInputAction: widget.textInputAction,

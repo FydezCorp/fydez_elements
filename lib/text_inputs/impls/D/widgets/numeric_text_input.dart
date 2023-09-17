@@ -50,6 +50,7 @@ class _NumericTextInputState extends State<_NumericTextInput> {
         filled: true,
         fillColor: Colors.white,
         isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(

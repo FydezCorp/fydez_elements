@@ -50,6 +50,7 @@ class _SimpleTextInputState extends State<_SimpleTextInput> {
         filled: true,
         fillColor: Colors.white,
         isDense: true,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           borderSide: BorderSide(
