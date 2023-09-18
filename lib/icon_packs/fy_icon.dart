@@ -4,6 +4,7 @@ import 'package:fydez_elements/extensions/theme_extension.dart';
 import '../const/logger.dart';
 import 'icon_list.dart';
 import 'icon_pack.dart';
+import 'icon_packs/feather_icons.dart';
 import 'icon_packs/iconsax_icons.dart';
 import 'icon_packs/material_icons.dart';
 
@@ -29,6 +30,10 @@ class FyIcon implements IconList {
       // Return the Iconsax Icons icon pack.
       case IconPack.iconsax:
         return IconsaxIcons();
+
+      // Return the Feather Icons icon pack.
+      case IconPack.feather:
+        return FeatherIcons();
     }
   }
 

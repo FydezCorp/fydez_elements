@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../fydez_elements.dart';
-import 'data/widget_listview_type.dart';
 import 'impls/simple_widget_listview.dart';
 
 abstract class WidgetListViewFactory {

@@ -1,5 +1,6 @@
 import 'package:example/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/fydez_elements.dart';
 import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,119 +11,138 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> buttonsList = [
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.navBars);
         },
-        child: const Text('Nav Bars'),
+        title: 'Nav Bars',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.textInputs);
         },
-        child: const Text('Text Inputs'),
+        title: 'Text Inputs',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.iconPacks);
         },
-        child: const Text('Icon Packs'),
+        title: 'Icon Packs',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.buttons);
         },
-        child: const Text('Buttons'),
+        title: 'Buttons',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.refactoredButtons);
         },
-        child: const Text('refactoredButtons'),
+        title: 'refactoredButtons',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.popups);
         },
-        child: const Text('Popups'),
+        title: 'Popups',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.notifier);
         },
-        child: const Text('Notifiers'),
+        title: 'Notifiers',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.dropdown);
         },
-        child: const Text('Dropdowns'),
+        title: 'Dropdowns',
       ),
-      ElevatedButton(
-        child: const Text('Google Maps'),
+      FyFilledButton.create(
+        context,
+        title: 'Google Maps',
         onPressed: () {
           context.push(FydezDemoRoutes.maps);
         },
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.productGridView);
         },
-        child: const Text('Product Grid View'),
+        title: 'Product Grid iew',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.slider);
         },
-        child: const Text('Slider'),
+        title: 'Slider',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.tiles);
         },
-        child: const Text('Tiles'),
+        title: 'Tiles',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.empty);
         },
-        child: const Text('Empty Page!'),
+        title: 'Empty Page!',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.marketItem);
         },
-        child: const Text('Market Item'),
+        title: 'Market Item',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.categoryItem);
         },
-        child: const Text('Category Item'),
+        title: 'Category Item',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.skeletons);
         },
-        child: const Text('Skeletons'),
+        title: 'Skeletons',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.cartItem);
         },
-        child: const Text('Cart Item'),
+        title: 'Cart Item',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.tabbar);
         },
-        child: const Text('Tabbar'),
+        title: 'Tabbar',
       ),
-      ElevatedButton(
+      FyFilledButton.create(
+        context,
         onPressed: () {
           context.push(FydezDemoRoutes.blocks);
         },
-        child: const Text('Blocks!'),
+        title: 'Blocks!',
       ),
     ];
 

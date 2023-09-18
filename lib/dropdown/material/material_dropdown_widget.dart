@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import '../../fydez_elements.dart';
-import '../data/fy_dropdown_item.dart';
 
 class MaterialDropdownWidget<T> extends StatefulWidget {
   final T value;
