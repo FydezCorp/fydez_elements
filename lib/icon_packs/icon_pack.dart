@@ -10,9 +10,9 @@ enum IconPack {
       case 'material':
         return IconPack.material;
       case 'iconsax':
-        return IconPack.feather;
-      case 'feather':
         return IconPack.iconsax;
+      case 'feather':
+        return IconPack.feather;
       default:
         SerializationErrorLogger.showConfigError(
           value: value,

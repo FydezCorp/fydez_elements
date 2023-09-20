@@ -9,15 +9,15 @@ enum FyInputType {
 
   static FyInputType fromString(String? value) {
     switch (value) {
-      case 'a':
+      case 'A':
         return FyInputType.A;
-      case 'b':
+      case 'B':
         return FyInputType.B;
-      case 'c':
+      case 'C':
         return FyInputType.C;
-      case 'd':
+      case 'D':
         return FyInputType.D;
-      case 'e':
+      case 'E':
         return FyInputType.E;
       default:
         SerializationErrorLogger.showConfigError(
