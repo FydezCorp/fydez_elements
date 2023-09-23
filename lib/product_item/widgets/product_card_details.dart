@@ -27,6 +27,8 @@ class ProductCardDetails extends StatelessWidget {
         children: [
           Text(
             product.name,
+            maxLines: 2,
+            overflow: TextOverflow.fade,
             style: context.textTheme.titleMedium!.copyWith(
               color: context.fyColors.textTenColor,
             ),
