@@ -38,7 +38,8 @@ class SampleProduct extends BaseProduct {
     return [
       SampleProduct(
         id: 1,
-        name: 'Product 1',
+        name:
+            'Product 1 Product 1 Product 1 Product 1 Product 1 Product 1 Product 1 Product 1',
         image:
             'https://dkstatics-public.digikala.com/digikala-products/57c190160cf59aebdb94a0ec3a97feac84da013c_1681032738.jpg?x-oss-process=image/resize,m_lfit,h_300,w_300/format,webp/quality,q_80',
         price: '\$100',
