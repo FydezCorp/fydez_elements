@@ -11,6 +11,7 @@ class FyCountdownWithBackgroundBlock {
     required double cornerRadius,
     required CountdownWithBackgroundType type,
     required String backgroundImage,
+    VoidCallback? onTap,
   }) {
     return CountdownWithBackgroundFactory(type: type).create(
       remainingSeconds: remainingSeconds,
@@ -18,6 +19,7 @@ class FyCountdownWithBackgroundBlock {
       backgroundImage: backgroundImage,
       headline: headline,
       color: color,
+      onTap: onTap,
     );
   }
 }

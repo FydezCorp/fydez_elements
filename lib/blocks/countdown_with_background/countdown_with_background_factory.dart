@@ -10,6 +10,7 @@ abstract class CountdownWithBackgroundFactory {
     required Color color,
     required double cornerRadius,
     required String backgroundImage,
+    VoidCallback? onTap, 
   });
   factory CountdownWithBackgroundFactory({
     required CountdownWithBackgroundType type,
