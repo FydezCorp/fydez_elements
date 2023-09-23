@@ -13,6 +13,7 @@ class SimpleCountdownWithBackground implements CountdownWithBackgroundFactory {
     required Color color,
     required double cornerRadius,
     required String backgroundImage,
+    VoidCallback? onTap,
   }) {
     return SimpleCounterWithBackgroundWidget(
       color: color,
@@ -20,6 +21,7 @@ class SimpleCountdownWithBackground implements CountdownWithBackgroundFactory {
       headline: headline,
       remainingSeconds: remainingSeconds,
       backgroundImage: backgroundImage,
+      onTap: onTap,
     );
   }
 }
@@ -30,6 +32,7 @@ class SimpleCounterWithBackgroundWidget extends StatefulWidget {
   final Color color;
   final double cornerRadius;
   final String backgroundImage;
+  final VoidCallback? onTap;
   const SimpleCounterWithBackgroundWidget({
     super.key,
     required this.remainingSeconds,
@@ -37,6 +40,7 @@ class SimpleCounterWithBackgroundWidget extends StatefulWidget {
     required this.color,
     required this.cornerRadius,
     required this.backgroundImage,
+    this.onTap,
   });
 
   @override
@@ -92,98 +96,101 @@ class _SimpleCounterWithBackgroundWidgetState
     TextStyle labelStyle = context.textTheme.labelSmall!.copyWith(
       color: context.colorScheme.onError,
     );
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: context.fyColors.textTwoColor,
-        borderRadius: BorderRadius.circular(widget.cornerRadius),
-        image: DecorationImage(
-          image: NetworkImage(widget.backgroundImage),
-          fit: BoxFit.cover,
-        ),
-      ),
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 24.0, bottom: 32.0),
-            child: Text(
-              widget.headline,
-              style: context.textTheme.headlineLarge!
-                  .copyWith(color: widget.color),
-            ),
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: context.fyColors.textTwoColor,
+          borderRadius: BorderRadius.circular(widget.cornerRadius),
+          image: DecorationImage(
+            image: NetworkImage(widget.backgroundImage),
+            fit: BoxFit.cover,
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            decoration: BoxDecoration(
-              color: context.colorScheme.error.withOpacity(0.75),
-              borderRadius: BorderRadius.circular(widget.cornerRadius * 0.8),
+        ),
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 24.0, bottom: 32.0),
+              child: Text(
+                widget.headline,
+                style: context.textTheme.headlineLarge!
+                    .copyWith(color: widget.color),
+              ),
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        days.toString(),
-                        style: numberStyle,
-                      ),
-                      Text(
-                        'Days',
-                        style: labelStyle,
-                      ),
-                    ],
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              decoration: BoxDecoration(
+                color: context.colorScheme.error.withOpacity(0.75),
+                borderRadius: BorderRadius.circular(widget.cornerRadius * 0.8),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          days.toString(),
+                          style: numberStyle,
+                        ),
+                        Text(
+                          'Days',
+                          style: labelStyle,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Text(':', style: labelStyle),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        hours.toString(),
-                        style: numberStyle,
-                      ),
-                      Text(
-                        'Hours',
-                        style: labelStyle,
-                      ),
-                    ],
+                  Text(':', style: labelStyle),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          hours.toString(),
+                          style: numberStyle,
+                        ),
+                        Text(
+                          'Hours',
+                          style: labelStyle,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Text(':', style: labelStyle),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        minutes.toString(),
-                        style: numberStyle,
-                      ),
-                      Text(
-                        'Minutes',
-                        style: labelStyle,
-                      ),
-                    ],
+                  Text(':', style: labelStyle),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          minutes.toString(),
+                          style: numberStyle,
+                        ),
+                        Text(
+                          'Minutes',
+                          style: labelStyle,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Text(':', style: labelStyle),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        seconds.toString(),
-                        style: numberStyle,
-                      ),
-                      Text(
-                        'Seconds',
-                        style: labelStyle,
-                      ),
-                    ],
+                  Text(':', style: labelStyle),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          seconds.toString(),
+                          style: numberStyle,
+                        ),
+                        Text(
+                          'Seconds',
+                          style: labelStyle,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
