@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
@@ -104,7 +105,7 @@ class _SimpleCounterWithBackgroundWidgetState
           color: context.fyColors.textTwoColor,
           borderRadius: BorderRadius.circular(widget.cornerRadius),
           image: DecorationImage(
-            image: NetworkImage(widget.backgroundImage),
+            image: CachedNetworkImageProvider(widget.backgroundImage),
             fit: BoxFit.cover,
           ),
         ),
