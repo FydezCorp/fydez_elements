@@ -11,7 +11,7 @@ enum ProductImageBackgroundType {
 
   static ProductImageBackgroundType fromString(String? value) {
     switch (value) {
-      case 'grey':
+      case 'gray':
         return ProductImageBackgroundType.grey;
       case 'white':
         return ProductImageBackgroundType.white;
