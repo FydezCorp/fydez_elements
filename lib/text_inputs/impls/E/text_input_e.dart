@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:gap/gap.dart';
 
 import '../../text_input_factory.dart';
 
@@ -10,7 +9,7 @@ part 'widgets/numeric_text_input.dart';
 part 'widgets/secure_text_input.dart';
 part 'widgets/simple_text_input.dart';
 
-class TextInputB implements TextInputFactory {
+class TextInputE implements TextInputFactory {
   @override
   Widget build({
     Key? key,
@@ -28,7 +27,7 @@ class TextInputB implements TextInputFactory {
     void Function(String p1)? onFieldSubmitted,
     void Function()? onTap,
   }) {
-    return TextInputBWidget(
+    return TextInputEWidget(
       mode: mode,
       controller: controller,
       label: label,
@@ -47,12 +46,12 @@ class TextInputB implements TextInputFactory {
   }
 }
 
-class TextInputBWidget extends StatelessWidget {
+class TextInputEWidget extends StatelessWidget {
   /// Creates a Text Input Widget ([TextFormField])
   ///
   /// All the fields are same as [TextFormField] except 'type' parameter which
   /// takes an enum of [InputMode] which defaults to [InputMode.simple].
-  const TextInputBWidget({
+  const TextInputEWidget({
     Key? key,
 
     /// Defaults to [InputMode.simple].

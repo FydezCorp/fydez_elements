@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
@@ -55,14 +57,16 @@ class _CountdownWithBackgroundDemoState
         ),
         const Gap(20.0),
         FyCountdownWithBackgroundBlock.create(
-          remainingSeconds: 100000,
-          headline: 'Sample Countdown Headline',
-          backgroundImage:
-              'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
-          color: context.colorScheme.primary,
-          cornerRadius: cornerRadius,
-          type: type,
-        ),
+            remainingSeconds: 100000,
+            headline: 'Sample Countdown Headline',
+            backgroundImage:
+                'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
+            color: context.colorScheme.primary,
+            cornerRadius: cornerRadius,
+            type: type,
+            onTap: () {
+              log('Tap!');
+            }),
       ],
     );
   }

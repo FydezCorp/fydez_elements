@@ -2,7 +2,8 @@ import '../const/logger.dart';
 
 enum IconPack {
   material,
-  iconsax;
+  iconsax,
+  feather;
 
   static IconPack fromString(String? value) {
     switch (value) {
@@ -10,6 +11,8 @@ enum IconPack {
         return IconPack.material;
       case 'iconsax':
         return IconPack.iconsax;
+      case 'feather':
+        return IconPack.feather;
       default:
         SerializationErrorLogger.showConfigError(
           value: value,

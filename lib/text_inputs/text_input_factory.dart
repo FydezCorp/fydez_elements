@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
-import 'package:fydez_elements/text_inputs/impls/B/text_input_b.dart';
 
 import 'impls/A/text_input_a.dart';
+import 'impls/B/text_input_b.dart';
+import 'impls/C/text_input_c.dart';
+import 'impls/D/text_input_d.dart';
+import 'impls/E/text_input_e.dart';
 
 abstract class TextInputFactory {
   Widget build({
@@ -28,6 +31,12 @@ abstract class TextInputFactory {
         return TextInputA();
       case FyInputType.B:
         return TextInputB();
+      case FyInputType.C:
+        return TextInputC();
+      case FyInputType.D:
+        return TextInputD();
+      case FyInputType.E:
+        return TextInputE();
     }
   }
 }

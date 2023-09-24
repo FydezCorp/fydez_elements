@@ -57,6 +57,14 @@ class _SecureTextInputState extends State<_SecureTextInput> {
       }
     }
 
+    Color getTitleColor() {
+      if (_isFocused) {
+        return focusedColor;
+      } else {
+        return unfocusedColor;
+      }
+    }
+
     return FocusScope(
       child: Focus(
         onFocusChange: (value) {
@@ -64,74 +72,87 @@ class _SecureTextInputState extends State<_SecureTextInput> {
             _isFocused = value;
           });
         },
-        child: TextFormField(
-          style: TextStyle(
-              fontSize: 14,
-              color: context.theme.extension<FyTextColor>()!.textTenColor),
-          controller: widget.controller,
-          keyboardType: widget.keyboardType,
-          obscureText: _isObscure,
-          validator: widget.validator,
-          decoration: InputDecoration(
-            hintText: widget.hint,
-            label: Text(widget.label),
-            enabled: widget.enabled ?? true,
-            suffixIcon: IconButton(
-              onPressed: _changePasswordVisibility,
-              icon: _isObscure
-                  ? Icon(
-                      FyIcon(context).eye,
-                      color: getIconColor(),
-                    )
-                  : Icon(
-                      FyIcon(context).eyeSlash,
-                      color: getIconColor(),
-                    ),
-            ),
-            isDense: true,
-            filled: true,
-            fillColor: context.fyColors.textTwoColor,
-            border: UnderlineInputBorder(
-              borderRadius: BorderRadius.circular(widget.cornerRadius),
-              borderSide: BorderSide(
-                color: context.fyColors.textFourColor,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.label,
+              style: TextStyle(
+                color: getTitleColor(),
               ),
             ),
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            hintStyle: TextStyle(
-                color: context.fyColors.textFiveColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400),
-            labelStyle: TextStyle(
-                color: context.fyColors.textSixColor,
-                fontSize: 14,
-                fontWeight: FontWeight.w400),
-            focusedBorder: UnderlineInputBorder(
-                borderSide:
-                    const BorderSide(color: Colors.transparent, width: 1.5),
-                borderRadius: BorderRadius.circular(widget.cornerRadius)),
-            disabledBorder: UnderlineInputBorder(
-                borderRadius: BorderRadius.circular(widget.cornerRadius),
-                borderSide: const BorderSide(color: Colors.transparent)),
-            enabledBorder: UnderlineInputBorder(
-                borderRadius: BorderRadius.circular(widget.cornerRadius),
-                borderSide: const BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                )),
-            focusColor: context.fyColors.textTenColor,
-            floatingLabelStyle: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                color: context.fyColors.textSixColor),
-            alignLabelWithHint: false,
-          ),
-          focusNode: widget.focusNode,
-          textInputAction: widget.textInputAction,
-          onEditingComplete: widget.onEditingComplete,
-          onFieldSubmitted: widget.onFieldSubmitted,
-          onTap: widget.onTap,
+            const Gap(5.0),
+            TextFormField(
+              style: TextStyle(
+                  fontSize: 14,
+                  color: context.theme.extension<FyTextColor>()!.textTenColor),
+              controller: widget.controller,
+              keyboardType: widget.keyboardType,
+              obscureText: _isObscure,
+              validator: widget.validator,
+              decoration: InputDecoration(
+                hintText: widget.hint,
+                enabled: widget.enabled ?? true,
+                suffixIcon: IconButton(
+                  onPressed: _changePasswordVisibility,
+                  icon: _isObscure
+                      ? Icon(
+                          FyIcon(context).eye,
+                          color: getIconColor(),
+                        )
+                      : Icon(
+                          FyIcon(context).eyeSlash,
+                          color: getIconColor(),
+                        ),
+                ),
+                isDense: true,
+                floatingLabelBehavior: FloatingLabelBehavior.always,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(widget.cornerRadius),
+                  borderSide: BorderSide(
+                    color: context.fyColors.textFourColor,
+                  ),
+                ),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                hintStyle: TextStyle(
+                    color: context.fyColors.textFiveColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400),
+                labelStyle: TextStyle(
+                    color: context.fyColors.textSixColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: context.fyColors.textTenColor, width: 1.5),
+                    borderRadius: BorderRadius.circular(widget.cornerRadius)),
+                disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(widget.cornerRadius),
+                    borderSide: BorderSide(
+                        color:
+                            context.fyColors.textFiveColor.withOpacity(0.3))),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(widget.cornerRadius),
+                    borderSide: BorderSide(
+                        color: context.fyColors.textFiveColor, width: 1)),
+                focusColor: context.fyColors.textTenColor,
+                floatingLabelStyle: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: context.fyColors.textSixColor),
+                alignLabelWithHint: true,
+                errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(widget.cornerRadius),
+                    borderSide: BorderSide(color: context.colorScheme.error)),
+              ),
+              focusNode: widget.focusNode,
+              textInputAction: widget.textInputAction,
+              onEditingComplete: widget.onEditingComplete,
+              onFieldSubmitted: widget.onFieldSubmitted,
+              onTap: widget.onTap,
+            ),
+          ],
         ),
       ),
     );
