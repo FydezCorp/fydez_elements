@@ -58,11 +58,10 @@ class SimpleProductListViewWidget extends StatelessWidget {
                 SimpleProductCountdown(remainingSeconds: remainingSeconds!),
               const Spacer(),
               if (cta != null)
-                FyButton.text(
+                FyTextButton.create(
+                  context,
                   onPressed: cta!.action,
-                  options: TextButtonOption(
-                    text: cta!.name,
-                  ),
+                  title: cta!.name,
                 ),
             ],
           ),

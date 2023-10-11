@@ -41,7 +41,6 @@ class NormalVideoFactoryWidget extends StatefulWidget {
 }
 
 class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
-
   @override
   void initState() {
     super.initState();
@@ -53,7 +52,8 @@ class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
     settings();
   }
 
-  settings() {/* 
+  settings() {
+    /* 
     _controller.setLooping(true);
     _controller.setVolume(0.0);
     _controller.play(); */
@@ -62,7 +62,8 @@ class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
   @override
   void dispose() {
 /*     _controller.dispose();
- */    super.dispose();
+ */
+    super.dispose();
   }
 
   @override
@@ -77,7 +78,8 @@ class _NormalVideoFactoryWidgetState extends State<NormalVideoFactoryWidget> {
             color: context.fyColors.textTwoColor,
             child: /* _controller.value.isPlaying
                 ? VideoPlayer(_controller)
-                : const */ CupertinoActivityIndicator(),
+                : const */
+                const CupertinoActivityIndicator(),
           ),
         ),
       ),
