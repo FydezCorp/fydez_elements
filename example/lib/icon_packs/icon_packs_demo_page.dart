@@ -37,7 +37,6 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                   });
                 },
               ),
-              // TODO: Can we automate this?
               Wrap(
                 children: [
                   IconWidget(

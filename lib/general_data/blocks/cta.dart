@@ -8,6 +8,4 @@ class CTA {
     required this.name,
     required this.action,
   });
-
-  // TODO: Add JSON serialization.
 }

@@ -14,7 +14,6 @@ abstract class RadioTileFactory<T> {
   });
 
   factory RadioTileFactory({required RadioTileType type}) {
-    // TODO: Add a switch case for other implementations in the future.
     return NormalRadioTile();
   }
 }
