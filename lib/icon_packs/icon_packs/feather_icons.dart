@@ -171,4 +171,7 @@ class FeatherIcons extends IconList {
 
   @override
   IconData get cartRemoveSingular => fi.FeatherIcons.trash2;
+
+  @override
+  IconData get filterButton => fi.FeatherIcons.filter;
 }

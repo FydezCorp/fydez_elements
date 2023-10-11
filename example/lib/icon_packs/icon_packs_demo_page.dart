@@ -424,6 +424,13 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).cartRemoveSingular,
                     name: 'cartRemoveSingular',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).filterButton,
+                    name: 'filterButton',
+                  ),
                 ],
               ),
               Row(

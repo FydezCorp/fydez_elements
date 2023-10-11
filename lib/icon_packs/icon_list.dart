@@ -39,6 +39,7 @@ abstract class IconList {
 
   // * Cart & Shop Functionality
   IconData get addToCart;
+  IconData get filterButton;
 
   // * Profile Section
   IconData get profileAccountSettings;
@@ -66,7 +67,6 @@ abstract class IconList {
   IconData get helpFAQ;
   IconData get helpGift;
   IconData get helpPrivacy;
-
 
   // * Cart
   IconData get cartRemove;

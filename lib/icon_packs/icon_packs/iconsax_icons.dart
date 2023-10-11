@@ -171,4 +171,7 @@ class IconsaxIcons extends IconList {
 
   @override
   IconData get cartRemoveSingular => Iconsax.trash;
+  
+  @override
+  IconData get filterButton => Iconsax.filter;
 }
