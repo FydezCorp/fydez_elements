@@ -68,6 +68,10 @@ class _TilesDemoPageState extends State<TilesDemoPage> {
               });
             },
           ),
+          const FyExpansionTile(
+            question: 'text 1',
+            answer: Text('data'),
+          )
         ],
       )),
     );

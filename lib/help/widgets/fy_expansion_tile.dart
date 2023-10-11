@@ -22,7 +22,11 @@ class FyExpansionTile extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(bottom: 12.0),
       child: ExpansionTile(
-        title: Text(question),
+        title: Text(
+          question,
+          style: context.textTheme.headlineLarge!
+              .copyWith(color: context.fyColors.textTenColor),
+        ),
         collapsedBackgroundColor: Colors.transparent,
         tilePadding: const EdgeInsets.symmetric(horizontal: 16.0),
         backgroundColor: Colors.transparent,
