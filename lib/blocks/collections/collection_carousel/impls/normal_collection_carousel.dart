@@ -51,9 +51,7 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
               children: [
                 Text(
                   title ?? '',
-                  style: context.textTheme.titleMedium!.copyWith(
-                    color: context.fyColors.textNineColor,
-                  ),
+                  style: context.textTheme.titleLarge,
                 ),
               ],
             ),
