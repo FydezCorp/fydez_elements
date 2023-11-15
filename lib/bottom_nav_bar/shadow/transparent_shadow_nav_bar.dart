@@ -35,7 +35,7 @@ class TransparentShadowNavBar extends StatelessWidget {
               ),
             )
             .toList(),
-        selectedItemColor: context.fyColors.textTenColor,
+        selectedItemColor: context.colorScheme.primary,
         unselectedItemColor: context.fyColors.textSixColor,
         onTap: onTap,
         currentIndex: currentIndex,

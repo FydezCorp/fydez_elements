@@ -16,7 +16,7 @@ class NavBarTransparentIcon extends StatelessWidget {
         ? Container(
             padding: const EdgeInsets.all(5.0),
             decoration: BoxDecoration(
-              color: context.fyColors.textTenColor,
+              color: context.colorScheme.primary,
               shape: BoxShape.circle,
             ),
             child: Icon(

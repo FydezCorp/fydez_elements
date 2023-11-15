@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 
 class NavBarMainTitleIcon extends StatelessWidget {
   final IconData icon;
@@ -16,10 +17,10 @@ class NavBarMainTitleIcon extends StatelessWidget {
     return isSelected
         ? Text(
             '. $label',
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w700,
-            ),
+            style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: context.colorScheme.primary),
           )
         : Icon(icon);
   }
