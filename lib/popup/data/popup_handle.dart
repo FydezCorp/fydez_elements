@@ -7,9 +7,9 @@ enum PopupHandle {
 
   static PopupHandle fromString(String? value) {
     switch (value) {
-      case 'inside':
+      case 'Simple':
         return PopupHandle.inside;
-      case 'outside':
+      case 'out_of_box':
         return PopupHandle.outside;
       case 'close':
         return PopupHandle.close;
