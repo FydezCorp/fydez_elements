@@ -42,7 +42,7 @@ class MainTitleNoneNavBar extends StatelessWidget {
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
-          showUnselectedLabels: false,
+          showUnselectedLabels: true,
         ));
   }
 }
