@@ -42,7 +42,7 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Row(
             children: [
               Text(
@@ -51,7 +51,8 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
               ),
               const Gap(10.0),
               if (remainingSeconds != null)
-                SimpleWidgetListViewCountdown(remainingSeconds: remainingSeconds!),
+                SimpleWidgetListViewCountdown(
+                    remainingSeconds: remainingSeconds!),
               const Spacer(),
               if (cta != null)
                 FyTextButton.create(
@@ -87,10 +88,12 @@ class SimpleWidgetListViewCountdown extends StatefulWidget {
   });
 
   @override
-  State<SimpleWidgetListViewCountdown> createState() => _SimpleWidgetListViewCountdownState();
+  State<SimpleWidgetListViewCountdown> createState() =>
+      _SimpleWidgetListViewCountdownState();
 }
 
-class _SimpleWidgetListViewCountdownState extends State<SimpleWidgetListViewCountdown> {
+class _SimpleWidgetListViewCountdownState
+    extends State<SimpleWidgetListViewCountdown> {
   late int _seconds;
   late Timer _timer;
   @override
