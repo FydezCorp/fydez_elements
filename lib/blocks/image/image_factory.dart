@@ -8,7 +8,7 @@ abstract class ImageFactory {
   Widget create(
     BuildContext context, {
     required String imageUrl,
-    required double aspectRatio,
+    required double? aspectRatio,
     required CTA cta,
     required double cornerRadius,
   });

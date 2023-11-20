@@ -85,6 +85,20 @@ class _ImageDemoState extends State<ImageDemo> {
           cornerRadius: cornerRadius,
           type: type,
         ),
+        const Gap(10.0),
+        FyImageBlock.create(
+          context,
+          imageUrl:
+              'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
+          cta: CTA(
+            name: 'Image',
+            action: () {
+              log('Image Tapped');
+            },
+          ),
+          cornerRadius: cornerRadius,
+          type: type,
+        ),
       ],
     );
   }

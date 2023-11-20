@@ -6,7 +6,7 @@ class FyImageBlock {
   static Widget create(
     BuildContext context, {
     required String imageUrl,
-    required double aspectRatio,
+    double? aspectRatio,
     required CTA cta,
     required double cornerRadius,
     required ImageBlockType type,
