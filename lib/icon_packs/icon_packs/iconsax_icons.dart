@@ -174,4 +174,7 @@ class IconsaxIcons extends IconList {
   
   @override
   IconData get filterButton => Iconsax.filter;
+  
+  @override
+  IconData get arrowRight => Iconsax.arrow_right_3;
 }

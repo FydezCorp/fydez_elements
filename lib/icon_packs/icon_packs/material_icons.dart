@@ -169,7 +169,10 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get cartRemoveSingular => Icons.delete_forever_outlined;
-  
+
   @override
   IconData get filterButton => Icons.filter_alt_outlined;
+
+  @override
+  IconData get arrowRight => Icons.keyboard_arrow_right_rounded;
 }

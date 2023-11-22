@@ -12,6 +12,7 @@ abstract class IconList {
   IconData get arrowDown;
   IconData get arrowUp;
   IconData get search;
+  IconData get arrowRight;
 
   // * General
   IconData get showPassword;
