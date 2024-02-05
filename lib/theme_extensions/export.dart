@@ -8,3 +8,4 @@ export 'data/text_input_configuration.dart';
 export 'fy_primary_color.dart';
 export 'fy_text_color.dart';
 export 'fy_theme_parameters.dart';
+export 'fy_spacing.dart';
