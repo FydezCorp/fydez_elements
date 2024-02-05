@@ -175,4 +175,7 @@ class MaterialIcons extends IconList {
 
   @override
   IconData get arrowRight => Icons.keyboard_arrow_right_rounded;
+  
+  @override
+  IconData get sortButton => Icons.sort_outlined;
 }

@@ -212,6 +212,9 @@ class FyIcon implements IconList {
   @override
   IconData get arrowRight => getIconPack.arrowRight;
 
+  @override
+  IconData get sortButton => getIconPack.sortButton;
+
   /// Returns the appropriate icon based on the provided icon name.
   static IconData fromString(
     BuildContext context, {
@@ -316,6 +319,8 @@ class FyIcon implements IconList {
         return FyIcon(context, iconPack: finalIconPack).cartAdd;
       case 'cartRemove':
         return FyIcon(context, iconPack: finalIconPack).cartRemove;
+      case 'sortButton':
+        return FyIcon(context, iconPack: finalIconPack).sortButton;
       case 'cartRemoveSingular':
         return FyIcon(context, iconPack: finalIconPack).cartRemoveSingular;
       case 'filterButton':

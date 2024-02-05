@@ -431,6 +431,13 @@ class _IconPacksDemoPageState extends State<IconPacksDemoPage> {
                     ).filterButton,
                     name: 'filterButton',
                   ),
+                  IconWidget(
+                    icon: FyIcon(
+                      context,
+                      iconPack: selectedIconPack,
+                    ).sortButton,
+                    name: 'sortButton',
+                  ),
                 ],
               ),
               Row(

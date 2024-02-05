@@ -41,6 +41,7 @@ abstract class IconList {
   // * Cart & Shop Functionality
   IconData get addToCart;
   IconData get filterButton;
+  IconData get sortButton;
 
   // * Profile Section
   IconData get profileAccountSettings;

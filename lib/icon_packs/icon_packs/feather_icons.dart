@@ -174,7 +174,10 @@ class FeatherIcons extends IconList {
 
   @override
   IconData get filterButton => fi.FeatherIcons.filter;
-  
+
   @override
   IconData get arrowRight => fi.FeatherIcons.arrowRight;
+
+  @override
+  IconData get sortButton => fi.FeatherIcons.menu;
 }

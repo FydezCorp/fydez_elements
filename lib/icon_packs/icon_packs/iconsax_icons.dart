@@ -177,4 +177,7 @@ class IconsaxIcons extends IconList {
   
   @override
   IconData get arrowRight => Iconsax.arrow_right_3;
+  
+  @override
+  IconData get sortButton => Iconsax.sort;
 }
