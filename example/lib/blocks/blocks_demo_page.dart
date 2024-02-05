@@ -27,6 +27,7 @@ class BlocksDemoPage extends StatelessWidget {
                 // VideoDemo(),
                 // Gap(20.0),
                 CollectionCarouselDemo(),
+
                 Gap(20.0),
                 CollectionSliderDemo(),
                 Gap(20.0),

@@ -41,25 +41,32 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final horizontalPadding = context.fySpacing.rightLeftPadding.toDouble();
     return Column(
       children: [
-        Visibility(
-          visible: title != null,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 16.0),
-            child: Row(
-              children: [
-                Text(
-                  title ?? '',
-                  style: context.textTheme.titleLarge,
-                ),
-              ],
+        Container(
+          margin: EdgeInsets.symmetric(
+            // vertical: context.fySpacing.topBottomPadding.toDouble(),
+            horizontal: horizontalPadding,
+          ),
+          child: Visibility(
+            visible: title != null,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 16.0),
+              child: Row(
+                children: [
+                  Text(
+                    title ?? '',
+                    style: context.textTheme.titleLarge,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
         SizedBox(
           height: 75,
-          child: ListView.separated(
+          child: ListView.builder(
             itemCount: items.length,
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
@@ -72,6 +79,11 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
                 child: Container(
                   width: 175,
                   height: 75,
+                  margin: EdgeInsets.only(
+                    left:
+                        index == 0 ? horizontalPadding : horizontalPadding / 2,
+                    right: index != items.length - 1 ? 0 : horizontalPadding,
+                  ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(cornerRadius),
                     color: context.colorScheme.primary,
@@ -100,7 +112,6 @@ class NormalCollectionCarouselWidget extends StatelessWidget {
                 ),
               );
             },
-            separatorBuilder: (context, index) => const SizedBox(width: 10),
           ),
         ),
       ],
