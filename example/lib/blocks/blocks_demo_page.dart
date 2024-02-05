@@ -17,7 +17,7 @@ class BlocksDemoPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(0.0),
             child: Column(
               children: [
                 SearchBarDemo(),

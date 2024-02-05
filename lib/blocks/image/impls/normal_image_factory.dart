@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:fydez_elements/image/fy_network_image.dart';
 
 import '../../../fydez_elements.dart';
@@ -42,24 +43,30 @@ class NormalImageFactoryWidget extends StatelessWidget {
         child: InkWell(
       onTap: cta.action,
       borderRadius: BorderRadius.circular(cornerRadius),
-      child: aspectRatio != null
-          ? AspectRatio(
-              aspectRatio: aspectRatio!,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  image: DecorationImage(
-                    image: CachedNetworkImageProvider(imageUrl),
-                    fit: BoxFit.cover,
+      child: Container(
+        margin: EdgeInsets.symmetric(
+          vertical: context.fySpacing.topBottomPadding.toDouble(),
+          horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+        ),
+        child: aspectRatio != null
+            ? AspectRatio(
+                aspectRatio: aspectRatio!,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    image: DecorationImage(
+                      image: CachedNetworkImageProvider(imageUrl),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(cornerRadius),
                   ),
-                  borderRadius: BorderRadius.circular(cornerRadius),
                 ),
+              )
+            : ClipRRect(
+                borderRadius: BorderRadius.circular(cornerRadius),
+                child: FyNetworkImage(url: imageUrl),
               ),
-            )
-          : ClipRRect(
-              borderRadius: BorderRadius.circular(cornerRadius),
-              child: FyNetworkImage(url: imageUrl),
-            ),
+      ),
     ));
   }
 }
