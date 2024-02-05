@@ -57,6 +57,7 @@ class _CountdownWithBackgroundDemoState
         ),
         const Gap(20.0),
         FyCountdownWithBackgroundBlock.create(
+          context, 
             remainingSeconds: 100000,
             headline: 'Sample Countdown Headline',
             backgroundImage:

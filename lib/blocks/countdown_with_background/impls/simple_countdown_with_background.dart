@@ -89,6 +89,8 @@ class _SimpleCounterWithBackgroundWidgetState
     int minutes = (_seconds % 3600) ~/ 60;
     int seconds = _seconds % 60;
 
+    const insidePadding = 8.0;
+
     TextStyle numberStyle = context.textTheme.headlineMedium!.copyWith(
       color: context.colorScheme.onError,
       fontSize: 32,
@@ -109,7 +111,11 @@ class _SimpleCounterWithBackgroundWidgetState
             fit: BoxFit.cover,
           ),
         ),
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(insidePadding),
+        margin: EdgeInsets.symmetric(
+          vertical: context.fySpacing.topBottomPadding.toDouble(),
+          horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+        ),
         child: Column(
           children: [
             Padding(
@@ -124,7 +130,9 @@ class _SimpleCounterWithBackgroundWidgetState
               padding: const EdgeInsets.symmetric(vertical: 10.0),
               decoration: BoxDecoration(
                 color: context.colorScheme.error.withOpacity(0.75),
-                borderRadius: BorderRadius.circular(widget.cornerRadius * 0.8),
+                borderRadius: BorderRadius.circular(
+                  widget.cornerRadius - insidePadding,
+                ),
               ),
               child: Row(
                 children: [
