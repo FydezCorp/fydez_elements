@@ -11,6 +11,7 @@ export 'blocks/countdown_with_background/export.dart';
 export 'blocks/image/export.dart';
 export 'blocks/product_listview/export.dart';
 export 'blocks/search_bar/export.dart';
+export 'blocks/text/export.dart';
 export 'blocks/video/export.dart';
 export 'blocks/widget_listview/export.dart';
 export 'bottom_nav_bar/export.dart';

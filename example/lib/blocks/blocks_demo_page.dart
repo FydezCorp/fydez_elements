@@ -1,6 +1,7 @@
 import 'package:example/blocks/widgets/collection_slider_demo.dart';
 import 'package:example/blocks/widgets/countdown_demo.dart';
 import 'package:example/blocks/widgets/countdown_with_background_demo.dart';
+import 'package:example/blocks/widgets/text_block_demo.dart';
 import 'package:example/gap.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,8 @@ class BlocksDemoPage extends StatelessWidget {
                 // VideoDemo(),
                 // Gap(20.0),
                 CollectionCarouselDemo(),
-
+                Gap(20.0),
+                TextBlockDemo(),
                 Gap(20.0),
                 CollectionSliderDemo(),
                 Gap(20.0),
