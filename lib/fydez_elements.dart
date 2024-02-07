@@ -4,6 +4,7 @@ export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:iconsax/iconsax.dart';
 
 export '/general_data/scroll_option.dart';
+export 'blocks/blog/export.dart';
 export 'blocks/collections/collection_slider/export.dart';
 export 'blocks/collections/export.dart';
 export 'blocks/countdown/export.dart';
