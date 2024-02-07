@@ -36,42 +36,47 @@ class NormalCategoryWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(cornerRadius),
-        onTap: onTap,
-        child: ClipRRect(
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+        vertical: context.fySpacing.topBottomPadding.toDouble() / 2,
+      ),
+      child: Ink(
+        child: InkWell(
           borderRadius: BorderRadius.circular(cornerRadius),
-          child: Container(
-            height: 80,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              // borderRadius: BorderRadius.circular(cornerRadius),
-              color: context.fyColors.textOneColor,
-            ),
-            child: Stack(
-              alignment: Alignment.centerLeft,
-              children: [
-                Positioned(
-                  right: 0,
-                  child: FyNetworkImage(
-                    url: imageUrl,
-                    height: 80,
-                    width: 80,
-                    fit: BoxFit.cover,
+          onTap: onTap,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(cornerRadius),
+            child: Container(
+              height: 80,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: context.fyColors.textOneColor,
+              ),
+              child: Stack(
+                alignment: Alignment.centerLeft,
+                children: [
+                  Positioned(
+                    right: 0,
+                    child: FyNetworkImage(
+                      url: imageUrl,
+                      height: 80,
+                      width: 80,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                Positioned(
-                  left: 20,
-                  child: Text(
-                    name.toUpperCase(),
-                    style: Theme.of(context)
-                        .textTheme
-                        .displaySmall!
-                        .copyWith(color: context.fyColors.textNineColor),
+                  Positioned(
+                    left: 20,
+                    child: Text(
+                      name.toUpperCase(),
+                      style: Theme.of(context)
+                          .textTheme
+                          .displaySmall!
+                          .copyWith(color: context.fyColors.textNineColor),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

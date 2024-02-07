@@ -33,27 +33,21 @@ class _CategoryItemDemoPageState extends State<CategoryItemDemoPage> {
                   ))
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FyCategoryItem.create(
-                  context,
-                  name: 'name',
-                  imageUrl:
-                      'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
-                  onTap: () {},
-                  cornerRadius: cornerRadius,
-                ),
+              FyCategoryItem.create(
+                context,
+                name: 'name',
+                imageUrl:
+                    'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
+                onTap: () {},
+                cornerRadius: cornerRadius,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: FyCategoryItem.create(
-                  context,
-                  name: 'name',
-                  imageUrl:
-                      'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
-                  onTap: () {},
-                  cornerRadius: cornerRadius,
-                ),
+              FyCategoryItem.create(
+                context,
+                name: 'name',
+                imageUrl:
+                    'https://dkstatics-public.digikala.com/digikala-adservice-banners/5134638e0bcb2639019b8bb899c224ef3c3fac0b_1684143360.jpg',
+                onTap: () {},
+                cornerRadius: cornerRadius,
               ),
             ],
           ),
