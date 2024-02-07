@@ -43,13 +43,19 @@ class ShadowImageFactoryWidget extends StatelessWidget {
         child: InkWell(
       onTap: cta.action,
       borderRadius: BorderRadius.circular(cornerRadius),
-      child: aspectRatio != null
-          ? AspectRatio(
-              aspectRatio: aspectRatio!,
-              child:
-                  ImageWidget(imageUrl: imageUrl, cornerRadius: cornerRadius),
-            )
-          : FyNetworkImage(url: imageUrl),
+      child: Container(
+        margin: EdgeInsets.symmetric(
+          vertical: context.fySpacing.topBottomPadding.toDouble(),
+          horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+        ),
+        child: aspectRatio != null
+            ? AspectRatio(
+                aspectRatio: aspectRatio!,
+                child:
+                    ImageWidget(imageUrl: imageUrl, cornerRadius: cornerRadius),
+              )
+            : FyNetworkImage(url: imageUrl),
+      ),
     ));
   }
 }

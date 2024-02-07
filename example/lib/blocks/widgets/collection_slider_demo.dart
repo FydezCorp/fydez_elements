@@ -75,6 +75,7 @@ class _CollectionSliderDemoState extends State<CollectionSliderDemo> {
         ),
         const Gap(20.0),
         FyCollectionSliderBlock.create(
+          context,
           items: items,
           type: type,
           hasTitle: hasTitle,

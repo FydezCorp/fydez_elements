@@ -4,6 +4,7 @@ export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:iconsax/iconsax.dart';
 
 export '/general_data/scroll_option.dart';
+export 'blocks/blog/export.dart';
 export 'blocks/collections/collection_slider/export.dart';
 export 'blocks/collections/export.dart';
 export 'blocks/countdown/export.dart';
@@ -11,6 +12,7 @@ export 'blocks/countdown_with_background/export.dart';
 export 'blocks/image/export.dart';
 export 'blocks/product_listview/export.dart';
 export 'blocks/search_bar/export.dart';
+export 'blocks/text/export.dart';
 export 'blocks/video/export.dart';
 export 'blocks/widget_listview/export.dart';
 export 'bottom_nav_bar/export.dart';

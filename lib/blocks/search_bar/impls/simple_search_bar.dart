@@ -35,6 +35,9 @@ class SimpleSearchBarWidget extends StatelessWidget {
             color: context.fyColors.textTwoColor,
             borderRadius: BorderRadius.circular(10),
           ),
+          margin: EdgeInsets.symmetric(
+              vertical: context.fySpacing.topBottomPadding.toDouble(),
+              horizontal: context.fySpacing.rightLeftPadding.toDouble()),
           padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
           child: Row(
             children: [

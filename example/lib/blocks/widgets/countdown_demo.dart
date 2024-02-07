@@ -53,6 +53,7 @@ class _CountdownDemoState extends State<CountdownDemo> {
         ),
         const Gap(20.0),
         FyCountdownBlock.create(
+          context,
           remainingSeconds: 100000,
           headline: 'Sample Countdown Headline',
           color: context.colorScheme.primary,

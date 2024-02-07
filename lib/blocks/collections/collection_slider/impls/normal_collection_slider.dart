@@ -48,80 +48,88 @@ class _NormalCollectionSliderWidgetState
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(widget.cornerRadius),
-          child: CarouselSlider.builder(
-            carouselController: _sliderController,
-            itemCount: widget.items.length,
-            itemBuilder: (context, index, realIndex) {
-              final item = widget.items[index];
-              return Container(
-                decoration: BoxDecoration(
-                  color: context.colorScheme.primary,
-                  image: DecorationImage(
-                    image: CachedNetworkImageProvider(item.imageUrl),
-                    fit: BoxFit.cover,
-                    opacity: widget.hasTitle ? 0.5 : 1.0,
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: context.fySpacing.topBottomPadding.toDouble(),
+        horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
+            child: CarouselSlider.builder(
+              carouselController: _sliderController,
+              itemCount: widget.items.length,
+              itemBuilder: (context, index, realIndex) {
+                final item = widget.items[index];
+                return Container(
+                  decoration: BoxDecoration(
+                    color: context.colorScheme.primary,
+                    image: DecorationImage(
+                      image: CachedNetworkImageProvider(item.imageUrl),
+                      fit: BoxFit.cover,
+                      opacity: widget.hasTitle ? 0.5 : 1.0,
+                    ),
                   ),
-                ),
-                child: widget.hasTitle
-                    ? Center(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              item.title,
-                              style: context.textTheme.headlineLarge!.copyWith(
-                                color: context.colorScheme.onPrimary,
-                                shadows: [
-                                  Shadow(
-                                    color: context.fyColors.textTenColor,
-                                    blurRadius: 10.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const Gap(10.0),
-                            OutlinedButton(
-                              onPressed: () {
-                                widget.onCollectionTapped(item.id);
-                              },
-                              style: OutlinedButton.styleFrom(
-                                foregroundColor: context.colorScheme.onPrimary,
-                                side: BorderSide(
+                  child: widget.hasTitle
+                      ? Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                item.title,
+                                style:
+                                    context.textTheme.headlineLarge!.copyWith(
                                   color: context.colorScheme.onPrimary,
+                                  shadows: [
+                                    Shadow(
+                                      color: context.fyColors.textTenColor,
+                                      blurRadius: 10.0,
+                                    ),
+                                  ],
                                 ),
                               ),
-                              child: const Text('Shop now'),
-                            )
-                          ],
-                        ),
-                      )
-                    : null,
-              );
-            },
-            options: CarouselOptions(
-              viewportFraction: 1.0,
-              autoPlay: true,
-              autoPlayCurve: Curves.easeInOutExpo,
-              autoPlayInterval: const Duration(seconds: 5),
-              autoPlayAnimationDuration: const Duration(seconds: 1),
-              onPageChanged: (index, reason) => setState(() {
-                currentIndex = index;
-              }),
+                              const Gap(10.0),
+                              OutlinedButton(
+                                onPressed: () {
+                                  widget.onCollectionTapped(item.id);
+                                },
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor:
+                                      context.colorScheme.onPrimary,
+                                  side: BorderSide(
+                                    color: context.colorScheme.onPrimary,
+                                  ),
+                                ),
+                                child: const Text('Shop now'),
+                              )
+                            ],
+                          ),
+                        )
+                      : null,
+                );
+              },
+              options: CarouselOptions(
+                viewportFraction: 1.0,
+                autoPlay: true,
+                autoPlayCurve: Curves.easeInOutExpo,
+                autoPlayInterval: const Duration(seconds: 5),
+                autoPlayAnimationDuration: const Duration(seconds: 1),
+                onPageChanged: (index, reason) => setState(() {
+                  currentIndex = index;
+                }),
+              ),
             ),
           ),
-        ),
-        Positioned(
-            bottom: 10.0,
-            child: SliderIndexIndicator(
-              currentIndex: currentIndex,
-              itemCount: widget.items.length,
-            ))
-      ],
+          Positioned(
+              bottom: 10.0,
+              child: SliderIndexIndicator(
+                currentIndex: currentIndex,
+                itemCount: widget.items.length,
+              ))
+        ],
+      ),
     );
   }
 }

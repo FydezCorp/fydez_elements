@@ -1,0 +1,1 @@
+enum TextBlockType {normal}

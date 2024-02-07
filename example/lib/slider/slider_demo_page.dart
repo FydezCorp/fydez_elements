@@ -111,6 +111,7 @@ class _SliderDemoPageState extends State<SliderDemoPage> {
               ),
             ),
             FySlider.create(
+              context,
               aspectRatio: aspectRatio,
               cornerRadius: cornerRadius,
               delay: delay.floor(),

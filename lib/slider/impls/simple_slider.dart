@@ -69,7 +69,11 @@ class _SimpleSliderImplState extends State<_SimpleSliderImpl> {
             return GestureDetector(
               onTap: item.cta.action,
               child: Container(
-                margin: EdgeInsets.all(widget.margin),
+                // Simple is being used in content blocks and the margin in being read from the theme.
+                margin: EdgeInsets.symmetric(
+                  vertical: context.fySpacing.topBottomPadding.toDouble(),
+                  horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+                ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(widget.cornerRadius),
                   image: DecorationImage(

@@ -82,7 +82,7 @@ class _ImageDemoState extends State<ImageDemo> {
               log('Image Tapped');
             },
           ),
-          cornerRadius: cornerRadius,
+          cornerRadius: null,
           type: type,
         ),
         const Gap(10.0),

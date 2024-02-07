@@ -93,6 +93,10 @@ class _SimpleCounterWidgetState extends State<SimpleCounterWidget> {
         borderRadius: BorderRadius.circular(widget.cornerRadius),
       ),
       padding: const EdgeInsets.all(20.0),
+      margin: EdgeInsets.symmetric(
+        vertical: context.fySpacing.topBottomPadding.toDouble(),
+        horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+      ),
       child: Column(
         children: [
           Text(

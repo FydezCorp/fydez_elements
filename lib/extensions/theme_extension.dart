@@ -6,7 +6,9 @@ extension ThemeExtension on BuildContext {
   TextTheme get textTheme => Theme.of(this).textTheme;
   ThemeData get theme => Theme.of(this);
   FyTextColor get fyColors => Theme.of(this).extension<FyTextColor>()!;
-  FyThemeParameters get fyParameters => Theme.of(this).extension<FyThemeParameters>()!;
+  FyThemeParameters get fyParameters =>
+      Theme.of(this).extension<FyThemeParameters>()!;
   FyPrimaryColor get primaryColors =>
       Theme.of(this).extension<FyPrimaryColor>()!;
+  FySpacing get fySpacing => Theme.of(this).extension<FySpacing>()!;
 }

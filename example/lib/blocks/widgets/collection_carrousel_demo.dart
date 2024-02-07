@@ -75,6 +75,7 @@ class _CollectionCarouselDemoState extends State<CollectionCarouselDemo> {
         ),
         const Gap(20.0),
         FyCollectionCarouselBlock.create(
+          context,
           items: items,
           type: type,
           hasTitle: hasTitle,

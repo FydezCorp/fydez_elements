@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/category_item/category_item_factory.dart';
-import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 
 import 'data/category_item_type.dart';
@@ -17,7 +16,7 @@ class FyCategoryItem {
   }) {
     final finalType = type ?? context.fyParameters.categoryItemType;
     final finalCornerRadius =
-        cornerRadius ?? Constants.categoryItemDefaultCornerRadius;
+        cornerRadius ?? context.fySpacing.cornerRadius.toDouble();
     return CategoryItemFactory(type: finalType).build(
       key: key,
       name: name,

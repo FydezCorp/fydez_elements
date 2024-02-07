@@ -39,10 +39,16 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final horizontalPadding = context.fySpacing.rightLeftPadding.toDouble();
+    final verticalPadding = context.fySpacing.topBottomPadding.toDouble();
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: EdgeInsets.only(
+            top: verticalPadding,
+            right: horizontalPadding,
+            left: horizontalPadding,
+          ),
           child: Row(
             children: [
               Text(
@@ -70,7 +76,13 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               final widget = widgets[index];
-              return widget;
+              return Container(
+                margin: EdgeInsets.only(
+                  left: index == 0 ? horizontalPadding : horizontalPadding / 2,
+                  right: index != widgets.length - 1 ? 0 : horizontalPadding,
+                ),
+                child: widget,
+              );
             },
             physics: const BouncingScrollPhysics(),
           ),
