@@ -44,9 +44,10 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(
-            vertical: verticalPadding,
-            horizontal: horizontalPadding,
+          padding: EdgeInsets.only(
+            top: verticalPadding,
+            right: horizontalPadding,
+            left: horizontalPadding,
           ),
           child: Row(
             children: [
