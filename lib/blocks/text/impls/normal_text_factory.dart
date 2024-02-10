@@ -43,12 +43,16 @@ class _NormalTextFactoryWidgetState extends State<_NormalTextFactoryWidget> {
         children: [
           Text(
             widget.title,
-            style: context.textTheme.titleLarge!,
+            style: context.textTheme.titleLarge!.copyWith(
+              color: context.fyColors.titleColor,
+            ),
           ),
           const Gap(4),
           Text(
             widget.description,
-            style: context.textTheme.bodyMedium!,
+            style: context.textTheme.bodyMedium!.copyWith(
+              color: context.fyColors.subtitleColor,
+            ),
           ),
         ],
       ),

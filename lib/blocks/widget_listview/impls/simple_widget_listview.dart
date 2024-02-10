@@ -53,7 +53,9 @@ class SimpleWidgetListViewWidget extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: context.textTheme.titleLarge,
+                style: context.textTheme.titleLarge!.copyWith(
+                  color: context.fyColors.titleColor,
+                ),
               ),
               const Gap(10.0),
               if (remainingSeconds != null)

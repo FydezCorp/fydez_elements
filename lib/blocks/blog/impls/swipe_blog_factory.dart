@@ -42,7 +42,9 @@ class _SwipeBlogFactoryWidget extends StatelessWidget {
             children: [
               Text(
                 headline!,
-                style: context.textTheme.headlineLarge,
+                style: context.textTheme.headlineLarge!.copyWith(
+                  color: context.fyColors.titleColor,
+                ),
               ),
               const Gap(20),
             ],
