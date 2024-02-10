@@ -13,6 +13,8 @@ class FyTextColor extends ThemeExtension<FyTextColor> {
   final Color textEightColor;
   final Color textNineColor;
   final Color textTenColor;
+  final Color titleColor;
+  final Color subtitleColor;
   FyTextColor({
     required this.textOneColor,
     required this.textTwoColor,
@@ -24,6 +26,8 @@ class FyTextColor extends ThemeExtension<FyTextColor> {
     required this.textEightColor,
     required this.textNineColor,
     required this.textTenColor,
+    required this.titleColor,
+    required this.subtitleColor,
   });
 
   @override
@@ -38,18 +42,23 @@ class FyTextColor extends ThemeExtension<FyTextColor> {
     Color? textEightColor,
     Color? textNineColor,
     Color? textTenColor,
+    Color? titleColor,
+    Color? subtitleColor,
   }) {
     return FyTextColor(
-        textOneColor: textOneColor ?? this.textOneColor,
-        textTwoColor: textTwoColor ?? this.textTwoColor,
-        textThreeColor: textThreeColor ?? this.textThreeColor,
-        textFourColor: textFourColor ?? this.textFourColor,
-        textFiveColor: textFiveColor ?? this.textFiveColor,
-        textSixColor: textSixColor ?? this.textSixColor,
-        textSevenColor: textSevenColor ?? this.textSevenColor,
-        textEightColor: textEightColor ?? this.textEightColor,
-        textNineColor: textNineColor ?? this.textNineColor,
-        textTenColor: textTenColor ?? this.textTenColor);
+      textOneColor: textOneColor ?? this.textOneColor,
+      textTwoColor: textTwoColor ?? this.textTwoColor,
+      textThreeColor: textThreeColor ?? this.textThreeColor,
+      textFourColor: textFourColor ?? this.textFourColor,
+      textFiveColor: textFiveColor ?? this.textFiveColor,
+      textSixColor: textSixColor ?? this.textSixColor,
+      textSevenColor: textSevenColor ?? this.textSevenColor,
+      textEightColor: textEightColor ?? this.textEightColor,
+      textNineColor: textNineColor ?? this.textNineColor,
+      textTenColor: textTenColor ?? this.textTenColor,
+      titleColor: titleColor ?? this.titleColor,
+      subtitleColor: subtitleColor ?? this.subtitleColor,
+    );
   }
 
   @override
@@ -69,6 +78,8 @@ class FyTextColor extends ThemeExtension<FyTextColor> {
       textEightColor: Color.lerp(textEightColor, other.textEightColor, t)!,
       textNineColor: Color.lerp(textNineColor, other.textNineColor, t)!,
       textTenColor: Color.lerp(textTenColor, other.textTenColor, t)!,
+      titleColor: Color.lerp(titleColor, other.titleColor, t)!,
+      subtitleColor: Color.lerp(subtitleColor, other.subtitleColor, t)!,
     );
   }
 }

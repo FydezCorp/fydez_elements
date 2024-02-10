@@ -13,6 +13,8 @@ FyTextColor textColors = FyTextColor(
   textEightColor: const Color(0xff585858),
   textNineColor: const Color(0xFF3A3A3A),
   textTenColor: const Color(0xff1A1A1A),
+  titleColor: Colors.red,
+  subtitleColor: Colors.greenAccent,
 );
 
 FyPrimaryColor primaryColors = FyPrimaryColor(
