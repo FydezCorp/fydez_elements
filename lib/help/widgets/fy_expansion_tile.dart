@@ -14,10 +14,11 @@ class FyExpansionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(
+        border: Border(
+            bottom: BorderSide(
           color: context.fyColors.textFiveColor,
           width: 0.5,
-        ),
+        )),
         color: Colors.transparent,
       ),
       margin: const EdgeInsets.only(bottom: 12.0),
@@ -28,13 +29,16 @@ class FyExpansionTile extends StatelessWidget {
               .copyWith(color: context.fyColors.textTenColor),
         ),
         collapsedBackgroundColor: Colors.transparent,
-        tilePadding: const EdgeInsets.symmetric(horizontal: 16.0),
+        tilePadding: EdgeInsets.symmetric(
+          horizontal: context.fySpacing.rightLeftPadding.toDouble(),
+        ),
         backgroundColor: Colors.transparent,
         children: [
-          const Divider(
+          Divider(
             indent: 16,
             endIndent: 52,
             height: 1,
+            color: context.fyColors.textFourColor,
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
