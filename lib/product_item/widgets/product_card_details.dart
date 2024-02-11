@@ -28,7 +28,7 @@ class ProductCardDetails extends StatelessWidget {
           Text(
             product.name,
             maxLines: 1,
-            overflow: TextOverflow.fade,
+            overflow: TextOverflow.ellipsis,
             style: context.textTheme.labelLarge!.copyWith(
               color: context.fyColors.textTenColor,
             ),
