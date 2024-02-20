@@ -51,7 +51,7 @@ class _SwipeBlogFactoryWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 250,
+          height: 210,
           child: Swiper(
             itemCount: contents.length,
             itemBuilder: (context, index) {

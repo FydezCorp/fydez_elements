@@ -1,1 +1,1 @@
-enum BlogBlockType {swipe}
+enum BlogBlockType { swipe, carousel }

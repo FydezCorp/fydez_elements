@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/blocks/blog/impls/swipe_blog_factory.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
+import 'impls/carousel_blog_factory.dart';
+
 abstract class BlogFactory {
   Widget create(
     BuildContext context, {
@@ -10,6 +12,11 @@ abstract class BlogFactory {
   });
 
   factory BlogFactory({required BlogBlockType type}) {
-    return SwipeBlogFactory();
+    switch (type) {
+      case BlogBlockType.carousel:
+        return CarouselBlogFactory();
+      default:
+        return SwipeBlogFactory();
+    }
   }
 }
