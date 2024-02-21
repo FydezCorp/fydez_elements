@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/blocks/blog/blog_factory.dart';
 import 'package:fydez_elements/blocks/blog/data/blog_content.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CarouselBlogFactory implements BlogFactory {
   @override
@@ -62,8 +63,10 @@ class _CarouselBlogFactoryWidget extends StatelessWidget {
             itemBuilder: (context, index) {
               final item = contents[index];
               return GestureDetector(
-                onTap: () {
-                  // onCollectionTapped(item.id);
+                onTap: () async {
+                  if (!await launchUrl(Uri.parse(contents[index].postURL))) {
+                    debugPrint('Can\'t open url: ${contents[index].postURL}');
+                  }
                 },
                 child: Container(
                   width: 200,
