@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fydez_elements/slider/data/slider_item.dart';
 import 'package:fydez_elements/slider/data/slider_type.dart';
@@ -15,6 +16,7 @@ abstract class SliderFactory {
     required double margin,
     required bool isAutoPlay,
     required bool hasIndicator,
+    required CarouselController? controller,
   });
 
   factory SliderFactory({required SliderType type}) {

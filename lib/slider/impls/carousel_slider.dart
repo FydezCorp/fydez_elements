@@ -18,6 +18,7 @@ class CarrouselSlider implements SliderFactory {
     required double margin,
     required bool isAutoPlay,
     required bool hasIndicator,
+    required CarouselController? controller,
   }) {
     return _CarrouselSliderImpl(
       items: items,
@@ -27,6 +28,7 @@ class CarrouselSlider implements SliderFactory {
       margin: margin,
       isAutoPlay: isAutoPlay,
       hasIndicator: hasIndicator,
+      controller: controller,
     );
   }
 }
@@ -39,6 +41,7 @@ class _CarrouselSliderImpl extends StatefulWidget {
   final double margin;
   final bool isAutoPlay;
   final bool hasIndicator;
+  final CarouselController? controller;
   const _CarrouselSliderImpl({
     required this.items,
     required this.aspectRatio,
@@ -47,6 +50,7 @@ class _CarrouselSliderImpl extends StatefulWidget {
     required this.delay,
     required this.isAutoPlay,
     required this.hasIndicator,
+    required this.controller,
   });
 
   @override
@@ -55,7 +59,6 @@ class _CarrouselSliderImpl extends StatefulWidget {
 
 class _CarrouselSliderImplState extends State<_CarrouselSliderImpl> {
   int currentIndex = 0;
-  final carrouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
     final items = widget.items;
@@ -92,7 +95,7 @@ class _CarrouselSliderImplState extends State<_CarrouselSliderImpl> {
               });
             },
           ),
-          carouselController: carrouselController,
+          carouselController: widget.controller,
         ),
         Visibility(
             visible: widget.hasIndicator,

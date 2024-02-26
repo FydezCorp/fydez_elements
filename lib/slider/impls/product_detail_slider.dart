@@ -18,6 +18,7 @@ class ProductDetailSlider implements SliderFactory {
     required double margin,
     required bool isAutoPlay,
     required bool hasIndicator,
+    required CarouselController? controller,
   }) {
     return _ProductDetailSliderImpl(
       items: items,
@@ -27,6 +28,7 @@ class ProductDetailSlider implements SliderFactory {
       margin: margin,
       isAutoPlay: isAutoPlay,
       hasIndicator: hasIndicator,
+      controller: controller,
     );
   }
 }
@@ -39,7 +41,7 @@ class _ProductDetailSliderImpl extends StatefulWidget {
   final double margin;
   final bool isAutoPlay;
   final bool hasIndicator;
-
+  final CarouselController? controller;
   const _ProductDetailSliderImpl({
     required this.items,
     required this.aspectRatio,
@@ -48,6 +50,7 @@ class _ProductDetailSliderImpl extends StatefulWidget {
     required this.delay,
     required this.isAutoPlay,
     required this.hasIndicator,
+    required this.controller,
   });
 
   @override
@@ -57,7 +60,6 @@ class _ProductDetailSliderImpl extends StatefulWidget {
 
 class _ProductDetailSliderImplState extends State<_ProductDetailSliderImpl> {
   int currentIndex = 0;
-  final carrouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
     final items = widget.items;
@@ -93,7 +95,7 @@ class _ProductDetailSliderImplState extends State<_ProductDetailSliderImpl> {
               });
             },
           ),
-          carouselController: carrouselController,
+          carouselController: widget.controller,
         ),
         Visibility(
             visible: widget.hasIndicator,

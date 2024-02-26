@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/const/constants.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
@@ -18,6 +19,8 @@ class FySlider {
     int delay = Constants.sliderDefaultDelay,
     double? cornerRadius,
     double margin = Constants.sliderDefaultMargin,
+    CarouselController?
+        controller, // TODO: We're using the one build-inside the carousel slider package for now, but we can implement our own if it's needed.
   }) {
     final finalType = type ?? SliderType.simple;
     final finalCornerRadius =
@@ -31,6 +34,7 @@ class FySlider {
       aspectRatio: aspectRatio,
       cornerRadius: finalCornerRadius,
       hasIndicator: hasIndicator,
+      controller: controller,
     );
   }
 }
