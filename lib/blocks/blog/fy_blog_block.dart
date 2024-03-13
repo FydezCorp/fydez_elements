@@ -8,6 +8,7 @@ class FyBlogBlock {
   static Widget create(
     BuildContext context, {
     required List<BlogContent> contents,
+    required Function(BlogContent content) onBlogPostTapped, 
     String? headline,
     BlogBlockType? type,
   }) {
@@ -16,6 +17,7 @@ class FyBlogBlock {
       context,
       contents: contents,
       headline: headline,
+      onBlogPostTapped: onBlogPostTapped, 
     );
   }
 }

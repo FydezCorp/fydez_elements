@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/fydez_elements.dart';
 
@@ -38,6 +40,9 @@ class _BlogDemoState extends State<BlogDemo> {
           type: type,
           contents: BlogContent.createMockPosts(),
           headline: 'Headline Sample',
+          onBlogPostTapped: (content) {
+            log(content.imageURL);
+          },
         )
       ],
     );

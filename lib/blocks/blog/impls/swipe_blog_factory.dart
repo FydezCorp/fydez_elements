@@ -4,7 +4,6 @@ import 'package:fydez_elements/blocks/blog/blog_factory.dart';
 import 'package:fydez_elements/blocks/blog/data/blog_content.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
 import 'package:gap/gap.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../image/fy_network_image.dart';
 
@@ -13,11 +12,13 @@ class SwipeBlogFactory implements BlogFactory {
   Widget create(
     BuildContext context, {
     required List<BlogContent> contents,
+    required Function(BlogContent content) onBlogPostTapped,
     String? headline,
   }) {
     return _SwipeBlogFactoryWidget(
       contents: contents,
       headline: headline,
+      onBlogPostTapped: onBlogPostTapped,
     );
   }
 }
@@ -25,10 +26,12 @@ class SwipeBlogFactory implements BlogFactory {
 class _SwipeBlogFactoryWidget extends StatelessWidget {
   final List<BlogContent> contents;
   final String? headline;
+  final Function(BlogContent content) onBlogPostTapped;
 
   const _SwipeBlogFactoryWidget({
     required this.contents,
     required this.headline,
+    required this.onBlogPostTapped,
     Key? key,
   }) : super(key: key);
 
@@ -57,9 +60,7 @@ class _SwipeBlogFactoryWidget extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () async {
-                  if (!await launchUrl(Uri.parse(contents[index].postURL))) {
-                    debugPrint('Can\'t open url: ${contents[index].postURL}');
-                  }
+                  onBlogPostTapped(contents[index]);
                 },
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(

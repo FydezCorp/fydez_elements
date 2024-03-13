@@ -8,6 +8,7 @@ abstract class BlogFactory {
   Widget create(
     BuildContext context, {
     required List<BlogContent> contents,
+    required Function(BlogContent content) onBlogPostTapped,
     String? headline,
   });
 

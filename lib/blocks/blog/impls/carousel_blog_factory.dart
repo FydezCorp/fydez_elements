@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:fydez_elements/blocks/blog/blog_factory.dart';
 import 'package:fydez_elements/blocks/blog/data/blog_content.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class CarouselBlogFactory implements BlogFactory {
   @override
   Widget create(
     BuildContext context, {
     required List<BlogContent> contents,
+    required Function(BlogContent content) onBlogPostTapped,
     String? headline,
   }) {
     return _CarouselBlogFactoryWidget(
       contents: contents,
       headline: headline,
+      onBlogPostTapped: onBlogPostTapped,
     );
   }
 }
@@ -22,9 +23,11 @@ class CarouselBlogFactory implements BlogFactory {
 class _CarouselBlogFactoryWidget extends StatelessWidget {
   final List<BlogContent> contents;
   final String? headline;
+  final Function(BlogContent content) onBlogPostTapped;
   const _CarouselBlogFactoryWidget({
     required this.contents,
     required this.headline,
+    required this.onBlogPostTapped,
   });
 
   @override
@@ -64,9 +67,7 @@ class _CarouselBlogFactoryWidget extends StatelessWidget {
               final item = contents[index];
               return GestureDetector(
                 onTap: () async {
-                  if (!await launchUrl(Uri.parse(contents[index].postURL))) {
-                    debugPrint('Can\'t open url: ${contents[index].postURL}');
-                  }
+                  onBlogPostTapped(contents[index]);
                 },
                 child: Container(
                   width: 200,
