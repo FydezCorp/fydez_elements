@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:fydez_elements/extensions/theme_extension.dart';
+import 'package:iconsax/iconsax.dart';
 
 class FyNetworkImage extends StatelessWidget {
   final String url;
@@ -22,6 +23,13 @@ class FyNetworkImage extends StatelessWidget {
       height: height,
       imageUrl: url,
       fit: fit,
+      errorWidget: (context, url, error) {
+        return const Icon(
+          Iconsax.image,
+          color: Colors.black26,
+          size: 48,
+        );
+      },
       progressIndicatorBuilder: (context, url, progress) {
         return Center(
           child: SizedBox(
