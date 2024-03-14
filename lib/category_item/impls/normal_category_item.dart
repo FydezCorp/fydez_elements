@@ -71,7 +71,7 @@ class NormalCategoryWidget extends StatelessWidget {
                       name.toUpperCase(),
                       style: Theme.of(context)
                           .textTheme
-                          .displaySmall!
+                          .titleLarge!
                           .copyWith(color: context.fyColors.textNineColor),
                     ),
                   ),
