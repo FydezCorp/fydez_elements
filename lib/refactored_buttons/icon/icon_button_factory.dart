@@ -10,6 +10,7 @@ abstract class IconButtonFactory {
     required IconData icon,
     Color? backgroundColor,
     Color? foregroundColor,
+    double? iconSize,
     double? height,
   });
 

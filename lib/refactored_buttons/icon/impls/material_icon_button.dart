@@ -12,6 +12,7 @@ class MaterialIconButton implements IconButtonFactory {
     Color? backgroundColor,
     Color? foregroundColor,
     required ButtonState state,
+    double? iconSize,
     double? height,
   }) {
     return IconMaterialButtonFactoryWidget(
@@ -21,6 +22,7 @@ class MaterialIconButton implements IconButtonFactory {
       backgroundColor: backgroundColor,
       foregroundColor: foregroundColor,
       height: height,
+      iconSize: iconSize,
     );
   }
 }
@@ -34,6 +36,7 @@ class IconMaterialButtonFactoryWidget extends StatelessWidget {
     this.backgroundColor,
     this.foregroundColor,
     this.height,
+    this.iconSize,
   });
 
   final VoidCallback onPressed;
@@ -42,6 +45,7 @@ class IconMaterialButtonFactoryWidget extends StatelessWidget {
   final Color? foregroundColor;
   final double? height;
   final ButtonState state;
+  final double? iconSize;
 
   VoidCallback? get _getMethod {
     if (state == ButtonState.deactivated || state == ButtonState.loading) {
@@ -88,7 +92,7 @@ class IconMaterialButtonFactoryWidget extends StatelessWidget {
         ),
         icon: Icon(
           icon,
-          size: 20,
+          size: iconSize ?? 24,
           color: foregroundColor,
         ),
       ),

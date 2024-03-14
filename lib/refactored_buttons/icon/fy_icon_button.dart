@@ -12,6 +12,7 @@ class FyIconButton {
     required IconData icon,
     Color? backgroundColor,
     Color? foregroundColor,
+    double? iconSize,
     double? height,
     IconButtonType? type,
   }) {
@@ -24,6 +25,7 @@ class FyIconButton {
       height: height,
       icon: icon,
       state: finalButtonState,
+      iconSize: iconSize,
     );
   }
 }
